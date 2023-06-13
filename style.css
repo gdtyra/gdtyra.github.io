@@ -2,14 +2,90 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #32302f;
     color: #dfdbb2;
+    padding: 0;
+    margin: 0;
+}
+
+a, a:hover, a:visited {
+    color: #dfdbb2;
+}
+
+div#main {
+    width: 100%;
+    display: flex;
+}
+
+.column {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+div#content {
     margin-left: auto;
     margin-right: auto;
+    text-overflow: ellipsis;
     width: 90%;
     max-width: 993.3px;
 }
 
+div#nav {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 10%;
+    min-width: 150px;
+    max-width: 250px;
+    background-color: black;
+    padding-right: 20px;
+}
+
+ul,ol {
+    line-height: 1.5;
+}
+
+div#nav ul {
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+div#nav > ul {
+    padding-left: 20px;
+}
+
+div#nav ul > li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p {
+    line-height: 1.5;
+    text-indent: 0;
+}
+
+p + h1,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6 {
+    margin-top: 50px;
+}
+
+ul + h1,
+ul + h2,
+ul + h3,
+ul + h4,
+ul + h5,
+ul + h6 {
+    margin-top: 50px;
+}
+
 h1,h2,h3,h4,h5,h6 {
     font-variant: small-caps;
+    margin-bottom: 10px;
 }
 
 h1 {

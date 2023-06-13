@@ -1,3 +1,23 @@
+# Intro
+Hello! Thank you for taking the time to look beyond what's written in my resume. The following is a candid retrospective and self-reflection on my work experience. I don't necessarily expect anyone to read it, but its something I needed to do for myself in order to answer interview questions sufficiently and I figured I would make it available.
+
+## Career Break
+There isn't any one specific reason I decided to take a career break, but I probably wouldn't have made the decision without the alignment of 3 things in particular:
+
+1. My team at the time had just gone through restructuring that left me on a new, small team that didn't yet own any systems and didn't have a clear vision of what we would own or build.
+2. I assumed we would start working from the office again, but I had moved away from the office during the pandemic and had no plan to move back.
+3. I had been feeling like I should explore opportunities at other companies for a number of years anyway simply to experience different environments and technology stacks
+
+I didn't immediately look for a new role because there was no need and I wanted to get a better sense of whether remote work is here to stay or not. I prefer to live within walking distance of the office, so the difference between hybrid and fully remote work is very significant to me.
+
+## What I'm Looking For
+A role that involves at least one of these things:
+
+- A product/service that feels interesting, relevant, important, or otherwise meaningful
+- An opportunity to apply my experience and be of value
+- An opportunity to learn a technology or stack that I'm less familiar with
+- An opportunity to take on more leadership responsibilities
+
 # Projects
 ## Sustainability: Carbon Footprint (2020 - 2021)
 ### Product
@@ -10,7 +30,9 @@ The work was technically pretty straightforward and the team was small with clea
 The "pipeline" was essentially a series of AWS Lambda functions implemented in Scala which expected inputs in one S3 bucket and delivered transformed outputs to another. An AWS Step Function orchestrated the order of these transformations, running them in parallel when possible. Granular IAM roles were used throughout. CDK was used to define the infrastructure.
 
 ### Role
-I ramped up by writing standard security review documentation of the system, and then my main body of work was implementing the "proxy" calculation and lookup. The "proxy" lookup table was a hierarchical table keyed by site attributes like geographic location and type of site. It was populated with averages of real energy usage data we had and then used as estimates to fill in any gaps in the actual data.
+This was a temporary assignment with another team in the organization to help them stay on schedule.
+
+I ramped up by writing standard security review documentation of the system, and then my main body of work was implementing the "proxy" calculation and lookup. The "proxy" lookup table was a hierarchical table keyed by site attributes like geographic location and type of site. It was populated with averages of real energy usage data we had and then used for estimates to fill in any gaps in the actual data prior to delivery to downstream systems.
 
 ### Team
 This was a small team consisting of 3 engineers, an SDM, and a product manager. I was the 3rd engineer temporarily joining the team to help them hit their timelines.
@@ -20,7 +42,7 @@ This was a small team consisting of 3 engineers, an SDM, and a product manager. 
 ### Products
 When I joined, this team owned a packaging certification system and website used by Amazon vendors to certify their products against packaging standards like "frustration-free" and "ships-in-own-container" (not overboxed). They also owned an almost-launched service that determined whether given inventory was eligible for donation (e.g. not hazmat, not expired, not recalled, among others).
 
-After I joined, much of the team's focus turned toward building a new system to begin replacing the existing packaging certification system which was not well understood, buggy, and brittle.
+After I joined, much of the team's focus turned toward building a new system to begin replacing the existing packaging certification system which was not well understood, buggy, and brittle. This initiative was driven by a need to allow certifications and a more granular inventory level than the system currently supported.
 
 I also built a service to aid in the creation of product labeling workloads for machine learning purposes while on this team. That is, the service would accept product identifiers and item attribute keys, collect the requested images and information from various sources, and create a labeling job in AWS SageMaker after which human workers could view the information and answer questions about the product that could be fed into a model as training data.
 
@@ -37,7 +59,7 @@ Building the new packaging certification infrastructure involved the complexity 
 
 The new system was also being designed with a scalable serverless architecture that allowed for a lot of parallelization in the workflow. However, we found that, while our system might be free to parallelize, we were being throttled by downstream dependencies and needed to rate limit ourselves to avoid having our requests rejected.
 
-The new system was not purely a replacement but also added the capability for certifications at a more granular inventory level than before. This additionally required work within the Amazon fulfillment center systems for receiving inventory. We needed to do this work ourselves in a foreign codebase which needed to be understood. It was also a very dangerous and mission-critical part of the code to make changes to, although we were able to do it in such a way that the worst possible impact would be extra boxes around items that didn't them as opposed to halting the inventory receive process entirely.
+This additionally required work within the Amazon fulfillment center systems for receiving inventory. We needed to do this work ourselves in a foreign codebase which needed to be understood. It was also a very dangerous and mission-critical part of the code to make changes to, although we were able to do it in such a way that the worst possible impact would be extra boxes around items that didn't need them as opposed to halting the inventory receive process entirely.
 
 ### Stack
 The existing certification system consisted of an RDS Aurora instance fronted by an HTTP REST service. A website built on a Java framework that I think was itself built on Spring MVC acted as the frontend to this service. The system used its relational database for, among other things, a queue of work to be done which everyone agreed was strange and problematic.
