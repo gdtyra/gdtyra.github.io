@@ -1,12 +1,15 @@
 import markdown2
+import time
 
 html = markdown2.markdown_path('index.md', extras={'toc': {'depth': 2}})
+
+timestamp = time.time()
 
 document = f"""
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v={timestamp}" />
 </head>
 <body>
 <div id="main">
