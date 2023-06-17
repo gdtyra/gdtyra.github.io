@@ -13,10 +13,32 @@ I didn't immediately look for a new role because there was no need and I wanted 
 ## What I'm Looking For
 A role that involves at least one of these things:
 
-- A product/service that feels interesting, relevant, important, or otherwise meaningful
+- A product / service that feels interesting, relevant, important, or otherwise meaningful
 - An opportunity to apply my experience and be of value
 - An opportunity to learn a technology or stack that I'm less familiar with
 - An opportunity to take on more leadership responsibilities
+
+## Traits
+These are the traits that I see as defining me and my behavior in relation to my work, the project, and the people around me. I see these traits as generally good, but they also imply certain roles, projects, and work environments that allow me to be most effective and biases I need to account for and be aware of.
+
+- **Driven by technical curiosity**
+    - &#x2714;: I'm in this field because I find computers and everything related to them to be very interesting. I'm driven by a curiosity in how things work and I have at least some familiarity and interest in everything from hardware to front-end UI. I'm more than happy to dive into unfamiliar territory and am able to learn quickly. I already have enough foundational knowledge in most areas to at least know where to begin when tackling an unfamiliar problem.
+    - &#x26a0; I have broad knowledge, but am not specialized in any particular area. The product I'm working on or problem I'm solving is very much secondary in my mind. Unless the product is itself related to computers, software development, or an interesting technology, I probably don't care that much about it aside from my responsibility to deliver quality results to those who are depending on me. I expect someone else to be defining the high-level goals of what we are building, what the measurements of success will be and, unless the product is an API, what the user experience should look like.
+- **Driven by perceived responsibility and desire to meet or exceed expectations**
+    - &#x2714;: If I'm given a well-defined responsibility, I am highly motivated to handle that responsibility well. This might be delivering a feature by a target date, doing research to provide a planning estimate, or leading a particular weekly meeting.
+    - &#x26a0; This breaks down if the expectations or constraints are unclear. Features usually have well-defined acceptance criteria and target dates, but lets say I'm tasked with researching and documenting different options for how to build something. I will likely have immediate ideas based on what I am already familiar with, but how much additional exploration and research should I do before calling it "done"? I do have my own sense of when I've done "enough", but if I'm given a predetermined time constraint then I will naturally make more effective use of the time.
+- **Highly agreeable**
+    - &#x2714;: I get along well with everyone. I'll offer my thoughts, but I'm happy to go along with team consensus or what leadership has decided on. If I really thought a huge misstep was being taken then I'm sure I would speak up, but I've never felt that way so far.
+    - &#x26a0; I don't often have strong opinions. In code reviews, for example, I will most likely approve if it is functionally correct, has good tests, and there is nothing else objectively problematic about the change. I offer suggestions for anything else that I think could be done better, but leave it up to the implementer as I don't want to be the reason for holding up the change. If I do personally feel interested in improvements, I may do it myself later as part of other changes.
+- **People pleaser**
+    - &#x2714;: I want people to be happy with me. This is probably the force behind the desire to meet expectations as explained above, but I also enjoy helping people who are stuck on a problem or are having trouble understanding something.
+    - &#x26a0; I am biased toward saying what people want to hear. For example, if I think someone will react badly to a longer project estimate, I may give a more optimistic estimate than I would otherwise.
+- **"Perfectionist", for lack of a better term**
+    - &#x2714;: I aim to do things as well as possible while also feeling like there is always something to improve.
+    - &#x26a0; I will work on details endlessly if there isn't some kind of externally imposed time constraints or completion criteria.
+- **(Re)Inventor**
+    - &#x2714;: I enjoy building things and am able to use my existing knowledge to start building solutions quickly.
+    - &#x26a0; I have a bias toward building from lower-level tools I'm familiar with as opposed to finding and using appropriate pre-built solutions. This comes from an eagerness to start building over doing research, desire to avoid bloated dependencies, and a preference to learn tools and exercise skills that are more generalizable over learning tools and frameworks that have a specific use case.
 
 # Projects
 ## Sustainability: Carbon Footprint (2020 - 2021)
@@ -35,12 +57,12 @@ This was a temporary assignment with another team in the organization to help th
 I ramped up by writing standard security review documentation of the system, and then my main body of work was implementing the "proxy" calculation and lookup. The "proxy" lookup table was a hierarchical table keyed by site attributes like geographic location and type of site. It was populated with averages of real energy usage data we had and then used for estimates to fill in any gaps in the actual data prior to delivery to downstream systems.
 
 ### Team
-This was a small team consisting of 3 engineers, an SDM, and a product manager. I was the 3rd engineer temporarily joining the team to help them hit their timelines.
+This was a small team consisting of 3 engineers, an SDM, and a product manager. I was the 3rd engineer temporarily joining the team to help them stay on schedule.
  
 
 ## Sustainability: Packaging (2018 - 2020)
 ### Products
-When I joined, this team owned a packaging certification system and website used by Amazon vendors to certify their products against packaging standards like "frustration-free" and "ships-in-own-container" (not overboxed). They also owned an almost-launched service that determined whether given inventory was eligible for donation (e.g. not hazmat, not expired, not recalled, among others).
+When I joined, this team owned a packaging certification system and website used by Amazon vendors to certify their products against packaging standards like "frustration-free" and "ships-in-own-container" (not over-boxed). They also owned an almost-launched service that determined whether given inventory was eligible for donation (e.g. not hazardous, not expired, not recalled, among others).
 
 After I joined, much of the team's focus turned toward building a new system to begin replacing the existing packaging certification system which was not well understood, buggy, and brittle. This initiative was driven by a need to allow certifications and a more granular inventory level than the system currently supported.
 
@@ -49,9 +71,9 @@ I also built a service to aid in the creation of product labeling workloads for 
 If you're wondering how these things are related, so am I.
 
 ### Complexity
-The donation eligiblity service was straightforward and not particularly interesting.
+The donation eligibility service was straightforward and not particularly interesting.
 
-The existing package certification system was complex in the sense that nobody remaining on the team really understood what it was supposed to do. Even outside of the engineering team, there didn't seem to be a wholistic understanding of what it was supposed to do, not supposed to do, what was deprecated or not, etc.
+The existing package certification system was complex in the sense that nobody remaining on the team really understood what it was supposed to do. Even outside of the engineering team, there didn't seem to be a holistic understanding of what it was supposed to do, not supposed to do, what was deprecated or not, etc.
 
 For the new systems we were building, there was complexity around the company's initiative to migrate systems onto public AWS offerings instead of the internal services and frameworks that had been used before. Other than the need to learn a new way of doing things, it added complexity in that dependencies we wanted to integrate with may be in differing stages of this migration and we needed to decide whether to wait for them to migrate or do a temporary integration with their legacy system.
 
@@ -62,7 +84,7 @@ The new system was also being designed with a scalable serverless architecture t
 This additionally required work within the Amazon fulfillment center systems for receiving inventory. We needed to do this work ourselves in a foreign codebase which needed to be understood. It was also a very dangerous and mission-critical part of the code to make changes to, although we were able to do it in such a way that the worst possible impact would be extra boxes around items that didn't need them as opposed to halting the inventory receive process entirely.
 
 ### Stack
-The existing certification system consisted of an RDS Aurora instance fronted by an HTTP REST service. A website built on a Java framework that I think was itself built on Spring MVC acted as the frontend to this service. The system used its relational database for, among other things, a queue of work to be done which everyone agreed was strange and problematic.
+The existing certification system consisted of an RDS Aurora instance fronted by an HTTP REST service. A website built on a Java framework that I think was itself built on Spring MVC acted as the front-end to this service. The system used its relational database for, among other things, a queue of work to be done which everyone agreed was strange and problematic.
 
 The new system, which had only so far been designed to replace a part of what the old system was responsible for, was built as Lambda functions behind API Gateway with S3 and DynamoDB for storage solutions. It used CloudFormation for infrastructure definition and Kinesis Firehose for streaming data to S3 and Redshift for reporting purposes. Despite being almost entirely public AWS offerings, it did use an established internal system for workflow orchestration that was responsible for calling into a REST service that performed the certification and decertification workflow logic.
 
@@ -80,7 +102,7 @@ Although it was not particularly complex, I did design and implement the labelin
 ### Team
 The team consisted of around 8 engineers. As mentioned above, the team was involved in a few different systems that don't seem particularly related and we were often focused on different things despite all sitting together.
 
-In my experience on other teams, the engineering and product teams work closely. On this team, there was more of a line drawn where the product team was not sitting in on our planning meetings or standups and I got the sense that the product team had other things going on unrelated to what we were actively working on. This was probably made worse by the fact that 2 or 3 of the engineers were senior engineers who would meet with stakeholders without the rest of the engineering team, so I always felt I was getting incomplete and second-hand information without the context I would expect.
+In my experience on other teams, the engineering and product teams work closely. On this team, there was more of a line drawn where the product team was not sitting in on our planning meetings or stand-ups and I got the sense that the product team had other things going on unrelated to what we were actively working on. This was probably made worse by the fact that 2 or 3 of the engineers were senior engineers who would meet with stakeholders without the rest of the engineering team, so I always felt I was getting incomplete and second-hand information without the context I would expect.
 
 Still, the team had solid code review, testing, an continuous deployment practices.
 
@@ -89,22 +111,22 @@ Still, the team had solid code review, testing, an continuous deployment practic
 ### Product
 The Dash Wand had 2 hardware models and, the way I look at it, 4 iterations on its functionality. The original idea was a sort of alternative to a written shopping list. Customers would keep it in their kitchen and either scan product barcodes when they ran out or speak the name of something they needed into the built-in microphone. It was originally just called the Amazon Dash, but the release of the Dash Button created confusion.
 
-The first model and iteration allowed users to build a "Dash List" entirely distinct from their shopping cart on the AmazonFresh website. We leveraged the NLP services concurrently being built for the Echo device to do voice transcription and acquired a database of product UPC mappings to populate the Dash List with appropriate search terms. Customers could go to their Dash List page and select products to add to cart from inline search results associated with each voice input or scan.
+The first model and iteration allowed users to build a "Dash List" entirely distinct from their shopping cart on the AmazonFresh website. We leveraged the NLP services concurrently being built for the Echo device to do voice transcription and acquired a database of product UPC mappings to populate the Dash List with appropriate search terms. Customers could go to their Dash List page and select products to add to cart from in-line search results associated with each voice input or scan.
 
-The 2nd iteration was the concept of "high confidence" inputs. If we were confident that an input was intended to represent a specific product, we would add that product directly to cart and skip the Dash List. However, we also provided an inline UX for customers to switch the product from the AmazonFresh cart page. In practice, "high confidence" inputs were scans for which the Amazon catalog had a UPC mapping to an available product or voice inputs with search results containing an item previously purchased by the customer.
+The 2nd iteration was the concept of "high confidence" inputs. If we were confident that an input was intended to represent a specific product, we would add that product directly to cart and skip the Dash List. However, we also provided an in-line UX for customers to switch the product from the AmazonFresh cart page. In practice, "high confidence" inputs were scans for which the Amazon catalog had a UPC mapping to an available product or voice inputs with search results containing an item previously purchased by the customer.
 
-The 3rd iteration was the migration, along with AmazonFresh in general, to the primary Amazon.com retail website. There was no "Dash List" anymore, but rather the concept of "ambiguous items" comingled in the shopping cart view with regular cart items. Ambiguous items could be "disambiguated" by selecting from the inline search results and disambiguated items could be swapped out with different search results using a similar UX.
+The 3rd iteration was the migration, along with AmazonFresh in general, to the primary Amazon.com retail website. There was no "Dash List" anymore, but rather the concept of "ambiguous items" co-mingled in the shopping cart view with regular cart items. Ambiguous items could be "disambiguated" by selecting from the in-line search results and disambiguated items could be swapped out with different search results using a similar UX.
 
 At some point during the iterations above, a 2nd hardware model was also released. It was significantly smaller and had a proper speaker and more expressive LEDs.
 
 The 4th and final iteration was the addition of Alexa integration. Instead of being a largely input-only device aside from confirmation beeps, customers could use it to talk to Alexa. It enabled most of the interactions that could be done with the Echo device except for things like music playback which would drain the battery. If the Alexa NLU systems matched an input to one of the Alexa intent handlers, the response would be streamed to the device. If not, the input would be treated as before and result in a cart item.
 
-Device configuration was also a major component of the product from an engineering perspective. Customers would need to use a mobile app to configure the Dash Wand's Wi-Fi connection while also registering the device to their Amazon account. Originally, the only setup method was one in which the user's phone would connect to a temporary Wi-Fi network broadcast by the device after which the app could send the necessary configuration data to the device. This had the inherent issue of the mobile app losing Internet access while connected to the Dash, but even worse was the behavior of some Android phones to automatically disconnect from the Dash after detecting that there was no Internet access. The poor UX resulted in a second setup method using ultrasonic audio. The app would output the configuration data encoded as an ultrasonic audio signal and the Dash would listen for this. Sonic setup was the primary setup method and Wi-Fi setup remained as a fallback in cases where Sonic setup failed for whatever reason.
+Device configuration was also a major component of the product from an engineering perspective. Customers would need to use a mobile app to configure the Dash Wand's Wi-Fi connection while also registering the device to their Amazon account. Originally, the only setup method was one in which the user's phone would connect to a temporary Wi-Fi network broadcast by the device after which the app could send the necessary configuration data to the device. This had the inherent issue of the mobile app losing Internet access while connected to the Dash, but even worse was the behavior of some Android phones to automatically disconnect from the Dash after detecting that there was no Internet access. The poor UX resulted in a second setup method using ultrasonic audio. The app would output the configuration data encoded as an ultrasonic audio signal and the Dash would listen for this. Sonic setup was the primary setup method and Wi-Fi setup remained as a fall-back in cases where Sonic setup failed for whatever reason.
 
 ### Complexity
 Device registration was a major point of complexity and pain. This stemmed from the fact that it was a client-side activity which we didn't have as much insight into combined with the constantly changing world of smartphones at the time, especially on the Android side. We were able to test the full range of relevant iPhones OS versions, but for Android we just covered as much as we could using our current and previous personal phones. To help us in this aspect, I progressively added more detailed client-side logging to the apps and did what I could to ensure that the logs made their way to our server. The apps would send us logs if the user succeeded, failed, or abandoned setup, but would also proactively send us partial logs if the user switched away from the app since we couldn't be sure if they were coming back. If the app crashed, it would send any previously written logs on the next startup.
 
-A major pain point on the development side was the fact that the Dash devices couldn't connect to the internal corporate network which prevented us from using them to test against our development environments. This wasn't the biggest problem early on because the device behavior was simple. We were able to write tests that covered API behavior and generally be confident it would work with the actual device. The problem was much more significant once we started working on Alexa integration because we would benefit much more from ad-hoc testing and experimentation with different Alexa interactions, especially as we were trying to understand how the Alexa systems worked and what kinds of responses we might get from it. We did eventually get one device that had special access to the corporate network, but it had to run modified firmware, was painful to update with new firmware, and the firmware was hardcoded to talk to a particular endpoint which all engineers had to share. It eventually became worthwhile to me to write a "virtual Dash" desktop app which enabled much easier development. We ran it on our laptops, which of course had access to the corporate network, and could use the laptop microphone to provide inputs. The app would play the audio response as well as print the HTTP headers and other useful debug information.
+A major pain point on the development side was the fact that the Dash devices couldn't connect to the internal corporate network which prevented us from using them to test against our development environments. This wasn't the biggest problem early on because the device behavior was simple. We were able to write tests that covered API behavior and generally be confident it would work with the actual device. The problem was much more significant once we started working on Alexa integration because we would benefit much more from ad-hoc testing and experimentation with different Alexa interactions, especially as we were trying to understand how the Alexa systems worked and what kinds of responses we might get from it. We did eventually get one device that had special access to the corporate network, but it had to run modified firmware, was painful to update with new firmware, and the firmware was hard-coded to talk to a particular endpoint which all engineers had to share. It eventually became worthwhile to me to write a "virtual Dash" desktop app which enabled much easier development. We ran it on our laptops, which of course had access to the corporate network, and could use the laptop microphone to provide inputs. The app would play the audio response as well as print the HTTP headers and other useful debug information.
 
 Migrating from AmazonFresh to Amazon.com was a major body of work involving swapping out dependencies, dealing with many new teams who didn't necessarily see it as a priority to support us. Instead of working within the stand-alone AmazonFresh website and mobile apps alongside people we had already worked with in the past, we were now trying to integrate with established Amazon systems that were surely dealing with many other things. While not an engineering complexity, there was definitely complexity involved in negotiating priorities with other teams and getting them aligned with our goals.
 
@@ -118,9 +140,9 @@ The microservice architecture was extremely helpful for the migration from Amazo
 This project was done prior to Amazon's efforts to build everything directly on top of its own public AWS offerings, so much of the infrastructure was still using internal Amazon services. We used DynamoDB for ambiguous item storage and SQS/SNS for event driven parts of the system, but fleet management, load balancers, log archival, monitoring, reporting / data warehousing, and continuous integration pipelines were all very standardized internal offerings available to us.
 
 ### Role
-I was recruited by the first engineer on the project, who had also worked with me on Fresh, at essentially the very beginning of the project. Shortly after, a 3rd engineer with more frontend experience joined and that was the original team for most of the pre-Amazon.com migration days.
+I was recruited by the first engineer on the project, who had also worked with me on Fresh, at essentially the very beginning of the project. Shortly after, a 3rd engineer with more front-end experience joined and that was the original team for most of the pre-Amazon.com migration days.
 
-I was involved in the architectural decisions from the beginning onward, but of course mostly deferred to the opinions of the two more senior engineers unless they specifically wanted a 3rd opinion. I implemented parts of all the services and the frontend web UIs, as did the other two. We just picked up tasks in priority order whenever we finished what we were working on.
+I was involved in the architectural decisions from the beginning onward, but of course mostly deferred to the opinions of the two more senior engineers unless they specifically wanted a 3rd opinion. I implemented parts of all the services and the front-end web UIs, as did the other two. We just picked up tasks in priority order whenever we finished what we were working on.
 
 On the other hand, given that I had mobile experience, I was really the only engineer of the original 3 working on the mobile app components: the device setup flow and mobile UIs for the Dash List. 
 
@@ -128,7 +150,7 @@ I was similarly siloed for a few months to help with part of the firmware implem
 
 As the team grew from 3 to 12 engineers, I was able to mentor and guide the incoming engineers as I had complete knowledge of the current state of the project and its history. I was similarly able to help new SDMs get up to speed as we went through 3 of them over the course of the project.
 
-Although our product manager had unusally strong SQL skills and handled much of the reporting, I also wrote SQL for reporting purposes on occasion.
+Although our product manager had unusually strong SQL skills and handled much of the reporting, I also wrote SQL for reporting purposes on occasion.
 
 For the migration to Amazon.com, I took the lead in learning how to develop for the Amazon.com retail website environment and digesting that for the rest of the growing team. It was built on a Perl framework that nobody had familiarity with.
 
@@ -160,7 +182,7 @@ I was initially focused on improving logging and alarms to make them more meanin
 
 I implemented the first automated UI tests for the site after deciding between the competing options at the time of Selenium or WebDriver.
 
-I did some frontend work for a website redesign.
+I did some front-end work for a website redesign.
 
 I did a significant portion of the work to refactor product information retrieval out of the monolithic website code and into a service.
 
@@ -175,9 +197,9 @@ Because I had been involved at least a little in all parts of the system, I sort
 ### Complexity
 Aside from everything simply being largely new to me, I remember the most complicated bugs involved delivery slots, inventory promises, order state transitions, order modification chains, and database deadlocks. The bugs often resulted from race conditions, especially after the Automatic Delivery feature was launched.
 
-Automatic Delivery exacerbated existing race condition issues as it would automatically place orders on a customer's behalf, sometimes while the customer was also doing something else. I can't remember specifics, but in general there were many issues involving slots no longer being available unexpectedly, inventory being overpromised, order quantities being unexpectedly changed, and concurrent order modifications breaking the order modification chain (changes to a checked-out order were represented as a child order of the original).
+Automatic Delivery exacerbated existing race condition issues as it would automatically place orders on a customer's behalf, sometimes while the customer was also doing something else. I can't remember specifics, but in general there were many issues involving slots no longer being available unexpectedly, inventory being over-promised, order quantities being unexpectedly changed, and concurrent order modifications breaking the order modification chain (changes to a checked-out order were represented as a child order of the original).
 
-A lot of my work inolved collecting logs from different parts of the system relevant to a given incident and poking around in the database to try and put together a timeline of events. Sometimes I would need logs from months ago to figure out what state an order had previously been in prior to something breaking more recently. Over time, I had written tools for myself to make this process easier.
+A lot of my work involved collecting logs from different parts of the system relevant to a given incident and poking around in the database to try and put together a timeline of events. Sometimes I would need logs from months ago to figure out what state an order had previously been in prior to something breaking more recently. Over time, I had written tools for myself to make this process easier.
 
 These issues were very systemic and hard to track down given that any part of the website or suite of scheduled tools were potentially writing to any table in the database.
 

@@ -1,7 +1,7 @@
 import markdown2
 import time
 
-html = markdown2.markdown_path('index.md', extras={'toc': {'depth': 2}})
+html = markdown2.markdown_path('index.md', extras={'wiki-tables': None, 'toc': {'depth': 2}})
 
 timestamp = time.time()
 
