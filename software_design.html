@@ -1,0 +1,144 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" href="style.css?v=1689663202.7881038" />
+        <title>gdtyra :: Software design</title>
+    </head>
+    <body>
+    <div id="main">
+    <div id ="nav" class="column">
+    <nav>
+    <h1>Table of Contents</h1>
+    <ul>
+  <li><a href="#software-design">Software Design</a>
+  <ul>
+    <li><a href="#high-level-considerations">High-level considerations</a></li>
+  </ul></li>
+  <li><a href="#use-of-oop-and-class-design">Use of OOP and class design</a>
+  <ul>
+    <li><a href="#solid">SOLID</a></li>
+    <li><a href="#constructors-and-dependency-injection">Constructors and dependency injection</a></li>
+    <li><a href="#interfaces-and-object-relationships">Interfaces and object relationships</a></li>
+    <li><a href="#subtle-dependencies">Subtle dependencies</a></li>
+    <li><a href="#tips-for-refactoring-a-large-class">Tips for refactoring a large class</a></li>
+  </ul></li>
+</ul>
+
+    <h1>Other Pages</h2>
+    <ul><li><a href="backend_systems.html">Backend systems</a></li><li><a href="index.html">Index</a></li><li><a href="software_design.html">Software design</a></li></ul>
+    </nav>
+    </div>
+    <div class="column">
+    <div id="content">
+    <article>
+    <h1 id="software-design">Software Design</h1>
+
+<p>The following is a collection of guidelines for class and general software component design based on things I've read and / or found to be helpful in my experience.</p>
+
+<h2 id="high-level-considerations">High-level considerations</h2>
+
+<ul>
+<li>Design systems in such a way that engineers can make changes to one aspect of the system without modifying or needing to understand other parts of the system.</li>
+<li>Good systems can tolerate change well without rippling effects</li>
+</ul>
+
+<h1 id="use-of-oop-and-class-design">Use of OOP and class design</h1>
+
+<h2 id="solid">SOLID</h2>
+
+<ul>
+<li>Single Responsibility: a class should do the smallest possible useful thing</li>
+<li>Open-Closed: objects should be open to extension and closed for modification; i.e. they should be extensible without modifying the existing code</li>
+<li>Liskov-Substitution: objects should be replaceable by subtypes without altering correctness</li>
+<li>Interface Segregation: many client-specific interfaces are better than one general-purpose interface</li>
+<li>Dependency Inversion: this seems to boil down to "depend on abstractions"</li>
+</ul>
+
+<h2 id="constructors-and-dependency-injection">Constructors and dependency injection</h2>
+
+<ul>
+<li>Constructors should be simple and serve only to fully validate and initialize an object
+<ul>
+<li>DO assign values and collaborator objects that are received by the constructor to instance fields</li>
+<li>DO feel free to create simple value / plain-old-data objects as long as they are state-focused and have minimal behavior</li>
+<li>DO perform validation or simple normalization of input data</li>
+<li>DO NOT create complex objects that have substantial behavior of their own. These collaborator objects should be received instead</li>
+<li>DO NOT call out to static methods or free functions unless they are doing simple validation or normalization</li>
+</ul></li>
+<li>Creation of object graphs should be the responsibility of a dedicated dependency injection framework or dedicated factory / builder classes that do nothing but create objects</li>
+</ul>
+
+<h2 id="interfaces-and-object-relationships">Interfaces and object relationships</h2>
+
+<ul>
+<li>Good design results in objects that can tolerate change easily
+<ul>
+<li>Try to depend on behavior, not data; hide fields and data structures, even within a class</li>
+<li>Clients of an object should "ask" for what they want rather than "tell" the object what to do. This kind of interaction allows more flexibility for "how" the result is accomplished</li>
+<li>Prefer to depend on things that change less often. Pay attention to the direction of dependencies to ensure that is the case</li>
+</ul></li>
+<li>Good design naturally progresses toward small independent objects that rely on abstractions
+<ul>
+<li>Warnings that a class is doing too much include...
+<ul>
+<li>It is hard to name</li>
+<li>It has fields that are only used in some methods, or has static methods that only operate on parameters</li>
+<li>It works with simple collaborators that don't have their own behavior (perhaps behavior should be moved into those classes)</li>
+</ul></li>
+<li>Watch out for "hidden" interactions between the main responsibilities of a class</li>
+<li>Try asking "{class}, what is your {attribute}?" or "{class}, can you {method}?" and see if it makes sense</li>
+<li>An object may have a single responsibility but require more "context" than it needs to do it</li>
+</ul></li>
+<li>Objects should interact only with immediate collaborators (Law of Demeter)
+<ul>
+<li>Violations of this guideline suggest an object's interface might be lacking</li>
+<li>"Fluent" interfaces are an exception, as are chaining methods that return the same interface</li>
+<li>Delegation superficially appears to fix violations and may in fact be an improvement, but delegation itself can also just hide the problem</li>
+<li>There may be exceptions to apparent violations; it's really about whether the code is "reaching" through the object graph in ways that are fragile. Code should not invoke behavior just because it happens to "know" a long path to get to that behavior. You have to ask whether it "should" know that path or not.</li>
+<li>Objects passed into a method should be used for something other than reaching in to retrieve another object deeper in the object graph</li>
+</ul></li>
+<li>While inheritance is a good fit in some cases, it has drawbacks and may be used inappropriately
+<ul>
+<li>Inheritance gives "free" delegation at the cost of a prescribed hierarchy</li>
+<li>Only use inheritance when it truly provides benefits that justify it. It is often less flexible and less reusable than composition</li>
+<li>Don't prematurely create class hierarchies with only one implementation</li>
+<li>If a problem really calls for an inheritance structure, consider "hook" methods to avoid calls to super (template method pattern)</li>
+</ul></li>
+<li>Composition is often a more flexible and less brittle solution to OOP problems. It promotes many small objects with clear responsibilities and interfaces
+<ul>
+<li>Composition allows for a more flexible and reusable structure than inheritance but requires the object to have explicit knowledge about delegation</li>
+<li>Standard compositional mechanisms for altering class behavior: decorator and strategy patterns</li>
+</ul></li>
+</ul>
+
+<h2 id="subtle-dependencies">Subtle dependencies</h2>
+
+<ul>
+<li>Even method names, expected arguments, and argument order represent dependencies
+<ul>
+<li>Remove argument-order dependencies (named keywords in Python and ruby, or a dedicated "Params" object in Java or similar languages)</li>
+<li>Context objects sound like a good way to minimize changes in method signatures, but they obfuscate the actual dependencies of a class or method when they are not specific to a particular method or group of methods</li>
+</ul></li>
+<li>Global state is generally not okay except when it is immutable or when the information only flows one way, as with a Logger interface</li>
+</ul>
+
+<h2 id="tips-for-refactoring-a-large-class">Tips for refactoring a large class</h2>
+
+<ul>
+<li>Extract extra responsibilities from methods to reveal reusable pieces</li>
+<li>Isolate to an inner class if you don't want to move it out to a new class yet</li>
+<li>If it is too much effort to properly fix object relationships, you can at least easily isolate the bad relationship</li>
+</ul>
+
+    <footer>
+    <p class="generated_date">Generated on July 17 2023</p>
+    </footer>
+    </article>
+    </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
+    

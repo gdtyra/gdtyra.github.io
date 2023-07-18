@@ -1,5 +1,5 @@
-# Intro
-Hello! Thank you for taking the time to look beyond what's written in my resume. The following is a candid retrospective and self-reflection on my work experience. I don't necessarily expect anyone to read it, but its something I needed to do for myself in order to answer interview questions sufficiently and I figured I would make it available.
+# Introduction
+Hello! Thank you for taking the time to look beyond what's written in my resume. The following is a candid retrospective and self-reflection on my work experience. I don't necessarily expect anyone to read it, but it's something I needed to do for myself in order to answer interview questions sufficiently and I figured I would make it available.
 
 ## Career Break
 There isn't any one specific reason I decided to take a career break, but I probably wouldn't have made the decision without the alignment of 3 things in particular:
@@ -22,23 +22,23 @@ A role that involves at least one of these things:
 These are the traits that I see as defining me and my behavior in relation to my work, the project, and the people around me. I see these traits as generally good, but they also imply certain roles, projects, and work environments that allow me to be most effective and biases I need to account for and be aware of.
 
 - **Driven by technical curiosity**
-    - &#x2714;: I'm in this field because I find computers and everything related to them to be very interesting. I'm driven by a curiosity in how things work and I have at least some familiarity and interest in everything from hardware to front-end UI. I'm more than happy to dive into unfamiliar territory and am able to learn quickly. I already have enough foundational knowledge in most areas to at least know where to begin when tackling an unfamiliar problem.
+    - &#x2714; I'm in this field because I find computers and everything related to them to be very interesting. I'm driven by a curiosity in how things work and I have at least some familiarity and interest in everything from hardware to front-end UI. I'm more than happy to dive into unfamiliar territory and am able to learn quickly. I already have enough foundational knowledge in most areas to at least know where to begin when tackling an unfamiliar problem.
     - &#x26a0; I have broad knowledge, but am not specialized in any particular area. The product I'm working on or problem I'm solving is very much secondary in my mind. Unless the product is itself related to computers, software development, or an interesting technology, I probably don't care that much about it aside from my responsibility to deliver quality results to those who are depending on me. I expect someone else to be defining the high-level goals of what we are building, what the measurements of success will be and, unless the product is an API, what the user experience should look like.
 - **Driven by perceived responsibility and desire to meet or exceed expectations**
-    - &#x2714;: If I'm given a well-defined responsibility, I am highly motivated to handle that responsibility well. This might be delivering a feature by a target date, doing research to provide a planning estimate, or leading a particular weekly meeting.
+    - &#x2714; If I'm given a well-defined responsibility, I am highly motivated to handle that responsibility well. This might be delivering a feature by a target date, doing research to provide a planning estimate, or leading a particular weekly meeting.
     - &#x26a0; This breaks down if the expectations or constraints are unclear. Features usually have well-defined acceptance criteria and target dates, but lets say I'm tasked with researching and documenting different options for how to build something. I will likely have immediate ideas based on what I am already familiar with, but how much additional exploration and research should I do before calling it "done"? I do have my own sense of when I've done "enough", but if I'm given a predetermined time constraint then I will naturally make more effective use of the time.
 - **Highly agreeable**
-    - &#x2714;: I get along well with everyone. I'll offer my thoughts, but I'm happy to go along with team consensus or what leadership has decided on. If I really thought a huge misstep was being taken then I'm sure I would speak up, but I've never felt that way so far.
+    - &#x2714; I get along well with everyone. I'll offer my thoughts, but I'm happy to go along with team consensus or what leadership has decided on. If I really thought a huge misstep was being taken then I'm sure I would speak up, but I've never felt that way so far.
     - &#x26a0; I don't often have strong opinions. In code reviews, for example, I will most likely approve if it is functionally correct, has good tests, and there is nothing else objectively problematic about the change. I offer suggestions for anything else that I think could be done better, but leave it up to the implementer as I don't want to be the reason for holding up the change. If I do personally feel interested in improvements, I may do it myself later as part of other changes.
 - **People pleaser**
-    - &#x2714;: I want people to be happy with me. This is probably the force behind the desire to meet expectations as explained above, but I also enjoy helping people who are stuck on a problem or are having trouble understanding something.
-    - &#x26a0; I am biased toward saying what people want to hear. For example, if I think someone will react badly to a longer project estimate, I may give a more optimistic estimate than I would otherwise.
-- **"Perfectionist", for lack of a better term**
-    - &#x2714;: I aim to do things as well as possible while also feeling like there is always something to improve.
-    - &#x26a0; I will work on details endlessly if there isn't some kind of externally imposed time constraints or completion criteria.
-- **(Re)Inventor**
-    - &#x2714;: I enjoy building things and am able to use my existing knowledge to start building solutions quickly.
-    - &#x26a0; I have a bias toward building from lower-level tools I'm familiar with as opposed to finding and using appropriate pre-built solutions. This comes from an eagerness to start building over doing research, desire to avoid bloated dependencies, and a preference to learn tools and exercise skills that are more generalizable over learning tools and frameworks that have a specific use case.
+    - &#x2714; I want people to be happy with me. This is probably the force behind the desire to meet expectations as explained above, but I also enjoy helping people who are stuck on a problem or are having trouble understanding something.
+    - &#x26a0; I am biased toward saying what people want to hear. For example, if I think someone will react badly to a longer project estimate, I may give a more optimistic estimate than I would otherwise and then attempt to deliver on an unrealistic time frame.
+- **Pursuer of perfection**
+    - &#x2714; I aim to do things as well as possible while also feeling like there is always something to improve.
+    - &#x26a0; I may work on details excessively if there isn't some kind of externally imposed time constraints or completion criteria. I need someone else to decide on and enforce constraints so that I can keep moving forward.
+- **Builder**
+    - &#x2714; I enjoy building things from low-level tools and technologies and am able to use my existing knowledge to start building solutions quickly.
+    - &#x26a0; I have a bias toward building from general purpose tools I'm familiar with as opposed to finding and using appropriate purpose-built solutions. This comes from an eagerness to start building over doing research, desire to avoid bloated dependencies, and a preference to learn tools and exercise skills that are more generalizable over learning tools and frameworks that have a specific use case. I prefer to build using simpler components that I can fully understand as opposed to large frameworks that I may only be using a small portion of.
 
 # Projects
 ## Sustainability: Carbon Footprint (2020 - 2021)

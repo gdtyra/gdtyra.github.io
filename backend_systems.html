@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" href="style.css?v=1689663202.7881038" />
+        <title>gdtyra :: Backend systems</title>
+    </head>
+    <body>
+    <div id="main">
+    <div id ="nav" class="column">
+    <nav>
+    <h1>Table of Contents</h1>
+    <ul>
+  <li><a href="#backend-systems">Backend Systems</a></li>
+</ul>
+
+    <h1>Other Pages</h2>
+    <ul><li><a href="backend_systems.html">Backend systems</a></li><li><a href="index.html">Index</a></li><li><a href="software_design.html">Software design</a></li></ul>
+    </nav>
+    </div>
+    <div class="column">
+    <div id="content">
+    <article>
+    <h1 id="backend-systems">Backend Systems</h1>
+
+<p>This page will become a collection of tips and guidelines for backend system design, but at the moment is just a few thoughts I had recently.</p>
+
+<ul>
+<li>Many OOP design principles apply to distributed systems. These systems should have well designed interfaces, limited responsibilities, and tolerate change well. The difference is that distributed systems have additional concerns relating to security, availability, consistency, and many failure cases that are not practical concerns within a single application instance but become plausible and likely in a distributed system. They also have parts that may need to change while other parts are still active without interrupting the entire system.</li>
+<li>System should have a well defined canonical data source for everything. It should never be ambiguous what the "correct" data is when there is a disagreement.</li>
+<li>Look out for opportunities for cheap breadcrumbs, i.e. have a canonical data store but also action logs that could be used to reconstruct the correct state of something if the canonical data store is broken. If it is economically sane, keep copies of data around prior to each transformation or modification.</li>
+<li>Ensure that actions are transactional in the sense that state is never left in a plausibly correct but actually undesired state.</li>
+<li>Consider versioning and backward compatibility of interfaces from the start because it is hard to add later and cheap to add upfront.</li>
+</ul>
+
+    <footer>
+    <p class="generated_date">Generated on July 17 2023</p>
+    </footer>
+    </article>
+    </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
+    

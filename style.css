@@ -99,3 +99,12 @@ h2 {
 h3 {
     color: #689d98;
 }
+
+#nav h1 {
+    padding-left: 20px;
+    font-size: large;
+}
+
+p.generated_date {
+    text-align: center;
+}
