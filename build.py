@@ -45,3 +45,33 @@ for path in files:
 
     with open(path.replace('.md', '.html'), 'wt') as f:
         f.write(document)
+
+document = f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css?v={timestamp}" />
+    <title>gdtyra :: Index</title>
+</head>
+<body>
+<div id="main">
+<div class="column">
+<div id="content">
+<article>
+<h1>Hello!</h1>
+<p>If my resume brought you here, you may be most interested in the <a href="work_history.html">work history page</a>.</p>
+{files_html}
+<footer>
+<p class="generated_date">Generated on {time.strftime('%B %d %Y')}</p>
+</footer>
+</article>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
+"""
+
+with open("index.html", 'wt') as f:
+    f.write(document)

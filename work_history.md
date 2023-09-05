@@ -1,5 +1,6 @@
+
 # Introduction
-Hello! Thank you for taking the time to look beyond what's written in my resume. The following is a candid retrospective and self-reflection on my work experience. I don't necessarily expect anyone to read it, but it's something I needed to do for myself in order to answer interview questions sufficiently and I figured I would make it available.
+The following is a candid retrospective and self-reflection on my work experience. I don't necessarily expect anyone to read it, but it's something I needed to do for myself in order to answer interview questions sufficiently and I figured I would make it available.
 
 ## Career Break
 There isn't any one specific reason I decided to take a career break, but I probably wouldn't have made the decision without the alignment of 3 things in particular:

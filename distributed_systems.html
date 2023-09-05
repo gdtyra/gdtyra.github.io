@@ -1,0 +1,101 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" href="style.css?v=1693886349.4744952" />
+        <title>gdtyra :: Distributed systems</title>
+    </head>
+    <body>
+    <div id="main">
+    <div id ="nav" class="column">
+    <nav>
+    <h1>Table of Contents</h1>
+    <ul>
+  <li><a href="#distributed-systems">Distributed Systems</a>
+  <ul>
+    <li><a href="#concerns">Concerns</a></li>
+    <li><a href="#tools-and-countermeasures">Tools and Countermeasures</a></li>
+    <li><a href="#vertical-and-horizontal-scaling">Vertical and Horizontal Scaling</a></li>
+    <li><a href="#other-thoughts">Other Thoughts</a></li>
+  </ul></li>
+</ul>
+
+    <h1>Other Pages</h2>
+    <ul><li><a href="distributed_systems.html">Distributed systems</a></li><li><a href="software_design.html">Software design</a></li><li><a href="work_history.html">Work history</a></li></ul>
+    </nav>
+    </div>
+    <div class="column">
+    <div id="content">
+    <article>
+    <h1 id="distributed-systems">Distributed Systems</h1>
+
+<p>This is a collection of notes relating to distributed system design based on my experience and digesting things I've read.</p>
+
+<h2 id="concerns">Concerns</h2>
+
+<p>Most OOP design principles also apply to distributed systems. Components of the system should have thoughtfully designed interfaces, decoupled components with limited responsibilities, and should tolerate change well. The difference is that distributed systems have additional concerns relating to security, availability, consistency, and many failure cases that are not practical concerns within a single application instance but become plausible and likely in a distributed system.</p>
+
+<ul>
+<li>Throughput: these systems often deal with large amounts of traffic and data which needs to be processed in a timely manner</li>
+<li>Latency: although related to throughput, its worth thinking about delay between input and end result as a separate concern</li>
+<li>Availability: components need to be ready to respond to incoming workloads</li>
+<li>Resilience: how does the system behave and recover when one or more components fail or become unavailable</li>
+<li>Synchronization: the system must gracefully deal with things happening out of order, at the same time, or after a delay</li>
+<li>Data integrity: data that is needed should never be lost due to a component failure or otherwise corrupted</li>
+<li>Security: access to data and operations must only be exposed to the intended audience</li>
+<li>Traffic patterns: the system may fluctuate from its baseline workload either predictably or unexpectedly</li>
+<li>Bad actors: especially if part of the system is exposed publicly, requests to the system from bad actors may disrupt the system for legitimate users</li>
+<li>Misbehaving clients: even if there is no malicious intent, clients may misbehave and generate invalid or excessive requests </li>
+</ul>
+
+<h2 id="tools-and-countermeasures">Tools and Countermeasures</h2>
+
+<p>These are some options for dealing with the concerns above.</p>
+
+<ul>
+<li>Scaling (throughput): ideally horizontally as explained below, scaling is the primary way to increase throughput</li>
+<li>Decoupling (availability, resilience): in this context it largely refers to handling temporary unavailability of a component and is often accomplished with message queues or other buffers </li>
+<li>Data redundancy (availability, resilience, throughput, data integrity): besides obviously protecting against data loss, having additional read-only data sources allows for scaling aspects of the system that only need read access to data and they can also be hot-swapped in as the target for write operations if the primary fails</li>
+<li>Rate limiting (availability, bad actors, misbehaving clients): rate limiting may be added at certain points in the system to prevent bad clients from impacting availability</li>
+<li>Authentication (security, bad actors, misbehaving clients): confidently identifying the source of requests is the first step in controlling access and makes it easier to effectively handle problematic clients</li>
+<li>Access control (security, bad actors, misbehaving clients): if clients are being confidently identified via an authentication mechanism, then access controls can be put in place to restrict how the system is used</li>
+</ul>
+
+<p>There are also some practices that can work to our advantage:</p>
+
+<ul>
+<li>Avoid stateful components. Stateless components can be scaled on demand and can process pieces of work without concern for what happened before or after</li>
+<li>Offload read operations to secondary data sources. This results in data redundancy as mentioned above and ensures the primary data instance is able to make use of its throughput for the write operations which typically cannot scale as easily</li>
+<li>Reject bad inputs as early as possible. By dropping an input as soon as it can be determined that it is unauthorized or invalid, less of the system needs to spend resources processing it</li>
+<li>Break data and tasks into discrete chunks. In general, this aids in scaling and resilience by allowing more work to be done at once and allowing partially completed work to be picked up</li>
+</ul>
+
+<h2 id="vertical-and-horizontal-scaling">Vertical and Horizontal Scaling</h2>
+
+<p>Vertical scaling refers to simply adding more CPU, network, and memory resources to a fixed number of instances to increase throughput. It is simple and can be done without architectural changes, but there are limits to how far it can get you. Additionally, vertical scaling does not provide additional redundancy or resilience to the system. Therefore, it is best to design systems with horizontal scaling in mind.</p>
+
+<p>Horizontal scaling refers to spreading workloads across an adjustable fleet of interchangeable instances. It requires more consideration for the problems inherent in distributed systems, but the benefit is a more scalable and resilient system.</p>
+
+<p>It is easy enough to run logic on a scalable fleet of stateless servers that share a common data source, so the difficulty in horizontal scaling often comes down to where the shared data sources are and how they are accessed. If a fleet of stateless web servers read and write to a single shared database instance, then the system is not actually scalable.</p>
+
+<h2 id="other-thoughts">Other Thoughts</h2>
+
+<ul>
+<li>There should always be a canonical data source for data which is copied around the system. It should never be ambiguous what the "correct" data is when there is a disagreement.</li>
+<li>If it is economically sane, keep copies of data around prior to each transformation or modification.</li>
+<li>Ensure that actions are transactional in the sense that state is never left in a plausibly correct but actually undesired state.</li>
+<li>Consider versioning and backward compatibility of interfaces from the start because it is hard to add later and cheap to add upfront.</li>
+<li>Try to keep operations idempotent</li>
+</ul>
+
+    <footer>
+    <p class="generated_date">Generated on September 04 2023</p>
+    </footer>
+    </article>
+    </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
+    
