@@ -2,7 +2,7 @@ import markdown2
 import time
 import glob
 
-files = glob.glob('*.md')
+files = [f for f in glob.glob('*.md') if not f.startswith("_")]
 timestamp = time.time()
 
 files_html = "<ul>" + "".join(f"<li><a href=\"{f.replace('.md', '.html')}\">{f.replace('.md', '').replace('_', ' ').capitalize()}</a></li>" for f in files) + "</ul>"
@@ -58,8 +58,6 @@ document = f"""
 <div class="column">
 <div id="content">
 <article>
-<h1>Hello!</h1>
-<p>If my resume brought you here, you may be most interested in the <a href="work_history.html">work history page</a>.</p>
 {files_html}
 <footer>
 <p class="generated_date">Generated on {time.strftime('%B %d %Y')}</p>

@@ -2,7 +2,7 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1693886349.4744952" />
+        <link rel="stylesheet" href="style.css?v=1702088736.561725" />
         <title>gdtyra :: Distributed systems</title>
     </head>
     <body>
@@ -13,15 +13,23 @@
     <ul>
   <li><a href="#distributed-systems">Distributed Systems</a>
   <ul>
+    <li><a href="#cap-theorem">CAP Theorem</a></li>
     <li><a href="#concerns">Concerns</a></li>
     <li><a href="#tools-and-countermeasures">Tools and Countermeasures</a></li>
     <li><a href="#vertical-and-horizontal-scaling">Vertical and Horizontal Scaling</a></li>
+    <li><a href="#storage-options">Storage Options</a></li>
+    <li><a href="#compute-options">Compute Options</a></li>
+    <li><a href="#interface-options">Interface Options</a></li>
+    <li><a href="#caches-and-cdns">Caches and CDNs</a></li>
+    <li><a href="#rate-limiting">Rate Limiting</a></li>
+    <li><a href="#generating-unique-ids">Generating Unique IDs</a></li>
+    <li><a href="#client-server-interaction">Client-Server Interaction</a></li>
     <li><a href="#other-thoughts">Other Thoughts</a></li>
   </ul></li>
 </ul>
 
     <h1>Other Pages</h2>
-    <ul><li><a href="distributed_systems.html">Distributed systems</a></li><li><a href="software_design.html">Software design</a></li><li><a href="work_history.html">Work history</a></li></ul>
+    <ul><li><a href="data_migrations.html">Data migrations</a></li><li><a href="distributed_systems.html">Distributed systems</a></li><li><a href="software_design.html">Software design</a></li></ul>
     </nav>
     </div>
     <div class="column">
@@ -30,6 +38,18 @@
     <h1 id="distributed-systems">Distributed Systems</h1>
 
 <p>This is a collection of notes relating to distributed system design based on my experience and digesting things I've read.</p>
+
+<h2 id="cap-theorem">CAP Theorem</h2>
+
+<p>A distributed system can realistically only provide 2 out of 3 of the following at the same time:</p>
+
+<ul>
+<li>Consistency, meaning all clients at a given moment see the same / most up-to-date data</li>
+<li>Availability, meaning all clients are guaranteed to receive a valid response</li>
+<li>Partition tolerance, meaning the system can continue to operate despite a break in communication between nodes</li>
+</ul>
+
+<p>Because network failure is unavoidable in practice distributed systems must be partition tolerant and make trade-offs between consistency and availability.</p>
 
 <h2 id="concerns">Concerns</h2>
 
@@ -78,9 +98,88 @@
 
 <p>It is easy enough to run logic on a scalable fleet of stateless servers that share a common data source, so the difficulty in horizontal scaling often comes down to where the shared data sources are and how they are accessed. If a fleet of stateless web servers read and write to a single shared database instance, then the system is not actually scalable.</p>
 
+<h2 id="storage-options">Storage Options</h2>
+
+<ul>
+<li>Local files: in some cases, it may be acceptable to store copies of data on a server's local file system. This may be the case for data that is some kind of configuration or pre-built read-only database and especially if it is acceptable for changes to the data to be performed as part of the regular application deployment process</li>
+<li>In-memory caches: caches such as Redis may be suitable for data that needs to be read frequently and which can be recomputed or retrieved in case the cache instance is reset</li>
+<li>Distributed file/object storage: storage services such as S3 may be suitable for records that don't need to be queried in real-time but are instead retrieved as-is on-demand or processed into some other form after being stored</li>
+<li>NoSQL databases are suitable for data that needs to be looked up by a particular key in applications that do not require or can otherwise work around the lack of strong consistency guarantees</li>
+<li>RDBMS instances should be considered when operations need to be strongly consistent and/or write operations need to be atomic. RDBMS instances can become a scaling bottleneck so they must be used thoughtfully (e.g. sharding and read-only replicas)</li>
+</ul>
+
+<h2 id="compute-options">Compute Options</h2>
+
+<ul>
+<li>Serverless: serverless logic is suitable for any workloads that can tolerate a cold-start delay and do not have a need for the semi-persistent storage or more complicated setups that are possible on a dedicated server instance</li>
+<li>Dedicated server instances: traditional servers may be best when any cold-start delay is unacceptable, the workload would benefit from large amounts of memory, CPU, or temporary storage resources, when the component could benefit from semi-persistent storage on disk, or when there is a need for a more complicated setup with multiple processes cooperating on a single system. When made stateless and put behind a load balancer, they can scale horizontally but perhaps not as responsively</li>
+</ul>
+
+<h2 id="interface-options">Interface Options</h2>
+
+<ul>
+<li>Synchronous API: most likely an HTTP/REST API, this is way a component is likely to interact with another when it needs some kind of response to a request, whether it be data or just a confirmation that the request was handled successfully</li>
+<li>Message queue: if an immediate response is not needed, using a message queue for input allows for decoupling of the components. The receiving component is free to process the workload at its own pace and can retry failed attempts as needed. Queue size is also a useful metric to track or use as an automatic scaling signal. Keep in mind that message queues typically deliver "at least once", not "only once". Some queues offer FIFO guarantees, otherwise messages may be received out of order.</li>
+</ul>
+
+<h2 id="caches-and-cdns">Caches and CDNs</h2>
+
+<p>Caches such as Redis or Memcache can be used to optimize and offload read operations for data that is read frequently</p>
+
+<ul>
+<li>Consider that, when a typical cache instance restarts, all cached data is suddenly lost. Although the cache is not a primary data store, the temporary or prolonged loss of a cache may severly impact the system</li>
+<li>In addition to an expiration policy based on time, caches must also have an eviction policy based on memory constraints. Most commonly this is LRU, but other options are LFU or FIFO</li>
+</ul>
+
+<p>CDNs are essentially a form of cache that is placed closer to the clients rather than close to the other components of the application. They are also distinct in that they are directly accessed by the client as opposed to sitting behind the application's other interfaces</p>
+
+<ul>
+<li>CDNs, or other caches for that matter, may have invalidation APIs to bypass the automatic expiration policy. Alternatively, versioning can be used to ensure clients request the latest version of content</li>
+<li>Consider that, if the CDN does fail, you may want the client to be able to request resources from the origin as a fall-back</li>
+</ul>
+
+<h2 id="rate-limiting">Rate Limiting</h2>
+
+<p>Rate limiting is often a necessity even if you expect all your clients to behave reasonably. Without it, it is too easy for one client to accidentally or intentionally impact system performance.</p>
+
+<p>Aside from determining how to identify or label traffic, the main decision is what the rate limiting policy/algorithm will be:</p>
+
+<ul>
+<li>Token bucket: clients are allotted tokens at a fixed rate up to a maximum. This allows for a degree of spiking traffic from clients</li>
+<li>Leaky bucket: this is effectively a queue with requests processed at a fixed rate regardless of spikes in traffic</li>
+<li>Fixed window counter: requests within a quantized time interval fall into the same bucket and are allowed as long as the bucket is not full. This can allow for more than expected traffic if a spike falls on the edge of a time window</li>
+<li>Sliding window log: fixes the edge-case with the fixed window counter but requires more memory. Request timestamps are kept in a cache. When a request arrives, timestamps of prior requests outside the current look-back window are dropped and the new timestamp is added. The request is allowed if the window is not full. Consider that even requests which are rejected must have their timestamp stored.</li>
+<li>Sliding window counter: similar to the fixed window counter but the counts in both the previous and current bucket are multiplied by how much of the "real" sliding look-back window overlaps them to get a more accurate running request rate</li>
+</ul>
+
+<p>If we're dealing with an HTTP API, then HTTP 429 and associated response headers can be used to inform the client of when they may try again.</p>
+
+<h2 id="generating-unique-ids">Generating Unique IDs</h2>
+
+<p>The straightforward approach of generating incremental IDs is difficult in a distributed system, so alternatives are needed.</p>
+
+<ul>
+<li>Centralized "ticket generation servers" that each provide sequenced IDs</li>
+<li>UUIDs/GUIDs are a very simple and effective solution. However, they may not be suitable for situations that require smaller IDs or IDs that have a sequential relation to each other</li>
+<li>The "snowflake" method involves generating an ID made up of both sequential and unique source information such as timestamp, datacenter, machine ID, and machine-specific sequence number</li>
+</ul>
+
+<h2 id="client-server-interaction">Client-Server Interaction</h2>
+
+<p>HTTP is client-initiated which works just fine for many situations, but situations where the client needs to receive events from a server are less straightforward.</p>
+
+<ul>
+<li>Polling: client repeatedly asks the server if there is anything it needs to know. This involves a tradeoff between delay upon receiving updates and overhead involved in opening and closing connections</li>
+<li>Long polling: client opens a connection with a relatively long timeout and closes the connection upon receiving a response or reaching the timeout before immediately connecting again. The benefits are that the client should receive updates as soon as they are available. The downsides are that it ties up server resources for connections that may not be very active</li>
+<li>WebSockets: a sort of "upgraded" HTTP connection, they allow for ongoing bidirectional communication. Downsides are that they require more complicated connection management on the server side. This sometimes involves a traditional "service discovery" API that provides the client with an optimal WebSocket server to connect to</li>
+</ul>
+
 <h2 id="other-thoughts">Other Thoughts</h2>
 
 <ul>
+<li>Bloom filters can be used in situations to quickly determine that an item is definitely not in a set</li>
+<li>Consider writing incoming data to a fast storage system and then responding to the client prior to committing the data to a more durable system</li>
+<li>Offloading read operations to secondary sources can provide many benefits at once: data redundancy, lightening the workload on the primary read-write source, and improved latency in the case of CDNs or other geographically distributed caches</li>
 <li>There should always be a canonical data source for data which is copied around the system. It should never be ambiguous what the "correct" data is when there is a disagreement.</li>
 <li>If it is economically sane, keep copies of data around prior to each transformation or modification.</li>
 <li>Ensure that actions are transactional in the sense that state is never left in a plausibly correct but actually undesired state.</li>
@@ -89,7 +188,7 @@
 </ul>
 
     <footer>
-    <p class="generated_date">Generated on September 04 2023</p>
+    <p class="generated_date">Generated on December 08 2023</p>
     </footer>
     </article>
     </div>

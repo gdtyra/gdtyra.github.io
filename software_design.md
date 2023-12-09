@@ -55,6 +55,7 @@ The following is a collection of guidelines for class and general software compo
     - Remove argument-order dependencies (named keywords in Python and ruby, or a dedicated "Params" object in Java or similar languages)
     - Context objects sound like a good way to minimize changes in method signatures, but they obfuscate the actual dependencies of a class or method when they are not specific to a particular method or group of methods
 - Global state is generally not okay except when it is immutable or when the information only flows one way, as with a Logger interface
+- Client code may use the interface in a way that depends on implementation details (e.g. assumption that end() - begin() would be an O(1) operation)
 
 ## Tips for refactoring a large class
 - Extract extra responsibilities from methods to reveal reusable pieces

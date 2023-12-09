@@ -6,7 +6,9 @@ body {
     margin: 0;
 }
 
-a, a:hover, a:visited {
+a,
+a:hover,
+a:visited {
     color: #dfdbb2;
 }
 
@@ -39,7 +41,8 @@ div#nav {
     padding-right: 20px;
 }
 
-ul,ol {
+ul,
+ol {
     line-height: 1.5;
 }
 
@@ -50,11 +53,11 @@ div#nav ul {
     list-style-type: none;
 }
 
-div#nav > ul {
+div#nav>ul {
     padding-left: 20px;
 }
 
-div#nav ul > li {
+div#nav ul>li {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -65,25 +68,30 @@ p {
     text-indent: 0;
 }
 
-p + h1,
-p + h2,
-p + h3,
-p + h4,
-p + h5,
-p + h6 {
+p+h1,
+p+h2,
+p+h3,
+p+h4,
+p+h5,
+p+h6 {
     margin-top: 50px;
 }
 
-ul + h1,
-ul + h2,
-ul + h3,
-ul + h4,
-ul + h5,
-ul + h6 {
+ul+h1,
+ul+h2,
+ul+h3,
+ul+h4,
+ul+h5,
+ul+h6 {
     margin-top: 50px;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-variant: small-caps;
     margin-bottom: 10px;
 }
@@ -107,4 +115,5 @@ h3 {
 
 p.generated_date {
     text-align: center;
+    display: none;
 }
