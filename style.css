@@ -117,3 +117,7 @@ p.generated_date {
     text-align: center;
     display: none;
 }
+
+code {
+    background-color: black;
+}

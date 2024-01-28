@@ -1,0 +1,290 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" href="style.css?v=1706439587.8431191" />
+        <link rel="stylesheet" href="vim.css?v=1706439587.8431191" />
+        <title>gdtyra :: Unix Commands</title>
+    </head>
+    <body>
+    <div id="main">
+    <div id ="nav" class="column">
+    <nav>
+    <h1>Table of Contents</h1>
+    <ul>
+  <li><a href="#unix-commands">Unix Commands</a>
+  <ul>
+    <li><a href="#tar-manipulate-tar-files"><code>tar</code> - manipulate tar files</a></li>
+    <li><a href="#find-find-files-and-directories-matching-criteria"><code>find</code> - find files and directories matching criteria</a></li>
+    <li><a href="#xargs-treat-input-as-arguments-to-a-command"><code>xargs</code> - treat input as arguments to a command</a></li>
+    <li><a href="#sed-manipulate-text-line-wise"><code>sed</code> - manipulate text line-wise</a></li>
+    <li><a href="#tr-delete-or-replace-characters"><code>tr</code> - delete or replace characters</a></li>
+    <li><a href="#cmp-compare-files-byte-wise"><code>cmp</code> - compare files byte-wise</a></li>
+    <li><a href="#pr-and-paste-join-files-column-wise"><code>pr</code> and <code>paste</code> - join files column-wise</a></li>
+    <li><a href="#comm-some-set-operations-on-sorted-files"><code>comm</code> - some set operations on sorted files</a></li>
+    <li><a href="#dd-read-and-write-files-or-devices-byte-wise"><code>dd</code> - read and write files or devices byte-wise</a></li>
+    <li><a href="#sudo-execute-commands-as-a-different-user"><code>sudo</code> - execute commands as a different user</a></li>
+    <li><a href="#kill-and-pkill-terminate-processes-or-send-signals"><code>kill</code> and <code>pkill</code> - terminate processes or send signals</a></li>
+    <li><a href="#stat-and-readlink-print-file-information"><code>stat</code> and <code>readlink</code> - print file information</a></li>
+    <li><a href="#tcpdump-capture-network-traffic"><code>tcpdump</code> - capture network traffic</a></li>
+    <li><a href="#dig-dns-lookup"><code>dig</code> - DNS lookup</a></li>
+    <li><a href="#nc-read-and-write-tcpudp-connections"><code>nc</code> - read and write TCP/UDP connections</a></li>
+    <li><a href="#tail-print-and-follow-ends-of-files"><code>tail</code> - print and follow ends of files</a></li>
+    <li><a href="#watch-run-a-command-repeatedly-to-observe-changes"><code>watch</code> - run a command repeatedly to observe changes</a></li>
+    <li><a href="#rsync-copy-and-mirror-directory-structures"><code>rsync</code> - copy and mirror directory structures</a></li>
+    <li><a href="#git-the-source-control"><code>git</code> - <em>the</em> source control</a></li>
+    <li><a href="#ruby-using-ruby-for-one-liners"><code>ruby</code> - using Ruby for one-liners</a></li>
+    <li><a href="#miscellaneous">Miscellaneous</a></li>
+  </ul></li>
+</ul>
+
+    <h1>Other Pages</h2>
+    <ul><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="unix_commands.html">Unix Commands</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li></ul>
+    </nav>
+    </div>
+    <div class="column">
+    <div id="content">
+    <article>
+    <h1 id="unix-commands">Unix Commands</h1>
+
+<p>This is a collection of notes relating to commands that are available in Linux and most Unix-like environments. In many cases only useful examples of a command are listed without a proper explanation of the command in general.</p>
+
+<h2 id="tar-manipulate-tar-files"><code>tar</code> - manipulate tar files</h2>
+
+<ul>
+<li><code>tar -czf &lt;archive&gt; &lt;directory&gt;</code> - create a gzip-compressed archive containing the given directory</li>
+<li><code>tar -chzf &lt;archive&gt; &lt;directory&gt;</code> - same as above, but dereference any symbolic links and archive the target file</li>
+<li><code>tar -cf &lt;archive&gt; -C &lt;directory&gt; &lt;file1&gt; &lt;file2&gt;</code> - create an uncompressed archive containing two files relative to the given directory</li>
+<li><code>tar -xf &lt;archive&gt; -C &lt;directory&gt; &lt;file1&gt; &lt;file2&gt;</code> - extract 2 files from the archive into the given directory</li>
+<li><code>tar -taf &lt;archive&gt;</code> - list files in the archive and automatically determine the compression scheme</li>
+</ul>
+
+<h2 id="find-find-files-and-directories-matching-criteria"><code>find</code> - find files and directories matching criteria</h2>
+
+<ul>
+<li><code>-L</code> follow symlinks</li>
+<li><code>-type &lt;f,d,l&gt;</code> - include only files, directories, or links respectively</li>
+<li><code>-name &lt;glob&gt;</code> - filter file name by glob pattern</li>
+<li><code>-path &lt;glob&gt;</code> - filter by glob pattern against entire path</li>
+<li><code>-print</code> - print matching file paths</li>
+<li><code>-depth</code> - process directory contents before directory itself</li>
+<li><code>-maxdepth &lt;n&gt;</code> - limit depth of search</li>
+<li><code>-mindepth &lt;n&gt;</code> - ignore shallow files</li>
+<li><code>-exec &lt;command&gt; \;</code> - run a command for each result where <code>\;</code> marks the end of the command and <code>{}</code> optionally specifies where arguments are placed</li>
+<li><code>-print0</code> - output null-terminated paths for use with <code>xargs</code></li>
+<li><code>find . -type f -exec grep "pattern" {} \;</code> - find files that match pattern</li>
+<li><code>find &lt;file1&gt; -newer &lt;file2&gt; -print</code> - print the newer of two files</li>
+<li><code>find tmp -maxdepth 1 -name *.mp3 -print0 | xargs -0 rm</code> - delete MP3 files that are 1 level deep within <code>tmp</code></li>
+</ul>
+
+<h2 id="xargs-treat-input-as-arguments-to-a-command"><code>xargs</code> - treat input as arguments to a command</h2>
+
+<ul>
+<li><code>-n &lt;n&gt;</code> - limit args per instance of command. Often <code>-n 1</code> is needed when a command accepts only one file</li>
+<li><code>-L &lt;n&gt;</code> - limit lines of input per command. Often <code>-L 1</code> when each line of input corresponds to an instance of the command</li>
+<li><code>-P &lt;n&gt;</code> - limit number of parallel commands, or <code>0</code> for unlimited</li>
+<li><code>-I&lt;symbol&gt;</code> - symbol to replace with argument values in command, usually <code>{}</code>. Otherwise, they are placed at the end of the command</li>
+<li><code>-0</code> - read input as null-terminated strings. Mainly used along with <code>find -print0</code></li>
+<li><code>xargs -n 1 -P 1 -I{} ssh -tt {} 'top -n 1 -b | grep "Cpu(s)"'</code> - <code>ssh</code> to hosts one at a time and run <code>top</code> on them</li>
+<li><code>find . -name '*.wav' -print0 | xargs -0 md5sum</code> - find all WAV files and print their MD5 sums</li>
+<li><code>cat old-archive-ids | xargs -L1 -I{} ./delete.sh {}</code> - run a script once for each line in a file </li>
+</ul>
+
+<h2 id="sed-manipulate-text-line-wise"><code>sed</code> - manipulate text line-wise</h2>
+
+<ul>
+<li><code>sed -n &lt;n&gt;p</code> - print only line <code>n</code> of the input</li>
+<li><code>sed -e '2,$d'</code> - delete all but first line of input</li>
+<li><code>sed -e "/^FirstKeyword\$/,/^SecondKeyword\$/d"</code> - delete lines once <code>FirstKeyword</code> is seen until after <code>SecondKeyword</code> is seen</li>
+<li><code>sed -e "/^FirstKeyword\$/,/^SecondKeyword\$/!d"</code> - the opposite of the above; keep only lines between and including the two keywords</li>
+<li><code>sed 's/Counters=\(.*\)$/\1/'</code> - keep only the value of <code>Counters</code></li>
+<li><code>sed 's/,/\n/g'</code> - replace all commas with newlines</li>
+<li><code>sed -r 's/(^|_)([a-z])/\U\2/g'</code> - UpperCamelCase a string</li>
+<li><code>sed 's/^.*customerId.{"s":"\([A-Z0-9]*\)"}.*$/\1 &amp;/g'</code> - capture ID value and copy it to the front of the line</li>
+<li><code>find src -name '*.c' -exec sed -i 's/= OLD_MACRO(\(\w*\))\[\(.*\)\]/= NEW_MACRO(\1, \2)/' {} \;</code> - in each C file, replace a particular macro usage of the form <code>OLD_MACRO(foo)[bar]</code> with <code>NEW_MACRO(foo, bar)</code></li>
+</ul>
+
+<h2 id="tr-delete-or-replace-characters"><code>tr</code> - delete or replace characters</h2>
+
+<ul>
+<li><code>tr '[A-Z]' '[a-z]'</code> - replace all upper case letters with lower case</li>
+<li><code>tr -d '"'</code> - remove all double-quotes</li>
+<li><code>tr -s '\t' ','</code> - replace tabs with commas</li>
+</ul>
+
+<h2 id="cmp-compare-files-byte-wise"><code>cmp</code> - compare files byte-wise</h2>
+
+<ul>
+<li><code>cmp -s &lt;file1&gt; &lt;file2&gt;</code> - exits non-zero if files are not the same</li>
+</ul>
+
+<h2 id="pr-and-paste-join-files-column-wise"><code>pr</code> and <code>paste</code> - join files column-wise</h2>
+
+<ul>
+<li><code>pr -m -t &lt;file1&gt; &lt;file2&gt;</code> - prints files side-by-side</li>
+<li><code>paste &lt;file1&gt; &lt;file2&gt;</code> - prints files side-by-side</li>
+</ul>
+
+<h2 id="comm-some-set-operations-on-sorted-files"><code>comm</code> - some set operations on sorted files</h2>
+
+<ul>
+<li><code>comm -12 &lt;sorted_file_1&gt; &lt;sorted_file_2&gt;</code> - outputs lines common to both files</li>
+<li><code>comm -23 &lt;sorted_file_1&gt; &lt;sorted_file_2&gt;</code> - outputs lines unique to the first file</li>
+<li><code>comm -3 &lt;sorted_file_1&gt; &lt;sorted_file_2&gt;</code> - outputs lines that are unique to either file</li>
+</ul>
+
+<h2 id="dd-read-and-write-files-or-devices-byte-wise"><code>dd</code> - read and write files or devices byte-wise</h2>
+
+<ul>
+<li><code>dd if=&lt;file&gt; ibs=1 skip=200 count=100</code> - read 100 bytes starting at the 200th byte</li>
+<li><code>dd if=/dev/sdf of=image.bin bs=8M</code> - write the entire device <code>/dev/sdf</code> to a file with a block size of 8M</li>
+</ul>
+
+<h2 id="sudo-execute-commands-as-a-different-user"><code>sudo</code> - execute commands as a different user</h2>
+
+<ul>
+<li>The <code>-E</code> flag will preserve your current environment when running the command</li>
+<li>Using <code>--preserve-env=&lt;list&gt;</code> will preserve only the listed environment variables</li>
+</ul>
+
+<h2 id="kill-and-pkill-terminate-processes-or-send-signals"><code>kill</code> and <code>pkill</code> - terminate processes or send signals</h2>
+
+<ul>
+<li><code>kill &lt;pid&gt;</code>, <code>kill -15 &lt;pid&gt;</code>, or <code>kill -TERM &lt;pid&gt;</code> - ask a process to stop gracefully</li>
+<li><code>kill -9 &lt;pid&gt;</code> or <code>kill -KILL &lt;pid&gt;</code> - force-kill a process by PID</li>
+<li><code>pkill -KILL -f &lt;part_of_process_name&gt;</code> - force-kill processes with a name that includes the given string</li>
+</ul>
+
+<h3 id="other-signals">Other signals</h3>
+
+<p><code>kill</code> is most commonly used with the <code>TERM</code> and <code>KILL</code> signals, but there are others that a given process may or may not respond to:</p>
+
+<ul>
+<li><code>HUP</code> - sometimes causes a daemon or service to reload its configuration files</li>
+<li><code>INT</code> - equivalent to pressing <code>Ctrl+C</code> in a terminal</li>
+<li><code>ALRM</code> - represents a timed event</li>
+<li><code>QUIT</code> and <code>ABRT</code> - similar to <code>INT</code> but often used to generate a core dump</li>
+<li><code>STOP</code> and <code>CONT</code> - used to pause and resume a process respectively</li>
+</ul>
+
+<h2 id="stat-and-readlink-print-file-information"><code>stat</code> and <code>readlink</code> - print file information</h2>
+
+<p>The <code>stat</code> command is not compatible between Linux and BSD / macOS, unfortunately, so <code>readlink</code> may be a better option for the specific use case of resolving a link to its target.</p>
+
+<ul>
+<li><code>stat -f '%Y' &lt;symbolic_link&gt;</code> (BSD) or <code>readlink &lt;symbolic_link&gt;</code> (Both) - print target of a symbolic link</li>
+<li><code>stat -f '%Lp' &lt;file&gt;</code> (BSD) or <code>stat -c '%a' &lt;file&gt;</code> (Linux) - print permission mask in octal form</li>
+</ul>
+
+<h2 id="tcpdump-capture-network-traffic"><code>tcpdump</code> - capture network traffic</h2>
+
+<ul>
+<li><code>tcpdump -A -vvv &lt;some.endpoint.host&gt;</code> - print TCP packets to and from the given host as ASCII with maximum verbosity</li>
+</ul>
+
+<h2 id="dig-dns-lookup"><code>dig</code> - DNS lookup</h2>
+
+<ul>
+<li><code>dig &lt;some.endpoint.host&gt;</code> - view DNS resolution for the given host</li>
+<li><code>dig -x &lt;IP address&gt;</code> - reverse DNS lookup to determine hostname for a given IP address</li>
+</ul>
+
+<h2 id="nc-read-and-write-tcpudp-connections"><code>nc</code> - read and write TCP/UDP connections</h2>
+
+<ul>
+<li><code>nc &lt;some.host.name&gt; &lt;port&gt;</code> - open TCP connection</li>
+<li><code>nc -u &lt;some.host.name&gt; &lt;port&gt;</code> - open UDP connection</li>
+<li><code>nc -l &lt;port&gt;</code> - listen on a given port</li>
+<li><code>nc -z &lt;some.host.name&gt; &lt;port_range_start&gt;-&lt;port_range_end&gt;</code> - attempt to connect on a range of ports and report which were open</li>
+</ul>
+
+<h2 id="tail-print-and-follow-ends-of-files"><code>tail</code> - print and follow ends of files</h2>
+
+<ul>
+<li><code>tail -f &lt;file&gt;</code> - print last lines of a file and print new lines as they are appended</li>
+<li><code>tail -F &lt;file&gt;</code> - same as <code>-f</code> but deals with the named file being renamed or replaced by a new file</li>
+</ul>
+
+<h2 id="watch-run-a-command-repeatedly-to-observe-changes"><code>watch</code> - run a command repeatedly to observe changes</h2>
+
+<ul>
+<li><code>watch -t &lt;command&gt;</code> - run command repeatedly with the default 2 second interval and hide the header</li>
+<li><code>watch -n 60 &lt;command&gt;</code> - run command repeatedly every minute</li>
+<li><code>watch -d &lt;command&gt;</code> - run command repeatedly and highlight differences between consecutive runs</li>
+<li><code>watch --differences=permanent &lt;command&gt;</code> - run command repeatedly and highlight differences from initial run</li>
+</ul>
+
+<h2 id="rsync-copy-and-mirror-directory-structures"><code>rsync</code> - copy and mirror directory structures</h2>
+
+<ul>
+<li><code>-delete</code> - delete files that don't exist on sender (system)</li>
+<li><code>-v</code> - verbose (<code>-vv</code> will provide more detailed information)</li>
+<li><code>-e ssh &lt;options&gt;</code> - specify ssh with options for remote targets</li>
+<li><code>-a</code> - archive mode which preserves permissions (owners, groups), times, symbolic links, and devices</li>
+<li><code>-r</code> - recurse into directories</li>
+<li><code>-z</code> - compress file data during transfer</li>
+<li><code>--exclude &lt;directory&gt;</code> – excludes the given directory</li>
+<li><code>-P</code> – show progress during the transfer</li>
+<li><code>-n</code> - perform a dry-run without actually writing anything</li>
+<li><code>-i</code> - show changes</li>
+<li><code>-W</code> - transfer whole files; do not attempt a delta sync</li>
+</ul>
+
+<p>If <code>/</code> is placed at the end of the source folder, <code>rsync</code> will copy only the content of the folder. Otherwise, it will copy the folder itself.  Similarly, if <code>/</code> is placed at the end of the destination folder, <code>rsync</code> will paste the data directly inside the folder. Otherwise, it will create a folder with that name and copy into it.</p>
+
+<ul>
+<li><code>rsync -v -e ssh /home/localuser/testfile.txt remoteuser@X.X.X.X:/home/remoteuser/transfer</code> - copy a file from local to remote</li>
+<li><code>rsync -r -a -v -e ssh --delete /home/localuser/testfolder remoteuser@X.X.X.X:/home/remoteuser/testfolder</code> - sync a local folder to remote with archival flags set and deleting files that don't exist locally</li>
+</ul>
+
+<h2 id="git-the-source-control"><code>git</code> - <em>the</em> source control</h2>
+
+<ul>
+<li><code>git init</code> - initialize the current directory as a git repository</li>
+<li><code>git add origin &lt;uri&gt;</code> - add an upstream remote repository</li>
+<li><code>git fetch</code> - update information from the origin</li>
+<li><code>git checkout -t origin/&lt;branch&gt;</code> - checkout a local copy of an upstream branch</li>
+<li><code>git push origin :&lt;branch&gt;</code> - delete a remote branch</li>
+<li><code>git checkout -b &lt;local_name&gt; --track origin/&lt;branch_name&gt;</code> - create a local branch tracking a remote one with a different name</li>
+<li><code>git push origin &lt;change_id&gt;:&lt;branch&gt;</code> - push local changes only up to a particular commit</li>
+<li><code>git push -u origin &lt;branch&gt;</code> - regular push of local changes to remote branch</li>
+<li><code>git clean -f -d</code> - remove local untracked files and directories</li>
+<li><code>git reset --merge</code> - abort a merge that isn't going well</li>
+<li><code>git reset --hard origin/&lt;branch&gt;</code> - discard committed changes that haven't yet been pushed</li>
+</ul>
+
+<h2 id="ruby-using-ruby-for-one-liners"><code>ruby</code> - using Ruby for one-liners</h2>
+
+<p>Ruby has command-line options that make it useful for writing inline scripts as an alternative to <code>sed</code> or <code>awk</code>.</p>
+
+<ul>
+<li><code>-F &lt;pattern&gt;</code> - specifies the input field separator (<code>$;</code>)</li>
+<li><code>-n</code> - causes Ruby to add <code>while gets</code> around your script which makes it iterate over file name arguments somewhat like <code>sed -n</code> or <code>awk</code></li>
+<li><code>-p</code> - mostly the same as <code>-n</code>, but prints the value of <code>$_</code> at the each end of each loop</li>
+<li><code>-a</code> - turns on auto-split mode when used with <code>-n</code> or <code>-p</code>. In auto-split mode, Ruby executes <code>$F = $_.split</code> at the beginning of each loop</li>
+<li><code>-d</code> or <code>--debug</code> - turns on debug mode; <code>$DEBUG</code> will be set to true</li>
+<li><code>-i &lt;extension&gt;</code> - specifies in-place-edit mode with an optional extension to be used for a backup copy</li>
+<li><code>-l</code>- enables automatic line-ending processing, which sets <code>$\</code> to the value of <code>$/</code> and chops every line read using <code>chop!</code></li>
+<li><code>-e &lt;ruby_statements&gt;</code> - specifies script from command-line and causes Ruby not to search the rest of arguments for a script file name</li>
+<li><code>-r &lt;library&gt;</code> - load the specified library using require.  It is useful when using <code>-n</code> or <code>-p</code></li>
+<li><code>ruby -p -e ’$_.tr! "a-z", "A-Z"’</code> - equivalent to <code>tr '[a-z]' '[A-Z]'</code></li>
+</ul>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+
+<ul>
+<li><code>javap -classpath some_jar.jar some.package.SomeClass</code> - list method signatures of a class within a JAR file</li>
+<li><code>tree &lt;file&gt;</code> - write input to both standard output and the given file</li>
+</ul>
+
+    <footer>
+    <p class="generated_date">Generated on January 28 2024</p>
+    </footer>
+    </article>
+    </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
+    
