@@ -2,8 +2,8 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1702423622.26862" />
-        <link rel="stylesheet" href="vim.css?v=1702423622.26862" />
+        <link rel="stylesheet" href="style.css?v=1706411904.411565" />
+        <link rel="stylesheet" href="vim.css?v=1706411904.411565" />
         <title>gdtyra :: C++ Templates and Metaprogramming</title>
     </head>
     <body>
@@ -19,12 +19,14 @@
     <li><a href="#template-functions-are-okay-with-returning-void">Template functions are okay with returning void</a></li>
     <li><a href="#placement-of-variadic-template-arguments">Placement of variadic template arguments</a></li>
     <li><a href="#what-is-the-purpose-of-stdforward">What is the purpose of <code>std::forward</code>?</a></li>
+    <li><a href="#what-is-decltypeauto">What is <code>decltype(auto)</code>?</a></li>
     <li><a href="#template-idioms">Template idioms</a></li>
+    <li><a href="#other-language-features-and-idioms">Other language features and idioms</a></li>
   </ul></li>
 </ul>
 
     <h1>Other Pages</h2>
-    <ul><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="data_migrations.html">Data Migrations</a></li></ul>
+    <ul><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li></ul>
     </nav>
     </div>
     <div class="column">
@@ -335,6 +337,46 @@ pointer
 ref
 </code></pre>
 
+<h2 id="what-is-decltypeauto">What is <code>decltype(auto)</code>?</h2>
+
+<p>After finding that the use of <code>auto</code> as a return type in templates wasn't always doing what I intuitively expected, I learned about <code>decltype(auto)</code>.</p>
+
+<p>This might be an oversimplification, but apparently <code>auto</code> deduces the type without references and cv-qualifiers while <code>decltype(auto)</code> deduces the exact type of the expression.</p>
+
+<p>For example, if I want a template function that returns me the exact same type that I pass in, I can use <code>decltype(auto)</code> in combination with <code>std::forward</code>:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&amp;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ref&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;const ref&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&amp;&amp;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;r-value ref&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">crx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">rx</span><span class="p">))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">crx</span><span class="p">))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>The above outputs what I would expect:</p>
+
+<pre><code>r-value ref
+ref
+ref
+const ref
+r-value ref
+</code></pre>
+
 <h2 id="template-idioms">Template idioms</h2>
 
 <h3 id="recursively-processing-variable-template-arguments">Recursively processing variable template arguments</h3>
@@ -432,8 +474,139 @@ ref
 </code></pre>
 </div>
 
+<h2 id="other-language-features-and-idioms">Other language features and idioms</h2>
+
+<h3 id="anonymous-namespaces">Anonymous namespaces</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1">// Anonymous namespaces result in internal linkage, like static</span>
+<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">internalVar1</span><span class="p">;</span>
+<span class="k">namespace</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">internalVar2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="inline-namespaces">Inline namespaces</h3>
+
+<div class="codehilite">
+<pre><span></span><code><span class="c1">// Declarations in inline namespaces are visible via the parent namespace</span>
+<span class="c1">// Can be used to have versioned implementations with the latest being the default</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">namespace</span><span class="w"> </span><span class="nn">v1</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="nf">bar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">v2</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="nf">bar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">foo</span><span class="o">::</span><span class="n">bar</span><span class="p">();</span><span class="w"> </span><span class="c1">// returns 2</span>
+</code></pre>
+</div>
+
+<h3 id="argument-dependent-lookup">Argument Dependent lookup</h3>
+
+<p>Argument Dependent Lookup, ADL, or Koenig lookup is the behavior in which C++ will look for functions declared in namespaces associated with the function's given arguments. It seems like one of the main reasons it exists is to enable operator overloads involving arbitrary types as shown in this contrived example:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">foo</span><span class="o">::</span><span class="n">Bar</span><span class="p">{};</span><span class="w"> </span><span class="c1">// returns 6</span>
+</code></pre>
+</div>
+
+<p>Another use for ADL is in generic programming for setting up customization points. In another contrived example, client code can define parts of a generic function by providing an implementation of a function with a particular name within the client's own namespace.</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">Client</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="p">{};</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">specialized_behavior</span><span class="p">(</span><span class="n">Foo</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">Library</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">generic_behavior</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">specialized_behavior</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Library</span><span class="o">::</span><span class="n">generic_behavior</span><span class="p">(</span><span class="n">Client</span><span class="o">::</span><span class="n">Foo</span><span class="p">{});</span><span class="w"> </span><span class="c1">// returns 6</span>
+</code></pre>
+</div>
+
+<h3 id="template-template-parameters">Template template parameters</h3>
+
+<p>Template parameters can themselves be a template as opposed to an instantiation of a template:</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Bar</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">Foo</span><span class="o">&lt;</span><span class="n">Bar</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span><span class="w"> </span><span class="c1">// type is Bar&lt;int&gt;</span>
+</code></pre>
+</div>
+
+<p>This can also be used with specialization to capture the types of a template instance as shown in this construct that determines if a given type is one of the type parameters of another template.</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Tuple</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">has_type</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">false_type</span><span class="w"> </span><span class="p">{};</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TupleLike</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">has_type</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">TupleLike</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">disjunction</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_same</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{};</span>
+</code></pre>
+</div>
+
+<h3 id="rule-of-five">Rule of Five</h3>
+
+<p>This is a guideline saying that if you have a need to define non-default implementations of any of the following then you should likely be defining implementations of all five:</p>
+
+<ul>
+<li>Destructor</li>
+<li>Copy constructor</li>
+<li>Copy assignment operator</li>
+<li>Move constructor</li>
+<li>Move assignment operator</li>
+</ul>
+
+<p>C++ will generate default implementations of these if it is able to given the instance members the class contains.</p>
+
+<h3 id="use-of-noexcept">Use of <code>noexcept</code></h3>
+
+<p>Marking destructors, move constructors, and move operators with <code>noexcept</code> when they will not throw exceptions allows C++ to potentially make optimizations.</p>
+
+<h3 id="virtual-destructors">Virtual destructors</h3>
+
+<p>If your class is intended to be a base class it should probably have a virtual destructor. Without it, deleting an instance via a pointer to the base class won't invoke the destructor logic of derived classes.</p>
+
+<div class="codehilite">
+<pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Base</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="o">~</span><span class="n">Derived</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
     <footer>
-    <p class="generated_date">Generated on December 12 2023</p>
+    <p class="generated_date">Generated on January 27 2024</p>
     </footer>
     </article>
     </div>

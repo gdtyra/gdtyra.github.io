@@ -8,7 +8,7 @@
 }
 
 .codehilite .c {
-    color: #000080
+    color: #999999
 }
 
 /* Comment */
@@ -59,27 +59,27 @@
 
 /* Punctuation */
 .codehilite .ch {
-    color: #000080
+    color: #999999
 }
 
 /* Comment.Hashbang */
 .codehilite .cm {
-    color: #000080
+    color: #999999
 }
 
 /* Comment.Multiline */
 .codehilite .cp {
-    color: #000080
+    color: #999999
 }
 
 /* Comment.Preproc */
 .codehilite .cpf {
-    color: #000080
+    color: #999999
 }
 
 /* Comment.PreprocFile */
 .codehilite .c1 {
-    color: #000080
+    color: #999999
 }
 
 /* Comment.Single */
@@ -106,7 +106,7 @@
 
 /* Generic.Error */
 .codehilite .gh {
-    color: #000080;
+    color: #999999;
     font-weight: bold
 }
 
@@ -122,7 +122,7 @@
 
 /* Generic.Output */
 .codehilite .gp {
-    color: #000080;
+    color: #999999;
     font-weight: bold
 }
 

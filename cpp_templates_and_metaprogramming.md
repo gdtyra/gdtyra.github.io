@@ -319,6 +319,46 @@ pointer
 ref
 ```
 
+## What is `decltype(auto)`?
+
+After finding that the use of `auto` as a return type in templates wasn't always doing what I intuitively expected, I learned about `decltype(auto)`.
+
+This might be an oversimplification, but apparently `auto` deduces the type without references and cv-qualifiers while `decltype(auto)` deduces the exact type of the expression.
+
+For example, if I want a template function that returns me the exact same type that I pass in, I can use `decltype(auto)` in combination with `std::forward`:
+
+```cpp
+template <class T> struct Bar { static constexpr const char* tag = "value"; };
+template <class T> struct Bar<T&> { static constexpr const char* tag = "ref"; };
+template <class T> struct Bar<T const&> { static constexpr const char* tag = "const ref"; };
+template <class T> struct Bar<T&&> { static constexpr const char* tag = "r-value ref"; };
+
+template <class T>
+decltype(auto) foo(T&& x) {
+    return std::forward<T>(x);
+}
+
+
+int x = 5;
+int& rx = x;
+int const& crx = x;
+std::cout << Bar<decltype(foo(5))>::tag << std::endl;
+std::cout << Bar<decltype(foo(x))>::tag << std::endl;
+std::cout << Bar<decltype(foo(rx))>::tag << std::endl;
+std::cout << Bar<decltype(foo(crx))>::tag << std::endl;
+std::cout << Bar<decltype(foo(std::move(x)))>::tag << std::endl;
+```
+
+The above outputs what I would expect:
+
+```
+r-value ref
+ref
+ref
+const ref
+r-value ref
+```
+
 
 ## Template idioms
 
@@ -419,4 +459,125 @@ constexpr Holder<T> holder = Holder<T>{};
 foo(holder<int>); // returns 1
 foo(holder<std::tuple<int, float>>); // returns 2
 
+```
+
+## Other language features and idioms
+
+### Anonymous namespaces
+
+```cpp
+// Anonymous namespaces result in internal linkage, like static
+static int internalVar1;
+namespace {
+    int internalVar2;
+}
+```
+
+### Inline namespaces
+
+```cpp
+// Declarations in inline namespaces are visible via the parent namespace
+// Can be used to have versioned implementations with the latest being the default
+namespace foo {
+    namespace v1 {
+        int bar() { return 1; }
+    }
+    inline namespace v2 {
+        int bar() { return 2; }
+    }
+}
+
+foo::bar(); // returns 2
+```
+
+### Argument Dependent lookup
+
+Argument Dependent Lookup, ADL, or Koenig lookup is the behavior in which C++ will look for functions declared in namespaces associated with the function's given arguments. It seems like one of the main reasons it exists is to enable operator overloads involving arbitrary types as shown in this contrived example:
+
+```cpp
+namespace foo {
+    struct Bar{};
+    int operator +(int const& n, Bar const&) {
+        return n + 1;
+    }
+}
+
+5 + foo::Bar{}; // returns 6
+```
+
+Another use for ADL is in generic programming for setting up customization points. In another contrived example, client code can define parts of a generic function by providing an implementation of a function with a particular name within the client's own namespace.
+
+```cpp
+namespace Client {
+    struct Foo{};
+    int specialized_behavior(Foo const&) {
+        return 5;
+    }
+}
+
+namespace Library {
+    template <class T>
+    int generic_behavior(T&& t) {
+        return 1 + specialized_behavior(std::forward<T>(t));
+    }
+}
+
+Library::generic_behavior(Client::Foo{}); // returns 6
+```
+### Template template parameters
+
+Template parameters can themselves be a template as opposed to an instantiation of a template:
+
+```cpp
+template<class T>
+class Bar {};
+
+template<template<class> class T>
+struct Foo {
+    using type = T<int>;
+};
+
+Foo<Bar>::type; // type is Bar<int>
+```
+
+This can also be used with specialization to capture the types of a template instance as shown in this construct that determines if a given type is one of the type parameters of another template.
+
+```cpp
+template<class T, class Tuple>
+struct has_type : std::false_type {};
+
+template<class T, template<class...> class TupleLike, class... Ts>
+struct has_type<T, TupleLike<Ts...>> : std::disjunction<std::is_same<T, Ts>...> {};
+```
+
+### Rule of Five
+
+This is a guideline saying that if you have a need to define non-default implementations of any of the following then you should likely be defining implementations of all five:
+
+- Destructor
+- Copy constructor
+- Copy assignment operator
+- Move constructor
+- Move assignment operator
+
+C++ will generate default implementations of these if it is able to given the instance members the class contains.
+
+### Use of `noexcept`
+
+Marking destructors, move constructors, and move operators with `noexcept` when they will not throw exceptions allows C++ to potentially make optimizations.
+
+### Virtual destructors
+
+If your class is intended to be a base class it should probably have a virtual destructor. Without it, deleting an instance via a pointer to the base class won't invoke the destructor logic of derived classes.
+
+```cpp
+class Base {
+public:
+    virtual ~Base() { }
+};
+
+class Derived : public Base {
+public:
+    ~Derived() override { }
+};
 ```
