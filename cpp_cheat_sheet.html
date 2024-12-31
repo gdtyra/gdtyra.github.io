@@ -1,0 +1,76 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="stylesheet" href="style.css?v=1735622539.916456" />
+        <link rel="stylesheet" href="vim.css?v=1735622539.916456" />
+        <title>gdtyra :: C++ Cheat Sheet</title>
+    </head>
+    <body>
+    <div id="main">
+    <div id ="nav" class="column">
+    <nav>
+    <h1>Table of Contents</h1>
+    <ul>
+  <li><a href="#c-cheat-sheet">C++ Cheat Sheet</a>
+  <ul>
+    <li><a href="#stl-algorithms">STL Algorithms</a></li>
+    <li><a href="#stl-modifying-algorithms">STL Modifying Algorithms</a></li>
+    <li><a href="#random">Random</a></li>
+  </ul></li>
+</ul>
+
+    <h1>Other Pages</h2>
+    <ul><li><a href="things_of_interest.html">Things of Interest</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="arch_linux.html">Arch Linux</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="unix_commands.html">Unix Commands</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="python_and_pip.html">Python and PIP</a></li><li><a href="docker.html">Docker</a></li><li><a href="node_and_npm.html">Node and NPM</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li></ul>
+    </nav>
+    </div>
+    <div class="column">
+    <div id="content">
+    <article>
+    <h1 id="c-cheat-sheet">C++ Cheat Sheet</h1>
+
+<h2 id="stl-algorithms">STL Algorithms</h2>
+
+<ul>
+<li><code>std::accumulate(first, last, initial, [op])</code>: perform summation on a range, optionally with given binary operation.</li>
+<li><code>std::reduce(first, last, [initial, [op]])</code>: perform summation on a range, optionally with given initial value and binary operation.</li>
+<li><code>std::transform_reduce(first, last, initial, biop, uop)</code>: perform the given unary operation followed by a binary operation on a range.</li>
+<li><code>std::transform(first, last, output, uop)</code>: perform the given unary operation on the input range and store the result in the output iterator.</li>
+<li><code>std::minmax_element(first, last, [cmp])</code>: returns a pair of iterators to the minimum and maximum elements according to the optional comparison function.</li>
+<li><code>std::all_of(first, last, predicate)</code>: returns true if all elements evaluate to true.</li>
+</ul>
+
+<h2 id="stl-modifying-algorithms">STL Modifying Algorithms</h2>
+
+<ul>
+<li><code>std::iota(first, last, initial)</code>: fill a range with incrementing values.</li>
+<li><code>std::fill(first, last, value)</code>: fill a range with the given value.</li>
+<li><code>std::generate(first, last, generator)</code>: fill a range with calls to a given generator.</li>
+<li><code>std::generate_n(first, count, generator)</code>: write a number of values via calls to a given generator.</li>
+<li><code>std::sort(first, last, [cmp])</code>: sort a random-access collection, optionally with a comparator.</li>
+<li><code>std::shuffle(first, last, rng)</code>: shuffle a random-access collection.</li>
+<li><code>std::remove_if(first, last, predicate)</code>: remove elements that match the predicate.</li>
+<li><code>std::remove(first, last, value)</code>: remove elements that equal the value.</li>
+<li><code>std::partition(first, last, predicate)</code>: moves elements to the left or right of the container based on the predicate and returns the pivot.</li>
+</ul>
+
+<h2 id="random">Random</h2>
+
+<ul>
+<li><code>std::mt19937{seed}</code>: the Mersene Twister pseudorandom number generator suitable for insecure number generation.</li>
+<li><code>std::uniform_real_distribution&lt;T&gt;{min, max}</code>: range of real numbers with equal probability.</li>
+<li><code>std::uniform_int_distribution&lt;T&gt;{min, max}</code>: sequence of integers with equal probability.</li>
+<li><code>std::normal_distribution{mean, stddev}</code>: a normal distribution.</li>
+</ul>
+
+    <footer>
+    <p class="generated_date">Generated on December 30 2024</p>
+    </footer>
+    </article>
+    </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
+    

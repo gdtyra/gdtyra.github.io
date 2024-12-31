@@ -106,11 +106,13 @@ HTTP is client-initiated which works just fine for many situations, but situatio
 - WebSockets: a sort of "upgraded" HTTP connection, they allow for ongoing bidirectional communication. Downsides are that they require more complicated connection management on the server side. This sometimes involves a traditional "service discovery" API that provides the client with an optimal WebSocket server to connect to
 
 ## Other Thoughts
-- Bloom filters can be used in situations to quickly determine that an item is definitely not in a set
-- Consider writing incoming data to a fast storage system and then responding to the client prior to committing the data to a more durable system
-- Offloading read operations to secondary sources can provide many benefits at once: data redundancy, lightening the workload on the primary read-write source, and improved latency in the case of CDNs or other geographically distributed caches
+- Bloom filters can be used in situations to quickly determine that an item is definitely not in a set.
+- Consider writing incoming data to a fast storage system and then responding to the client prior to committing the data to a more durable system.
+- Offloading read operations to secondary sources can provide many benefits at once: data redundancy, lightening the workload on the primary read-write source, and improved latency in the case of CDNs or other geographically distributed caches.
 - There should always be a canonical data source for data which is copied around the system. It should never be ambiguous what the "correct" data is when there is a disagreement.
 - If it is economically sane, keep copies of data around prior to each transformation or modification.
 - Ensure that actions are transactional in the sense that state is never left in a plausibly correct but actually undesired state.
 - Consider versioning and backward compatibility of interfaces from the start because it is hard to add later and cheap to add upfront.
-- Try to keep operations idempotent
+- Try to keep operations idempotent.
+- The horizontal scaling difficulties associated with an RDBMS can be mitigated to some extent using application-level sharding with multiple writeable database instances and by queuing writes in message queues.
+- Carefully consider the order in which things are done, e.g. transform then merge vs. merge then transform.

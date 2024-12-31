@@ -34,6 +34,14 @@ This is a collection of notes relating to commands that are available in Linux a
 - `find . -name '*.wav' -print0 | xargs -0 md5sum` - find all WAV files and print their MD5 sums
 - `cat old-archive-ids | xargs -L1 -I{} ./delete.sh {}` - run a script once for each line in a file 
 
+## `basename` and `dirname` - remove prefix and suffix from file paths
+- `basename path/to/file.txt` - yields `file.txt`
+- `basename path/to/file.txt .txt` - yields `file`
+- `basename -a -s .txt file1.txt file2.txt` - yields `file1\nfile2`
+- `dirname path/to/file.txt` - yields `path/to`
+- `dirname path/to/` - yields `path`
+- `dirname path/to` - yields `path`
+
 ## `sed` - manipulate text line-wise
 - `sed -n <n>p` - print only line `n` of the input
 - `sed -e '2,$d'` - delete all but first line of input
@@ -109,6 +117,9 @@ The `stat` command is not compatible between Linux and BSD / macOS, unfortunatel
 - `tail -f <file>` - print last lines of a file and print new lines as they are appended
 - `tail -F <file>` - same as `-f` but deals with the named file being renamed or replaced by a new file
 
+## `mount` - manage mounted filesystems
+- `mount` - view currently mounted paths and filesystem types
+
 ## `watch` - run a command repeatedly to observe changes
 - `watch -t <command>` - run command repeatedly with the default 2 second interval and hide the header
 - `watch -n 60 <command>` - run command repeatedly every minute
@@ -140,11 +151,14 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 - `git checkout -t origin/<branch>` - checkout a local copy of an upstream branch
 - `git push origin :<branch>` - delete a remote branch
 - `git checkout -b <local_name> --track origin/<branch_name>` - create a local branch tracking a remote one with a different name
+- `git checkout -b <local_name>` - create a new local copy of the current branch
 - `git push origin <change_id>:<branch>` - push local changes only up to a particular commit
 - `git push -u origin <branch>` - regular push of local changes to remote branch
 - `git clean -f -d` - remove local untracked files and directories
 - `git reset --merge` - abort a merge that isn't going well
 - `git reset --hard origin/<branch>` - discard committed changes that haven't yet been pushed
+- `git branch -d <branch>` - delete a local branch
+- `git diff HEAD~2 HEAD -- <paths...>` - compare paths between current and 2 revisions prior
 
 ## `ruby` - using Ruby for one-liners
 
@@ -161,6 +175,34 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 - `-r <library>` - load the specified library using require.  It is useful when using `-n` or `-p`
 - `ruby -p -e ’$_.tr! "a-z", "A-Z"’` - equivalent to `tr '[a-z]' '[A-Z]'`
 
+### `ffmpeg` - media encoding
+- `ffmpeg -framerate 30 -i "%d.bmp" -r 30 -pix_fmt yuv420p video.mp4` - create a video from a sequence of image files
+- `ffmpeg -i original.jpg -qmin 1 -q:v 1 -vf "scale=iw/2:ih/2" reduced.jpg` - re-encode an image at half the resolution
+- `ffmpeg -i video.mp4 -c:v null -c:a copy audio.m4a` - extract only the audio from an MP4 video
+- `ffmpeg -i input.avi -vf 'yadif=1:1,drawbox=y=ih-h:w=0:h=11:t=max,hqdn3d=6' -acodec aac -vcodec libx264 -pix_fmt yuv420p -preset veryslow -crf 20 -aspect 4:3 output.mp4` - re-encode an interlaced, 4:3 AVI as an MP4 after masking overscan noise and denoising the image
+- `ffmpeg -i input.avi -acodec copy -vcodec ffv1 -coder 1 -g 1 -context 1 -pix_fmt yuv410p output.avi` - re-encode as lossless FFV1
+- `for f in **/*.wav; ./ffmpeg.exe -i "$f" flac/"$(basename $f .wav)".flac` - encode all WAV files in under the current path as FLAC and put the files under a "flac" directory
+
 ## Miscellaneous
+- `cal` - display calendars
+- `at` - schedule a task at a given time
+- `fortune` - print random messages from a collection
+- `diff` - compare files or directory structures
+- `patch` - apply changes specified by a diff
+- `tsort` - topologically sort a graph
+- `od` - display files in hexadecimal or other forms
+- `nohup` - prevent a program from stopping after logout
+- `nl` - add line numbers to output
+- `join` - join lines in files by shared field values 
+- `bc` - do calculations
+- `file` - heuristically determine file content type
+- `fc` - deal with command history
+- `csplit` - split a file into multiple based on context lines
+- `split` - split a file into multiple files of a fixed size
+- `fmt`, `fold` - apply word wrapping to text
+- `banner`, `figlet`, and `cowsay` - print fancy text
+- `pexec` and `parallel` - run commands concurrently
 - `javap -classpath some_jar.jar some.package.SomeClass` - list method signatures of a class within a JAR file
 - `tree <file>` - write input to both standard output and the given file
+- `wget -O <output_path> <some.resource/address>` - download a given resource to a given path
+- `chsh -s <shell_path> <user>` - change a user's login shell

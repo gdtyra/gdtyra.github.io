@@ -2,8 +2,8 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1706439587.8431191" />
-        <link rel="stylesheet" href="vim.css?v=1706439587.8431191" />
+        <link rel="stylesheet" href="style.css?v=1735622539.916456" />
+        <link rel="stylesheet" href="vim.css?v=1735622539.916456" />
         <title>gdtyra :: Unix Commands</title>
     </head>
     <body>
@@ -17,6 +17,7 @@
     <li><a href="#tar-manipulate-tar-files"><code>tar</code> - manipulate tar files</a></li>
     <li><a href="#find-find-files-and-directories-matching-criteria"><code>find</code> - find files and directories matching criteria</a></li>
     <li><a href="#xargs-treat-input-as-arguments-to-a-command"><code>xargs</code> - treat input as arguments to a command</a></li>
+    <li><a href="#basename-and-dirname-remove-prefix-and-suffix-from-file-paths"><code>basename</code> and <code>dirname</code> - remove prefix and suffix from file paths</a></li>
     <li><a href="#sed-manipulate-text-line-wise"><code>sed</code> - manipulate text line-wise</a></li>
     <li><a href="#tr-delete-or-replace-characters"><code>tr</code> - delete or replace characters</a></li>
     <li><a href="#cmp-compare-files-byte-wise"><code>cmp</code> - compare files byte-wise</a></li>
@@ -30,6 +31,7 @@
     <li><a href="#dig-dns-lookup"><code>dig</code> - DNS lookup</a></li>
     <li><a href="#nc-read-and-write-tcpudp-connections"><code>nc</code> - read and write TCP/UDP connections</a></li>
     <li><a href="#tail-print-and-follow-ends-of-files"><code>tail</code> - print and follow ends of files</a></li>
+    <li><a href="#mount-manage-mounted-filesystems"><code>mount</code> - manage mounted filesystems</a></li>
     <li><a href="#watch-run-a-command-repeatedly-to-observe-changes"><code>watch</code> - run a command repeatedly to observe changes</a></li>
     <li><a href="#rsync-copy-and-mirror-directory-structures"><code>rsync</code> - copy and mirror directory structures</a></li>
     <li><a href="#git-the-source-control"><code>git</code> - <em>the</em> source control</a></li>
@@ -39,7 +41,7 @@
 </ul>
 
     <h1>Other Pages</h2>
-    <ul><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="unix_commands.html">Unix Commands</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li></ul>
+    <ul><li><a href="things_of_interest.html">Things of Interest</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="arch_linux.html">Arch Linux</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="unix_commands.html">Unix Commands</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="python_and_pip.html">Python and PIP</a></li><li><a href="docker.html">Docker</a></li><li><a href="node_and_npm.html">Node and NPM</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li></ul>
     </nav>
     </div>
     <div class="column">
@@ -88,6 +90,17 @@
 <li><code>xargs -n 1 -P 1 -I{} ssh -tt {} 'top -n 1 -b | grep "Cpu(s)"'</code> - <code>ssh</code> to hosts one at a time and run <code>top</code> on them</li>
 <li><code>find . -name '*.wav' -print0 | xargs -0 md5sum</code> - find all WAV files and print their MD5 sums</li>
 <li><code>cat old-archive-ids | xargs -L1 -I{} ./delete.sh {}</code> - run a script once for each line in a file </li>
+</ul>
+
+<h2 id="basename-and-dirname-remove-prefix-and-suffix-from-file-paths"><code>basename</code> and <code>dirname</code> - remove prefix and suffix from file paths</h2>
+
+<ul>
+<li><code>basename path/to/file.txt</code> - yields <code>file.txt</code></li>
+<li><code>basename path/to/file.txt .txt</code> - yields <code>file</code></li>
+<li><code>basename -a -s .txt file1.txt file2.txt</code> - yields <code>file1\nfile2</code></li>
+<li><code>dirname path/to/file.txt</code> - yields <code>path/to</code></li>
+<li><code>dirname path/to/</code> - yields <code>path</code></li>
+<li><code>dirname path/to</code> - yields <code>path</code></li>
 </ul>
 
 <h2 id="sed-manipulate-text-line-wise"><code>sed</code> - manipulate text line-wise</h2>
@@ -205,6 +218,12 @@
 <li><code>tail -F &lt;file&gt;</code> - same as <code>-f</code> but deals with the named file being renamed or replaced by a new file</li>
 </ul>
 
+<h2 id="mount-manage-mounted-filesystems"><code>mount</code> - manage mounted filesystems</h2>
+
+<ul>
+<li><code>mount</code> - view currently mounted paths and filesystem types</li>
+</ul>
+
 <h2 id="watch-run-a-command-repeatedly-to-observe-changes"><code>watch</code> - run a command repeatedly to observe changes</h2>
 
 <ul>
@@ -246,11 +265,14 @@
 <li><code>git checkout -t origin/&lt;branch&gt;</code> - checkout a local copy of an upstream branch</li>
 <li><code>git push origin :&lt;branch&gt;</code> - delete a remote branch</li>
 <li><code>git checkout -b &lt;local_name&gt; --track origin/&lt;branch_name&gt;</code> - create a local branch tracking a remote one with a different name</li>
+<li><code>git checkout -b &lt;local_name&gt;</code> - create a new local copy of the current branch</li>
 <li><code>git push origin &lt;change_id&gt;:&lt;branch&gt;</code> - push local changes only up to a particular commit</li>
 <li><code>git push -u origin &lt;branch&gt;</code> - regular push of local changes to remote branch</li>
 <li><code>git clean -f -d</code> - remove local untracked files and directories</li>
 <li><code>git reset --merge</code> - abort a merge that isn't going well</li>
 <li><code>git reset --hard origin/&lt;branch&gt;</code> - discard committed changes that haven't yet been pushed</li>
+<li><code>git branch -d &lt;branch&gt;</code> - delete a local branch</li>
+<li><code>git diff HEAD~2 HEAD -- &lt;paths...&gt;</code> - compare paths between current and 2 revisions prior</li>
 </ul>
 
 <h2 id="ruby-using-ruby-for-one-liners"><code>ruby</code> - using Ruby for one-liners</h2>
@@ -270,15 +292,46 @@
 <li><code>ruby -p -e ’$_.tr! "a-z", "A-Z"’</code> - equivalent to <code>tr '[a-z]' '[A-Z]'</code></li>
 </ul>
 
+<h3 id="ffmpeg-media-encoding"><code>ffmpeg</code> - media encoding</h3>
+
+<ul>
+<li><code>ffmpeg -framerate 30 -i "%d.bmp" -r 30 -pix_fmt yuv420p video.mp4</code> - create a video from a sequence of image files</li>
+<li><code>ffmpeg -i original.jpg -qmin 1 -q:v 1 -vf "scale=iw/2:ih/2" reduced.jpg</code> - re-encode an image at half the resolution</li>
+<li><code>ffmpeg -i video.mp4 -c:v null -c:a copy audio.m4a</code> - extract only the audio from an MP4 video</li>
+<li><code>ffmpeg -i input.avi -vf 'yadif=1:1,drawbox=y=ih-h:w=0:h=11:t=max,hqdn3d=6' -acodec aac -vcodec libx264 -pix_fmt yuv420p -preset veryslow -crf 20 -aspect 4:3 output.mp4</code> - re-encode an interlaced, 4:3 AVI as an MP4 after masking overscan noise and denoising the image</li>
+<li><code>ffmpeg -i input.avi -acodec copy -vcodec ffv1 -coder 1 -g 1 -context 1 -pix_fmt yuv410p output.avi</code> - re-encode as lossless FFV1</li>
+<li><code>for f in **/*.wav; ./ffmpeg.exe -i "$f" flac/"$(basename $f .wav)".flac</code> - encode all WAV files in under the current path as FLAC and put the files under a "flac" directory</li>
+</ul>
+
 <h2 id="miscellaneous">Miscellaneous</h2>
 
 <ul>
+<li><code>cal</code> - display calendars</li>
+<li><code>at</code> - schedule a task at a given time</li>
+<li><code>fortune</code> - print random messages from a collection</li>
+<li><code>diff</code> - compare files or directory structures</li>
+<li><code>patch</code> - apply changes specified by a diff</li>
+<li><code>tsort</code> - topologically sort a graph</li>
+<li><code>od</code> - display files in hexadecimal or other forms</li>
+<li><code>nohup</code> - prevent a program from stopping after logout</li>
+<li><code>nl</code> - add line numbers to output</li>
+<li><code>join</code> - join lines in files by shared field values </li>
+<li><code>bc</code> - do calculations</li>
+<li><code>file</code> - heuristically determine file content type</li>
+<li><code>fc</code> - deal with command history</li>
+<li><code>csplit</code> - split a file into multiple based on context lines</li>
+<li><code>split</code> - split a file into multiple files of a fixed size</li>
+<li><code>fmt</code>, <code>fold</code> - apply word wrapping to text</li>
+<li><code>banner</code>, <code>figlet</code>, and <code>cowsay</code> - print fancy text</li>
+<li><code>pexec</code> and <code>parallel</code> - run commands concurrently</li>
 <li><code>javap -classpath some_jar.jar some.package.SomeClass</code> - list method signatures of a class within a JAR file</li>
 <li><code>tree &lt;file&gt;</code> - write input to both standard output and the given file</li>
+<li><code>wget -O &lt;output_path&gt; &lt;some.resource/address&gt;</code> - download a given resource to a given path</li>
+<li><code>chsh -s &lt;shell_path&gt; &lt;user&gt;</code> - change a user's login shell</li>
 </ul>
 
     <footer>
-    <p class="generated_date">Generated on January 28 2024</p>
+    <p class="generated_date">Generated on December 30 2024</p>
     </footer>
     </article>
     </div>
