@@ -30,3 +30,39 @@ One approach for migrating would be to leave the existing system as-is while bri
 
 ## Migrating as part of regular operations
 Alternatively, data can be migrated if and when it is accessed. For example, if user accounts are being migrated or merged into a different system, users may be required to verify and update their information and credentials the next time they attempt to login. After some time, only the least regular users (or, more generally, least frequently accessed data) remains unmigrated and can be dealt with via a secondary process with a smaller scope that is less likely to impact the users or data that are most often needed.
+
+
+## Strategies for handling breaking changes
+
+### Upcasting / Transformation
+
+- Data remains stored with its original schema version
+- Upcasting logic appropriate for a given schema version runs at read-time to transform the data to a current, standard representation
+- Upcasting logic grows, can become complicated, and must be maintained indefinitely
+- Lowers operational risk and complexity while increasing runtime cost and maintenance complexity
+
+### Versioned Schemas
+
+- Similar to upcasting, data is stored in its original form with an associated type or version identifier
+- Unlike upcasting, the data is consumed throughout the system in its original form with version-specific logic maintained where needed
+- Stored data remains untouched, but decentralized, version-specific logic makes the system more complex
+
+### Backward-compatible Schema Evolution
+
+- The schema is modified using only backward-compatible changes (adding new optional fields with default values)
+- No transformations or version-specific logic needed
+- Simplest option, but can't handle truly breaking semantic changes
+
+### Copy-and-Transform
+
+- Perform an "offline" process to read, transform, and write records to a new schema
+- Runtime system logic only needs to consider the current schema, no transformation or legacy code
+- Greater operational risk, including potential downtime and irreversible data loss
+- Makes sense when necessary to simplify the codebase and when a controlled migration window is acceptable
+
+### Dual-Write / Shadowing
+
+- Records are written to new and old schemas by the live system in parallel
+- Consumers gradually switch to reading from the new schema
+- The old schema can be retired once all consumers are migrated
+- Can eliminate any disruption to operations at the cost of temporary overhead and complexity

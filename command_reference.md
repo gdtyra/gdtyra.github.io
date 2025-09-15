@@ -1,6 +1,4 @@
-# Unix Commands
-
-This is a collection of notes relating to commands that are available in Linux and most Unix-like environments. In many cases only useful examples of a command are listed without a proper explanation of the command in general.
+# Command Reference
 
 ## `tar` - manipulate tar files
 - `tar -czf <archive> <directory>` - create a gzip-compressed archive containing the given directory
@@ -144,9 +142,11 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 - `rsync -v -e ssh /home/localuser/testfile.txt remoteuser@X.X.X.X:/home/remoteuser/transfer` - copy a file from local to remote
 - `rsync -r -a -v -e ssh --delete /home/localuser/testfolder remoteuser@X.X.X.X:/home/remoteuser/testfolder` - sync a local folder to remote with archival flags set and deleting files that don't exist locally
 
-## `git` - *the* source control
+## `git` - the only source control anyone cares about anymore
 - `git init` - initialize the current directory as a git repository
 - `git add origin <uri>` - add an upstream remote repository
+- `git add <path>` - stage modifications and new files under the given path
+- `git add --update <path>` - stage modifications but ignore new files
 - `git fetch` - update information from the origin
 - `git checkout -t origin/<branch>` - checkout a local copy of an upstream branch
 - `git push origin :<branch>` - delete a remote branch
@@ -159,6 +159,71 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 - `git reset --hard origin/<branch>` - discard committed changes that haven't yet been pushed
 - `git branch -d <branch>` - delete a local branch
 - `git diff HEAD~2 HEAD -- <paths...>` - compare paths between current and 2 revisions prior
+- `git diff <commit> -- <paths...>` - compare paths between current and a specific revision
+- `git submodule update --init --recursive` - pull down and register missing submodules
+
+## `go` - for the very limited golang exposure I have
+- `go mod init <name>` - initialize a go module workspace
+- `go run <go_file>` - run a go file containing a main function
+- `go test -v` - run functions starting with "Test" found in file paths ending with "_test.go"
+
+
+## `cmake` - the closest thing to a standard C/C++ build system
+- `cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake -S./source/directory -B./build/directory -G Ninja` - configure a vcpkg build
+- `cmake -DCMAKE_BUILD_TYPE=Debug -S./ -B./build` - configure a build with mostly default options
+- `cmake --build build/directory` - execute a previously configured build
+
+## `winget` - Windows has a package manager, too
+- `winget search <term>` - search packages by name, ID, tags
+- `winget add <package>` - install package via an unambiguous name or ID
+
+## `npm` - because I can't avoid it these days
+- `npm init -y` - initialize the directory as an NPM package
+- `npm install <package>` or `npm i <package>` - install a package in this workspace
+
+## `docker` - work with containers
+- `docker build -t <image_name> .` - From a directory with a Dockerfile, build an image with the given name
+- `docker build -t <image_name> -f <dockerfile> .` - Same, but with a custom Dockerfile path
+- `docker build --no-cache -t <image_name> .` - Same, but redo all cached build steps
+- `docker ps` - See currently running containers
+- `docker ps -a` - See all containers
+- `docker attach <container_id>` - Reattach to a running container
+- `docker commit <container_id> <image_name>` - Commit the state of a container to a new image
+- `docker stop <container_id>` - Stop a running container
+- `docker start <container_id>` - Restart a stopped container
+- `docker cp <path/on/host> <container_id>:<path/in/container>` - Copy files between host and container
+- `docker volume create <volume_name>` - Create a new volume
+- `docker volume ls` - List volumes
+- `docker run -it <image_name>` -  Start a container in TTY interactive mode
+- `docker run --rm ...` - auto-remove the container when it exits
+- `docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=docker.for.mac.host.internal:0 <image_name>` - Start a container while making XQuartz available to it
+- `docker run -it -v <volume_name>:<path/in/container> <image_name>` - Start a container with a volume attached
+- `docker run -it -v <path/in/container> <image_name>` - Start a container with a new, unnamed volume
+- `docker run -it -v <path/on/host>:<path/in/container> <image_name>` - Start a container with a host directory mounted
+- `docker container prune` - remove stopped containers
+- `docker rm <container>` - delete a container
+- `docker compose up -d` - create a container from a `docker-compose.yml` file in the current directory
+- `docker exec -it <container> <command>` - run a command within an existing, running container
+
+## `python` and `pip`
+- `python -m venv ./venv` - create a virtual environment
+
+## `pacman` - Arch linux package manager
+- `pacman -Q` - list installed packages
+- `pacman -Qi` - list installed packages with detail
+- `pacman -Qe` - list packages explicitly installed by the user
+- `pacman -Qei` - list packages explicitly installed by the user with detail
+- `pacman -Qdtq` - list installed, orphaned packages
+- `pacman -Rs <package_name>` - remove package
+- `pacman -Rs $(pacman -Qdtq)` - remove orphaned packages
+- `pacman -Ss <search_string>` - search available packages
+- `pacman -S <package_name>` - install package
+- `pacman -Syu` - full system update
+- `pacman -Scc` - clean package cache
+
+## `apt` - More common package manager
+- `apt update` - synchronize local index with repositories
+- `apt upgrade` - install all newer versions of installed packages
 
 ## `ruby` - using Ruby for one-liners
 
@@ -175,13 +240,16 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 - `-r <library>` - load the specified library using require.  It is useful when using `-n` or `-p`
 - `ruby -p -e ’$_.tr! "a-z", "A-Z"’` - equivalent to `tr '[a-z]' '[A-Z]'`
 
-### `ffmpeg` - media encoding
+## `ffmpeg` - media encoding
 - `ffmpeg -framerate 30 -i "%d.bmp" -r 30 -pix_fmt yuv420p video.mp4` - create a video from a sequence of image files
 - `ffmpeg -i original.jpg -qmin 1 -q:v 1 -vf "scale=iw/2:ih/2" reduced.jpg` - re-encode an image at half the resolution
 - `ffmpeg -i video.mp4 -c:v null -c:a copy audio.m4a` - extract only the audio from an MP4 video
 - `ffmpeg -i input.avi -vf 'yadif=1:1,drawbox=y=ih-h:w=0:h=11:t=max,hqdn3d=6' -acodec aac -vcodec libx264 -pix_fmt yuv420p -preset veryslow -crf 20 -aspect 4:3 output.mp4` - re-encode an interlaced, 4:3 AVI as an MP4 after masking overscan noise and denoising the image
 - `ffmpeg -i input.avi -acodec copy -vcodec ffv1 -coder 1 -g 1 -context 1 -pix_fmt yuv410p output.avi` - re-encode as lossless FFV1
 - `for f in **/*.wav; ./ffmpeg.exe -i "$f" flac/"$(basename $f .wav)".flac` - encode all WAV files in under the current path as FLAC and put the files under a "flac" directory
+- `ffmpeg -hide_banner -i input.mp4 -vf "scale='if(lt(iw,ih),min(720,iw),-2)':'if(lt(iw,ih),-2,min(720,ih))'" -c:v libx265 -crf 28 -preset veryslow -c:a copy output.mp4` - re-encode as HEVC and scale to a maximum width or height of 720
+- `ffmpeg -i input.gif -filter_complex "[0:v]crop=300:270:100:0,split[a][b];[a]palettegen=max_colors=32[p];[b][p]paletteuse=dither=none" output.gif` - crop and re-encode gif at a reduced quality
+- `ffmpeg -i input.mp4 -filter_complex "[0:v] fps=8,scale=300:-1:flags=lanczos,crop=in_w:in_h:0:0,split[a][b];[a]palettegen=reserve_transparent=on[p];[b][p]paletteuse=dither=bayer:bayer_scale=5" output.gif` - convert video to gif
 
 ## Miscellaneous
 - `cal` - display calendars

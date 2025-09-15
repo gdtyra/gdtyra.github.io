@@ -124,7 +124,7 @@ void foo(std::list<T> lst) {
 
 These options may be acceptable in many cases, but they require all implementations to be coupled together so that they mutually exclude each other. What I really want is a hierarchy of implementations where the more generic implementations are entirely unaware of any other more specific implementations that may exist.
 
-According to my limited understanding and to ChatGPT (shout-out ChatGPT, love ya 😘), this can't be accomplished with only function templates. Instead, we have to make use of struct templates and partial specialization which is not available with function templates.
+According to my limited understanding, this can't be accomplished with only function templates. Instead, we have to make use of struct templates and partial specialization which is not available with function templates.
 
 ```cpp
 

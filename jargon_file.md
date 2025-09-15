@@ -1,0 +1,343 @@
+# Jargon File
+
+Entries from the jargon file that I found interesting.
+
+
+- [121 reset](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#120%20reset): I just like the sound of it -- reminds me of 360 no-scope
+- [accumulator](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#accumulator): explains some unexpected usage of "accumulator" for things that aren't necessarily accumulating
+- [AFAIK](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#AFAIK): still commonly used, from Usenet
+- [AFK](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#AFK): still commonly used, from MUDs and IRC
+- [AI-complete](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#AI-complete): interesting because it describes problems as "too hard" which have now been effectively solved
+- [AIDS](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#AIDS): funny pejorative for Apple and Amiga machines
+- [airplane rule](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#airplane%20rule): useful guideline -- simplicity increases robustness
+- [Aliasing bug](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#aliasing%20bug): alternative name for what I would call a stale or dangling pointer
+- [Amiga Persecution Complex](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Amiga%20Persecution%20Complex): funny phrase from a time when platforms were less homogenized
+- [amp off](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#amp%20off): useful phrase for starting a command in the background
+- [angry fruit salad](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#angry%20fruit%20salad): funny phrase for poorly designed UIs 
+- [ANSI standard pizza](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ANSI%20standard%20pizza): funny name for pepperoni and mushroom pizza
+- [AOL!](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#AOL%21): interesting to see how Usenet felt about the influx of new users in the 90s. I feel like adoption of smartphones had a similar effect on the Internet
+- [app](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#app): interesting to see a definition that has nothing to do with smartphones
+- [arena](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#arena): I didn't know that's what it was called
+- [ASCII](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ASCII): interesting history. Still fundamental to computing, if largely through UTF-8 backward-compatibility
+- [automagically](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#automagically): I've heard and probably used this term many times. It didn't occur to me that it isn't heard much outside of an IT context
+- [baggy pantsing](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#baggy%20pantsing): apparently an early example of similar pranks I've seen involving computers left unattended
+- [banana problem](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#banana%20problem): useful phrase for bugs involving termination conditions not occurring
+- [binary four / 00100](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#binary%20four): funny but silly reference to the finger
+- [batbelt](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#batbelt): funny relic from a time before a single device could do everything
+- [baroque](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#baroque): useful term for something that is overly complicated or excessive
+- [bazaar](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bazaar): term for the open-source practice of releasing early and often, and getting a lot of eyes on the code
+- [beige toaster](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#beige%20toaster): pejorative term for old Macs
+- [Berzerkeley / Berkeley Quality Software](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Berkeley%20Quality%20Software): apparently Berkeley had a certain reputation?
+- [beta](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#beta): interesting historical notes on a common term
+- [BiCapitalization](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#BiCapitalization): term for ProductName capitalization that is maybe less common now but was definitely in fashion for a while
+- [Big Red Switch](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Big%20Red%20Switch): interesting notes on the signifiance of the power switch on a mainframe
+- [Big Room / Big Blue Room](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Big%20Room): took me too long to realize what this refers to
+- [bitty box](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bitty%20box): pejorative term for a relatively primitive machine
+- [black art](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#black%20art): useful term for knowledge that is not widely known and has few sources to learn from
+- [black magic](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#black%20magic): useful term for techniques that are used without understanding them fully
+- [Black Screen of Death](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Black%20Screen%20of%20Death): I didn't know there was a BSOD other than the blue one
+- [blink](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#blink): interesting that methods of limiting online connection time were needed due to cost
+- [blinkenlights](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#blinkenlights): funny entry on blinking lights found more commonly on old machines
+- [blitter](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#blitter): interesting because the IBM PC never had one, or it was uncommon, which I guess is part of why the Amiga had superior graphics at the time
+- [blow away](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#blow%20away): I've definitely heard and used this phrase
+- [Blue Screen of Death](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Blue%20Screen%20of%20Death): classic
+- [BOFH](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#BOFH): I feel like I've come across some of the associated stories before
+- [bogo-sort](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bogo-sort): It never occurred to me that bubble sort is not really the worst possible way to sort, it's just the worst way that is somewhat reasonable
+- [bogus](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bogus): interesting because it seems to have a long history
+- [Borg](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Borg): interesting because I feel Microsoft is no longer as Borg-like these days
+- [borken / borked](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#borken): I have heard and used "borked" without really considering its relationship to "broken". It just sounds right
+- [bot](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bot): interesting that "bot" only displaced "robot" in the 90s
+- [bottom-up implementation](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bottom-up%20implementation): interesting thoughts about bottom-up, top-down, and middle-out approaches
+- [bounce](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bounce): commonly used alternative to rebooting in my experience
+- [box / boxen](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#box): funny plural form of box (as in computer/machine)
+- [boxed comments](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#boxed%20comments): useful -- I've never heard a name for this other than "multi-line comment"
+- [brain dump](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#brain%20dump): I've certainly heard this, its just an odd phrase now that I stop to think about it
+- [braino](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#braino): I assumed this would mean something used to unclog/unblock your brain, but it's more like "brain typo"
+- [bread crumbs](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bread%20crumbs): interesting because it's _not_ refering to navigation trails on a webpage
+- [BrokenWindows](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#BrokenWindows): one of several entries hating on Sun workstations
+- [Brooke's Law](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Brooks%27s%20Law): useful wisdom, "adding manpower to a late software project makes it later"
+- [browser](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#browser): interesting because web browsers somewhat displaced a more general use of the term "browser"
+- [brute force](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#brute%20force): interesting for making points in favor of selectively applying brute-force solutions rather than simply hating on them as you might expect
+- [bubble sort](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bubble%20sort): similarly, interesting for pointing out that bubble sort is empirically okay below 5000 items
+- [bug](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#bug): interesting for historical information, including the fact that "bug" appears to have already been in use prior to that well-known "first computer bug" factoid
+- [buried treasure](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#buried%20treasure): funny term for burried code that works in unexpected ways
+- [burn-in](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#burn-in%20period): interesting for historical origins
+- [byte](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#byte): interesting because I didn't know the spelling was intended to make it more distinct from "bit"
+- [C Programmer's Disease](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#C%20Programmer%27s%20Disease): useful term for for the semi-arbitrary fixed array sizes seen in a lot of C code
+- [can't happen](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#can%27t%20happen): true
+- [cargo cult programming](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cargo%20cult%20programming): I've heard this before, ~~but I can't really imagine an example of it~~ I suppose [this](https://stackoverflow.com/questions/31162367/significance-of-ios-basesync-with-stdiofalse-cin-tienull) is an example
+- [cascade](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cascade): useful term for what C++ compilers tend to do
+- [cathedral](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cathedral): interesting for contrast with "bazaar"
+- [cdr](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cdr): interesting because of the historic origin of the odd terms "cdr" and "car"
+- [channel](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#channel): interesting because it is solely about IRC channels
+- [chase pointers](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#chase%20pointers): aside from the obvious, useful term for following leads to find someone who has what you need
+- [Classic C](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Classic%20C): interesting to consider that C was at one point in use but not standardized yet
+- [clean](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#clean): commonly used to mean "elegant" or "devoid of cruft"
+- [clobber](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#clobber): useful term for overwriting/destroying previous data, especially unintentionally
+- [code / codes](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#code): I feel an unreasonable disgust when someone uses "code" as a countable noun, as in "write a code". However "codes" was apparently a common way to refer to "programs" in the scientific computing community at some point
+- [cobweb site](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cobweb%20site): interesting because the concept feels outdated. Nearly all web content I access is some kind of well-maintained information source, semi-disposable user-generated content within a well-maintained website, or news that is only temporarily relevant
+- [Compu$erve](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Compu$erve): pejorative for CompuServe which is definitely a name I've heard but I never knew what it was
+- [computer geek](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#computer%20geek): interesting because I feel like there used to be a much greater distinction between "computer people" and "normal people" that is substantially less pronounced today
+- [condition out](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#condition%20out): useful term for putting code in a dead code path to effectively "comment it out"
+- [console](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#console): interesting for clarifying the historical distinction between terminal and console, which is used mostly interchangeably today
+- [content free](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#content-free): useful term for a lot of words that don't really say anything
+- [Conway's Law](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Conway%27s%20Law): useful wisdom, and also related to my observation that the way groups are organized and the incentives or goals the groups are given has a large impact on the system or product they work on. It's not just about dividing labor efficiently
+- [cooked mode / raw mode / rare mode](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cooked%20mode): funny terms for character-input modes
+- [cookie](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cookie): useful alternative for handle or token, and interesting because it partly explains why browser cookies are called that
+- [cookie jar](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cookie%20jar): useful term for a collection of identifiers that signify the presence of things
+- [core dump](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#core%20dump): interesting because it is still in common use but refers to a long-obsolete form of memory
+- [cosmic rays](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cosmic%20rays): interesting because I was led to believe that cosmic rays were actually a possible, though rare, reason for bits to flip randomly
+- [cow orker](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cow%20orker): funny typo of coworker
+- [crapplet](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#crapplet): pejorative for applet, which is mainly interesting because Java applets and the term applet more generally seem to have gone away
+- [crash](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#crash): interesting because of etymology
+- [CP/M](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#CP%2fM): interesting history
+- [crayola / crayon](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#crayola): funny terms related to Cray supercomputers
+- [creationism](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#creationism): useful term for the demonstrably false idea that software can be fully designed and implemented successfully all at once with no iteration
+- [creeping featurism](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#creeping%20featurism): useful term for the tendency of questionable features to be added over time
+- [cross-post](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cross-post): interesting because I thought the term started with Reddit
+- [cruft](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#cruft): useful, common, but kind of odd word for messy, ugly, or otherwise unpleasant stuff
+- [crumb](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#crumb): possibly useful term for 2 bits
+- [crunch](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#crunch): common term for time-consuming computation
+- [C|N>K](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#C%7cN%3eK): excessively nerdy way to describe laughing
+- [daemon](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#daemon): interesting etymological history
+- [dancing frog](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dancing%20frog): useful term for a problem that doesn't occur when anyone else is watching
+- [dangling pointer](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dangling%20pointer): more common term, in my experience, for aliasing bug
+- [dd](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dd): interesting history
+- [dead code](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dead%20code): useful and common term for branches of code that will never occur in practice
+- [DEADBEEF](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#DEADBEEF): funny filler value for unused memory
+- [deep magic](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#deep%20magic): useful term for knowledge that can't be easily found or learned
+- [demigod](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#demigod): useful term for certain notable people
+- [demo](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#demo): common abbreviation for demonstration
+- [demoscene](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#demoscene): interesting subculture that wasn't much of "a thing" in the U.S. from what I can tell
+- [deprecated](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#deprecated): common term that non-programmers seem to get confused with "depreciated"
+- [die horribly](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#die%20horribly): sounds familiar to me
+- [dinosaur / dinosaur pen](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dinosaur): funny terms for an old mainframe or minicomputer as well as the room they sit in
+- [dogcow](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dogcow): interesting because the description is not making any sense to me
+- [dogfood](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dogfood): seems to have become common in my experience. I just heard it the other day in fact
+- [domainist](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#domainist): funny because I'm guilty of judging "hotmail", "aol", "outlook", and, to a lesser extent, "yahoo" email domains
+- [dot file](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dot%20file): still very relevant
+- [Don't do that then!](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Don%27t%20do%20that%20then%21): funny but good advice
+- [drunk mouse syndrome](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#drunk%20mouse%20syndrome): funny term for an issue I remember encountering but which doesn't happen much anymore
+- [Duff's device](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Duff%27s%20device): interesting technique for partially unrolling a loop
+- [DWIM](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#DWIM): arguably a valid UX design goal?
+- [dynner](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#dynner): funny but silly term for 32 bits
+- [Easter egg](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Easter%20egg): common term, but sadly uncommon these days
+- [EBCDIC](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#EBCDIC): interesting given that ASCII has been ubiquitous for a long time now
+- [ed](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ed): interesting mainly for historical value
+- [El Camino Bignum](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#El%20Camino%20Bignum): funny but silly pun on El Camino Real
+- [elder days](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#elder%20days): useful term for pre-1980 computing
+- [elegant](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#elegant): common and useful term for simple yet effective tools or designs
+- [elevator controller](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#elevator%20controller): more realistic alternative to "toaster" as a dumb or constrained device
+- [EMACS](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#EMACS): I encountered a few people around 2010 who were EMACS users but I've never seen anyone use or reference it recently
+- [emoticon](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#emoticon): I still prefer them to emoji when applicable
+- [EOF](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#EOF): interesting because I guess I didn't realize this is system-specific and not an ASCII control character
+- [EOU](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#EOU): funny hypothetical control character that ends the user
+- [epoch](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#epoch): interesting because of historically different definitions across systems
+- [exercise left as an](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#exercise%20left%20as%20an): something I hate to see
+- [Exploder](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Exploder): pejorative for Windows Explorer
+- [fall over](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#fall%20over): common alternative for crashing or entering the state of being down
+- [fall through](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#fall%20through): interesting for historical note
+- [FAQ](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#FAQ): interesting because it implies it originated with Usenet. ChatGPT corroborates this.
+- [fascist](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#fascist): useful term for a system with annoying limits or policies
+- [feature key](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#feature%20key): interesting because I've never heard it called anything other than the command key
+- [feep](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#feep): interesting because it seems to describe what I think everyone would call a "beep"
+- [fence](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#fence): useful term for delimiter. I suppose I have heard it in regard to markdown code "fences"
+- [fencepost error](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#fencepost%20error): useful term for a specific type of off-by-one error
+- [FidoNet](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#FidoNet): interesting because it may still exist and be worth exploring
+- [film at 11](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#film%20at%2011): funny way of saying more information will be available later
+- [filter](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#filter): useful term for a program which reads STDIN and writes to STDOUT in a well-defined way
+- [firefighting](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#firefighting): common way (more commonly "fighting fires") to describe dealing with operational issues instead of building things
+- [FIXME](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#FIXME): common way to mark things that should be fixed later
+- [flag](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#flag): common way to say "boolean value"
+- [flag day](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#flag%20day): useful term for a planned, disruptive outage
+- [flame](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#flame): "flame war" used to be a common phrase, but it feels somehow less relevant or replaced with alternatives now
+- [flat](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#flat): common and useful term for data that lacks a hierarchical structure
+- [flavor](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#flavor): common, useful term for a variety of something
+- [flush](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#flush): interesting for having two almost opposing definitions historically
+- [foo](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#foo): interesting for the extended list of metasyntactic variable names
+- [for free](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#for%20free): common phrase for that which can essentially be taken for granted
+- [Fortrash](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Fortrash): funny pejorative for Fortran
+- [frag](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#frag): interesting because I don't know why the term was used (rather than simply "kill") or why we stopped using it
+- [front end](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#front%20end): interesting because the definition doesn't include the most common meaning of today
+- [fscking](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#fscking): funny because the 'fsck' command is always funny
+- [fudge factor](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#fudge%20factor): common, I think, but kind of an odd term
+- [geek out](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#geek%20out): common
+- [General Public Virus](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#General%20Public%20Virus): funny term for versions of the GPL that require downstream code to be similarly free
+- [Get a life!](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Get%20a%20life%21): interesting for notes about origin of the phrase
+- [Get a real computer!](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Get%20a%20real%20computer%21): interesting because of changing definitions for what constitutes a "real computer"
+- [glob](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#glob): common, still very relevant, interesting for historical note
+- [glue](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#glue): common
+- [gnarly](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#gnarly): common but weird
+- [Godwin's Law](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Godwin%27s%20Law): still gets brought up regularly today
+- [grep](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#grep): common, still very relevant, interesting for etymology / history
+- [gribble](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#gribble): useful term for rendering of arbitrary data as meaningless text
+- [grok](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#grok): I had only encountered this term a few times, but the Grok AI has made it much more significant
+- [ha ha only serious](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ha%20ha%20only%20serious): basically another form of "haha just kidding... but seriously though"
+- [hack](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hack): interesting to see definitions because I feel it has become almost meaningless due to overuse
+- [Hackintosh](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Hackintosh): interesting because it had earlier meanings than the one I grew up with
+- [hairy](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hairy): common but weird, interesting note about origins
+- [Halloween Documents](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Halloween%20Documents): interesting history from Microsoft's more blatantly evil days
+- [handle](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#handle): interesting because I don't hear it used much anymore in either sense, nor do I really hear "nickname" or "screen name". I think "username" and "display name" are the standard now.
+- [handwave](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#handwave): useful and, I think, common term
+- [hang](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hang): common term for stuck but not necessarily down
+- [Hanlon's Razor](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Hanlon%27s%20Razor): commonly referenced, I don't think of it as specifically a tech thing
+- [happily](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#happily): common, never considered it a computing term even with this definition
+- [heavy wizardry](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#heavy%20wizardry): useful term for something less mysterious than black magic
+- [heisenbug](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#heisenbug): useful term for a common situation where a bug is hard to reproduce reliably
+- [Helen Keller mode](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Helen%20Keller%20mode): horrible but hilarious
+- [hello world](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hello%20world): interesting for historical origins
+- [hidden flag](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hidden%20flag): a common questionable practice
+- [highly](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#highly): common, never thought much about it, as in the phrase "highly unlikely"
+- [holy wars](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#holy%20wars): interesting for the list of holy wars
+- [home box](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#home%20box): interesting because the concept of a home box is kind of fuzzy and/or irrelevant now
+- [home machine](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#home%20machine): interesting because these days "the machine that receives your email" is almost certainly a server farm somewhere that you've never seen
+- [home page](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#home%20page): interesting because, even if some people do have a personal website of some kind, it probably is never referred to as their "home page"
+- [hook](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hook): still common and relevant
+- [hop](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hop): still common and relevant
+- [hosed](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hosed): common in my experience, but odd
+- [hot spot](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hot%20spot): common term in the context of performance/profiling, I believe
+- [How does one patch KDE2 under FreeBSD?](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#How%20does%20one%20patch%20KDE2%20under%20FreeBSD?): interesting because it seems to be some kind of exotic meme
+- [HP-SUX](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#HP-SUX): funny pejorative for HP-UX
+- [hysterical reasons](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#hysterical%20reasons): funny play on "for historical reasons"
+- [I didn't change anything!](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#I%20didn%27t%20change%20anything%21): it's true
+- [IANAL](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#IANAL): common on Reddit, started on Usenet apparently
+- [ID10T error](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ID10T%20error): I remember we thought this was funny in high school
+- [idempotent](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#idempotent): common and necessary, but a strange word
+- [If you want X you know where to find it.](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#If%20you%20want%20X%20you%20know%20where%20to%20find%20it.): sassy and funny
+- [ifdef out](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ifdef%20out): useful alternative to commenting out
+- [IIRC](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#IIRC): common and useful acronym
+- [ill-behaved](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ill-behaved): useful term for non-conforming or problematic behavior
+- [IMHO](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#IMHO): common and useful acronym
+- [incantation](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#incantation): useful term for any weird step needed to make things work as desired
+- [indent style](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#indent%20style): interesting for the discussion and historical notes
+- [insanely great](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#insanely%20great): sounds familiar
+- [INTERCAL](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#INTERCAL): interesting for historical info
+- [interesting](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#interesting): I certainly use it in the way defined here
+- [Internet Exploder](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Internet%20Exploder): funny pejorative for Internet Explorer
+- [interrupt list](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#interrupt%20list): interesting reminder of how messy the DOS world apparently was
+- [Iron Age](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Iron%20Age): useful term for the 60's
+- [iron box](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#iron%20box): interesting technique, possibly still used for all I know
+- [ISO standard cup of tea](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ISO%20standard%20cup%20of%20tea): funny term for particular preparation of tea
+- [jiffy](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#jiffy): useful term for one system clock tick
+- [juggling eggs](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#juggling%20eggs): useful term for tracking too much state in your head
+- [killer micro](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#killer%20micro): interesting reminder of a time before ubiquitous (micro) computers
+- [language lawyer](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#language%20lawyer): something that I feel applies very much to C++
+- [languages of choice](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#languages%20of%20choice): interesting because it feels pretty out-of-date. "Nobody" uses Perl or Smalltalk as far as I know. Also it says "Python has been gaining popularity" which would be an understatement today.
+- [laser chicken](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#laser%20chicken): never heard this, skeptical anyone actually called it that
+- [like kicking dead whales down the beach](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#like%20kicking%20dead%20whales%20down%20the%20beach): never heard it but it's a great metaphor
+- [linearithmic](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#linearithmic): useful because it sounds more academic than "oh en log en"
+- [lint](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#lint): interesting for origin of the term
+- [Linux](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Linux): interesting because apparently it's supposed to be pronounced "Leenux" but nobody says it that way
+- [LISP](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#LISP): interesting for historical info
+- [livelock](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#livelock): useful, probably common in the right context but I don't think I've heard it
+- [lots of MIPS but no I/O](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#lots%20of%20MIPS%20but%20no%20I%2fO): funny term for a possibly neurodivergent person
+- [Lumber Cartel](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Lumber%20Cartel): funny story
+- [luser](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#luser): funny pejorative for a user
+- [M$](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#M$): reminds me of when Microsoft was the big, bad monopoly
+- [Macintrash](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Macintrash): funny pejorative for Macs
+- [macdink](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#macdink): useful term for the way many things seem to have perpetual, superficial changes made to them
+- [magic](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#magic): common term for something not understood or even just not worth explaining
+- [magic cookie](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#magic%20cookie): useful term for opaque identifier, interesting as the likely root of browser cookie
+- [magic number](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#magic%20number): common, but most often in the sense of an unexplained number
+- [magic smoke](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#magic%20smoke): interesting because I thought this term was largely from a Reddit meme
+- [manularity](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#manularity): useful term for a quantity of non-automatedness
+- [meme / meme plague](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#meme): interesting because it does not describe meme as it is commonly used today
+- [memory smash](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#memory%20smash): useful term for writing to an unintended place in memory
+- [mess-dos](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#mess-dos): not-so-funny pejorative for MS-DOS
+- [meta](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#meta): common term with many uses
+- [metasyntactic variable](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#metasyntactic%20variable): useful, the term for foo, bar, etc. Also interesting for the list of them
+- [Microsloth Windows](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Microsloth%20Windows): mildly funny pejorative for Microsoft Windows, but the entry contains funnier ones
+- [mockingbird](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#mockingbird): sounds like a specific kind of man-in-the-middle attack
+- [monstrosity](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#monstrosity): common term for big and hairy
+- [Moore's Law](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Moore%27s%20Law): of course
+- [MS-DOS](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#MS-DOS): interesting for historical info
+- [mu](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#mu): theoretically useful but nobody will know what you mean
+- [MUD](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#MUD): interesting for historical info
+- [nailing jelly](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#nailing%20jelly): useful phrase for something hopelessly difficult
+- [nastygram](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#nastygram): I have heard this in reference to an angry email
+- [neats vs. scruffies](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#neats%20vs.%20scruffies): interesting difference in approaches, especially with recent focus on AI
+- [nerd](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#nerd): interesting for historical origins
+- [nethack](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#nethack): interesting project that is still around
+- [New Testament / Old Testament](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#New%20Testament): funny names for the 1st and 2nd editions of The C Programming Language book
+- [NeWS](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#NeWS): interesting because it sounded like a good idea
+- [Nominal Semidestructor](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Nominal%20Semidestructor): funny pejorative for National Semiconductor
+- [nonlinear](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#nonlinear): I like the idea of describing angry behavior as nonlinear
+- [nuke](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#nuke): somewhat common term for deleting a lot of things in my experience
+- [nyetwork](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#nyetwork): funny but silly term for a network that is not working
+- [Objectionable-C](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Objectionable-C): hilarious pejorative for Objective-C, and I agree
+- [off-by-one error](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#off-by-one%20error): useful term for a common type of bug
+- [offline](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#offline): commonly used in the sense "let's continue this discussion separately, later"
+- [orthogonal](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#orthogonal): commonly used in the sense of something being separate or independent
+- [out-of-band](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#out-of-band): useful term for values with a special meaning in a given context or information channel
+- [page out](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#page%20out): I like it as an alternative to "zone out"
+- [param / arg / var](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#param): short form of parameter (and argument, variable) that bothers me, especially when spoken out loud
+- [parity errors](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#parity%20errors): useful term for minor brain malfunction
+- [Parkinson's Law of Data](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Parkinson%27s%20Law%20of%20Data): very true, my storage always becomes full. Also counter-top space
+- [Pascal](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Pascal): interesting for historical info
+- [PC-ism](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#PC-ism): useful term for things that would be done in a DOS environment
+- [Pentagram Pro](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Pentagram%20Pro): mildly funny pejorative for Pentium Pro
+- [ping](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#ping): common, interesting for historical info
+- [plan file](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#plan%20file): interesting as a historical artifact
+- [plug-and-pray](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#plug-and-pray): funny pejorative for plug-and-play which actually works quite well these days
+- [profile](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#profile): all definitions still pretty common and relevant
+- [Programmer's Cheer](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Programmer%27s%20Cheer): embarassing
+- [programming fluid](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#programming%20fluid): necessary
+- [rc file](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#rc%20file): interesting because it apparently comes from "runcom file" used in some Iron Age system
+- [Real World](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Real%20World): familiar in the sense of "location of non-programmers and activites not related to programming", or "place I'm supposedly building this for"
+- [rice box](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#rice%20box): questionable term for an Asian-made computer (not sure if this refers to things like the Sharp X1, NEC PC8801, or what)
+- [say](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#say): interesting because I never considered that it might be odd to use "say" in the ways described
+- [screwage](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#screwage): useful term for something intentionally made lacking or difficult
+- [second-system effect](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#second-system%20effect): interesting observation that the second version of something successful may be bloated or overly complex
+- [September that never ended](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#September%20that%20never%20ended): interesting that Usenet activity from AOL users was so significant
+- [sharing violation](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#sharing%20violation): hilarious alternative to what would commonly be called TMI / too much information
+- [shell](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#shell): interesting because, in addition to the common usage, it apparently has also been used to mean what I would call a "skeleton" or framework
+- [showstopper](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#showstopper): interesting because I never considered that the usage is inverted from its meaning outside of software
+- [slashdot effect](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#slashdot%20effect): interesting because it lives on as the "Reddit kiss of death" or similar
+- [slopsucker](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#slopsucker): useful term for a process that has low priority
+- [slurp](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#slurp): the definition is specifically about reading all relevant data into memory, but I may use it the same way as "snarf" below
+- [smash the stack](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#smash%20the%20stack): useful term for writing to memory beyond the current stack frame
+- [snarf](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#snarf): fun word for fetching data or otherwise consuming something
+- [sock puppet](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#sock%20puppet): another term I mostly associate with Reddit and Twitter/X but that is actually much older
+- [space-cadet keyboard](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#space-cadet%20keyboard): historical keyboard with a ton of modifier keys
+- [SPACEWAR](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#SPACEWAR): interesting for historical significance
+- [spaghetti code](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#spaghetti%20code): common term for poorly structured code
+- [spaghetti inheritance](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#spaghetti%20inheritance): less common term for poorly structured inheritance
+- [spider food](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#spider%20food): fun term for a kind of SEO
+- [spiffy](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#spiffy): haven't heard this in a while
+- [sponge](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#sponge): useful term for a filter that must read all input before producing output
+- [Stone Age](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Stone%20Age): useless term for the 1940's and 50's
+- [superloser](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#superloser): funny term for a reckless root user
+- [swizzle](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#swizzle): useful term for replacing indirect pointers to things with more direct ones for efficiency reasons
+- [tar and feather](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#tar%20and%20feather): more meaningful and funnier term for a tar archive that has been compressed
+- [tarball](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#tarball): interesting for note about tar baby of which I'm skeptical. This word gives me the ick, not sure why. Probably because it sounds like hairball
+- [text](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#text): interesting for the fact that it has two opposing definitions (textual, non-executable data and the "text" section of a binary containing executable code)
+- [thanks in advance](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#thanks%20in%20advance): interesting for being associated with Usenet when I thought it was just a common phrase in general
+- [the network](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#the%20network): interesting for the reminder that non-Internet networks existed
+- [This time for sure!](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#This%20time%20for%20sure%21): feeling and thought I often have when trying to fix something
+- [thrash](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#thrash): common in my experience, specifically when it comes to hard disks constantly reading/writing
+- [throwaway account](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#throwaway%20account): interesting because it refers specifically to a cheap "Internet account" as opposed to a temporary (free) account on a specific site
+- [thunk](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#thunk): interesting because I've encountered this term in the context of pointers to functions and wondered why it would be called that
+- [trampoline](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#trampoline): another term I've come across occasionally and wondered about. I'm not sure what I saw is quite what this entry describes
+- [trap](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#trap): still common in relation to interrupts, although I think the main usage I see is the trap command in shell scripts
+- [trap door](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#trap%20door): term for one-way cryptographic function
+- [troll](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#troll): interesting for origins on Usenet as well as the idea that it is in reference to a style of fishing called trolling. I had assumed it just had something to do with trolls being ugly, undesirable creatures.
+- [Turing tar-pit](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Turing%20tar-pit): useful term for a language that is powerful but difficult to use in practice
+- [unixism](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#unixism): interesting for the idea that things we take for granted today came out of unix "winning" against other fancy multitasking OSes
+- [vaxocentrism](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#vaxocentrism): similarly, interesting for things that can be assumed on VAX but not necessarily on Unix
+- [virtual Friday](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#virtual%20Friday): useful term for when the last day of the work week is not Friday due to a holiday
+- [walking drives](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#walking%20drives): interesting phenomenon, hard to imagine
+- [wall follower](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#wall%20follower): interesting for the anecdote about a simple solution outperforming ones that try to be smart
+- [webify](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#webify): interesting because everything is probably already webified or is webified from the start these days
+- [webmaster](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#webmaster): I suppose this is still a role, but how often is it one person and/or not mostly managed by a hosting service?
+- [wedged](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#wedged): common and fun way to say something is hung or broken
+- [well-behaved](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#well-behaved): common way to say something behaves in expected and predictable ways (not ill-behaved)
+- [What's a spline?](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#What%27s%20a%20spline%3f): interesting anecdote related to something I experience where I avoid asking a question for too long and then feel like I can't ask it anymore
+- [wheel](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#wheel): interesting because I was wondering why the superuser group is often called "wheel"
+- [wheel of reincarnation](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#wheel%20of%20reincarnation): maybe still holds true, although more in the sense that the CPU and other chips become part of an SoC rather than the CPU itself becoming responsible for other functions
+- [win](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#win): interesting because I first noticed "win" used as a kind of early Internet term for a success or anything "good". Then I found it being used in professional environments, e.g. "easy win" being something worth improving that doesn't require much effort
+- [winged comments](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#winged%20comments): interesting because I've never heard this; people call them "inline comments" in my experience
+- [Wintel](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Wintel): nostalgic
+- [WYSIAYG](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#WYSIAYG): variation of WYSIWYG emphasizing the limitations of many GUIs
+- [Zero-One-Infinity Rule](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#Zero-One-Infinity%20Rule): guideline saying limits shouldn't be arbitrary (should be zero, one, or unbounded)
+- [zeroth](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#zeroth): interesting because I never considered that this is sort of a meaningless word outside of a programming context
+- [zigamorph](https://web.archive.org/web/20130827121341/http://cosman246.com/jargon.html#zigamorph): interesting because I didn't know there was a Unicode non-character / end-of-string value

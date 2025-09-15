@@ -2,8 +2,8 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1735622539.916456" />
-        <link rel="stylesheet" href="vim.css?v=1735622539.916456" />
+        <link rel="stylesheet" href="style.css?v=1762831290.6753502" />
+        <link rel="stylesheet" href="vim.css?v=1762831290.6753502" />
         <title>gdtyra :: Data Migrations</title>
     </head>
     <body>
@@ -16,11 +16,12 @@
   <ul>
     <li><a href="#migrating-via-a-secondary-background-process">Migrating via a secondary background process</a></li>
     <li><a href="#migrating-as-part-of-regular-operations">Migrating as part of regular operations</a></li>
+    <li><a href="#strategies-for-handling-breaking-changes">Strategies for handling breaking changes</a></li>
   </ul></li>
 </ul>
 
     <h1>Other Pages</h2>
-    <ul><li><a href="things_of_interest.html">Things of Interest</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="arch_linux.html">Arch Linux</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="unix_commands.html">Unix Commands</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="python_and_pip.html">Python and PIP</a></li><li><a href="docker.html">Docker</a></li><li><a href="node_and_npm.html">Node and NPM</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li></ul>
+    <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
     </nav>
     </div>
     <div class="column">
@@ -68,8 +69,53 @@
 
 <p>Alternatively, data can be migrated if and when it is accessed. For example, if user accounts are being migrated or merged into a different system, users may be required to verify and update their information and credentials the next time they attempt to login. After some time, only the least regular users (or, more generally, least frequently accessed data) remains unmigrated and can be dealt with via a secondary process with a smaller scope that is less likely to impact the users or data that are most often needed.</p>
 
+<h2 id="strategies-for-handling-breaking-changes">Strategies for handling breaking changes</h2>
+
+<h3 id="upcasting-transformation">Upcasting / Transformation</h3>
+
+<ul>
+<li>Data remains stored with its original schema version</li>
+<li>Upcasting logic appropriate for a given schema version runs at read-time to transform the data to a current, standard representation</li>
+<li>Upcasting logic grows, can become complicated, and must be maintained indefinitely</li>
+<li>Lowers operational risk and complexity while increasing runtime cost and maintenance complexity</li>
+</ul>
+
+<h3 id="versioned-schemas">Versioned Schemas</h3>
+
+<ul>
+<li>Similar to upcasting, data is stored in its original form with an associated type or version identifier</li>
+<li>Unlike upcasting, the data is consumed throughout the system in its original form with version-specific logic maintained where needed</li>
+<li>Stored data remains untouched, but decentralized, version-specific logic makes the system more complex</li>
+</ul>
+
+<h3 id="backward-compatible-schema-evolution">Backward-compatible Schema Evolution</h3>
+
+<ul>
+<li>The schema is modified using only backward-compatible changes (adding new optional fields with default values)</li>
+<li>No transformations or version-specific logic needed</li>
+<li>Simplest option, but can't handle truly breaking semantic changes</li>
+</ul>
+
+<h3 id="copy-and-transform">Copy-and-Transform</h3>
+
+<ul>
+<li>Perform an "offline" process to read, transform, and write records to a new schema</li>
+<li>Runtime system logic only needs to consider the current schema, no transformation or legacy code</li>
+<li>Greater operational risk, including potential downtime and irreversible data loss</li>
+<li>Makes sense when necessary to simplify the codebase and when a controlled migration window is acceptable</li>
+</ul>
+
+<h3 id="dual-write-shadowing">Dual-Write / Shadowing</h3>
+
+<ul>
+<li>Records are written to new and old schemas by the live system in parallel</li>
+<li>Consumers gradually switch to reading from the new schema</li>
+<li>The old schema can be retired once all consumers are migrated</li>
+<li>Can eliminate any disruption to operations at the cost of temporary overhead and complexity</li>
+</ul>
+
     <footer>
-    <p class="generated_date">Generated on December 30 2024</p>
+    <p class="generated_date">Generated on November 10 2025</p>
     </footer>
     </article>
     </div>

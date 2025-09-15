@@ -2,9 +2,9 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1735622539.916456" />
-        <link rel="stylesheet" href="vim.css?v=1735622539.916456" />
-        <title>gdtyra :: Unix Commands</title>
+        <link rel="stylesheet" href="style.css?v=1762831290.6753502" />
+        <link rel="stylesheet" href="vim.css?v=1762831290.6753502" />
+        <title>gdtyra :: Command Reference</title>
     </head>
     <body>
     <div id="main">
@@ -12,7 +12,7 @@
     <nav>
     <h1>Table of Contents</h1>
     <ul>
-  <li><a href="#unix-commands">Unix Commands</a>
+  <li><a href="#command-reference">Command Reference</a>
   <ul>
     <li><a href="#tar-manipulate-tar-files"><code>tar</code> - manipulate tar files</a></li>
     <li><a href="#find-find-files-and-directories-matching-criteria"><code>find</code> - find files and directories matching criteria</a></li>
@@ -34,22 +34,29 @@
     <li><a href="#mount-manage-mounted-filesystems"><code>mount</code> - manage mounted filesystems</a></li>
     <li><a href="#watch-run-a-command-repeatedly-to-observe-changes"><code>watch</code> - run a command repeatedly to observe changes</a></li>
     <li><a href="#rsync-copy-and-mirror-directory-structures"><code>rsync</code> - copy and mirror directory structures</a></li>
-    <li><a href="#git-the-source-control"><code>git</code> - <em>the</em> source control</a></li>
+    <li><a href="#git-the-only-source-control-anyone-cares-about-anymore"><code>git</code> - the only source control anyone cares about anymore</a></li>
+    <li><a href="#go-for-the-very-limited-golang-exposure-i-have"><code>go</code> - for the very limited golang exposure I have</a></li>
+    <li><a href="#cmake-the-closest-thing-to-a-standard-cc-build-system"><code>cmake</code> - the closest thing to a standard C/C++ build system</a></li>
+    <li><a href="#winget-windows-has-a-package-manager-too"><code>winget</code> - Windows has a package manager, too</a></li>
+    <li><a href="#npm-because-i-cant-avoid-it-these-days"><code>npm</code> - because I can't avoid it these days</a></li>
+    <li><a href="#docker-work-with-containers"><code>docker</code> - work with containers</a></li>
+    <li><a href="#python-and-pip"><code>python</code> and <code>pip</code></a></li>
+    <li><a href="#pacman-arch-linux-package-manager"><code>pacman</code> - Arch linux package manager</a></li>
+    <li><a href="#apt-more-common-package-manager"><code>apt</code> - More common package manager</a></li>
     <li><a href="#ruby-using-ruby-for-one-liners"><code>ruby</code> - using Ruby for one-liners</a></li>
+    <li><a href="#ffmpeg-media-encoding"><code>ffmpeg</code> - media encoding</a></li>
     <li><a href="#miscellaneous">Miscellaneous</a></li>
   </ul></li>
 </ul>
 
     <h1>Other Pages</h2>
-    <ul><li><a href="things_of_interest.html">Things of Interest</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="arch_linux.html">Arch Linux</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="unix_commands.html">Unix Commands</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="python_and_pip.html">Python and PIP</a></li><li><a href="docker.html">Docker</a></li><li><a href="node_and_npm.html">Node and NPM</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li></ul>
+    <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
     </nav>
     </div>
     <div class="column">
     <div id="content">
     <article>
-    <h1 id="unix-commands">Unix Commands</h1>
-
-<p>This is a collection of notes relating to commands that are available in Linux and most Unix-like environments. In many cases only useful examples of a command are listed without a proper explanation of the command in general.</p>
+    <h1 id="command-reference">Command Reference</h1>
 
 <h2 id="tar-manipulate-tar-files"><code>tar</code> - manipulate tar files</h2>
 
@@ -242,8 +249,8 @@
 <li><code>-a</code> - archive mode which preserves permissions (owners, groups), times, symbolic links, and devices</li>
 <li><code>-r</code> - recurse into directories</li>
 <li><code>-z</code> - compress file data during transfer</li>
-<li><code>--exclude &lt;directory&gt;</code> â€“ excludes the given directory</li>
-<li><code>-P</code> â€“ show progress during the transfer</li>
+<li><code>--exclude &lt;directory&gt;</code> – excludes the given directory</li>
+<li><code>-P</code> – show progress during the transfer</li>
 <li><code>-n</code> - perform a dry-run without actually writing anything</li>
 <li><code>-i</code> - show changes</li>
 <li><code>-W</code> - transfer whole files; do not attempt a delta sync</li>
@@ -256,11 +263,13 @@
 <li><code>rsync -r -a -v -e ssh --delete /home/localuser/testfolder remoteuser@X.X.X.X:/home/remoteuser/testfolder</code> - sync a local folder to remote with archival flags set and deleting files that don't exist locally</li>
 </ul>
 
-<h2 id="git-the-source-control"><code>git</code> - <em>the</em> source control</h2>
+<h2 id="git-the-only-source-control-anyone-cares-about-anymore"><code>git</code> - the only source control anyone cares about anymore</h2>
 
 <ul>
 <li><code>git init</code> - initialize the current directory as a git repository</li>
 <li><code>git add origin &lt;uri&gt;</code> - add an upstream remote repository</li>
+<li><code>git add &lt;path&gt;</code> - stage modifications and new files under the given path</li>
+<li><code>git add --update &lt;path&gt;</code> - stage modifications but ignore new files</li>
 <li><code>git fetch</code> - update information from the origin</li>
 <li><code>git checkout -t origin/&lt;branch&gt;</code> - checkout a local copy of an upstream branch</li>
 <li><code>git push origin :&lt;branch&gt;</code> - delete a remote branch</li>
@@ -273,6 +282,94 @@
 <li><code>git reset --hard origin/&lt;branch&gt;</code> - discard committed changes that haven't yet been pushed</li>
 <li><code>git branch -d &lt;branch&gt;</code> - delete a local branch</li>
 <li><code>git diff HEAD~2 HEAD -- &lt;paths...&gt;</code> - compare paths between current and 2 revisions prior</li>
+<li><code>git diff &lt;commit&gt; -- &lt;paths...&gt;</code> - compare paths between current and a specific revision</li>
+<li><code>git submodule update --init --recursive</code> - pull down and register missing submodules</li>
+</ul>
+
+<h2 id="go-for-the-very-limited-golang-exposure-i-have"><code>go</code> - for the very limited golang exposure I have</h2>
+
+<ul>
+<li><code>go mod init &lt;name&gt;</code> - initialize a go module workspace</li>
+<li><code>go run &lt;go_file&gt;</code> - run a go file containing a main function</li>
+<li><code>go test -v</code> - run functions starting with "Test" found in file paths ending with "_test.go"</li>
+</ul>
+
+<h2 id="cmake-the-closest-thing-to-a-standard-cc-build-system"><code>cmake</code> - the closest thing to a standard C/C++ build system</h2>
+
+<ul>
+<li><code>cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake -S./source/directory -B./build/directory -G Ninja</code> - configure a vcpkg build</li>
+<li><code>cmake -DCMAKE_BUILD_TYPE=Debug -S./ -B./build</code> - configure a build with mostly default options</li>
+<li><code>cmake --build build/directory</code> - execute a previously configured build</li>
+</ul>
+
+<h2 id="winget-windows-has-a-package-manager-too"><code>winget</code> - Windows has a package manager, too</h2>
+
+<ul>
+<li><code>winget search &lt;term&gt;</code> - search packages by name, ID, tags</li>
+<li><code>winget add &lt;package&gt;</code> - install package via an unambiguous name or ID</li>
+</ul>
+
+<h2 id="npm-because-i-cant-avoid-it-these-days"><code>npm</code> - because I can't avoid it these days</h2>
+
+<ul>
+<li><code>npm init -y</code> - initialize the directory as an NPM package</li>
+<li><code>npm install &lt;package&gt;</code> or <code>npm i &lt;package&gt;</code> - install a package in this workspace</li>
+</ul>
+
+<h2 id="docker-work-with-containers"><code>docker</code> - work with containers</h2>
+
+<ul>
+<li><code>docker build -t &lt;image_name&gt; .</code> - From a directory with a Dockerfile, build an image with the given name</li>
+<li><code>docker build -t &lt;image_name&gt; -f &lt;dockerfile&gt; .</code> - Same, but with a custom Dockerfile path</li>
+<li><code>docker build --no-cache -t &lt;image_name&gt; .</code> - Same, but redo all cached build steps</li>
+<li><code>docker ps</code> - See currently running containers</li>
+<li><code>docker ps -a</code> - See all containers</li>
+<li><code>docker attach &lt;container_id&gt;</code> - Reattach to a running container</li>
+<li><code>docker commit &lt;container_id&gt; &lt;image_name&gt;</code> - Commit the state of a container to a new image</li>
+<li><code>docker stop &lt;container_id&gt;</code> - Stop a running container</li>
+<li><code>docker start &lt;container_id&gt;</code> - Restart a stopped container</li>
+<li><code>docker cp &lt;path/on/host&gt; &lt;container_id&gt;:&lt;path/in/container&gt;</code> - Copy files between host and container</li>
+<li><code>docker volume create &lt;volume_name&gt;</code> - Create a new volume</li>
+<li><code>docker volume ls</code> - List volumes</li>
+<li><code>docker run -it &lt;image_name&gt;</code> -  Start a container in TTY interactive mode</li>
+<li><code>docker run --rm ...</code> - auto-remove the container when it exits</li>
+<li><code>docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=docker.for.mac.host.internal:0 &lt;image_name&gt;</code> - Start a container while making XQuartz available to it</li>
+<li><code>docker run -it -v &lt;volume_name&gt;:&lt;path/in/container&gt; &lt;image_name&gt;</code> - Start a container with a volume attached</li>
+<li><code>docker run -it -v &lt;path/in/container&gt; &lt;image_name&gt;</code> - Start a container with a new, unnamed volume</li>
+<li><code>docker run -it -v &lt;path/on/host&gt;:&lt;path/in/container&gt; &lt;image_name&gt;</code> - Start a container with a host directory mounted</li>
+<li><code>docker container prune</code> - remove stopped containers</li>
+<li><code>docker rm &lt;container&gt;</code> - delete a container</li>
+<li><code>docker compose up -d</code> - create a container from a <code>docker-compose.yml</code> file in the current directory</li>
+<li><code>docker exec -it &lt;container&gt; &lt;command&gt;</code> - run a command within an existing, running container</li>
+</ul>
+
+<h2 id="python-and-pip"><code>python</code> and <code>pip</code></h2>
+
+<ul>
+<li><code>python -m venv ./venv</code> - create a virtual environment</li>
+</ul>
+
+<h2 id="pacman-arch-linux-package-manager"><code>pacman</code> - Arch linux package manager</h2>
+
+<ul>
+<li><code>pacman -Q</code> - list installed packages</li>
+<li><code>pacman -Qi</code> - list installed packages with detail</li>
+<li><code>pacman -Qe</code> - list packages explicitly installed by the user</li>
+<li><code>pacman -Qei</code> - list packages explicitly installed by the user with detail</li>
+<li><code>pacman -Qdtq</code> - list installed, orphaned packages</li>
+<li><code>pacman -Rs &lt;package_name&gt;</code> - remove package</li>
+<li><code>pacman -Rs $(pacman -Qdtq)</code> - remove orphaned packages</li>
+<li><code>pacman -Ss &lt;search_string&gt;</code> - search available packages</li>
+<li><code>pacman -S &lt;package_name&gt;</code> - install package</li>
+<li><code>pacman -Syu</code> - full system update</li>
+<li><code>pacman -Scc</code> - clean package cache</li>
+</ul>
+
+<h2 id="apt-more-common-package-manager"><code>apt</code> - More common package manager</h2>
+
+<ul>
+<li><code>apt update</code> - synchronize local index with repositories</li>
+<li><code>apt upgrade</code> - install all newer versions of installed packages</li>
 </ul>
 
 <h2 id="ruby-using-ruby-for-one-liners"><code>ruby</code> - using Ruby for one-liners</h2>
@@ -289,10 +386,10 @@
 <li><code>-l</code>- enables automatic line-ending processing, which sets <code>$\</code> to the value of <code>$/</code> and chops every line read using <code>chop!</code></li>
 <li><code>-e &lt;ruby_statements&gt;</code> - specifies script from command-line and causes Ruby not to search the rest of arguments for a script file name</li>
 <li><code>-r &lt;library&gt;</code> - load the specified library using require.  It is useful when using <code>-n</code> or <code>-p</code></li>
-<li><code>ruby -p -e â€™$_.tr! "a-z", "A-Z"â€™</code> - equivalent to <code>tr '[a-z]' '[A-Z]'</code></li>
+<li><code>ruby -p -e ’$_.tr! "a-z", "A-Z"’</code> - equivalent to <code>tr '[a-z]' '[A-Z]'</code></li>
 </ul>
 
-<h3 id="ffmpeg-media-encoding"><code>ffmpeg</code> - media encoding</h3>
+<h2 id="ffmpeg-media-encoding"><code>ffmpeg</code> - media encoding</h2>
 
 <ul>
 <li><code>ffmpeg -framerate 30 -i "%d.bmp" -r 30 -pix_fmt yuv420p video.mp4</code> - create a video from a sequence of image files</li>
@@ -301,6 +398,9 @@
 <li><code>ffmpeg -i input.avi -vf 'yadif=1:1,drawbox=y=ih-h:w=0:h=11:t=max,hqdn3d=6' -acodec aac -vcodec libx264 -pix_fmt yuv420p -preset veryslow -crf 20 -aspect 4:3 output.mp4</code> - re-encode an interlaced, 4:3 AVI as an MP4 after masking overscan noise and denoising the image</li>
 <li><code>ffmpeg -i input.avi -acodec copy -vcodec ffv1 -coder 1 -g 1 -context 1 -pix_fmt yuv410p output.avi</code> - re-encode as lossless FFV1</li>
 <li><code>for f in **/*.wav; ./ffmpeg.exe -i "$f" flac/"$(basename $f .wav)".flac</code> - encode all WAV files in under the current path as FLAC and put the files under a "flac" directory</li>
+<li><code>ffmpeg -hide_banner -i input.mp4 -vf "scale='if(lt(iw,ih),min(720,iw),-2)':'if(lt(iw,ih),-2,min(720,ih))'" -c:v libx265 -crf 28 -preset veryslow -c:a copy output.mp4</code> - re-encode as HEVC and scale to a maximum width or height of 720</li>
+<li><code>ffmpeg -i input.gif -filter_complex "[0:v]crop=300:270:100:0,split[a][b];[a]palettegen=max_colors=32[p];[b][p]paletteuse=dither=none" output.gif</code> - crop and re-encode gif at a reduced quality</li>
+<li><code>ffmpeg -i input.mp4 -filter_complex "[0:v] fps=8,scale=300:-1:flags=lanczos,crop=in_w:in_h:0:0,split[a][b];[a]palettegen=reserve_transparent=on[p];[b][p]paletteuse=dither=bayer:bayer_scale=5" output.gif</code> - convert video to gif</li>
 </ul>
 
 <h2 id="miscellaneous">Miscellaneous</h2>
@@ -331,7 +431,7 @@
 </ul>
 
     <footer>
-    <p class="generated_date">Generated on December 30 2024</p>
+    <p class="generated_date">Generated on November 10 2025</p>
     </footer>
     </article>
     </div>

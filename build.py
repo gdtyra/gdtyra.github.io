@@ -7,7 +7,7 @@ def _html_from_markdown_path(md_path):
     return markdown2.markdown_path(md_path, extras={'wiki-tables': None, 'toc': {'depth': 2}, 'fenced-code-blocks': None})
 
 def _page_title_from_html_content(content):
-    soup = bs4.BeautifulSoup(content)
+    soup = bs4.BeautifulSoup(content, features="html.parser")
     return soup.find(name='h1').text
 
 files = [f for f in glob.glob('*.md') if not f.startswith("_")]
@@ -24,6 +24,7 @@ files_html = (
 )
 
 for path, html, title in zip(html_files, html_file_content, page_titles):
+    print(f"Processing {path}")
     document = f"""
     <!DOCTYPE html>
     <html>
