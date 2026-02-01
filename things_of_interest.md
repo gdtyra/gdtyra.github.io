@@ -230,6 +230,7 @@
 - [Quicksort](https://en.wikipedia.org/wiki/Quicksort)
 - [Hacker's Delight](https://en.wikipedia.org/wiki/Hacker's_Delight)
 - [Tree traversal](https://en.wikipedia.org/wiki/Tree_traversal)
+- [Heapsort](https://en.wikipedia.org/wiki/Heapsort)
 
 ### Data Structures
 - [Merkle tree](https://en.m.wikipedia.org/wiki/Merkle_tree)
@@ -249,6 +250,7 @@
 - [Interval tree](https://en.wikipedia.org/wiki/Interval_tree)
 - [Heap](https://en.wikipedia.org/wiki/Heap_(data_structure))
 - [Fibonacci heap](https://en.wikipedia.org/wiki/Fibonacci_heap)
+- [Binary heap](https://en.wikipedia.org/wiki/Binary_heap)
 - [Bloom filter](https://en.wikipedia.org/wiki/Bloom_filter)
 - [AA tree](https://en.wikipedia.org/wiki/AA_tree)
 - [B-tree](https://en.wikipedia.org/wiki/B-tree)
@@ -425,6 +427,7 @@
 - [Hungarian notation](https://en.m.wikipedia.org/wiki/Hungarian_notation)
 - [Undefined behavior](https://en.m.wikipedia.org/wiki/Undefined_behavior)
 - [Modern C++ Design](https://en.wikipedia.org/wiki/Modern_C%2B%2B_Design)
+- [S-expression](https://en.wikipedia.org/wiki/S-expression)
 
 ### History
 - [APL](https://en.m.wikipedia.org/wiki/APL_(programming_language))
@@ -494,7 +497,7 @@
 - [Scintilla](https://en.m.wikipedia.org/wiki/Scintilla_(software))
 - [Tree-sitter](https://en.m.wikipedia.org/wiki/Tree-sitter_(parser_generator))
 
-### Systems and Security
+## Systems and Security
 - [HMAC](https://en.wikipedia.org/wiki/HMAC)
 - [Two Generals' Problem](https://en.wikipedia.org/wiki/Two_Generals%27_Problem)
 - [Dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
@@ -533,6 +536,8 @@
 - [ETL](https://en.m.wikipedia.org/wiki/Extract,_transform,_load)
 - [Content management system](https://en.m.wikipedia.org/wiki/Content_management_system)
 - [Lockstep protocol](https://en.m.wikipedia.org/wiki/Lockstep_protocol)
+- [Web crawler](https://en.wikipedia.org/wiki/Web_crawler)
+- [Message queuing service](https://en.wikipedia.org/wiki/Message_queuing_service)
 
 ## Computing
 
@@ -917,6 +922,7 @@
 - [ANSI.SYS](https://en.m.wikipedia.org/wiki/ANSI.SYS)
 - [Option ROM](https://en.m.wikipedia.org/wiki/Option_ROM)
 - [4DOS](https://en.m.wikipedia.org/wiki/4DOS)
+- [Gopher](https://en.wikipedia.org/wiki/Gopher_(protocol))
 
 ### Mobile
 - [postmarketOS](https://en.m.wikipedia.org/wiki/PostmarketOS)
@@ -1132,3 +1138,4 @@
 - [Rounding](https://en.m.wikipedia.org/wiki/Rounding#Rounding_half_to_even)
 - [Computer algebra system](https://en.m.wikipedia.org/wiki/Computer_algebra_system)
 - [Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula)
+- [Saturation arithmetic](https://en.wikipedia.org/wiki/Saturation_arithmetic)

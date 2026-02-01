@@ -117,6 +117,11 @@ The `stat` command is not compatible between Linux and BSD / macOS, unfortunatel
 
 ## `mount` - manage mounted filesystems
 - `mount` - view currently mounted paths and filesystem types
+- `mount <device> <path>` - mount a device while attempting to detect the filesystem automatically
+- `umount <path>` - unmount the filesystem mounted at the given path
+
+## `mkfs` - family of commands for formatting storage
+- `mkfs.exfat <device>` - format a block device with exFAT
 
 ## `watch` - run a command repeatedly to observe changes
 - `watch -t <command>` - run command repeatedly with the default 2 second interval and hide the header
@@ -144,7 +149,8 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 
 ## `git` - the only source control anyone cares about anymore
 - `git init` - initialize the current directory as a git repository
-- `git add origin <uri>` - add an upstream remote repository
+- `git remote add origin <uri>` - add an upstream remote repository
+- `git remote set-url origin <uri>` - change the upstream URL of an existing remote
 - `git add <path>` - stage modifications and new files under the given path
 - `git add --update <path>` - stage modifications but ignore new files
 - `git fetch` - update information from the origin
@@ -161,6 +167,7 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 - `git diff HEAD~2 HEAD -- <paths...>` - compare paths between current and 2 revisions prior
 - `git diff <commit> -- <paths...>` - compare paths between current and a specific revision
 - `git submodule update --init --recursive` - pull down and register missing submodules
+- `git submodule sync` - synchronize all submodule URL configurations to the value specified in `.gitmodules`
 
 ## `go` - for the very limited golang exposure I have
 - `go mod init <name>` - initialize a go module workspace
@@ -171,6 +178,7 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 ## `cmake` - the closest thing to a standard C/C++ build system
 - `cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake -S./source/directory -B./build/directory -G Ninja` - configure a vcpkg build
 - `cmake -DCMAKE_BUILD_TYPE=Debug -S./ -B./build` - configure a build with mostly default options
+- `cmake -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE=include-what-you-use -DCMAKE_BUILD_TYPE=Debug -S./ -B./build` - to add `include-what-you-use` support
 - `cmake --build build/directory` - execute a previously configured build
 
 ## `winget` - Windows has a package manager, too
@@ -250,6 +258,15 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 - `ffmpeg -hide_banner -i input.mp4 -vf "scale='if(lt(iw,ih),min(720,iw),-2)':'if(lt(iw,ih),-2,min(720,ih))'" -c:v libx265 -crf 28 -preset veryslow -c:a copy output.mp4` - re-encode as HEVC and scale to a maximum width or height of 720
 - `ffmpeg -i input.gif -filter_complex "[0:v]crop=300:270:100:0,split[a][b];[a]palettegen=max_colors=32[p];[b][p]paletteuse=dither=none" output.gif` - crop and re-encode gif at a reduced quality
 - `ffmpeg -i input.mp4 -filter_complex "[0:v] fps=8,scale=300:-1:flags=lanczos,crop=in_w:in_h:0:0,split[a][b];[a]palettegen=reserve_transparent=on[p];[b][p]paletteuse=dither=bayer:bayer_scale=5" output.gif` - convert video to gif
+- `ffmpeg -i input.png -vf "scale=64:64:force_original_aspect_ratio=decrease,pad=64:64:(ow-iw)/2:(oh-ih)/2:color=black@0" out.ico` - convert an image to a 64x64 ICO file
+
+## `robocopy` - somewhat like rsync for Windows
+- `robocopy <source> <destination> /E /COPY:DAT /DCOPY:DAT` - deep copy files while preserving timestamps, including empty subdirectories
+
+## `aws` - AWS CLI commands I need to remember
+- `aws codecommit create-repository --region <region> --repository-name <name>` - create a new repository
+- `aws codecommit list-repositories --region <region>` - list existing repositories for a region
+- `aws codecommit get-repository --region <region> --repository-name <name>` - get details of a repository such as URL for cloning
 
 ## Miscellaneous
 - `cal` - display calendars

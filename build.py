@@ -31,6 +31,7 @@ for path, html, title in zip(html_files, html_file_content, page_titles):
     <head>
         <link rel="stylesheet" href="style.css?v={timestamp}" />
         <link rel="stylesheet" href="vim.css?v={timestamp}" />
+        <link rel="shortcut icon" href="favicon.ico?v={timestamp}" />
         <title>gdtyra :: {title}</title>
     </head>
     <body>

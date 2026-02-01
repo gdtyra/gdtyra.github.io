@@ -43,9 +43,31 @@ Note, when I say "root" below, I mean Proto-Indo-European root, and even then I'
 - `since`: from Middle English "sithen", Old English "sith" and "than", meaning "after then".
 
 ## Common nouns
+- `it`: very old, from Proto-Germanic (split from German, where it became "es"), Proto-Indo-European "id"
 - `dog`: unclear origin in comparison with "hound", which comes from Old English and German "hund".
 - `cat`: from Latin "cattus", Greek "katta".
 - `thing`: Old English word meaning more specifically a public assembly, meeting, or legal matter, root "ten-" meaning to appoint.
 - `stuff`: from Old French "estoffe", meaning materials, provisions, or furniture. Originally referred more specifically to furnishings or fabric.
 - `man`: from Old English "mann", which replaced "wer", originally meaning "person" with no gender connotation.
 - `woman`: from Old English "wifmann", meaning "woman-person"
+- `lady`: from Old english "hlaefdige", meaning "loaf-kneader"
+
+
+## Other interesting etymologies
+- `cloud`: from Old English "clud", meaning "mass of rock", later reinterpreted as "sky rock"
+- `meat`: from Proto-Germanic "matiz", originally meant any kind of food in Old English
+- `starve`: from Proto-Germanic "sterbana", meaning "to die" in a more general sense
+- `deer`: from Proto-Germanic "djur", originally meant any kind of animal
+- `worm`: from Proto-Germanic "wurmaz", meaning "serpent" or "creeping thing"
+- `knight`: from Proto-Germanic "knechtaz", meaning "young man" or "servant"
+- `silly`: from Proto-Germanic "saeligaz", meaning "blessed" or "happy"
+- `gossip`: from Proto-Germanic "godsibb", meaning "a person related through God" (godparent)
+- `sky`: from Old Norse, where it meant "cloud"
+- `bread`: from Proto-Germanic brauda, meaning "something cooked". Originally referred to food in general while "hlaf" (loaf) was used for bread
+- `ghost`: from Proto-Germanic gaistaz, meaning "spirit" or "breath"
+- `nice`: from Latin nescius, meaning "ignorant", "not to know"
+- `thrill`: from Proto-Germanic "thrilliana", originally meaning "to pierce" in Old English
+- `queen`: from Proto-Germanic "kweniz", Old English "cwen", meaning "woman"
+- `perhaps`: from Latin "per" and Middle English "hap", literally meaning "by chance"
+- `bother`: of Anglo-Irish origin, originally in the sense "confuse with noise"
+- `world`: from Old English "weorold", a compound of "wer" (man) and ald (age), or "age of man"

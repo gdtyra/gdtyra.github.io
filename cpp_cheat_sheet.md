@@ -31,6 +31,11 @@
 - `std::partition(first, last, predicate)`: moves elements to the left or right of the container based on the predicate and returns the pivot.
 - `std::stable_partition(first, last, predicate)`: like `partition`, but preserves the relative order of elements.
 
+
+## Math
+
+- `std::clamp(v, lo, hi, [cmp])`: clamp the given value within the given boundary
+
 ## Random
 
 - `std::mt19937{seed}`: the Mersene Twister pseudorandom number generator suitable for insecure number generation.

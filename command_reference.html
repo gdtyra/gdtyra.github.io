@@ -2,8 +2,9 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1762831290.6753502" />
-        <link rel="stylesheet" href="vim.css?v=1762831290.6753502" />
+        <link rel="stylesheet" href="style.css?v=1769936743.4322565" />
+        <link rel="stylesheet" href="vim.css?v=1769936743.4322565" />
+        <link rel="shortcut icon" href="favicon.ico?v=1769936743.4322565" />
         <title>gdtyra :: Command Reference</title>
     </head>
     <body>
@@ -32,6 +33,7 @@
     <li><a href="#nc-read-and-write-tcpudp-connections"><code>nc</code> - read and write TCP/UDP connections</a></li>
     <li><a href="#tail-print-and-follow-ends-of-files"><code>tail</code> - print and follow ends of files</a></li>
     <li><a href="#mount-manage-mounted-filesystems"><code>mount</code> - manage mounted filesystems</a></li>
+    <li><a href="#mkfs-family-of-commands-for-formatting-storage"><code>mkfs</code> - family of commands for formatting storage</a></li>
     <li><a href="#watch-run-a-command-repeatedly-to-observe-changes"><code>watch</code> - run a command repeatedly to observe changes</a></li>
     <li><a href="#rsync-copy-and-mirror-directory-structures"><code>rsync</code> - copy and mirror directory structures</a></li>
     <li><a href="#git-the-only-source-control-anyone-cares-about-anymore"><code>git</code> - the only source control anyone cares about anymore</a></li>
@@ -45,6 +47,8 @@
     <li><a href="#apt-more-common-package-manager"><code>apt</code> - More common package manager</a></li>
     <li><a href="#ruby-using-ruby-for-one-liners"><code>ruby</code> - using Ruby for one-liners</a></li>
     <li><a href="#ffmpeg-media-encoding"><code>ffmpeg</code> - media encoding</a></li>
+    <li><a href="#robocopy-somewhat-like-rsync-for-windows"><code>robocopy</code> - somewhat like rsync for Windows</a></li>
+    <li><a href="#aws-aws-cli-commands-i-need-to-remember"><code>aws</code> - AWS CLI commands I need to remember</a></li>
     <li><a href="#miscellaneous">Miscellaneous</a></li>
   </ul></li>
 </ul>
@@ -229,6 +233,14 @@
 
 <ul>
 <li><code>mount</code> - view currently mounted paths and filesystem types</li>
+<li><code>mount &lt;device&gt; &lt;path&gt;</code> - mount a device while attempting to detect the filesystem automatically</li>
+<li><code>umount &lt;path&gt;</code> - unmount the filesystem mounted at the given path</li>
+</ul>
+
+<h2 id="mkfs-family-of-commands-for-formatting-storage"><code>mkfs</code> - family of commands for formatting storage</h2>
+
+<ul>
+<li><code>mkfs.exfat &lt;device&gt;</code> - format a block device with exFAT</li>
 </ul>
 
 <h2 id="watch-run-a-command-repeatedly-to-observe-changes"><code>watch</code> - run a command repeatedly to observe changes</h2>
@@ -267,7 +279,8 @@
 
 <ul>
 <li><code>git init</code> - initialize the current directory as a git repository</li>
-<li><code>git add origin &lt;uri&gt;</code> - add an upstream remote repository</li>
+<li><code>git remote add origin &lt;uri&gt;</code> - add an upstream remote repository</li>
+<li><code>git remote set-url origin &lt;uri&gt;</code> - change the upstream URL of an existing remote</li>
 <li><code>git add &lt;path&gt;</code> - stage modifications and new files under the given path</li>
 <li><code>git add --update &lt;path&gt;</code> - stage modifications but ignore new files</li>
 <li><code>git fetch</code> - update information from the origin</li>
@@ -284,6 +297,7 @@
 <li><code>git diff HEAD~2 HEAD -- &lt;paths...&gt;</code> - compare paths between current and 2 revisions prior</li>
 <li><code>git diff &lt;commit&gt; -- &lt;paths...&gt;</code> - compare paths between current and a specific revision</li>
 <li><code>git submodule update --init --recursive</code> - pull down and register missing submodules</li>
+<li><code>git submodule sync</code> - synchronize all submodule URL configurations to the value specified in <code>.gitmodules</code></li>
 </ul>
 
 <h2 id="go-for-the-very-limited-golang-exposure-i-have"><code>go</code> - for the very limited golang exposure I have</h2>
@@ -299,6 +313,7 @@
 <ul>
 <li><code>cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake -S./source/directory -B./build/directory -G Ninja</code> - configure a vcpkg build</li>
 <li><code>cmake -DCMAKE_BUILD_TYPE=Debug -S./ -B./build</code> - configure a build with mostly default options</li>
+<li><code>cmake -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE=include-what-you-use -DCMAKE_BUILD_TYPE=Debug -S./ -B./build</code> - to add <code>include-what-you-use</code> support</li>
 <li><code>cmake --build build/directory</code> - execute a previously configured build</li>
 </ul>
 
@@ -401,6 +416,21 @@
 <li><code>ffmpeg -hide_banner -i input.mp4 -vf "scale='if(lt(iw,ih),min(720,iw),-2)':'if(lt(iw,ih),-2,min(720,ih))'" -c:v libx265 -crf 28 -preset veryslow -c:a copy output.mp4</code> - re-encode as HEVC and scale to a maximum width or height of 720</li>
 <li><code>ffmpeg -i input.gif -filter_complex "[0:v]crop=300:270:100:0,split[a][b];[a]palettegen=max_colors=32[p];[b][p]paletteuse=dither=none" output.gif</code> - crop and re-encode gif at a reduced quality</li>
 <li><code>ffmpeg -i input.mp4 -filter_complex "[0:v] fps=8,scale=300:-1:flags=lanczos,crop=in_w:in_h:0:0,split[a][b];[a]palettegen=reserve_transparent=on[p];[b][p]paletteuse=dither=bayer:bayer_scale=5" output.gif</code> - convert video to gif</li>
+<li><code>ffmpeg -i input.png -vf "scale=64:64:force_original_aspect_ratio=decrease,pad=64:64:(ow-iw)/2:(oh-ih)/2:color=black@0" out.ico</code> - convert an image to a 64x64 ICO file</li>
+</ul>
+
+<h2 id="robocopy-somewhat-like-rsync-for-windows"><code>robocopy</code> - somewhat like rsync for Windows</h2>
+
+<ul>
+<li><code>robocopy &lt;source&gt; &lt;destination&gt; /E /COPY:DAT /DCOPY:DAT</code> - deep copy files while preserving timestamps, including empty subdirectories</li>
+</ul>
+
+<h2 id="aws-aws-cli-commands-i-need-to-remember"><code>aws</code> - AWS CLI commands I need to remember</h2>
+
+<ul>
+<li><code>aws codecommit create-repository --region &lt;region&gt; --repository-name &lt;name&gt;</code> - create a new repository</li>
+<li><code>aws codecommit list-repositories --region &lt;region&gt;</code> - list existing repositories for a region</li>
+<li><code>aws codecommit get-repository --region &lt;region&gt; --repository-name &lt;name&gt;</code> - get details of a repository such as URL for cloning</li>
 </ul>
 
 <h2 id="miscellaneous">Miscellaneous</h2>
@@ -431,7 +461,7 @@
 </ul>
 
     <footer>
-    <p class="generated_date">Generated on November 10 2025</p>
+    <p class="generated_date">Generated on February 01 2026</p>
     </footer>
     </article>
     </div>
