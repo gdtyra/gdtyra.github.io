@@ -10,7 +10,7 @@ Note, when I say "root" below, I mean Proto-Indo-European root, and even then I'
 - `what`/`who`/`why`/`where`/`when`/`how`: originally from words starting with a "k" sound, hence why Latin and Spanish equivalents start with "q".
 - `and`: from roots "en/eti", meaning "in addition" or "also".
 - `but`: from Old English "butan", derived from "be" and "utan", meaning "outside", so "be outside". Related to root "ud-" meaning "up" or "out" and Latin "ut". First spacial, then logical.
-- `or`/`other`: "or" is derived from "other" and related to roots "al-/alio".
+- `or`/`other`: from Old English "othe", related to Proto-Germanic "aththau" and root "-eter", meaning either/or.
 - `no`: from Old English "na", meaning "not ever", and related to root "ne".
 - `in`/`on`: from root "en/n". 
 - `at`: from root "ad-", meaning "to" or "toward". Originally directive and became locative.
@@ -51,6 +51,7 @@ Note, when I say "root" below, I mean Proto-Indo-European root, and even then I'
 - `man`: from Old English "mann", which replaced "wer", originally meaning "person" with no gender connotation.
 - `woman`: from Old English "wifmann", meaning "woman-person"
 - `lady`: from Old english "hlaefdige", meaning "loaf-kneader"
+- `girl`: in Middle English, "girl" referred to any young person, only becoming specific to females over time
 
 
 ## Other interesting etymologies
@@ -71,3 +72,16 @@ Note, when I say "root" below, I mean Proto-Indo-European root, and even then I'
 - `perhaps`: from Latin "per" and Middle English "hap", literally meaning "by chance"
 - `bother`: of Anglo-Irish origin, originally in the sense "confuse with noise"
 - `world`: from Old English "weorold", a compound of "wer" (man) and ald (age), or "age of man"
+- `field`: from Old English "feld" (plain, pasture, cultivated land), Proto-Germanic "felthan" (flat land)
+- `boss`: from Dutch "baas", meaning "master"
+- `tinker`: may be a shortened form of "tinkerere" meaning "worker in tin" or an onamatopoea of the sound of metal work
+- `tome`: originally referred to a single volume of a larger work, from Latin "tomus", rooted in "tem-" (to cut)
+- `excrutiating`: from Latin, literally "out of crucifying"
+- `salient`: from Latin "salire", meaning to leap, spring, or jump (hence something that "stands out")
+- `goodbye`: originally a contraction of "God be with you"
+- `clue`: from Middle English "clewe", meaning a ball of thread
+- `whiskey`: derived from the Gaelic "uisce beatha" meaning "water of life"
+- `disaster`: from Italian "disastro", literally meaning "bad star"
+- `alarm`: from Italian "all'arme", meaning "to arms"
+- `window`: from Old Norse "vindauga", meaning "wind eye"
+- `rather`: from Old English "hraether" and "hraed", meaning more quickly or quick

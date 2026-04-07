@@ -71,6 +71,7 @@
 ## `dd` - read and write files or devices byte-wise
 - `dd if=<file> ibs=1 skip=200 count=100` - read 100 bytes starting at the 200th byte
 - `dd if=/dev/sdf of=image.bin bs=8M` - write the entire device `/dev/sdf` to a file with a block size of 8M
+- `dd if=<image> of=<device> bs=16M status=progress oflag=sync` - recommended by Debian for writing an isohybrid image to USB
 
 ## `sudo` - execute commands as a different user
 - The `-E` flag will preserve your current environment when running the command
@@ -222,6 +223,7 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 - `pacman -Qe` - list packages explicitly installed by the user
 - `pacman -Qei` - list packages explicitly installed by the user with detail
 - `pacman -Qdtq` - list installed, orphaned packages
+- `pacman -Ql <package_name>` - list files provided by a given installed package
 - `pacman -Rs <package_name>` - remove package
 - `pacman -Rs $(pacman -Qdtq)` - remove orphaned packages
 - `pacman -Ss <search_string>` - search available packages
@@ -259,6 +261,11 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 - `ffmpeg -i input.gif -filter_complex "[0:v]crop=300:270:100:0,split[a][b];[a]palettegen=max_colors=32[p];[b][p]paletteuse=dither=none" output.gif` - crop and re-encode gif at a reduced quality
 - `ffmpeg -i input.mp4 -filter_complex "[0:v] fps=8,scale=300:-1:flags=lanczos,crop=in_w:in_h:0:0,split[a][b];[a]palettegen=reserve_transparent=on[p];[b][p]paletteuse=dither=bayer:bayer_scale=5" output.gif` - convert video to gif
 - `ffmpeg -i input.png -vf "scale=64:64:force_original_aspect_ratio=decrease,pad=64:64:(ow-iw)/2:(oh-ih)/2:color=black@0" out.ico` - convert an image to a 64x64 ICO file
+- `ffmpeg -i input.mp4 -vf "scale=iw/2:ih/2" -c:v libx265 -crf 28 -preset slow -c:a copy output.mp4` - encode video at half the input resolution
+- `ffmpeg -i input.mp4 -vf "scale=-2:720" -c:v libx265 -crf 28 -preset slow -c:a copy output.mp4` - preserve input ratio while scaling to a height of 720.
+- `ffmpeg -i input.mp4 -vf "scale='if(gt(max(iw,ih)/2,720),-2,iw)':'if(gt(max(iw,ih)/2,720),-2,ih)'" -c:v libx265 -crf 28 -preset slow -c:a copy output.mp4` - scale video to a height of 720 but only if it is currently larger than that
+- `ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 input.mp4` - print the dimensions of a video
+- `ffmpeg -i input.mp4 -vf "scale='if(lt(iw,ih),min(720,iw),-2)':'if(lt(iw,ih),-2,min(720,ih))'" -c:v libx265 -crf 28 -preset slow -c:a copy output.mp4` - scale the shorter dimension of a video to 720 (for handling horizontal and vertical video)
 
 ## `robocopy` - somewhat like rsync for Windows
 - `robocopy <source> <destination> /E /COPY:DAT /DCOPY:DAT` - deep copy files while preserving timestamps, including empty subdirectories
@@ -267,6 +274,35 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 - `aws codecommit create-repository --region <region> --repository-name <name>` - create a new repository
 - `aws codecommit list-repositories --region <region>` - list existing repositories for a region
 - `aws codecommit get-repository --region <region> --repository-name <name>` - get details of a repository such as URL for cloning
+
+## `jq` - transform and filter JSON
+- `jq '.[0:5]'` - show the first 5 elements in a list
+- `jq '.[0:5] | .[].title'` - show a particular property of the first 5 elements in a list
+- `jq '.[0:5][] | .title'` - equivalent to the above
+- `jq 'length'` - show the number of items in a list
+- `jq 'sort_by(.time) | reverse | .[0:5][] | .title'`- sort by a time property in reverse and then get the first 5 titles
+- `jq '.[0:5][] | [.time, .title, .titleUrl] | @tsv'` - build a tab-separated table from selected properties
+- `jq 'map(select((.titleUrl // "") | contains("/watch"))) | .[0:5]'` - select only entries with a titleUrl containing "/watch"
+- `jq 'map(select((.titleUrl // "") | contains("/post") | not)) | .[0:5]'` - reject entries with a titleUrl containing "/post"
+
+## `column` - print tabular data
+- `column -t -s$'\t' | less -S` - format data separated by tabs and show via `less` with horizontal scrolling
+- `column -t -s, | less -S` - format data separated by commas and show via `less` with horizontal scrolling
+
+## `wget` - download files over HTTP
+- `wget -O - <url>` - fetch a URL and write to standard output rather than a file
+- `wget -qO - <url>` - fetch a URL and write to standard output but suppress the usual progress bar
+
+## `curl` - download or make various requests over HTTP
+- `curl <url>` - fetch a URL and write the content to standard output
+- `curl -I <url>` - fetch only the headers for the URL
+- `curl -IL <url>` - fetch only the headers for the URL while following any redirects
+
+## `socat` - cat for sockets
+- `socat -v TCP-LISTEN:11434,fork,reuseaddr TCP:127.0.0.1:11435` - listen for TCP traffic on a given port, print it, and forward to another destination
+
+## `ss` - investigate socket usage
+- `ss -tulpn` - display processes using and listening to TCP and UDP sockets that are listening, use numbers instead of human-readable alternatives
 
 ## Miscellaneous
 - `cal` - display calendars

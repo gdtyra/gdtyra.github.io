@@ -2,9 +2,9 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1769936743.4322565" />
-        <link rel="stylesheet" href="vim.css?v=1769936743.4322565" />
-        <link rel="shortcut icon" href="favicon.ico?v=1769936743.4322565" />
+        <link rel="stylesheet" href="style.css?v=1775588494.5583253" />
+        <link rel="stylesheet" href="vim.css?v=1775588494.5583253" />
+        <link rel="shortcut icon" href="favicon.ico?v=1775588494.5583253" />
         <title>gdtyra :: Command Reference</title>
     </head>
     <body>
@@ -49,12 +49,18 @@
     <li><a href="#ffmpeg-media-encoding"><code>ffmpeg</code> - media encoding</a></li>
     <li><a href="#robocopy-somewhat-like-rsync-for-windows"><code>robocopy</code> - somewhat like rsync for Windows</a></li>
     <li><a href="#aws-aws-cli-commands-i-need-to-remember"><code>aws</code> - AWS CLI commands I need to remember</a></li>
+    <li><a href="#jq-transform-and-filter-json"><code>jq</code> - transform and filter JSON</a></li>
+    <li><a href="#column-print-tabular-data"><code>column</code> - print tabular data</a></li>
+    <li><a href="#wget-download-files-over-http"><code>wget</code> - download files over HTTP</a></li>
+    <li><a href="#curl-download-or-make-various-requests-over-http"><code>curl</code> - download or make various requests over HTTP</a></li>
+    <li><a href="#socat-cat-for-sockets"><code>socat</code> - cat for sockets</a></li>
+    <li><a href="#ss-investigate-socket-usage"><code>ss</code> - investigate socket usage</a></li>
     <li><a href="#miscellaneous">Miscellaneous</a></li>
   </ul></li>
 </ul>
 
     <h1>Other Pages</h2>
-    <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
+    <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li><li><a href="timesteps_in_games.html">Timesteps in Games</a></li></ul>
     </nav>
     </div>
     <div class="column">
@@ -162,6 +168,7 @@
 <ul>
 <li><code>dd if=&lt;file&gt; ibs=1 skip=200 count=100</code> - read 100 bytes starting at the 200th byte</li>
 <li><code>dd if=/dev/sdf of=image.bin bs=8M</code> - write the entire device <code>/dev/sdf</code> to a file with a block size of 8M</li>
+<li><code>dd if=&lt;image&gt; of=&lt;device&gt; bs=16M status=progress oflag=sync</code> - recommended by Debian for writing an isohybrid image to USB</li>
 </ul>
 
 <h2 id="sudo-execute-commands-as-a-different-user"><code>sudo</code> - execute commands as a different user</h2>
@@ -372,6 +379,7 @@
 <li><code>pacman -Qe</code> - list packages explicitly installed by the user</li>
 <li><code>pacman -Qei</code> - list packages explicitly installed by the user with detail</li>
 <li><code>pacman -Qdtq</code> - list installed, orphaned packages</li>
+<li><code>pacman -Ql &lt;package_name&gt;</code> - list files provided by a given installed package</li>
 <li><code>pacman -Rs &lt;package_name&gt;</code> - remove package</li>
 <li><code>pacman -Rs $(pacman -Qdtq)</code> - remove orphaned packages</li>
 <li><code>pacman -Ss &lt;search_string&gt;</code> - search available packages</li>
@@ -417,6 +425,11 @@
 <li><code>ffmpeg -i input.gif -filter_complex "[0:v]crop=300:270:100:0,split[a][b];[a]palettegen=max_colors=32[p];[b][p]paletteuse=dither=none" output.gif</code> - crop and re-encode gif at a reduced quality</li>
 <li><code>ffmpeg -i input.mp4 -filter_complex "[0:v] fps=8,scale=300:-1:flags=lanczos,crop=in_w:in_h:0:0,split[a][b];[a]palettegen=reserve_transparent=on[p];[b][p]paletteuse=dither=bayer:bayer_scale=5" output.gif</code> - convert video to gif</li>
 <li><code>ffmpeg -i input.png -vf "scale=64:64:force_original_aspect_ratio=decrease,pad=64:64:(ow-iw)/2:(oh-ih)/2:color=black@0" out.ico</code> - convert an image to a 64x64 ICO file</li>
+<li><code>ffmpeg -i input.mp4 -vf "scale=iw/2:ih/2" -c:v libx265 -crf 28 -preset slow -c:a copy output.mp4</code> - encode video at half the input resolution</li>
+<li><code>ffmpeg -i input.mp4 -vf "scale=-2:720" -c:v libx265 -crf 28 -preset slow -c:a copy output.mp4</code> - preserve input ratio while scaling to a height of 720.</li>
+<li><code>ffmpeg -i input.mp4 -vf "scale='if(gt(max(iw,ih)/2,720),-2,iw)':'if(gt(max(iw,ih)/2,720),-2,ih)'" -c:v libx265 -crf 28 -preset slow -c:a copy output.mp4</code> - scale video to a height of 720 but only if it is currently larger than that</li>
+<li><code>ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 input.mp4</code> - print the dimensions of a video</li>
+<li><code>ffmpeg -i input.mp4 -vf "scale='if(lt(iw,ih),min(720,iw),-2)':'if(lt(iw,ih),-2,min(720,ih))'" -c:v libx265 -crf 28 -preset slow -c:a copy output.mp4</code> - scale the shorter dimension of a video to 720 (for handling horizontal and vertical video)</li>
 </ul>
 
 <h2 id="robocopy-somewhat-like-rsync-for-windows"><code>robocopy</code> - somewhat like rsync for Windows</h2>
@@ -431,6 +444,53 @@
 <li><code>aws codecommit create-repository --region &lt;region&gt; --repository-name &lt;name&gt;</code> - create a new repository</li>
 <li><code>aws codecommit list-repositories --region &lt;region&gt;</code> - list existing repositories for a region</li>
 <li><code>aws codecommit get-repository --region &lt;region&gt; --repository-name &lt;name&gt;</code> - get details of a repository such as URL for cloning</li>
+</ul>
+
+<h2 id="jq-transform-and-filter-json"><code>jq</code> - transform and filter JSON</h2>
+
+<ul>
+<li><code>jq '.[0:5]'</code> - show the first 5 elements in a list</li>
+<li><code>jq '.[0:5] | .[].title'</code> - show a particular property of the first 5 elements in a list</li>
+<li><code>jq '.[0:5][] | .title'</code> - equivalent to the above</li>
+<li><code>jq 'length'</code> - show the number of items in a list</li>
+<li><code>jq 'sort_by(.time) | reverse | .[0:5][] | .title'</code>- sort by a time property in reverse and then get the first 5 titles</li>
+<li><code>jq '.[0:5][] | [.time, .title, .titleUrl] | @tsv'</code> - build a tab-separated table from selected properties</li>
+<li><code>jq 'map(select((.titleUrl // "") | contains("/watch"))) | .[0:5]'</code> - select only entries with a titleUrl containing "/watch"</li>
+<li><code>jq 'map(select((.titleUrl // "") | contains("/post") | not)) | .[0:5]'</code> - reject entries with a titleUrl containing "/post"</li>
+</ul>
+
+<h2 id="column-print-tabular-data"><code>column</code> - print tabular data</h2>
+
+<ul>
+<li><code>column -t -s$'\t' | less -S</code> - format data separated by tabs and show via <code>less</code> with horizontal scrolling</li>
+<li><code>column -t -s, | less -S</code> - format data separated by commas and show via <code>less</code> with horizontal scrolling</li>
+</ul>
+
+<h2 id="wget-download-files-over-http"><code>wget</code> - download files over HTTP</h2>
+
+<ul>
+<li><code>wget -O - &lt;url&gt;</code> - fetch a URL and write to standard output rather than a file</li>
+<li><code>wget -qO - &lt;url&gt;</code> - fetch a URL and write to standard output but suppress the usual progress bar</li>
+</ul>
+
+<h2 id="curl-download-or-make-various-requests-over-http"><code>curl</code> - download or make various requests over HTTP</h2>
+
+<ul>
+<li><code>curl &lt;url&gt;</code> - fetch a URL and write the content to standard output</li>
+<li><code>curl -I &lt;url&gt;</code> - fetch only the headers for the URL</li>
+<li><code>curl -IL &lt;url&gt;</code> - fetch only the headers for the URL while following any redirects</li>
+</ul>
+
+<h2 id="socat-cat-for-sockets"><code>socat</code> - cat for sockets</h2>
+
+<ul>
+<li><code>socat -v TCP-LISTEN:11434,fork,reuseaddr TCP:127.0.0.1:11435</code> - listen for TCP traffic on a given port, print it, and forward to another destination</li>
+</ul>
+
+<h2 id="ss-investigate-socket-usage"><code>ss</code> - investigate socket usage</h2>
+
+<ul>
+<li><code>ss -tulpn</code> - display processes using and listening to TCP and UDP sockets that are listening, use numbers instead of human-readable alternatives</li>
 </ul>
 
 <h2 id="miscellaneous">Miscellaneous</h2>
@@ -461,7 +521,7 @@
 </ul>
 
     <footer>
-    <p class="generated_date">Generated on February 01 2026</p>
+    <p class="generated_date">Generated on April 07 2026</p>
     </footer>
     </article>
     </div>
