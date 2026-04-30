@@ -5,15 +5,16 @@ The following is a collection of guidelines for class and general software compo
 - Design systems in such a way that engineers can make changes to one aspect of the system without modifying or needing to understand other parts of the system.
 - Good systems can tolerate change well without rippling effects
 
-# Use of OOP and class design
-## SOLID
+## Use of OOP and class design
+
+### SOLID
 - Single Responsibility: a class should do the smallest possible useful thing
 - Open-Closed: objects should be open to extension and closed for modification; i.e. they should be extensible without modifying the existing code
 - Liskov-Substitution: objects should be replaceable by subtypes without altering correctness
 - Interface Segregation: many client-specific interfaces are better than one general-purpose interface
 - Dependency Inversion: this seems to boil down to "depend on abstractions"
 
-## Constructors and dependency injection
+### Constructors and dependency injection
 - Constructors should be simple and serve only to fully validate and initialize an object
     - DO assign values and collaborator objects that are received by the constructor to instance fields
     - DO feel free to create simple value / plain-old-data objects as long as they are state-focused and have minimal behavior
@@ -22,7 +23,7 @@ The following is a collection of guidelines for class and general software compo
     - DO NOT call out to static methods or free functions unless they are doing simple validation or normalization
 - Creation of object graphs should be the responsibility of a dedicated dependency injection framework or dedicated factory / builder classes that do nothing but create objects
 
-## Interfaces and object relationships
+### Interfaces and object relationships
 - Good design results in objects that can tolerate change easily
     - Try to depend on behavior, not data; hide fields and data structures, even within a class
     - Clients of an object should "ask" for what they want rather than "tell" the object what to do. This kind of interaction allows more flexibility for "how" the result is accomplished
@@ -50,7 +51,7 @@ The following is a collection of guidelines for class and general software compo
     - Composition allows for a more flexible and reusable structure than inheritance but requires the object to have explicit knowledge about delegation
     - Standard compositional mechanisms for altering class behavior: decorator and strategy patterns
 
-## Subtle dependencies
+### Subtle dependencies
 - Even method names, expected arguments, and argument order represent dependencies
     - Remove argument-order dependencies (named keywords in Python and ruby, or a dedicated "Params" object in Java or similar languages)
     - Context objects sound like a good way to minimize changes in method signatures, but they obfuscate the actual dependencies of a class or method when they are not specific to a particular method or group of methods

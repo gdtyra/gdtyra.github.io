@@ -85,3 +85,7 @@ Note, when I say "root" below, I mean Proto-Indo-European root, and even then I'
 - `alarm`: from Italian "all'arme", meaning "to arms"
 - `window`: from Old Norse "vindauga", meaning "wind eye"
 - `rather`: from Old English "hraether" and "hraed", meaning more quickly or quick
+- `kudos`: from ancient Greece, meaning "glory" or "fame"
+- `bogeyman`: believed to have originated from the Middle English "bogge", meaning a scarecrow or specter.
+- `water`: from Proto-Indo-European "wodr"
+- `vodka`: literally "little water" or "dear water" in Russian

@@ -169,6 +169,7 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 - `git diff <commit> -- <paths...>` - compare paths between current and a specific revision
 - `git submodule update --init --recursive` - pull down and register missing submodules
 - `git submodule sync` - synchronize all submodule URL configurations to the value specified in `.gitmodules`
+- `git switch <branch>` - switch to a different, existing local branch
 
 ## `go` - for the very limited golang exposure I have
 - `go mod init <name>` - initialize a go module workspace
@@ -327,3 +328,4 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 - `tree <file>` - write input to both standard output and the given file
 - `wget -O <output_path> <some.resource/address>` - download a given resource to a given path
 - `chsh -s <shell_path> <user>` - change a user's login shell
+- `uuencode` and `uudecode` - binary to ASCII format

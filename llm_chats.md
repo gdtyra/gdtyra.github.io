@@ -1,6 +1,6 @@
 # Information from chatting with LLMs
 
-These are my own summaries of information I got from LLM chats that I just wanted to make note of. The information may be incorrect or incomplete; I don't necessarily fact check these at all and usually the answers aren't that important beyond my own curiosity.
+These are my own summaries of information I got from LLM chats that I just wanted to make note of. The information may be incorrect or incomplete; I don't necessarily fact check these at all and usually the answers aren't that important beyond my own curiosity. In some cases I've also added my own thoughts that came about from thinking on the responses.
 
 ### Q: For saving on video storage space, should I prefer lowering resolution or lowering encoding quality?
 
@@ -544,7 +544,7 @@ The first photo was taken in 1946 by a V-2 rocket launched from New Mexico. It r
 
 The TIROS-1 weather satellite launched by NASA in 1960 took more comprehensive images of Earth from an altitude of around 450 miles.
 
-The first full-disk image of the Earth was taken by the ATS-3 satellite in 1967 at an altitude of 22,300 miles.
+The first full-disk image of the Earth (what most would consider "from space") was taken by the ATS-3 satellite in 1967 at an altitude of 22,300 miles.
 
 ### Q: How did palm trees end up in California?
 
@@ -564,11 +564,11 @@ The diner originated in the late 19th century as a mobile eatery to serve worker
 
 ### Q: Presumably grid power supply never perfectly matches demand, so where does any "extra" energy go?
 
-Although modern grids may incorporate some energy storage in the form of flywheels, pumped hydroelectric storage, and batteries, in general the system aims to quickly adjust to match demand. A mismatch may manifest as additional heat or divergence from the target frequency (e.g. 60 Hz in the U.S.)
+Although modern grids may incorporate some energy storage in the form of flywheels, pumped hydroelectric storage, and batteries, in general the system aims to quickly adjust to match demand. A mismatch may manifest as additional heat or divergence from the target frequency (e.g. 60 Hz in the U.S.), but that is not catastrophic.
 
 ### Q: Why is "Sino" sometimes used in reference to China?
 
-The term "sino" derives from the Latin word Sinae, which was the Roman name for China. This likely originates from an earlier Greek term, Sinai, which was derived from Sanskrit Cina. The term referred to the Qin dynasty.
+The term "sino" derives from the Latin word Sinae, which was the Roman name for China. This likely originates from an earlier Greek term, Sinai, which was derived from Sanskrit Cina. The term referred to the Qin dynasty. The Chinese refer to their country as Zhong Guo, which means "middle kingdom".
 
 ### Q: What is the relationship between things like Taoism, Buddhism, Confucianism, and Yin-Yang?
 
@@ -582,9 +582,9 @@ Yin-Yang is a concept from ancient Chinese cosmology that represents dualism: th
 
 Taoism and confucianism emerged around 500-200 BCE in response to the social chaos of the Warring States period. Taoism sought to escape from rigid structures while Confucianism sought order within them. Buddhism entered China around the 1st century CE and blended with both. Yin-yang is more of a cosmological principle that all three use to explain aspects of their philosophies.
 
-### Q: Why do I associate jazz with "city life" in the 1990s?
+### Q: Why do I associate "city life" in the 1990s with jazz music?
 
-Jazz had a cultural presence in the 1990s despite not being mainstream. It was used in media as a kind of shorthand for "sophistication and urban cool". You would see it in Hey Arnold, Cowboy Bebop, and Seinfeld to some extent. It was used in coffe culture advertising. Games like SimCity 3000 had jazz-heavy soundtracks, reinforcing the connection between jazz and the cityscape.
+Jazz had a cultural presence in the 1990s despite not being mainstream. It was used in media as a kind of shorthand for "sophistication and urban cool". You would see it in Hey Arnold, Cowboy Bebop, and Seinfeld to some extent. It was used in coffee culture advertising. Games like SimCity 3000 had jazz-heavy soundtracks, reinforcing the connection between jazz and the cityscape.
 
 ### Q: I remember WolframAlpha handling natural language questions long before modern NLP; how did it do this?
 
@@ -655,7 +655,7 @@ Browsers initially enforced a strict same-origin policy, but this was quite rest
 
 It is recognized as a genuine biological phenomenon, although the exact mechanisms are not fully understood. Some notable effects observed have been pain relief, influence on psychiatric conditions, immune system response, and motor performance.
 
-### Q: Why did FreeBSD remove block devices while Linux only creates block devices?
+### Q: Why did FreeBSD remove block devices while Linux _only_ creates block devices?
 
 Block devices operate on fixed size blocks of data with the OS managing a buffer. Character, or raw, devices are accessed directly by applications with no OS-managed cache. FreeBSD removed block devices in favor of moving caching logic into the filesystem layer (UFS/ZFS). This simplified aspects of the kernel.
 
@@ -670,6 +670,1155 @@ Linux instead treats the block device as the primary interface for a disk. This 
 - 4th Edition (D&D 4E): Released in 2008, it brought significant changes, emphasizing tactical combat through roles for each class (defender, striker, leader, controller), with powers being a key feature.
 - 5th Edition (D&D 5E): Released in 2014, it aimed to streamline gameplay, making it accessible to newcomers while retaining depth. It simplified rules, emphasized storytelling, and introduced advantage/disadavantage mechanics.
 
-### Q: Why do say something is "byazantine" when its excessively complicated?
+### Q: Why do we say something is "byazantine" when it's excessively complicated?
 
 It reflects a historical perception of the Byzantine political, bureaucratic, and administrative systems as complex and intricate. The Byzantine Empire was known for its elaborate court rituals, intricate political maneuvering, and complex administrative procedures.
+
+### Q: How does a UEFI system boot?
+
+- UEFI firmware initializes hardware components, similar to how a BIOS does.
+- UEFI provides a more modular and standardized architecture for hardware manufacturers to develop boot-time drivers.
+- UEFI systems have a boot manager integrated into the firmware which is more flexible than the legacy BIOS boot sequence.
+- The UEFI boot loader is a small program expected to be found in an EFI System Partition (ESP), a special partition on a storage device intended to be bootable. The ESP is identified by a unique GUID and is usually formatted with FAT32.
+- UEFI variables are configuration parameters saved in NVRAM, such as the boot device priority order.
+- UEFI often supports a Secure Boot feature whereby only signed and authenticated boot loaders and OS kernels are approved to be loaded during the boot process.
+
+### Q: How does SSH establish a connection without leaking information to the public Internet?
+
+SSH uses a secure key exchange, typically Diffie-Hellman or its elliptic curve variant (ECDH).
+
+1. The client sends a "hello" message including information about supported encryption algorithms and exchange methods.
+2. The server responds with a "hello" message acknowledging the request and providing its own set of supported encryption and exchange methods.
+3. The client and server agree on an exchange method and generate key material to establish a shared secret without transmitting the secret over the network. Diffie-Hellman involves both parties contributing to a generated shared secret without explicitly exchanging it in public.
+4. A handshake is done to verify that both parties have generated the same key material.
+5. The client and server can then exxchange data securely using keys derived from the shared secret.
+
+The server typically presents its public key to the client during the exchange process, allowing the client to verify the server's identity.
+
+### Q: In the context of cryptography, what is a "nonce"?
+
+The term "nonce" refers to a "number used once" (may also relate to more general uses of the term meaning "something used for now"). It describes a random or pseudo-random number that is generated for a specific purpose and is intended and expected to be used only once within a given context or session. 
+
+Generally, the server generates a nonce and sends it to the client as part of a communication protocol. The client uses it as instructed within the protocol, for example as part of signing a request. The server checks to ensure that the nonce has not been used previously in the same context or session and can reject the request if it has. To achieve this, the server typcially maintains a record of nonces that have been used within the current session.
+
+### Q: What is the origin of the phrase "winner winner chicken dinner"?
+
+Unclear, but it may have originated in Las Vegas casinos in the mid-to-late 20th century when a typical payout at some tables matched the cost of a casino meal, which was often a chicken dinner.
+
+### Q: What is the difference between Marxism and Communism?
+
+Marxism is a socio-economic and political theory emphasizing the role of class struggle and the eventual establishment of a classless society. Communism is a political and economic ideology that advocates for a society in which the means of production are commonly owned and the distribution of wealth is based on the principle of balancing ability and need. In other words, Marxism is a broader theoretical framework while communism is a specific socio-economic system that is considered the ultimate "stage" in Marxist theory.
+
+### Q: Why did primates evolve to have flatter faces than other animals?
+
+It is an adaptation to an arboreal (tree-dwelling) lifestyle. Flatter faces provide a broader field of binocular vision which helps in accurately judging distances while navigating through branches; better depth perception.
+
+### Q: Why did Hollywood become the place that movies are made?
+
+1. The sunny and consistent weather allowed for year-round outdoor filming, especially important for early cameras that required bright light.
+2. Proximity to diverse scenery such as deserts, mountains, and beaches.
+3. Distance from Thomas Edison's Motion Picture Patents Company on the East Coast, offering some protection from patent restrictions.
+
+### Q: When a photon hits a transparent window, is the photon that emerges on the other side the "same" photon?
+
+Identity is not necessarily straightforward in the subatomic world. In a simplified physical model where photons are particles, a photon is emitted on the other side after a chain of interactions, absorptions, and energy transfers, and so in that sense it is not really the same photon.
+
+However, from the perspective of Quantum Field Theory, there is one universal "photon field" with localized ripples rather than "little billiard balls", and in that sense photons are fundamentally indistinguishable. If you have two photons A and B, there is no physical experiment that can tell you which is which after an interaction and so the concept of identity has little meaning.
+
+### Q: Why do private vehicles not use diesel if it is a more efficient fuel?
+
+Diesel vehicles are typically more expensive due to their robust engines that handle higher compression. In some countries, diesel fuel is also taxed more heavily than gasoline.
+
+Diesel engines are most efficient during long, steady drives. Private vehicles often make short trips with frequent stops which reduces the efficiency benefits of diesel. Diesel engines take longer to warm up, again making them less appropriate for short commutes.
+
+While diesel engines produce less CO2, they emit more nitrogen oxides and particulate matter which reduces air quality. Emission regulations have made gasoline more attractive for private buyers.
+
+Gasoline engines generally provide smoother acceleration and quieter operation which appeals to many private buyers. Public perception of diesel as being something dirty for commercial or utility vehicles further influences private buyer choices.
+
+### Q: What do the "dot product" and "cross product" of two vectors represent?
+
+The dot product is a scalar value measuring how much one vector extends in the direction of the other. If two vectors are perpendicular, then their dot product is zero and if they are parallel then their dot product is maximized. In other words, it is a measure of "how parallel" or "how perpendicular" two vectors are.
+
+The cross product produces a third vector that is perpendicular to both of the other vectors. It is useful for finding the normal vector of surfaces, computing torque, and determining rotational direction.
+
+### Q: What is the distinction between absurdism and nihilism?
+
+Both confront an apparent meaninglessness of existence, but interpret and respond to it differently. Nihilism says there is no inherent meaning, value, or purpose in the universe and does not take the idea further than that. Absurdism incorporates the idea that there is a human desire for meaning despite the lack of a universal meaning, and emphasizes the absurdity of that conflict. Where nihilism surrenders to the meaningless in a way, absurdism is more like an acknowledgement, observation, and possibly defiance.
+
+### Q: What was the "environment of evolutionary adaptation" for humans?
+
+The details are still a subject of debate, but it is generally believed to span from about 200,000 years ago to roughly 10,000 years ago. During the EEA, humans were primarily hunter-gatherers, relying on foraging for food rather than agriculture and settled societies. The period was characterized by a nomadic lifestyle and various environments, including savannahs, forests, and costal regions.
+
+1. Hunter-gatherer lifestyle required mobility and skills such as tracking, tool-making, and knowledge of the local environment.
+2. Small groups consisting of extended family or bands of related individuals. Cooperation and bonding were crucial for survival.
+3. Bipedal locomotion enabled efficient travel over long distances and a larger brain enabled complex problem-solving and social interaction.
+4. A diverse and adaptable diet involving meat, fish, fruits, vegetables, nuts, and roots.
+
+
+### Q: How does a generative image model work?
+
+A massive dataset teaches the model relationships between image data and text descriptions.
+
+When prompting, the text is transformed into a point in a "latent space". This is a high-dimensional, mathematical "space" that captures relationships between various image features that have been learned.
+
+Most commonly, models use a diffusion process to generate an image based on the prompt. This involves starting with random noise and iteratively refining the image toward one that aligns with the prompt's associated region of the latent space.
+
+### Q: To what extent are language models and image models similar?
+
+Both types of models often use the same kinds of neural network models with a transformer architecture. They both rely heavily on pre-training with massive amounts of data to establish reasonable baseline performance.
+
+Both models learn to map input data into a high-dimensional latent space where related concepts or features are located near each other.
+
+Language models must track dependencies over long sequences, but they are ultimately working with a linear structure. Images are far more complex due to the spacial nature and the higher dimensionality of the output (height x width x color channels).
+
+In language models, the "attention" mechanism of a transformer architecture helps the model focus on the most relevant parts of the input sequence as it generates output tokens. In image models, the attention mechanism is more spatially oriented, tracking relationships between different parts of the image.
+
+
+### Q: What are "unified shaders"?
+
+The unified shader model refers to the shader model found in modern GPUs. Prior to their introduction, GPUs used a largely fixed rendering pipeline where each stage was handled by different specialized units. With unified shaders, shader cores on the GPU are flexible and not dedicated to a particular function; they are "unified". This means the cores can be better allocated and utilized for the specific needs of a given application.
+
+### Q: What is meant by "deferred rendering"?
+
+Deferred rendering is a technique that attemps to reduce the raw compute needed to render a scene with complex lighting. More traditional rendering techniques such as forward rendering require performing lighting calculations for each individual object or light source which scales poorly for complex scenes. In deferred rendering, computations are done per-pixel, and so the amount of computations is pinned more to a fixed, unchanging resolution regardless of scene complexity.
+
+The process has two stages. First, the geometry stage renders the geometry in the scene to several buffers that capture different attributes, for example diffuse color, normals, and material properties (often in the form of a numeric identifier). This set of buffers is collectively called the G-buffer. Then, in the shading stage, the lighting and shading calculations are performed based on the G-buffer.
+
+One drawback of deferred rendering is the increased memory requirements of the G-buffer as output resolution grows. Another is that traditional MSAA blurs the image instead of only softening edges because of the way that the G-buffer interacts with that process.
+
+### Q: What is "tile-based deferred rendering"?
+
+Traditional deferred shading can be computationally expensive due to the large number of pixels processed in the lighting pass. Tile-based deferred shading divides the screen into smaller tiles and the lighting pass is done per-tile rather than per-pixel. A per-tile light list contains the necessary data for lighting calculations in that tile. This reduces the raw amount of lighting calculations needed by a factor of how large the tiles are, and it enables efficient memory access patterns where related light information lives together per tile.
+
+### Q: What is "global illumination"?
+
+In traditional rendering, direct illumination is typically calculated by considering only the light sources and their direct paths to the objects in the scene. However, this ignores the indirect lighting effects caused by light bouncing of surfaces. Global illumination techniques aim to model these indirect lighting effects.
+
+Ray tracing is a widely used technique for global illumination where light rays are simulated by tracing them from the camera throughout the scene. It can be physically accurate but computationally expensive.
+
+Radiosity is a method that divides the scene into small patches and calculates energy transfer between them. It can accurately simulate diffuse inter-reflections, but it may not handle other effects like glossy surfaces or caustics.
+
+Photon mapping is a two-pass technique where photons are traced from light sources and then used to estimate the lighting at different points in the scene. It can handle effects like caustics.
+
+Path tracing traces light rays through the scene while using random samples to estimate the light contribution at each point. Like ray tracing, it can be computationally demanding but can produce physically accurate results.
+
+
+### Q: What are spherical harmonic probes?
+
+SH probes are a technique for capturing and representing lighting information in a scene. They are a compact representation of functions defind on a sphere, such as lighting environments or light intensities.
+
+Lighting information for a particular environment or scene is "captured" and encoded into a compact form using spherical harmonic coefficients. These represent the distribution of lighting across the spherical harmonics.
+
+Spherical harmonics are analogous to the harmonics in one-dimensional waves, but extended to a sphere. By using these harmonics, it becomes possible to capture and represent lighting information using a low-dimensional set of coefficients.
+
+### Q: What is SSAO?
+
+Screen-Space Ambient Occlusion is a technique to approximate the ambient occlusion effect in graphics. This is a phenomenon where surfaces close to each other (like the corner of a room) receive less ambient light due to the blocking effect of nearby objects.
+
+SSAO estimates the occlusion of each pixel in the image based on its surrounding geometry in screen space. Instead of calculating occlusion in the full 3D scene, SSAO operates on the final rendered image.
+
+SSAO often operates on the G-buffer used in deferred rendering. For each pixel, the depth values from the G-buffer are used to reconstruct the 3D position at that point. By comparing with the depth of surrounding samples, an occlusion amount can be estimated. The occlusion value is often used to darken the original color of the pixel.
+
+### Q: How did the legacy fixed-function pipeline in OpenGL operate?
+
+In versions of OpenGL prior to 2.0, vertices went through a series of fixed stages:
+
+1. Vertex data was provided as position ,color, texture coordinates, and normals.
+2. The vertices were transformed by the modelview and projection matrices to bring the vertices into view space and then screen space. Lighting calculations like diffuse and specular lighting were applied to the transformed vertices using fixed light positions and material properties.
+3. The primitives were clipped against the view frustum to discard portions of geometry outside the visible region.
+4. Assembled primitives were rasterized into fragments based on screen coordinates. This determined which pixels were covered by a given primitive and generated fragment position, color, texture, coordinates, and depth.
+5. If textures were enabled, the rasterizer would apply texture mapping to the fragments. This involved interpolating texture coordinates across the primitive and sampling textures to determine the texture color.
+6. Fragments underwent depth testing, stencil testing, and blending.
+7. The resulting fragments were written to the final framebuffer.
+
+
+### Q: How do games deal with transparent objects?
+
+One approach is to sort and render objects such that those farther from the camera are rendered first. This ensures that closer transparent objects correctly blend with those rendered behind them. This sorting can be done per-object, per-triangle, or per-pixel. This opposes the "typical" rendering order where objects are rendered front-to-back such that occluded objects are ignored.
+
+Depth peeling is a technique for scenes with complex overlapping transparent objects. It involves multiple rendering passes to peel away layers of transparent geometry and resolve the order of blending correctly. Each pass renders a subset of transparent objects with depth values of previous objects stored and used to determine the correct rendering order.
+
+Order-independent transparency techniques aim to overcome a need for explicit sorting by using different data structures or algorithms to maintain transparency information for correct rendering.
+
+
+### Q: What is a "skin mesh"?
+
+A skin mesh, skinned mesh, or skeletal mesh, is a mesh often used to represent character models. It consists of a combined base mesh and skeletal rig. The base mesh contains the static geometry of the character. The skeletal rig is a hierarchical structure of interconnected bones or joints that define the character's underlying skeletal structure, with each bone or join associated with a specific region of the character mesh.
+
+
+### Q: What are the advantages of forward rendering?
+
+Forward rendering is generally more efficient and better leverages graphics hardware for scenes with a moderate number of lights or scenes where the number of lights affecting each pixels is relatively low. It has a lower memory footprint than deferred rendering as it does not need to store per-pixel information in intermediate buffers.
+
+Forward rendering benefits from early depth testing. By depth testing as early as possible, occluded objects don't need to be processed.
+
+Forward rendering handles transparency more naturally than deferred rendering.
+
+Forward rendering has a more straightforward pipeline that allows for greater control and customization of the rendering process by providing direct access to per-pixel lighting calculations and shading models.
+
+Forward rendering can be enhanced with so-called Forward+ rendering techniques whereby screenspace is divided into tiles or clusters and performing light culling and shading calculations only on relevant tiles, allowing forward rendering to handle more complex lighting scenarios.
+
+### Q: What are the various techniques for rendering shadows?
+
+Shadow mapping renders a depth map, known as a shadow map, from the perspective of the light source. During final rendering, each fragment is compared with its corresponding position in the shadow map to determine if shadowing should be applied. It can support both hard and soft shadows using techniques such as Percentage Closer Filtering (PCF) or variance shadow mapping.
+
+Shadow volumes use the stencil buffer to determine whether a fragment is inside or outside a shadow volume. The volumes are generated by extruding the silhouette edges of occluder geometry in the direction of the light source. The stencil buffer is then used to count the number of times a fragment's depth is incremented or decremented, indicating whether it's inside or outside the shadow volume. They can handle hard and soft shadows, self-shadowing, and dynamic objects, but can be computationally expensive.
+
+Stencil shadows are an alternative to shadow volumes where geometry is not extruded. Instead, depth values of the occluder geometry are used to create a silhouette in the stencil buffer. Fragments are compared against the stencil value to determine if they are inside or outside the shadow. They are generally faster than shadow volumes and can support hard and soft shadows, but may not support self-shadowing.
+
+### Q: Why are "self-shadows" a distinct problem from shadowing in general?
+
+In shadow mapping, which is the most common real-time shadowing method, the scene is rendered from a given light's point of view and depth is recorded. This is fine for capturing unambiguous cases of an object being further "behind" another object that casts a shadow. However, when considering whether a given object casts a shadow on itself, floating-point precision limits become a problem. They can lead to various artifacts like streaks, speckles, flickering, etc.
+
+
+### Q: What developments allowed for real-time raytracing in recent years?
+
+NVIDIA introduced RT Cores in 2018, specialized units designed to accelerate Bounding Volume Hierarchy (BVH) traversal and triangle intersection tests. BHV is used to eficiently find which objects a ray intersects. BHV is a tree structure that groups objects into bounding boxes.
+
+Even so, it isn't that full scenes are being raytraced. The scene still uses traditional rasterization but adds more accurate reflections, shadows, global illumination, and ambient occlusion using raytracing operations.
+
+Raytracing produces noisy images when limited samples per pixel are used. AI-based denoising enabled more accurate, smoother final images with limited samples.
+
+Similarly, AI-based upscaling via DLSS or FSR allowed games to render to a lower "native" resolution, offloading more raw compute power for raytracing operations.
+
+
+### Q: How does raytracing fit into the existing rasterization pipeline?
+
+Raytracing introduces new shader types, including:
+
+- Ray generation: launches rays and defines what to compute when they hit or miss.
+- Intersection: defines how rays interact with complex geometry like curves.
+- Any-hit: runs whenever a ray hits geometry and can decide whether to continue or terminate the ray (e.g. for transparency).
+- Closest-hit: runs at the closest ray intersection and determines final color, material, lighting, etc.
+- Miss: handles rays that don't hit anything (used for skyboxes, backgrounds, etc.).
+
+### Q: How are "decals" (e.g., bullet holes) typically implemented?
+
+Often times, both historically and in modern engines, it is simply a piece of textured geometry offset very slightly from a surface.
+
+In games that use deferred rendering, they may be volumetric geometry that influences the G-buffer (modifying normals or other attributes).
+
+In some cases, such as for persistent effects on terrain, texture "splatting" maybe used where by textures are truly modified at runtime and "painted" over.
+
+### Q: What is the point of "premultiplying alpha"?
+
+Premultiplied alpha makes compositing mathematically simpler, more stable, and more efficient. Many compositing operations (additive effects, particles, glow, etc.) behave much more naturally with premultiplied alpha.
+
+A useful way to think about premultiplied alpha is that the RGB already represents the amount of light the pixel contributes; it stores "emitted light" instead of "color + opacity".
+
+The representation is more physically meaningful. Without premultiplied alpha, RGB can be any value while alpha is zero, which doesn't "mean" anything since a fully transparent pixel's color is irrelevant. With premultiplied alpha, RGB must be zero when alpha is zero. After premultiplication, the 4 channels behave more uniformly: scaling brightness multplies all four channels, fading multiplies all four channels, and interpolation works correctly. Before premultiplication, the alpha channel is somewhat independent of the others.
+
+Premultiplying alpha does not mean the alpha channel becomes unnecessary, though. It still controls how much of the destination/target image should be visible when blending.
+
+### Q: How do "living world" games like Skyrim or S.T.A.L.K.E.R. simulate AI for NPCs that are distant?
+
+They don't truly simulate distant NPCs the same way they simulate the ones nearby that can be seen. They only need to make sure what the player sees appears consistent at the time that they see it.
+
+For NPCs in other parts of the world, the real-time AI is replaced with various other approaches:
+
+- Behavior state machines with time-based transitions.
+- Random event resolution: instead of simulating full combat, the results may be decided by "dice rolls" and high-level statistics about the groups involved.
+- Coarse position updates: NPCs may "teleport" between key points based on elapsed time.
+
+These systems often don't update every frame. They run on a schedule of seconds or minutes, or they may perform a batch of updates when the player moves to a new location.
+
+
+### Q: When RTS games moved from 2D to 3D, they often appear to have dropped the concept of a fixed grid at the same time. How does that work?
+
+The world is primarily modeled on continuous world coordinates while grids and spatial partitioning structures serve as coarse ways of looking up what exists in particular areas; structures like uniform grids, quadtrees, or BVH and KD-trees in games that truly operate in three dimensions.
+
+Buildings typically have bounding volumes; when attempting to place one, the terrain is evaluated to determine if it's flat enough, and collision tests are done against nearby existing structures.
+
+Pathfinding moves beyond grid-based A-star and onto navigation meshes (navmeshes). A navgmesh is a representation of walkable areas as polygons. Obstacles carve holes in that mesh. A-star can still be used for finding a path, but it operates on a variable-cost navmesh rather than a fixed-cost grid. Geometric "cutting" operations can be used to cut a building footprint out of such a navmesh.
+
+Triangles are trivial to split against a convex shape. In practice, though, buildings may be treated as "dynamic obstacles" rather than navmesh edits. The navmesh may reflect only the static terrain while the existence of buildings and units only operate on a runtime obstacle "mask" of nodes in that navmesh.
+
+The high-level approach for convex clipping is the Sutherland-Hodgman algorithm. This can, however, leave non-convex leftovers that need to be accounted for.
+
+### Q: How did HTML change up through HTML5?
+
+HTML 1.0 was standardized in 1991. It had headings, paragraphs, lists, and links, but no support for images or tables and styling was limited (no CSS).
+
+HTML 2.0 in 1995 introduced tables, images, and forms. It also introduced the script tag.
+
+HTML 3.2 in 1997 introduced styling elements like font and center. Support for frames was added. The concept of CSS was introduced, but support was limited and inconsistent.
+
+HTML 4.01 in 1999 refined CSS support and introduced div and span for controlling document structure. It also added more form input types like checkboxes, radio buttons, and text areas.
+
+XHTML 1.0 in 2000 was a reformulation of HTML 4.01 as a strict XML specification. However, the strict XML syntax requirements would not carry forward in HTML5 as backward-compatibility with existing web content was prioritized.
+
+HTML5 in 2014 introduced major changes and features. It added semantic structural elements like header, nav, article, and footer. Multimedia support was added via the video and audio elements, reducing the need for multimedia plugins. Canvas and SVG elements allowed for dynamic and interactive graphics and animations. Input types were added to forms along with form validation. Local storage and offline cache APIs were added. APIs for geolocation, drag-and-drop, and web workers were added.
+
+### Q: What is a Red-Black tree and how does it work?
+
+A Red-Black tree is a type of self-balancing binary search tree, continually keeping the height of the tree from growing more than necessary. Each node has an associated color attribute. The root is always black. Red nodes cannot have red children (and thus a red node also cannot have a red parent). Every path from a node to its descendant leaves must have the same number of black nodes. This ensures the longest path from the root to a leaf is no more than twice the length of the shortest path.
+
+### Q: What is a heap and what are its interesting properties?
+
+A heap is a specialized tree data structure. Commonly, a heap is either a min-heap or a max-heap, where the value of a given node is less than or greater than the values of its children respectively. Extracting the minimum or maximum value of these structures is guaranteed to be a constant-time operation since it will always be the root element. Heaps are commonly used to implement a priority queue where elements can be added and then retrieved according to some ordered property. However, unlike a binary search tree a heap is not a sorted data structure. The root is guaranteed to hold the minimum or maximum value, but the structure is not entirely sorted beyond that (no ordering between sibling nodes).
+
+Inserting an element into a heap involves appending the element and then running a "heapify" operation.
+
+Extracting the root element (minimum or maximum) is similarly done in constant-time, followed by a "heapify" operation.
+
+The heapify operation typically involves swapping elements and recursively adjusting the tree structure from the root to the leaves or vice versa until the heap order property is restored.
+
+### Q: What are radix sort and bucket sort?
+
+Radix sort is a non-comparative sorting algorithm specifically for integers. It processes the digits of an integer in order, distributing integers into buckets based on their digits. It has a time complexity of O(kn) where k is the maximum number of digits allowed. If k is relatively small, then radix sort can be very efficient. It is suitable for sorting integers with a known, limited range of values.
+
+Bucket sort is a more general sorting algorithm that also involves the use of "buckets". Input values within a known range are distributed across ordered buckets. Typically, the buckets are then sorted using some other sorting algorithm. The sorted buckets are then concatenated to produce the final sorted result. It is suitable for sorting data with a uniform distribution across a known range, such as floating-point values within a known range. The performance depends on the specific data and implementation, but on average a bucket sort can aim to achieve linear time complexity.
+
+### Q: What information is a Git commit ID derived from?
+
+A Git commit ID is a hash of the commit object, typically SHA-256. A commit object contains:
+
+- The tree object (snapshot of the directory at that commit)
+- zero or more parent commit IDs
+- author name, email, and timestamp
+- committer name, email, and timestamp
+- optional extra headers
+- the commit message
+
+Thus, if any of these things are changed (e.g. via amending the commit), the commit ID hash will change.
+
+### Q: My mental model of a "git commit" is that it's defined by a diff. How should I think about it?
+
+Because a commit most often has a single parent associated with it, it is not uncommon to think of a commit as capturing a diff. However, a commit is not a diff. It is a pointer to a tree that captures a snapshot of the entire repository. When you "commit", git writes a tree object representing every file and directory, and the commit stores a reference to that tree along with parent commit IDs and other metadata.
+
+A diff only exists when you pick two of these snapshots to compare; there is no diff that represents a single commit by itself. If a commit has one parent, then naturally a diff against that parent is a useful representation of the commit.
+
+A commit can have more than one parent when histories are joined, such as when a branch is merged. A merge commit can have multiple parents (one in each branch involved in the merge, usually two). In that case, the diff associated with the merge commit is more ambiguous, especially if the merge involved conflict resolution. If the merge includes changes for conflict resolution, a diff against either parent branch will be non-empty, but it won't be the same diff.
+
+### Q: What exactly is a "pull request" in the context of Git?
+
+It's not a feature of Git but rather a collaboration feature of platforms like GitHub. It bundles review, discussion, and possible merge into a formal process. The term comes from the idea that "I have work in my branch and I want you to pull it into yours".
+
+The request is usually defined by a source branch, a target branch, the commits reachable from the source but not the target, along with associated comments, approvals, automated checks, etc.
+
+### Q: What are the different "signals" that can be sent to a process on Unix-like systems?
+
+- SIGTERM (15): It asks the process to terminate gracefully, giving it an opportunity to cleanup and finalize.
+- SIGKILL (9): This forces the process to terminate immediately.
+- SIGHUP (1): Typically used to instruct a process to reload its configuration files.
+- SIGINT (2): Sent via Ctrl+C in the terminal. It's meant to interrupt the process, which may be treated similarly to SIGTERM but not ncessarily.
+- SIGQUIT (3): Similar to SIGINT, it's often used to generate a core dump for debugging.
+- SIGSTOP (19) and SIGCONT (18): SIGSTOP pauses a process while SIGCONT resumes a paused process.
+- SIGABRT (6): Often used by the process itself when it detects a critical error. It can be handled, but the default action is to terminate and generate a core dump.
+- SIGALRM (14): Generated when a timer set by the `alarm()` function expires. IT is used to handle timeouts or delays in a program.
+
+
+### Q: What should be considered when choosing between serverless computing and traditional fleets?
+
+Severless is great when the workload is unpredictable or very dynamic. The pay-as-you-go pricing model can be very effective when applications have sporadic usage. Serverless platforms enable faster development and deployment since infrastructure setup, configuration, and maintenance are minimal. On the other hand, serverless platforms come with a degree of vendor lock-in and less configuration flexibility.
+
+Traditional server fleets offer more control of the underlying hardware and software stack. Because they can be left in a running and available state at all times, they can fulfill more stringent latency requirements and offer more predictable performance. They are capable of maintaining state between requests. Even for a generally stateless service, local cache layers that persist between requests may be beneficial.
+
+### Q: What's the deal with fullscreen behavior on Windows?
+
+Windows has two fullscreen modes. True "exclusive fullscreen" involves the game bypassing the Windows compositor (DWM). This often means better performance and, perhaps more notably, lower latency. The downside is that switching back to the Windows desktop can be slow and disruptive, particularly with older games using Direct3D 9 through 11.
+
+Alternatively, a borderless window can be used to display the game fullscreen. In that case, the compositor is not bypassed. This means switching to other windows is just as smooth as any other application, but it can introduce input lag and slightly worse performance that some users don't tolerate.
+
+Windows 10 and 11 introduced Fullscreen Optimizations (FSO) which attempts to combine the best of both worlds for games running in exclusive fullscreen, but some users still complain about latency or other quirks.
+
+### Q: Does Linux have an "exclusive fullscreen" mode?
+
+Technically, but not in the exact same way as Windows. Neither X11 nor Wayland allow an application to take full control of the display. Some compositors support bypass of compositing for fullscreen windows which can offer better performance similar to exclusive fullscreen.
+
+It is possible to run in a GPU-level exclusive model via DRM/KMS, but it requires that the application run outside the context of a windowing system.
+
+### Q: Are microservices still "in vogue" (2025)?
+
+They are widely used, but the hype has cooled and alternatives are common.
+
+Microservices are used more pragmatically. People have felt the pain of latency, complexity, cross-service coordination, and versioning issues.
+
+"Modular monoliths" are making a comeback -- monolithic services with clear internal boundaries and responsibilities. This provides the simplicity and performance benefits of a monolithic service while still allowing for logical separation or transition to multiple services later.
+
+Serverless / Function-as-a-Service (FaaS) emerged as an alternative -- breaking logic into event-driven functions while avoiding infrastructure management.
+
+Event-Driven architectures -- instead of REST-only APIs, services communicate via events (e.g. Kafka). It can lead to looser coupling and more resilient systems at the cost of harder debugging, eventual consistency, or a more complex mental model.
+
+### Q: Very generally, how do search systems like Lucene work?
+
+Systems like Lucene use an inverted index to efficiently find which documents contain given keywords.
+
+During the indexing phase, Lucene scans each document, tokenizing text into individual terms, optionally applying stemming, lowercasing, stopword removal, etc. For each term, it records the list of documents that contain that term, called a "posting list". Optionally, Lucene can store positions and frequencies of words that appear.
+
+During the query phrase, the given search keyword is looked up in the inverted index. The list of associated documents is often sorted or scored using something like TF-IDF or BM25.
+
+Once candidate documents are found, they are scored based on term frequency, how rare the terms are in general (inverse document frequency), field boosts, document length normalization, etc.
+
+### Q: I understand what a lambda is in Python or C++, but what exactly is "the lambda calculus" and why does it matter?
+
+The lambda calculus is a system that shows how computation can be done using only functions and function application. In other words, it is a language consisting of only variables, function abstractions, and function applications.
+
+It's significant because it's Turing complete and shows that computation in general can be done via functions and function application -- no loops, stateful variables, control structures, etc.
+
+
+### Q: What's the deal with libstdc++ and libc++, particularly on macOS?
+
+Historically, libstdc++ was the default standard library implementation used with GCC. Conversely, libc++ is the implementation associated with LLVM and Clang. After Apple transitioned to using Clang as the default compiler, libc++ became the default.
+
+### Q: What is the history and purpose of the /opt directory?
+
+Short for "optional", the directory was intorduced to provide a location for packages that are not part of the default OS installation. Software installed in opt is often self-contained with its own directory structures, libraries, and resources.
+
+
+### Q: What are all the different terminal color "modes" or standards?
+
+ANSI escape codes allow setting text foreground, background, "bright" foreground and "bright" background colors according to indices associated with 8 possible pre-configured colors each.
+
+8-color mode supports 4 text and 4 background colors, limited to a set of common colors.
+
+256-color mode using ANSI escape codes to set text foreground and background colors to a palette of 256 pre-configured colors.
+
+TrueColor mode allows fully specifying 24-bit RGB values via ANSI escape codes.
+
+
+### Q: What are the simplest solutions to the problem of packing rectangles?
+
+First-Fit Decreasing Height (FFDH) whereby the rectangles are sorted by height in descending order and placed on the first "shelf" where it fits. A new "shelf" is started if the next rectangle can't fit on the current shelf.
+
+Best-Fit Decreasing Height (BFDH) whereby rectangles are sorted by height in descending order and placed in the shelf where it leaves the least amount of unused space.
+
+Bottom-Left (BL) whereby rectangles are sorted in some way (e.g. height or area) and then placed in the bottom-most, left-most position where it can fit. Choose the left-most option when multiple positions are possible.
+
+Guillotine Cut algorithms whereby remaining free space is recursively split after placing each rectangle:
+- Choose a rectangle and place it in a corner, e.g. bottom left.
+- Split the remaining space into two parts horizontally and vertically.
+- Recursively apply the same operation to the remaining space.
+
+
+### Q: Why is C sort of the "lingua franca" of programming languages?
+
+Partly historical precedence. It is old an influential, with many modern languages having been designed or influenced by compatibility with C which further reinforces that entrenched compatibility expectation.
+
+C has a relatively simple and well-defined ABI, making it easier for languages to interface with compiled C code.
+
+C provides low-level memory manipulation capabilities that are missing in higher-level languages. In other words, few popular languages could fill the role of being a foundation the way C is.
+
+### Q: Why have web technologies evolved to be a kind of "universal platform" rather than something purpose-built for that goal (e.g. JVM)?
+
+The web had three structural advantages over efforts like the JVM: instant distribution, universal runtime availability, and decentralized evolution.
+
+To run a Java Applet, the user had to navigate somewhere in their browser, possibly install or update a secondary Java plugin, download the application content, and then run it. Even that relatively low amount of friction couldn't compete with the use of features built into the browser and delivered with the web page content seamlessly. Distribution friction turned out to be very important in practice.
+
+Browser development involved a tension between introduction of features and maintaining compatibility. This resulted in experimentation followed by open standardization, allowing further evolution along standardized interfaces. This won out over something like the JVM which had been owned and developed by one centralized party.
+
+This follows a common pattern where the most widely deployed runtime becomes the "universal platform". If someone visited your web application, it was guaranteed they had a browser, so targeting the browser itself made sense when possible. They may or may not have had other software, like a JVM plugin or Flash installed.
+
+### Q: What are some guidelines for the point when highly composed or compact code hurts readability instead of helping it?
+
+Compact code can aid readability when each function has a clear and understandable responsibility, e.g. `users.filter(isActive).map(toDisplayName).sort(byLastName)`, follows a standard, well-known pattern, and there are minimal branches or side effects embedded within.
+
+Compact code can hurt readability when the functions being composed are too abstract, anonymous, or nested, e.g. `doSomething(f(g(h(x))))`, side-effects or context changes are embedded within, or when intermediate values are useful for understanding and debugging key steps.
+
+The line is wherever mental unpacking outweighs perceived elegance. Some rules of thumb might be 3-5 functions in an intuitive pipeline and no more than 2-3 levels of nesting.
+
+### Q: What are the roces behind the fact that JavaScript became popular well beyond its original frontend scripting domain?
+
+1. The ubiquity of the browser runtime (and therefore JavaScript) as a platform.
+2. Developer consolidation and hiring economics. Companies prefer to hire generalists, and if the frontend is unavoidably JavaScript, it makes sense to write back-end systems in JavaScript as well.
+3. NPM grew to be a giant package repository and tooling like Electron, React Native, and WebAssembly allowed JavaScript to run across various non-browser environments.
+4. Modern JS runtimes allowed JavaScript performance to be "good enough" for most use cases.
+5. Writing software as a webapp is of the path of least resistance due to browser ubiquity and frictionless distribution.
+
+### Q: What's the dela with "range queries", query types 1 and 2, and "difference arrays"?
+
+This refers to a particular category of algorithm involving modifying and querying values in an array efficiently.
+
+Query Type 1 (Point Update or Range Update) modifies or adds values in a specified range of indices. For example, add "x" between indices "l" and "r".
+
+Query Type 2 (Range Query) typically involves computing some function, like a sum or max, over a range of indices.
+
+A difference arrays is a secondary array that can be leveraged to handle these updates and reads efficiently. A difference array is created that captures the difference between consecutive elements of the primary array. To, for example, increment all values, one would most naturally need to walk through and increment every relevant value in the primary array. When using a difference array, one would instead just modify the "difference" value at the left and right boundary of the range (two modifications). The appropriate value for the original array can then be recovered by taking the prefix sum of the difference array. This makes sense to do when there are many update operations relative to reads (imagine a task involving incrementing various large ranges of an array). It reduces a linear update operation to a constant-time one.
+
+### Q: What's the deal with COM and OLE in Windows programming, and are there equivalents on macOS or Linux?
+
+COM and OLE are Microsoft's way, especially historically, of enabling interprocess communication, code reuse, and language interoperability. COM provides a binary interface standard that can enable cross-language integration, and allow processes to communicate, even over a network via DCOM. OLE started as a way to embed objects (e.g. inserting an Excel sheet into a Word document), which further generalized to COM and evolved into more modern architectures like .NET.
+
+Objective-C's runtime provides dynamic object messaging between Objective-C and Swift which supports some of what COM aims to achieve but with less language agnosticism. Similarly, CoreFoundation and CoreServices handle modular component interaction.
+
+D-Bus on Linux is used for interprocess communication, but is more focused on system services. GObject is similar but primarily for use with C and GTK.
+
+### Q: I get the sense that COM, at the time, was meant to be a bigger thing than it became. What happened?
+
+It was designed as a kind of grand unifying framework for software components, but didn't catch on outside of Microsoft's own products and system-level APIs. It was notoriously difficult to work with directly -- the manual reference counting, interface querying, and need for IDL files made it cumbersome.
+
+While COM was meant to be language-agnostic, its design was very C++-centric. Outside of Microsoft, most developers didn't see a strong reason to adopt COM when they could just use DLLs, shared libraries, and other cross-platform solutions. COM was also not designed with cross-platform compatibility in mind because, at the time, Windows was so dominant in the desktop software space.
+
+### Q: What and when was the first C compiler?
+
+The original C compiler was developed in the early 1970s, initially for the PDP-11. Over the years, it was updated to support more architectures and was named the Portable C Compiler, PCC. In the mid-1980s, the GCC C compiler was created and widely adopted.
+
+### Q: What are the GNU extensions to the C standard?
+
+- Statement expressions allow you to execute blocks of code within an expression, e.g. `int x = ({ int y = 3; y + 2; });`.
+- Nested functions allow the definition and use of a function within the scope of another (similar to Python).
+- The address of a label can be used as a value and jumped to dynamically.
+- Variable-length arrays inside structures.
+- Designated initializers, although this was standardized in C99.
+- GCC allows inline assembly within C.
+- GCC provides attributes to control certain things about functions, variables, or types, e.g. `__attribute((packed))__` to disable padding bytes.
+- `typeof` can be used to get the type of an expression.
+- Numeric ranges in a case statement.
+- Zero-length arrays in structures.
+- Extended integer types like `__int128`.
+
+
+### Q: Are there any features in modern C that are missing from modern C++?
+
+- Variable-Length arrays (VLAs). C++ does not support VLAs; instead, a vector or other standard library container would be used.
+- C99 has the `restrict` keyword which indicates that a pointer is the sole reference to an object and tells the compiler to assume no pointer aliasing. Some C++ compilers may support `__restrict__` as an extension.
+- C99 supports designated initializers where struct fields can be initialized using their names. C++20 introduced a form of designated initialization, but the rules differ slightly.
+- C retains implicit `int` type for function declarations which is invalid in C++.
+- C99 supports flexible array members where the last member of a struct can have an unspecified size.
+- C99 supports compound literals. C++ can achieve similar functionality through the initializer list type.
+- C99 supports macros with variables arguments via `__VA_ARGS__`.
+
+
+### Q: Why has aspect-oriented programming apparently had very limited adoption?
+
+AOP hides behavior and clashes with standard debugging tools. It often relies on weaving to inject behavior such that the runtime code does not exactly reflect the source.
+
+AOP often requires integration into the build pipeline, adding complexity and breaking the "standard" build steps one would expect.
+
+While AOP is useful for certain cross-cutting concerns like metrics in an effort to keep the business logic clear, the use cases are somewhat limited and may not justify the complexity of adding AOP to a project.
+
+Functional programming idioms like second order functions and monadic constructs can be used to address cross-cutting concerns with less "magic".
+
+Mainstream languages emphasize explicitness and simplicity. A language could integrate AOP as a first-class feature, but it would need to embrace the idea that implicit behaviors are acceptable. There are patterns such as decorators and functional techniques that reduce the relative value of introducing AOP.
+
+In other words, AOP sounds nice but in practice the complexity it introduces has not been found to be worth it for the limited use cases.
+
+
+### Q: I was always taught singletons are bad, so why do we seem to accept singleton logging interfaces?
+
+Logging is a cross-cutting concern, so it does make some sense for it to be accessible anywhere without requiring passing references around. It is also something that generally benefits from centralized configuration and consistent logging behavior across an application.
+
+It does have downsides, though. Unit tests may fall back to default logging behavior unless they are appropriately configured. It can be more difficult or awkward to customize logging behavior for a specific section of the application.
+
+The biggest factor, though, is probably that logging is one-way. There is not really problematic global state, which is the issue that singletons may introduce. A logging interface is simply an output sink; writing to the log should never impact any other part of the system.
+
+### Q: Another thing I often see that feels counter to best practices is context objects. Do they not violate design guidelines?
+
+Context objects typically serve to reduce the number of related objects or values passed around and to keep function signatures from growing. They are not inherently bad but should be used with clear intent. When multiple pieces of information are highly related and multiple layers of the system need access, context objects make sense and serve to reduce the size of function signatures and number of changes required to change or add to that set of related information. They are particularly useful for passing read-only configuration information, scoped state such as request or transaction information, or encapsulating cross-cutting concerns like logging, authentication, or metrics.
+
+Where context objects become a problem is when they become bloated and start to contain unrelated information simply for the convenience of not having to change function signatures. They can be used, but one should consider whether it makes logical sense to group the information or interfaces that are added to them. When the context objects serve read-only information, the potential impact down the line from bad decisions is more limited.
+
+### Q: Python and Ruby are similar but yet so different. What is the difference in their design philosophies?
+
+Python emphasizes readability, where explicit is better than implicit and there is "only one way to do it". It supports object-oriented programming but is more multi-paradigm and precedural styles feel natural as well. It supports some level of metaprogramming via decorators, dynamic class creation, and metaclasses, but it prefers clarity and understandability.
+
+Ruby emphasizes flexibility with multiple ways of writing the same code and multiple ways of accomplishing the same thing. It is a purely object-oriented language where absolutely every construct is an object. Ruby's metaprogramming is more flexible and integrated into the language which is powerful but more "magical" and harder to follow.
+
+
+### Q: What are some best practices or rigid ideas that are taught in programming but have more nuance in practice?
+
+Global state is not always bad when controlled. Some global state is often a practical necessity, with things like configuration, environment variables, and dependency injection containers often being a form of global state. The key is controlled usage, and often acceptable global state is state that is largely read-only.
+
+The Don't Repeat Yourself (DRY) principle is sometimes taken too literally. Prematurely abstracting any and all shared code can lead to unnecessary complexity. Sometimes, two pieces of code look similar but have different reasons to exist or _should_ otherwise be allowed to evolve separately. Write Everything Twice (WET) may be a better principle; that is, don't worry about consolidating repetition until it has been repeated three times or more and it makes logical sense to share.
+
+Preferring composition is a good practice, but that doesn't mean inheritance is never useful. It can be useful for defining shared behavior when there truly is a clear "is-a" relationship between two things.
+
+Overusing dependency injection can make code more complex than needed. Sometimes, creating an object directly inline is fine if it's lightweight, simple, and/or unlikely to change or need to be substituted in tests.
+
+OOP has been the standard paradigm in development and education for some time, but it is often applied poorly and only overcomplicates the design of a system. More recently, functional, data-oriented, and event-driven approaches have become popular.
+
+100% unit test coverage is a bit excessive sometimes; simple getters/setters and glue code don't necessarily benefit from test coverage.
+
+While breaking down functions into smaller units is useful to an extent, excessively small functions can make code harder to read when the function definitions start to become a larger percentage of the code one is looking at.
+
+While ORMs abstract away database interaction, that also means they can make debugging and understanding what exactly is happening with regard to the database more difficult. Perhaps more direct SQL generation has advantages.
+
+Self-documenting code is a good goal, but in practice some business logic, decisions, or historical context are much better explained with comments than names.
+
+Excessive decoupling can lead to unnecessary complexity. Sometimes, direct dependencies make code simpler and easier to maintain.
+
+The latest programming trends do not always last or represent progress. Trending languages and frameworks have come and gone while other staples, like C, SQL, and POSIX, have stayed relevant for many decades.
+
+More lines of code does not mean more complexity or less readability. Sometimes, overly concise or condensed code (ternary operators, list comprehensions, bitwise tricks) is less readable and maintainable.
+
+Encapsulation is valuable for managing invariants or abstracting implementation details that could change, but it can be taken to an extreme (e.g. getters and setters for fields that logically have no invariants).
+
+
+### Q: What even is a monad, really?
+
+A monad is a functional design pattern that represents computations as a series of steps. At it score, a monad is a type with two operations that satisfy the "monad laws":
+
+- A unit or return function that takes a plain value and wraps it in a monadic context, e.g. `Some(value)`
+- A bind function (sometimes called flatMap) that takes a value from within a monad and a function that returns another monad, flattening the result into a single monad. This allows chaining monadic operations together.
+
+The monadic laws are:
+- Left identity: wrapping a value with the unit function and then applying bind should be the same as applying the function to the value directly.
+- Right identity: applying the bind function with the unit function should not change the monad.
+- Associativity: chaining multiple operations with the bind function should not depend on how the operations are grouped.
+
+Looking at a "Maybe" or "Optional" type, you have a way of putting a value into that context (e.g. `Some(value)`) or of putting an "empty" value into it (e.g. `None`). That is the entire space of possible things that can exist in that monadic context. Then, you have a bind or flatMap function which takes one of those possible things and provides a new one which may be the same or different. That is the "chaining" operation that allows representing computation as a series of steps.
+
+Other common monads are `Either`, which allows a "successful" `Right` result or an error `Left` result, analogous to `Some` or `None`, and the `List` monad which allows chaining operations over lists, handling multiple values, and combining results.
+
+### Q: What is "backpressure" in reactive programming?
+
+Backpressure refers to a mechanism for handling situations where a data producer (e.g. a stream or observable) generates data faster than a consumer (e.g. subscriber) can process it. It can be implemented in several ways, including:
+
+- Buffering excess messages. This helps to tolerate occasional bursts of data but isn't a solution if the producer continuously outpaces the consumer.
+- Dropping messages. This can be acceptable when only the latest data is relevant and a backlog has little value anyway.
+- Throttling, whereby the producer reacts to the consumer's inability to keep up or proactively throttles itself.
+- Blocking, whereby the producer must wait until the consumer is ready accept new data.
+- Windowing and batching, whereby the system processes data in fixed-size chunks or batches, reducing the overhead of processing data items individually.
+
+
+### Q: What is the "non-member, non-friend principle"?
+
+The principle states that, with regard to C++, if a function can be implemented using only a class's public interface, then it should be implemented as a free function (a non-member, non-friend function).
+
+The reasoning is that it clearly signals that the function does not rely on internals of the class, and that any changes to the internals of the related class should not require changes to the function.
+
+However, some may argue that it impacts discoverability (i.e. no "dot completion" in an IDE) and can create a sense of fragmentation or disorganization when not all of a class's associated functionality is strictly part of the class.
+
+
+### Q: How can one determine whether the "right" abstraction has been achieved?
+
+The abstraction should have a minimal but sufficient interface. Client code should not need to reach "under the hood" for details or do what they need without workarounds.
+
+It should have predictable, intuitive behavior. Clients shouldn't need to guess how something works or be surprised by the effects of small changes in usage.
+
+It should hide what varies and expose what's stable.
+
+It should minimize dependencies on other parts of the system and keep related responsibilities together (low coupling, high cohesion). If changes outside the abstraction often force changes inside it, that's a bad sign.
+
+It should be reusable in multiple contexts without bending too much or requiring adapters, glue, workarounds, etc.
+
+If it survives multiple iterations or feature additions without becoming cumbersome, that's a positive sign.
+
+It should fit the mental model that you and other developers have about the problem; it should be easy to "get".
+
+### Q: What is the distinction between a unit, integration, and acceptance test?
+
+A unit test targets a small unit of behavior in isolation; often a single function, method, or class. Everything outside of that scope should be controlled or replaced with mock implementations.
+
+An integration test checks that multiple real components work together correctly. It tests boundaries: database to service, service to service, configuration, etc.
+
+An acceptance test validates the system from the perspective of a user or stakeholder. It tests whether the system satisfies the requirements it was built for, often exercising the whole stack from UI through backend. They are often the most brittle and least precise diagnostically, but they provide confidence that the system actually does what was intended.
+
+
+### Q: What is the guidance on the use of "auto" in modern C++?
+
+The guidance is to use auto fairly liberally when the type is obvious or irrelevant to understanding, but to avoid it when it hides important type information. Practical guidance many teams follow is:
+
+Use auto when:
+- The type is obvious from the initializer
+- The type is verbose or template-heavy (and hard to follow anyway)
+- It would be repetitive not to
+- You want the compiler to adjust to type changes without intervention
+
+And to avoid auto when:
+- The exact type is important to understanding the code
+- The initializer doesn't clearly reveal th type
+- It could hide conversions or narrowing
+
+
+### Q: What is the timeline of programming language design and popularity?
+
+Assembly languages (1940s-1950s) mapped mnemonic codes directly to hardware operations. Essential, but impractical for increasingly complex applications.
+
+Early high-level languages (1950s-1960s) like Fortran for scientific computing and Cobol for business applications.
+
+Structured programming languages (1960s-1980s) introduced the concepts of block structure and scope. Algol (1960) was influential in acacemia but less so in industry. Pascal (1970) was popular in educational settings and C (1972) became very popular for system programming and is still highly relevant today.
+
+Object-Oriented programming languages (1980s-1990s) emerged starting with Smalltalk (1980). C++ (1985) extended C with object-oriented features while maintaining backward compatibility. Java (1995) emphasized platform independence and security.
+
+Scripting and functional languages (1990s-2000s) emerged with Perl (1987) focusing on text processing, Haskell (1990) demonstrating a purely functional language, Python (1991) emphasizing readability and simplicity long before recent explosive growth in the data science world, and JavaScript (1995) for web browser scripting.
+
+Modern trends (2000s-2025) bring us Rust (2010), aiming to combine memory safety with the efficiency of C++, Go (2009) emphasizing simplicity and efficiency for concurrent programming, and Kotlin (2011) aiming to be a more modern and pragmatic language for the Java VM.
+
+
+### Q: What about Ruby, Objective-C, and Delphi?
+
+Ruby was introduced in 1995 before gaining popularity later due to the Ruby on Rails framework for web development. It is highly influenced by the object-oriented purity of Smalltalk.
+
+Objective-C is similarly influenced by Smalltalk, but maintains compatibility with C. It was introduced in the early 1980s and became dominant in the Apple ecosystem because of its association with NeXTSTEP. Swift is meant as a modern, safer alternative that reduces the syntax complexity and verbosity of Objective-C.
+
+Delphi was introduced in 1995 as part of a rapid application development by Borland. It was heavily influenced by Object Pascal with an emphasis on quick GUI development for Windows. However, it faced challenges from Java, .NET, and later web applications.
+
+### Q: What exactly is the difference between structured, imperative, and procedural programming?
+
+They are technically different paradigms, but most popular modern languages involve all three.
+
+Imperative programming is the idea that programs are composed as a series of commands that manipulate state
+
+Structured programming introduces concepts like loops, conditionals, and associated blocks of code.
+
+Procedural programming is the idea of abstracting parts of a program into named blocks to aid abstraction and reuse.
+
+### Q: What's the relationship between algabraic data types, traits, higher-kinded types, and implicits as seen in Scala?
+
+Traits are somewhat similar to interfaces in other languages. They define contracts but can also hold state and implement methods. They are used for a kind of multiple inheritance to share both interfaces and data among classes in a way that is more like composition than inheritance.
+
+Higher-Kinded Types are types that take type constructors as parameters, enabling the definition of more generic structures that operate on a wide variety of types. In other words, they're types that take other types as parameters.
+
+Implicits are mechanisms that allow the compiler to automatically supply parameters to functions or to convert types.
+
+Algabraic Data Types are types formed by combining other types, typically using sum types (variants) and product types (tuples). They allos the definition of complex structures that can encapsulate a fixed set of possible values for type-safe data handling.
+
+Traits can be used to define ADTs by writing a set of classes that implement a sealed trait.
+
+Higher-Kinded Types are often used in conjunction with implicits to define generic operations over data structures like functors, monads, etc. Implicits provide instances of these type classes, allowing for automatic derivation of functionality based on context.
+
+Implicits can be used to provide default behavior or type class instances for ADTs, enabling more flexible and reusable code.
+
+Traits can be parameterized with higher-kinded types to define abstract data structures or operations that work with any type constructor.
+
+### Q: What was the earliest game console where games were typically programming in C or C++ rather than assembly?
+
+The majority of SNES games were still written in assembly for performance. The PlayStation and Saturn were the earliest to provide robust development kits for C, and this of course continued with the N64, Dreamcast, and so on.
+
+### Q: How can one replicate the "context and dependency capture" role of objects in OOP in other paradigms?
+
+In C, this might be accomplished with context structs holding relevant context for use with multiple functions.
+
+In languages that have closures, you can create lambdas or function objects with relevant context bound. Similarly, partial function application achieves binding of context separately from use.
+
+
+### Q: Why are houses in the US typically built with wood while in the UK they're typically built with brick or stone?
+
+By the time large-scale building was needed in the UK, much of Britain's original forest cover had already been depleted due to centuries of shipbuilding, charcoal production, and land clearing for agriculture. Timber shortages were already an issue by the 17th and 18th centuries.
+
+The UK has abundant natural stone deposits (limestone, sandstone, granite, etc.). Stone is durable, fire-resistant, and sutiable for the damp British climate.
+
+Wood construction works well in the US because it offers better insulation against the more extreme temperature fluctuations.
+
+### Q: What is the distinction between England, Britain, and the UK now and historically?
+
+Britain is the geographical island that includes three countries (although, not countries in the usual international sense of the word): England, Scotland, and Wales.
+
+The United Kingdom is a sovereign state or political entity that comprises England, Scotland, Wales, and Northern Ireland (i.e. Great Britain and Northern Ireland). From an international perspective it is often referred to as a country despite also having entities within it called "countries".
+
+Prior to the 10th century, England, Scotland, and Wales contained various kingdoms. In 927, England was unified under one monarch. In 1284, Wales was effectively annexed by England (but not formalized until 1535-1542). The Acts of Union in 1707 united England and Scotland under the Kingdom of Great Britain, at which point Britain became a political term rather than a purely geographical one. Ireland was added in 1801, with part of it leaving in 1922.
+
+
+### Q: How and when did the monarchy in the UK lose its "real" power and why am I not aware of any kind of revolution?
+
+It was a long, gradual decline in authority rather than a sudden revolution. As early as 1215, English kings had their power legally limited by nobles with the Magna Carta.
+
+Charles I fought Parliament across money, religion, and authority, but was put on trial and executed in 1649, reinforcing that the monarch could be judged by his own people.
+
+A major turning point was the introduction of the English Bill of Rights in 1689. King James II was forced out by Parliament while William III and Mary II were invited to rule under the new conditions. The bill made it unlawful for the monarch to suspend laws or tax without Parliament's consent. This made Parliament the supreme lawmaking body.
+
+The 18th century saw a shift in power from the monarch to the Prime Minister and Cabinet. Elected ministers were more involved in day-to-day governance by the 1800s.
+
+A single violent revolution didn't occur because the monarch gradually lost practical power even if technically he still had formal authority. Parliament held control of funding. The military was not loyal to the king to the extent that they would act without pay and support from Parliament, so Parliament effectively had the power.
+
+
+### Q: How and when did the US and UK become allies, or at least friendly, post-revolution?
+
+The two were still unfriendly and the situation remained tense through the early 1800s. However, the War of 1812 ended with a treaty and trade between the two countries grew. It became practical and profitable to cooperate.
+
+Tensions briefly rose during the American Civil War with Britain's economic ties to cotton, but Britain ultimately stayed neutral.
+
+Around the turn of the 20th century, Britain had bigger concerns with Germany's rise in Europe. With the U.S. becoming a major industrial and naval power, along with strong cultural ties, the relationship became increasingly friendly and centered on strategic trust. The two World Wars further cemented the two as allies.
+
+Overall, it was a gradual shift where hostility clearly stopped making economic sense and friendly trade offered benefits for both. Later, emerging threats incentivized strategic cooperation.
+
+
+### Q: What is the population of the UK in terms of US regions or states?
+
+At roughly 69 million people, the UK overall is similar to the combination of California and Texas.
+
+England is a bit more than Florida and New York combined.
+
+Scotland is roughly the same as Minnesota or Colorado.
+
+Wales is roughly Iowa or Arkansas.
+
+Northern Ireland is roughly New Mexico or West Virginia.
+
+
+### Q: What is the UK's economic output in terms of US regions or states?
+
+For reference, the US's approximate nominal GDP is 29.2 trillion USD.
+
+The UK's GDP is approximately 3.3-3.9 trillion USD.
+
+The UK falls between California and Texas in terms of GDP, with California having 4.1 trillion USD and Texas having 2.7 trillion USD.
+
+
+### Q: How can I deal with the "awkwardness" of handling both orientation and velocity with a vector?
+
+A velocity vector is awkward for orientation because it can have zero magnitude which has no orientation. These are really two independent pieces of state that are only correlated in many cases.
+
+You can store a normalized direction vector separately from a speed vector. Even if the velocity/magnitude is zero, orientation can be retained.
+
+You can store angle and magnitude instead, but without an associated "zero degrees" axis, the angle is underspecified. For most operations, a direction vector is more immediately useful anyway.
+
+
+### Q: What is the difference between brush-based and model-based environments?
+
+Brush-based geometry, also known as constructive solid geometry (CSG), involves constructing an environment from primitive shapes called brushes. Brushes can be combined, subtracted, or intersected to create more complex shapes and structures.
+
+Model-based geometry emphasizes the construction of an environment by composing geometry that was crafted in dedicated 3D modeling software.
+
+Brush-based environments have become less common since the mid-2000s as the industry leveraged increased processing power and more advanced 3D modeling tools to build environments directly from more complex models.
+
+
+### Q: How is gamma different from brightness or contrast?
+
+Brightness adjusts the overall luminance of an image, with all regions and tones affected uniformly.
+
+Contrast controls the difference between the darkest areas and the lighest areas in an image.
+
+Gamma refers to a nonlinear relationship between the numerical values of pixel intensities and their perceived brightness on a display. It is used to compensate for the nonlinearity of human visual perception and to ensure that images appear correctly on different devices. Adjusting the gamma value affects the overall brightness distribution and mid-tones of an image.
+
+### Q: What is frame pacing?
+
+Frame pacing refers to the consistency of the time it takes to render each frame in a game. While frame rate indicates an average, it does not say anything about how consistent the time between each frame is. Frame pacing issues can result from a variety of factors, including rendering techniques, CPU or GPU bottlenecks, or synchronization issues.
+
+### Q: What are all the various anti-aliasing techniques?
+
+Multisample Anti-Aliasing (MSAA) is a common traditional technique. Instead of resolving a pixel to one virtual point in the scene, it samples a few clustered points in the scene to get an average.
+
+Supersample Anti-Aliasing (SSAA) involves rendering the scene at a higher resolution and then downsampling to the target display resolution.
+
+Fast Approximate Anti-Aliasing (FXAA) operates on the final rendered image. It analyzes and smooths the image, but may blur details as a result.
+
+Temporal Anti-Aliasing (TAA) is a more advanced technique that combines information from multiple frames to reduce aliasing as well as flickering or shimmering. It leverages motion vectors from the game data and the previous frame to create a smoother result.
+
+Conservative Morphological Anti-Aliasing (CMAA) is a technique that works by examining the scene's depth buffer to determine edges, allowing for more selective anti-aliasing.
+
+### Q: What are some methods of procedurally generating game worlds or maps?
+
+The real goal and difficulty comes from creating local variety while maintaining global constraints or intentions.
+
+A common approach in roguelikes is a graph-first, abstract layout that is "realized" into a more physical space. The graph defines rooms or areas as nodes with edges between them representing connections via doors or corridors, and encodes any constraints like special areas that must exist somewhere (e.g. boss or starting area). The graph is then used to build a more detailed tile-based world. The details of a given room or connection can be decided on-the-fly, but by following the graph when building it ensures that the high-level constraints are maintained.
+
+Cellular automata can be good for creating organic, cave-like spaces with natural chokepoints and emergent shapes, but connectivity is probabalistic without post-processing and you have less control. It works best when the environment is the focus rather than layout control. You start with random noise and apply local rules iteratively such as "if a cell has more than N solid neighbors, it becomes solid". Then, you flood-fill to keep only the largest connected region.
+
+Binary space partitioning can be used to carve less organic spaces. It involves splitting the map rectangle recursively and placing a room in each leaf and potentially connecting sibling partitions. It is essential building a graph from space rather than building spaces from a graph. It works well for clean, readable layouts and reliable connectivity.
+
+Random walk tunneling involves metaphorically digging tunnels by walking agents through a solid space including variants like the drunkard's walk or biasing toward unexplored regions. This is not especially interesting on its own but can be used to make more interesting corridors or connections between rooms that have been placed in another way.
+
+Constraint satisfcation or "wave function collapse" style methods involves building a map from local adjacency rules. You iteratively pin tiles in the world from among the options that are valid for a given tile considering what has been pinned already. It's good for enforcing local adjacency rules and making a coherent map, but on its own does little to satisfy global constraints unless those constraints bias the choices that are made when pinning.
+
+Rule-based generation like shape grammars or L-systems require a bit more upfront design work, but can allow a map to feel authored.
+
+For outdoor spaces or terrain, it can make sense to start with a noise-based heightfield. Use flood-fill to find large connected components and either discard small isolated areas or carve passes between them. The heightmap can be used to determine walkability, where water flows, where vegetation can grow, etc.
+
+### Q: What are typical final loudness targets in modern music?
+
+For streaming platforms, the common reference metric is integrated LUFS over the full track.
+
+- Pop / dance: around -9 to -7 integrated LUFS
+- Rock: more often -10 to -8 integrated LUFS
+- More dynamic or less "commercial" material: -12 to -10 integrated LUFS
+
+Anything louder than about -7 LUFS is usually a conscious aesthetic choice toward aggression or "hard" club material.
+
+However, musically, short-term and momentary loudness matter more:
+
+- Short-term LUFS in choruses is often around -6 to -4 LUFS in modern pop/dance
+- Verses might live closer to -10 to -8 LUFS
+
+Dynamic range (LRA) is also important to consider:
+
+- Modern pop/dance typically lands around 3-6 LU LRA
+- Rock may stretch to 5-8 LU LRA
+- Below around 3 LU, things often start sounding flat and fatiguing unless the genre demands it
+
+Commonly, a gentle bus compression (1-2 dB GR, slow attack, auto or medium release) is used to glue the track and final loudness is achieved primarily through limiting, often in stages. Try to make the mix feel finished and punchy at around -14 to -12 LUFS integrated and then see how far it can be pushed in a limiter without noticeable changes. That often puts the track somewhere between -10 and -7 LUFS.
+
+
+### Q: What exactly is an LU or an LUFS?
+
+LU is a relative "loudness unit" while LUFS is the same measure in absolute terms ("loudness units relative to full scale"). 0 LUFS is the theoretical maximum within a digital audio system. LUFS only has meaning when paired with a time window: "integrated" means the entire track, short-term often means around 3 seconds, and momentary means around 400 milliseconds.
+
+An LU itself is simply a difference of 1 dB in loudness relative to some reference loudness. For example, a common broadcast standard like EBU R128 might use a reference of -23 LUFS. From that perspective, material at -21 LUFS is said to be +2 LU. Therefore, a value like "16 LU" on its own has little meaning without context.
+
+
+### Q: How should I think about using the various kinds of dynamics tools?
+
+A very high-level guideline might be that early tools should make decisions and late stage tools should manage consequences.
+
+Default to single-band compressors for general envelope shaping, groove consistency, or glue. They are appropriate on individual tracks, subgroups, and the mix bus only for very light glue (1-2 db GR).
+
+Single-band limiters can be used to cap peaks in material, increase density without reshaping envelopes, and achieving final mix loudness. They can occasionally be used on unruly individual tracks, but should almost exclusively live at the end of the mix chain.
+
+Saturation is for when things feel thin, sterile, or disconnected. They may be chosen over compression when something feels overly dynamic but also lifeless. They can make sense on individual tracks, subgroups, or very lightly on the mix bus.
+
+More specialized tools like maximizers or transient shapers are often just multiple tools behind a unified interface, maybe with special psychoacoustic processing. Maximizers, for example, are often a combination of limiter, soft clipping, and psychoacoustics. The danger is that they make decisions for you. It's fine in the mastering stage if it sounds the way you want, but it's risky to use earlier in the mix somewhere. Transient shapers can be used when compression is changing the tone too much and you want more or less attack without sustain side effects.
+
+Multiband compressors should be used judiciously to avoid inappropriately compensating for imbalances. They should only be used when a known frequency range is dynamically unstable and this can't be fixed in another way. Using one on the mix bus is often a sign that you're compensating for too much low-end energy, overcrowded mids, or over-bright top end.
+
+Multiband limiters may be used to push loudness on the final mix, perhaps in part by controlling the low-end separately from the rest of the mix.
+
+In general, a practical hierarchy:
+
+1. Arrangement and sound choice
+2. Track-level EQ and compression
+3. Subgroup processing
+4. Gentle mix-bus glue compression
+5. Final limiting
+
+
+### Q: How do I reconcile the idea of "track-level" with the fact that many synthesized sounds can be quite layered and dense to begin with?
+
+Really, the a better mental model is perceptual or functional "voices". A three-oscillator synth through one filter and envelope may function as a single voice. A layered bass may be one "thing" rhythmically or melodically, but consist of a sub sine, mid growl, and distorted top, each of which may be treated separately before being bussed. Multiple unrelated elements shouldn't share a (non-glue) compressor or EQ.
+
+### Q: What's the distinction between a compressor and a transient shaper?
+
+Both can be used to control transients, but compressors operate on input levels while transient shapers operate on _changes_ in amplitude rather than the absolute level. Transient shapers aim to identify the fast attack component and shape it separately from the rest of the sound.
+
+Transient shapers are less dependent on input level; they aim to treat the input envelope similarly regardless of peak level.
+
+### Q: What's the deal with oversampling, true peak, dithering, and noise shaping?
+
+These only come into play for rendering a final output file.
+
+Oversampling is relevant to non-linear processes like clipping that create harmonics. They can fold back into the signal as aliasing, but oversampling runs the process at a higher internal sample rate to avoid this.
+
+True peak again uses oversampling to catch peaks that fall in-between the digital samples. For final delivery, you may want to enable true peak processing with a ceiling of -1.0 dBTP to -0.8 dBTP.
+
+Dithering only matters if you are reducing bit depth. It replaces correlated quantization distortion with uncorrelated noise, making quiet fades and tails behave correctly. It is really not relevant for 24-bit or 32-bit float exports, only 16-bit files. Noise shaping just impacts where the dither noise goes. A flat dither spreads the noise evenly while noise shaping puts the noise into less audible frequencies.
+
+
+### Q: Are there any guidelines for how to chain non-linear distortion effects and EQ?
+
+The key principle is that non-linaer processors create new frequency content. EQ before them changes what gets created while EQ after them changes what survives.
+
+Use EQ before distortion to prevent ugly artifacts or bias where harmonics are generated. Common cases include high-pass to avoid muddy, pumping results, cutting harsh bands, especially 3-6 kHz, or feeding target band-pass or shelf into saturation.
+
+EQ after distortion is for removing added "junk" and fitting the sound back into the mix. Common moves include a low-pass to remove fizz, high-pass to clean up low frequency junk, or broad shaping for tone balance.
+
+Some common chains:
+
+- HPF + mild saturation + LPF on busses for subtle thickening
+- Mid boost + saturation + undo with EQ to add presence without changing tone
+- Band-pass + heavy distortion + quiet blend to add parallel excitement
+
+### Q: What is an amp/cab model if you break it down?
+
+1. Input conditioning: high pass or tilt filtering
+2. Non-linear gain: preamp distortion, saturation, or dynamic effects
+3. Tone stack: EQ controls that interact with the distortion behavior
+4. Power amp: more saturation, compression, low-frequency resonance and damping
+5. Cabinet + mic: very strong filtering, resonances, high-frequency roll-off
+
+In other words: EQ + distortion + EQ + compression + extreme EQ
+
+
+### Q: What makes a sound "boxy"?
+
+1. Strong midrange resonances, often around 200-400 Hz or 600-900 Hz
+2. Aggressive high-frequency roll-off above 6-8 kHz
+3. Comb filtering due to micro-reflections
+
+
+### Q: Should I aggressively filter anything under 20 Hz?
+
+It's reasonable, but don't do it by putting a steep filter on the mix bus. Use gentle and purposeful high-pass filters on tracks or busses, especially on tracks that are not at all meant to contribute to the low-end. Don't automatically high-pass the bass and kick unless there is a problem. If you do filter, use a gentle 6-12 dB/oct slope around 20-25 Hz.
+
+
+### Q: How might I name MIDI clips or patterns in a useful way?
+
+Consider a template of (Role) - (Behavior) - (Section).
+
+Role captures functions like bass, lead, pad, chords, arp, pluck, drone, or stab.
+
+Behavior captures sustain, groove, offbeat, swell, or syncopated.
+
+Section captures compositional purpose like main, alt, answer, fill, breakdown, dropout, verse, chorus, or bridge.
+
+### Q: What is the role of a "pad" in comparison to other sustained sounds?
+
+Pads fill a role of continuous harmonic support in genres or styles that call for it. They fill space between rhythmic events and add a sense of space. Genres that prioritize articulation, rhythm, or attack may not make use what one would call a "pad" because silence and temporal spacing are features.
+
+Not all sustained sounds are pads; a Hammond organ is harmonic, but usually rhythmic and articulated. A horn section may hold sustained notes, but it sits in the foreground and is declarative. Pads are intentionally non-assertive and subordinate.
+
+### Q: Aside from strong use as an effect, how is reverb typically used?
+
+It has three main roles:
+- Glueing tracks or voices so they "feel" like they're in the same room.
+- Pushing elements back in the mix so they feel farther away
+- Adding emotion, realism, or "vibe"
+
+There is often at least one shared reverb fed by multiple tracks simulating a common environment, like a hall or a plate.
+
+It's also common to use different reverbs for specific purposes, such as a vocal plate for vocals, room reverb for drums, and long hall for pads. However, big differences in reverb between instruments can sound unnatural if not intentional.
+
+It is common to use small amounts on almost everything, as dry instruments/voices can sound disconnected.
+
+Pre-delay and EQ are essential, as pre-delay separates the reverb tail from the dry signal and high or low-pass filtering avoids muddiness.
+
+### Q: What is the subjective difference between a plate, room, and hall reverb?
+
+Plate reverb mimics a mechanical device from the 50s-60s where a metal plate vibrates to create reverb. It is bright, dense, and smooth, but lacks natural early reflections and sounds less realistic. However, it tends to muddy the mix less than other kinds of reverb. It is often used on vocals, snare drums, or general glue when the artificial sound is okay.
+
+Room reverb has a short decay, strong early reflections, and doesn't wash out the dry signal. It is often used on drums to simulate a real recording room, guitars and pianos for realism, and general cohesion for a shared space effect.
+
+Hall reverb has a long decay with obvious tails for a sense of depth and grandeur, often with rolled-off highs. It is often used with orchestral instruments, pads or ambient layers, and vocals if you want an epic or cinematic feel.
+
+### Q: How are delay effects most often used?
+
+It is often used on vocals with short delays for thickness, tempo-sync for rhythmic interest, or automated to hit at the end of phrases.
+
+Tempo-synced delays dominate modern production, but unsynced delays are used for effects or organic feel in ambient/experimental music.
+
+Delay is usually per-instrument. They are often EQ'd to avoid frequency clutter and modulated for richness.
+
+### Q: Why did producers go crazy with reverb and delay in the 1980s?
+
+The late 1970s and early 1980s saw the appearance of new digital processors like the AMS RMX16 Digital Reverb and the Lexicon 224 Digital Reverb. For the first time, producers had clean, controllable reverb with precise gating and automation. The gated reverb drum sound in particular was an accidental discovery that became a trend due to its ability to make drums sound "big" while keeping the mix controlled.
+
+1970s production tended toward natural room sound and warmth. The 1980s reacted against that by emphasizing synthetic textures, electronic drums, processing, and brightness. This fits a general pattern in production trends where new technology or trend appears, it gets overused, and then there is a reaction against it.
+
+Considering the later decades, they might be associated with:
+
+- 1980s: gated reverb
+- 1990s: raw minimalism
+- 2000s: extreme loudness
+- 2010s: sidechain pumping
+- 2020s: analog nostalgia
+
+
+### Q: Why does 80s music sound decently "modern" to me while earlier music does not?
+
+The 80s production crossed a threshold such that it is not fundamentally different from the modern day. Digital tools, MIDI, and increasingly clean multitrack recording all arrived around the same time. The aesthetic target changed from capturing a performance in a room toward aiming for clarity, separation, and control.
+
+A lot of pre-80s music is still rhythmically "human" with loose timing, swing by default, and tempo drift. Tools in the 80s allowed for and encouraged the use of quantized, grid-locked patterns. This rhythmic rigidity has become standard.
+
+The frequency balance moved toward what modern playback systems are designed for. Earlier music often emphasizes mids with rolled-off lows and highs, partly due to the constraints of vinyl and live-band instrumentation. The 80s brings extended low-end and bright highs with cleaner transients, and modern speakers or headphones are capable of producing the full range.
+
+Certain synthetic sounds introduced in the 80s are sonically simple and remain functional. Unlike performance instruments which have strong ties to certain places or times, many synthetic sounds are abstract and timeless in a way.
+
+### Q: Was there pushback against the shift from "capturing a performance" to the modern multitrack studio sound?
+
+Yes, many felt it was sterile, fake, or dishonest. Some listeners described it as cold, plastic, or soulless. Genres like punk and grunge were in some way push-back against the new artificial sound.
+
+### Q: What were the audio capabilities of the Sega Genesis / Mega Drive?
+
+It had two audio chips: a Yamaha YM2612 FM Synthesizer and a Texas Instruments SN75489, the latter mainly for backward compatibility with the Master System.
+
+The FM synthesizer provided:
+- 6 simultaneous voice channels which can all be allocated to FM synthesis, but channel 6 can instead be used as a PCM channel for 8-bit audio samples.
+- Each channel has 4 operators arranged in 8 possible modulation relationships
+- Each operator is a sine wave with configurable ADSR envelope, detuning, and scaling
+- Stereo output with each channel assignable to left, right, or both
+- Roughly 9-bit dynamic range due to internal DAC limitations
+- LFO support for vibrato / tremolo
+- Sample playback is roughly 8-bit and 32 kHz at best
+
+The 8 FM algorithms were:
+- 4-op chain, good for metallic or complex evolving tones
+- 3-op chain + 1 op, balance between complex voice and simple voice
+- 2x2 op chains, good for layered or stereo voices
+- 4 parallel, maximum polyphony, least complexity, good for percussion and layered pads
+- Op1 mod Op2/Op3, Op4 separate, used for richer stereo-like detuned tones or chorused effects
+- Op1 mod Op2/Op3 mod Op4, allows for tight control and complexity
+- Parallel Op2 mod Op1, Op3 mod Op4, complex dual-instrument sounds
+
+The SN76489 provided:
+- 4 channels: 3 square wave tone generators with a fixed duty cyle, 1 noise channel with white or periodic noise
+- 16 volume levels (4-bit volume control)
+- Tone range roughly from 110 Hz to 111 kHz
+- Mono only
+
+No built-in effects or subtractive filters.
+
+FM operator configurations and envelope parameters could be changed at any time during playback, but with important caveats due to CPU time, timing precision, and voice allocation, however such changes are not common due to artifacts like clicks and pops.
+
+
+### Q: What does an "exciter" do exactly?
+
+An exciter emphasizes harmonic content, adding presence and increasing perceived brightness or clarity. Primarily, an exciter generates additional harmonics in the original signal and then mixes them back in.
+
+Exciters are commonly used to add "air" to vocals, giving a "breathy" quality. More generally, they are used to add presence and definition to certain instruments or voices, making them stand out.
+
+### Q: Without any compressors or limiters, how was dynamic range handled on hardware like the Sega Genesis / Mega Drive?
+
+Everything was handled manually or left to quirks of the chip. Dynamics were handled via volume envelopes, channel balancing, and deliberate saturation/clipping via DAC limitations. The DAC is nonlinaer and slightly distorted eve nat normal volumes, but if the sum of the FM outputs is too loud then it clips.
+
+Sometimes, percussive sounds or bass were deliberately driven into the red to stand out.
+
+### Q: How can you have a "second order linear regression"? It's quadratic, not a line.
+
+In the context of statistics and machine learning, "linear regression" means the coefficients appear linearly, not that the regression itself is linear.
+
+- `y = a + bx` is a 1st-order linear regression
+- `y = a + bx + cx^2` is a 2nd-order linear regression
+- `y = a + b^x` is _not_ a linear regression
+
+### Q: If LLMs predict tokens sequentially, what stops one bad prediction from derailing the rest of the response?
+
+Nothing fundamentally stops it and it can happen, but there are some factors that prevent it from happening constantly.
+
+Language has a strong statistical structure and is extremely redundant. Even if one token is slightly wrong, the rest of the context still constrains the continuation heavily. A long with this, modern models have very large context windows that contribute to the probability and stability of the next token.
+
+During training, models learn from imperfect text. It implicitly learns to recover from inconsistencies in a coherent way even if part of the response is slightly odd or incorrect.
+
+
+### Q: How were "reasoning" models trained?
+
+Early versions relied heavily on human-written reasoning traces, but modern reasoning models are not primarily trained that way. After a point, they were trained from self-generated reasoning plus verification and reinforcement learning. You have a model generate reasoning paths for a problem and train a new model on the reasoning trajectories that reached the correct answer. This is somewhat analogous to selection pressure in evolution. Even the correct answer can be decided automatically by assuming that the answer which appears most often in many traces is correct. In some domains like math, code, or logic, correctness for known problems can be checked automatically.
+
+
+### Q: Why do reasoning traces often seem to ramble and repeat awkwardly?
+
+The training rewarded correctness, not elegance. Only the final result was rewarded. Thinking longer often improves accuracy, so models learned to think longer even if they end up repeating or going in circles sometimes.
+
+Self-generated reasoning amplifies weird patterns. Models may generate strange patterns that happen to succeed, and training reinforces this. This is somewhat analogous to the way that arbitrary mutations or features that are hard to explain in nature are carried along with obvious beneficial genetic changes.
+
+Some repetitive phrasing serves to represent a kind of state or state change that happens to be represented as natural language.
+
+### Q: How do LLMs decide when to stop a response? If it's just another token, isn't it unlikely to choose that token over all others?
+
+Conceptually they predict a end-of-sequence token as the next token. It works relibably because the model has learned very strong signals about when text typically ends. It has seen billions or more samples of how text ends with a concluding sentence, finished list, closing braces, etc. Furthermore, every training input ends with an EOS token so the model has a high amount of exposure to it.
+
+Models are also trained on length. As the length of a response approaches a typical response length, the probability of predicting EOS dramatically increases. This is also why a model might produce a similarly lengthy response to both a simple and complex question.
+
+
+### Q: In the context of machine learning, what is MLP?
+
+A Multilayer Perceptron, a type of feedforward artificial neural network. An input layer receives initial data corresponding to the number of "features". A set of one or more "hidden layers" sits between the input and output layers, with each node in a given layer connected to every node in the next layer (fully connected network). The hidden layers use non-linear activation functions like ReLU or sigmoid which is crucial for the model's ability to learn complex, non-linear relationships. At each neuron input, a weighted sum of inputs from the previous layer is calculated and a bias is added. The output layer has a number of neurons dependent on the task; it may have one for a single decision or multiple for a classification problem.
+
+The network learns by adjusting weights and biases to minimize the difference between predictions and expected values using a process called backpropagation. Backpropagation uses the chain rule from calculus to efficiently calculate how much each weight and bias contributes to the overall error. These adjustments are made through an optimization algorithm like gradient descent.
+
+MLPs are considered universal function approximators; they can, in theory, approximate any continuous function given enough hidden neurons and layers.
+
+
+### Q: What are some known universal function approximators?
+
+Universal function approximators are systems that have been proven to be capable of approximating any continous function using the Universal Approximation Theorem.
+
+- Multilayer Perceptrons (MLPs): a common type of feedforward artificial neural network.
+- Radial Basis Function (RBF) networks: a type of neural network that uses radial basis functions (like a Gaussian curve) as activation functions in the hidden layer. Instead of a weighted sum of inputs like MLPs, RBF networks use the distance from a central point to determine the output of a neuron.
+- Support Vector Machines (SVMs): these are often used for classification problems, but SVMs with certain kernels like the Gaussian kernel can act as universal function approximators. The kernel essentially maps data into a higher-dimensional space where it can be separated or approximated linearly.
+- Polynomials and Fourier Series: the Stone-Weirstrass theorem shows that polynomials can approximate any continuous function on a closed interval. Similarly, the Fourier series can.
+- Turing Machines: although more abstract and conceptual, a Turing machine can simulate any computer algorithm and thus, in a sense, process any computable function. It is a broader class than continuous functions.
+
+### Q: What is the highest "ping" latency for an idealized network connection between two points on Earth?
+
+The speed of light in fiber is around 200,000 km/s. A realistic best-case cable path would be something like 30,000 - 40,000 km one way. This gives up to 200 ms one-way or 400 ms round-trip.
+
+### Q: What's the difference between "realm" and "domain"?
+
+Realm is related to the Latin regimen, meaning "rule, government", and historically is the territory of a monarch; a kingdom or empire. Domain comes from Latin dominus, meaning "lord, master", and historically is the land controlled by a lord or noble. A domain is a smaller area than a realm.
+
+### Q: Where does the trope of dwarves being master craftsmen and elves being archers come from?
+
+Norse mythology includes the concept of dwarves as subterranean smiths who forged legendary items like Thor's hammer and Odin's spear. Germanic folklore also involves dwarves as miners and metalworkers living and working underground.
+
+Elves in Celtic mythology were otherwordly beings associated with nature, beauty, and sometimes skill with weapons, but they were not strongly associated with bows until Tolkien's portrayal of Legolas. He linked elves with forests and the bow as a weapon.
+
+### Q: Where does the depiction of elves as tiny creatures originate?
+
+The "tiny elf" stereotype comes from later European folklore. Early Germanic and Norse sources depicted elves as human-sized or larger. Over time, especially in British folklore, elves became conflated with fairies and household spirits which were depicted as small, mischievous beings.
+
+In the 19th century Victorian era, literature and art portrayed elves as miniature, whimsical creatures living in flowers or mushrooms. Around the same time, the 19th century evolution of Santa Claus introduced Santa's elves as tiny, industrious helpers.
+
+### Q: Are futhorc runes derived from the Latin alphabet?
+
+Elder Futhark was developed around 150-300 CE among Germanic tribes. It was not derived from Latin, but was almost certainly influenced by Italic scripts like Old Italic or Greek, as Germanic peoples traded and fought near the Roman frontier.
+
+Anglo-Saxon Futhorc descended from Elder Futhark and was used from around the 5th to the 11th centuries, expanding the script from 24 to 28-33 runes to accommodate Old English phonemes.

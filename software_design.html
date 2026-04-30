@@ -2,9 +2,9 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1775588494.5583253" />
-        <link rel="stylesheet" href="vim.css?v=1775588494.5583253" />
-        <link rel="shortcut icon" href="favicon.ico?v=1775588494.5583253" />
+        <link rel="stylesheet" href="style.css?v=1777508486.7076788" />
+        <link rel="stylesheet" href="vim.css?v=1777508486.7076788" />
+        <link rel="shortcut icon" href="favicon.ico?v=1777508486.7076788" />
         <title>gdtyra :: Software Design</title>
     </head>
     <body>
@@ -16,13 +16,7 @@
   <li><a href="#software-design">Software Design</a>
   <ul>
     <li><a href="#high-level-considerations">High-level considerations</a></li>
-  </ul></li>
-  <li><a href="#use-of-oop-and-class-design">Use of OOP and class design</a>
-  <ul>
-    <li><a href="#solid">SOLID</a></li>
-    <li><a href="#constructors-and-dependency-injection">Constructors and dependency injection</a></li>
-    <li><a href="#interfaces-and-object-relationships">Interfaces and object relationships</a></li>
-    <li><a href="#subtle-dependencies">Subtle dependencies</a></li>
+    <li><a href="#use-of-oop-and-class-design">Use of OOP and class design</a></li>
     <li><a href="#tips-for-refactoring-a-large-class">Tips for refactoring a large class</a></li>
   </ul></li>
 </ul>
@@ -45,9 +39,9 @@
 <li>Good systems can tolerate change well without rippling effects</li>
 </ul>
 
-<h1 id="use-of-oop-and-class-design">Use of OOP and class design</h1>
+<h2 id="use-of-oop-and-class-design">Use of OOP and class design</h2>
 
-<h2 id="solid">SOLID</h2>
+<h3 id="solid">SOLID</h3>
 
 <ul>
 <li>Single Responsibility: a class should do the smallest possible useful thing</li>
@@ -57,7 +51,7 @@
 <li>Dependency Inversion: this seems to boil down to "depend on abstractions"</li>
 </ul>
 
-<h2 id="constructors-and-dependency-injection">Constructors and dependency injection</h2>
+<h3 id="constructors-and-dependency-injection">Constructors and dependency injection</h3>
 
 <ul>
 <li>Constructors should be simple and serve only to fully validate and initialize an object
@@ -71,7 +65,7 @@
 <li>Creation of object graphs should be the responsibility of a dedicated dependency injection framework or dedicated factory / builder classes that do nothing but create objects</li>
 </ul>
 
-<h2 id="interfaces-and-object-relationships">Interfaces and object relationships</h2>
+<h3 id="interfaces-and-object-relationships">Interfaces and object relationships</h3>
 
 <ul>
 <li>Good design results in objects that can tolerate change easily
@@ -114,7 +108,7 @@
 </ul></li>
 </ul>
 
-<h2 id="subtle-dependencies">Subtle dependencies</h2>
+<h3 id="subtle-dependencies">Subtle dependencies</h3>
 
 <ul>
 <li>Even method names, expected arguments, and argument order represent dependencies
@@ -135,7 +129,7 @@
 </ul>
 
     <footer>
-    <p class="generated_date">Generated on April 07 2026</p>
+    <p class="generated_date">Generated on April 29 2026</p>
     </footer>
     </article>
     </div>
