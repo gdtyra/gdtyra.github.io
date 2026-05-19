@@ -137,8 +137,8 @@ The `stat` command is not compatible between Linux and BSD / macOS, unfortunatel
 - `-a` - archive mode which preserves permissions (owners, groups), times, symbolic links, and devices
 - `-r` - recurse into directories
 - `-z` - compress file data during transfer
-- `--exclude <directory>` – excludes the given directory
-- `-P` – show progress during the transfer
+- `--exclude <directory>` - excludes the given directory
+- `-P` - show progress during the transfer
 - `-n` - perform a dry-run without actually writing anything
 - `-i` - show changes
 - `-W` - transfer whole files; do not attempt a delta sync

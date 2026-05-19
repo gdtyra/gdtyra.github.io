@@ -2,17 +2,24 @@
     <!DOCTYPE html>
     <html>
     <head>
-        <link rel="stylesheet" href="style.css?v=1777508486.7076788" />
-        <link rel="stylesheet" href="vim.css?v=1777508486.7076788" />
-        <link rel="shortcut icon" href="favicon.ico?v=1777508486.7076788" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css?v=1779172267.9653304" />
+        <link rel="stylesheet" href="vim.css?v=1779172267.9653304" />
+        <link rel="shortcut icon" href="favicon.ico?v=1779172267.9653304" />
         <title>gdtyra :: Software Design</title>
     </head>
     <body>
-    <div id="main">
-    <div id ="nav" class="column">
-    <nav>
-    <h1>Table of Contents</h1>
-    <ul>
+    <header>
+        <h1>gdtyra</h1>
+    </header>
+    <!-- Toggle Button -->
+    <button class="menu-btn" onclick="toggleNav()">Menu</button>
+
+    <!-- Side Navigation Drawer -->
+    <nav id="nav-drawer">
+        <h3>Table of Contents</h3>
+        <ul>
   <li><a href="#software-design">Software Design</a>
   <ul>
     <li><a href="#high-level-considerations">High-level considerations</a></li>
@@ -21,13 +28,10 @@
   </ul></li>
 </ul>
 
-    <h1>Other Pages</h2>
-    <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li><li><a href="timesteps_in_games.html">Timesteps in Games</a></li></ul>
+        <h3>Other Pages</h3>
+        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li><li><a href="timesteps_in_games.html">Timesteps in Games</a></li></ul>
     </nav>
-    </div>
-    <div class="column">
-    <div id="content">
-    <article>
+    <main class="container">
     <h1 id="software-design">Software Design</h1>
 
 <p>The following is a collection of guidelines for class and general software component design based on things I've read and / or found to be helpful in my experience.</p>
@@ -128,14 +132,11 @@
 <li>If it is too much effort to properly fix object relationships, you can at least easily isolate the bad relationship</li>
 </ul>
 
+    </main>
     <footer>
-    <p class="generated_date">Generated on April 29 2026</p>
+    <p class="generated_date">Generated on May 18 2026</p>
     </footer>
-    </article>
-    </div>
-    </div>
-    </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=1779172267.9653304"></script>
     </body>
     </html>
     

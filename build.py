@@ -29,33 +29,34 @@ for path, html, title in zip(html_files, html_file_content, page_titles):
     <!DOCTYPE html>
     <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css?v={timestamp}" />
         <link rel="stylesheet" href="vim.css?v={timestamp}" />
         <link rel="shortcut icon" href="favicon.ico?v={timestamp}" />
         <title>gdtyra :: {title}</title>
     </head>
     <body>
-    <div id="main">
-    <div id ="nav" class="column">
-    <nav>
-    <h1>Table of Contents</h1>
-    {html.toc_html}
-    <h1>Other Pages</h2>
-    {files_html}
+    <header>
+        <h1>gdtyra</h1>
+    </header>
+    <!-- Toggle Button -->
+    <button class="menu-btn" onclick="toggleNav()">Menu</button>
+
+    <!-- Side Navigation Drawer -->
+    <nav id="nav-drawer">
+        <h3>Table of Contents</h3>
+        {html.toc_html}
+        <h3>Other Pages</h3>
+        {files_html}
     </nav>
-    </div>
-    <div class="column">
-    <div id="content">
-    <article>
+    <main class="container">
     {html}
+    </main>
     <footer>
     <p class="generated_date">Generated on {time.strftime('%B %d %Y')}</p>
     </footer>
-    </article>
-    </div>
-    </div>
-    </div>
-    <script src="script.js"></script>
+    <script src="script.js?v={timestamp}"></script>
     </body>
     </html>
     """
@@ -67,23 +68,24 @@ document = f"""
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css?v={timestamp}" />
+    <link rel="stylesheet" href="vim.css?v={timestamp}" />
+    <link rel="shortcut icon" href="favicon.ico?v={timestamp}" />
     <title>gdtyra :: Index</title>
 </head>
 <body>
-<div id="main">
-<div class="column">
-<div id="content">
-<article>
+<header>
+    <h1>gdtyra</h1>
+</header>
+<main class="container">
 {files_html}
+</main>
 <footer>
 <p class="generated_date">Generated on {time.strftime('%B %d %Y')}</p>
 </footer>
-</article>
-</div>
-</div>
-</div>
-<script src="script.js"></script>
+<script src="script.js?v={timestamp}"></script>
 </body>
 </html>
 """
