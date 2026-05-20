@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css?v=1779172267.9653304" />
-        <link rel="stylesheet" href="vim.css?v=1779172267.9653304" />
-        <link rel="shortcut icon" href="favicon.ico?v=1779172267.9653304" />
+        <link rel="stylesheet" href="style.css?v=1779266050.7458577" />
+        <link rel="stylesheet" href="vim.css?v=1779266050.7458577" />
+        <link rel="shortcut icon" href="favicon.ico?v=1779266050.7458577" />
         <title>gdtyra :: Information from chatting with LLMs</title>
     </head>
     <body>
@@ -20,16 +20,28 @@
     <nav id="nav-drawer">
         <h3>Table of Contents</h3>
         <ul>
-  <li><a href="#information-from-chatting-with-llms">Information from chatting with LLMs</a></li>
+  <li><a href="#information-from-chatting-with-llms">Information from chatting with LLMs</a>
+  <ul>
+    <li><a href="#digital-video">Digital Video</a></li>
+    <li><a href="#computers-and-programming">Computers and Programming</a></li>
+    <li><a href="#networks-and-systems">Networks and Systems</a></li>
+    <li><a href="#llms-ai-and-machine-learning">LLMs, AI, and Machine Learning</a></li>
+    <li><a href="#society-and-culture">Society and Culture</a></li>
+    <li><a href="#international">International</a></li>
+    <li><a href="#games-graphics-and-math">Games, Graphics, and Math</a></li>
+    <li><a href="#audio-and-production">Audio and Production</a></li>
+  </ul></li>
 </ul>
 
         <h3>Other Pages</h3>
-        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li><li><a href="timesteps_in_games.html">Timesteps in Games</a></li></ul>
+        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
     </nav>
     <main class="container">
     <h1 id="information-from-chatting-with-llms">Information from chatting with LLMs</h1>
 
-<p>These are my own summaries of information I got from LLM chats that I just wanted to make note of. The information may be incorrect or incomplete; I don't necessarily fact check these at all and usually the answers aren't that important beyond my own curiosity. In some cases I've also added my own thoughts that came about from thinking on the responses.</p>
+<p>These are my own summaries of information I got from LLM chats that I just wanted to make note of. The information may be incorrect or incomplete; I don't necessarily fact check these at all and usually the answers aren't that important beyond my own curiosity. In some cases I've also added my own thoughts as well.</p>
+
+<h2 id="digital-video">Digital Video</h2>
 
 <h3 id="q-for-saving-on-video-storage-space-should-i-prefer-lowering-resolution-or-lowering-encoding-quality">Q: For saving on video storage space, should I prefer lowering resolution or lowering encoding quality?</h3>
 
@@ -37,17 +49,17 @@
 
 <h3 id="q-how-does-crf-as-used-with-h264-relate-to-or-scale-with-resolution">Q: How does CRF (as used with H.264) relate to or scale with resolution?</h3>
 
-<p>CRF of 23 at 4K will look will look better than CRF 23 at 720p. When cutting resolution in half, you can usually increase CRF (reduce quality) without hurting perceptual quality because there is less detail to preserve. If CRF 23 looks fine for 1080p, then CRF 26-28 may be fine for 720p.</p>
+<p>CRF of 23 at 4K will look better than CRF 23 at 720p. When cutting resolution in half, you can usually increase CRF (reduce quality) without hurting perceptual quality because there is less detail to preserve. If CRF 23 looks fine for 1080p, then CRF 26-28 may be fine for 720p.</p>
 
 <h3 id="q-what-even-is-crf-what-do-the-numbers-represent">Q: What even is CRF? What do the numbers represent?</h3>
 
-<p>It's a quality target, Constant Rate Factor. It can be better than a bitrate target because fixed bitrates waste data on simple scenes. Mathematically, it is a quantization parameter. Lower numbers are higher quality because the quantization steps are smaller.</p>
+<p>It's a quality target, Constant Rate Factor. It can be better than a bit-rate target because fixed bit-rates waste data on simple scenes. Mathematically, it is a quantization parameter. Lower numbers are higher quality because the quantization steps are smaller.</p>
 
 <ul>
 <li>0 = lossless</li>
 <li>18 = effectively visually / perceptually lossless</li>
 <li>20-24 = "sweet spot" for typical viewing</li>
-<li>25-30 = noticable degredation, but not a bad tradeoff for storage savings</li>
+<li>25-30 = noticeable degradation, but not a bad trade-off for storage savings</li>
 <li>30+ = very compressed with obvious artifacts</li>
 </ul>
 
@@ -60,11 +72,13 @@
 <li>Improved CABAC</li>
 </ul>
 
-<h3 id="q-compare-cinepak-as-used-in-1990s-fmv-with-the-more-modern-mpeg-4">Q: Compare Cinepak (as used in 1990s FMV) with the more modern MPEG-4?</h3>
+<h3 id="q-how-does-an-older-codec-like-cinepak-as-used-in-1990s-fmv-compare-with-the-more-modern-mpeg-4">Q: How does an older codec like Cinepak (as used in 1990s FMV) compare with the more modern MPEG-4?</h3>
 
 <p>Cinepak uses a combination of vector quantization and run-length encoding. It focuses on inter-frame compression, meaning it looks for similarities between consecutive frames.</p>
 
-<p>MPEG-4 utilizes motion compensation, DCT, and variable bitrate encoding. It can take advantage of spatial and temporal redundancies.</p>
+<p>MPEG-4 utilizes motion compensation, DCT, and variable bit-rate encoding. It can take advantage of spatial and temporal redundancies.</p>
+
+<h2 id="computers-and-programming">Computers and Programming</h2>
 
 <h3 id="q-as-someone-who-never-dives-lower-level-than-c-what-makes-architectures-like-x86-z80-68k-and-arm-different-from-each-other">Q: As someone who never dives lower level than C, what makes architectures like x86, Z80, 68k, and ARM different from each other?</h3>
 
@@ -191,27 +205,9 @@
 
 <p>Starting with iMac G3, Apple moved to Open Firmware, which is more similar to BIOS or UEFI and allows booting arbitrary OSes. Disk partitioning schemes still differed, however, needing to use Apple Partition Map layouts rather than MBR or GPT.</p>
 
-<h3 id="q-what-is-a-federated-system">Q: What is a "federated" system?</h3>
-
-<p>A federated system is a decentralized one composed of multiple independent "nodes" that cooperate. A common example is email. There is no central email system or provider; email is really a set of protocols that different systems agree on for sending messages to each other. Although Gmail dominates personal email accounts today, a person can create an email account using any available service or even set up their own email server.</p>
-
-<p>Users authenticate with their chosen node, or "instance", with their credentials. This may use something like OAuth 2.0.</p>
-
-<p>Instances communicate with others through a protocol like ActivityPub, or SMTP/IMAP in the case of email. Cryptographic signatures (public key cryptography) are used to verify the authenticity of interactions. For example, each instance may have its own pair of public and private keys. The public keys allow other instances to verify that incoming messages were truly sent by a given instance.</p>
-
-<p>As commonly seen with email, "identity" is tied to a specific instance (e.g. "@gmail.com").</p>
-
-<h3 id="q-how-does-single-sign-on-work">Q: How does Single Sign-On work?</h3>
-
-<p>SSO delegates authentication to a trusted third party. The target system sends you to the authentication system. Upon authentication, you are directed back to the target system along with an authorization code. The target system uses the authorization code to request an access token (and optionally a refresh token) from the identity provider. This access token can then be used to make authorized requests to the identity provide for more information. The target system may also set its own session cookie or token to manage your session independently from the identity provider.</p>
-
-<p>Standardized protocols and formats may be used, such as OAuth 2.0, OpenID Connect, and JWT.</p>
-
-<p>A state parameter is used to prevent CSRF attacks. The target system generates a unique value for each authentication request which the identity provider must return unchanged.</p>
-
 <h3 id="q-do-arm-devices-have-a-semi-standard-boot-process-like-x86-pcs-do-bios-or-uefi">Q: Do ARM devices have a semi-standard boot process like x86 PCs do (BIOS or UEFI)?</h3>
 
-<p>Some ARM-based devices use UEFI (especially in servers), but many ARM devices like smartphones use custom bootloaders specific to the manufacturerer. Typically, ROM code baked into a chip runs first, does minimal hardware initialization, then hands off to a first-stage bootloader, then a second, and finally the OS kernel.</p>
+<p>Some ARM-based devices use UEFI (especially in servers), but many ARM devices like smartphones use custom bootloaders specific to the manufacturer. Typically, ROM code baked into a chip runs first, does minimal hardware initialization, then hands off to a first-stage bootloader, then a second, and finally the OS kernel.</p>
 
 <p>Because ARM is used in various kinds of systems, the boot process may be even more customized. It may not have a staged boot process but simply boot by running the OS at a fixed location.</p>
 
@@ -229,7 +225,7 @@
 
 <h3 id="q-what-is-the-legacy-of-the-ibm-system360">Q: What is the legacy of the IBM System/360?</h3>
 
-<p>The IBM System/360, introduced in the 1960s, introduced the concept of "family architecture" where multiple models in a family shared a common architecture and instruction set, allowing for backward compability and smooth transitions.</p>
+<p>The IBM System/360, introduced in the 1960s, introduced the concept of "family architecture" where multiple models in a family shared a common architecture and instruction set, allowing for backward compatibility and smooth transitions.</p>
 
 <p>It introduced virtual memory, swapping storage between RAM and the more plentiful disk-based storage.</p>
 
@@ -279,7 +275,7 @@
 
 <p>One factor is that today's mobile market is dominated by only two players. In the early days of computing, many companies were experimenting with different, incompatible systems which made open standardization appealing.</p>
 
-<h3 id="q-how-do-linux-and-bsd-differ-given-their-shared-unix-roots">Q: How do Linux and BSD differ, given their shared Unix roots?</h3>
+<h3 id="q-how-do-linux-and-bsd-differ-given-their-shared-unix-roots-inspiration">Q: How do Linux and BSD differ, given their shared Unix roots / inspiration?</h3>
 
 <p>For one, Linux itself is strictly a kernel. Even shells and other utilities one would expect to find are provided from other projects like GNU. BSDs are considered complete operating systems with the kernel and user-space programs developed together as part of the same project.</p>
 
@@ -369,22 +365,6 @@
 
 <p>On Windows and macOS, move operations typically preserve both the "created at" and "modified at" dates while copy operations replace the "created at" date. On Linux, both operations typically preserve both dates.</p>
 
-<h3 id="q-how-does-the-concept-of-a-byzantine-fault-relate-to-the-design-of-distributed-systems">Q: How does the concept of a Byzantine fault relate to the design of distributed systems?</h3>
-
-<p>Byzantine faults are about the inability of nodes in a system to know whether other nodes are providing correct or information or may even be behaving maliciously. Fault-tolerant designs may involve redundant copies of data with replication, consensus algorithms like PBFT, HoneyBadgerBFT, Paxos or Raft, and of course secure communciation via encryption, authentication, and authorization.</p>
-
-<p>One failure mode is that nodes may simply stop functioning or be unreachable due to network partition. Timeouts and heartbeats can be used as a basic signal that a node is "dead" or unreachable and to exclude it until it comes back online. Another failure mode is that a given node may be operating on old or incorrect information, or be otherwise faulty in some way while still responding to messages. This is where consensus algorithms come in so that the system can agree on a ground truth.</p>
-
-<h3 id="q-what-is-the-relevance-of-3n-1-with-regard-to-byzantine-faults">Q: What is the relevance of "3n + 1" with regard to Byzantine faults?</h3>
-
-<p>A 1980 paper showed that "3n + 1" nodes are necessary and sufficient in a distributed system to handle "n" nodes acting maliciously. In other words, the system can still agree on the correct "truth" as long as under 1/3 of the nodes are acting maliciously.</p>
-
-<h3 id="q-how-do-pbft-and-honeybadgerbft-work">Q: How do PBFT and HoneyBadgerBFT work?</h3>
-
-<p>Practical Byzantine Fault Tolerance aims to provide a solution to the Byzantine Generals Problem. It relies on replicating the relevant state across a set of nodes that participate in the consensus process. A "primary node" proposes a value, other nodes acknowledge the proposed value, and then nodes vote on a value. A certain number of nodes (quorum) need to agree on a value for it be accepted. The optimistic path is that most nodes are functioning correctly and will agree, otherwise a slower path is required. Cryptographic signatures are used to ensure the authenticity of messages.</p>
-
-<p>HoneyBadgerBFT operates in an asynchronous network that doesn't rely on assumptions about message delivery times. This makes it more tolerant to unpredictable network conditions. It uses broadcast encryption to transmit messages to a subset of nodes without revealing the content to others which adds an extra layer of privacy and security. It (somehow) maintains its functionality even when the number of faulty nodes exceeds the expected threshold. It is particularly suitable for use in blockchain or decentralized ledger technologies.</p>
-
 <h3 id="q-what-is-the-recommended-way-to-partition-a-disk-for-linux">Q: What is the recommended way to partition a disk for Linux?</h3>
 
 <p>In general, using a single partition is fine. More complex schemes are often related to outdated advice or specific use cases or concerns.</p>
@@ -393,7 +373,7 @@
 
 <p>The "modern" default is often a single root partition, optionally with "home" on a separate partition, which can be useful for separating user data from system files.</p>
 
-<p>More rigid compartmentation was more relevant in the past because storage was more constrained in general and older filesystems didn't handle large trees as well.</p>
+<p>More rigid compartmentalization was more relevant in the past because storage was more constrained in general and older filesystems didn't handle large trees as well.</p>
 
 <p>For servers or other systems where you expect heavy logging, growing database storage, or Docker containers, it can make sense to put "var" on a separate partition to isolate uncontrolled growth.</p>
 
@@ -406,82 +386,6 @@
 <p>A filesystem maps well to human understanding and also provides naming, isolation, and interoperability. In general, applications can expect that an error involving one file will remain isolated to that file, and this provides coarse-grained fault isolation "for free". The filesystem is a kind of "common ground" for communication or data exchange between software. The concept of a "file" is simple and can transcend differences in programming language, runtimes, machines, decades, etc.</p>
 
 <p>Historically, filesystems as we know them won because they were a low common denominator abstraction that balanced simplicity, safety, and generality.</p>
-
-<h3 id="q-what-value-do-critics-provide-seems-like-they-just-provide-subjective-opinions-for-the-most-part-i-often-like-things-that-critics-rated-poorly">Q: What value do critics provide? Seems like they just provide subjective opinions for the most part. I often like things that critics rated poorly.</h3>
-
-<p>I may like critically unpopular media because I don't consume that much of it and a given example is therefore still novel and entertaining enough to me. A critic likely consumes a lot more content and is comparing to many more examples. Fair enough.</p>
-
-<h3 id="q-how-does-something-like-a-centralized-crypto-exchange-scale-given-the-non-negotiable-requirements-for-sequential-order-execution">Q: How does something like a centralized crypto exchange scale given the non-negotiable requirements for sequential order execution?</h3>
-
-<p>At its core, an exchange does rely on strongly ordered, single-writer components, and this doesn't scale the way a more stateless web backend does, nor does it pretend to. Instead of scaling everything horizontally, exchanges are almost always sharded by market. The exchange overall may have massive traffic, but traffic is substantially less for any given market pair.</p>
-
-<p>Of course, certain markets are more active than others, and for this some amount of vertical scaling is required: faster CPUs, more memory on a single system, optimizations, etc.</p>
-
-<p>Persistence on the critical path is usually handled by append-only logs rather than a traditional "source of truth" database. The order matching engine writes an event stream which is used to build database state downstream. If the engine crashes, the log still serves as a source of truth for reconstructing the expected state, and so distributed transactions and eventual consistency are avoided in the critical path.</p>
-
-<p>Outside of that, there is much more room for horizontal scaling. Things like authentication, API gateways, order intake, and balance checks don't require precise timing and can be eventually consistent. There is more room for being optimistic until the boundary of the critical order matching path.</p>
-
-<p>Account balances are somewhat split-brained. There is typically a fast and strongly consistent balance colocated with the matching engine, or logically owned by it, that tracks available funds. Separately, there are slower, replicated ledger systems that track deposits, withdrawals, funding, and reconciliation.</p>
-
-<p>Similarly, market data feeds and user dashboards can tolerate a fair amount of lag without major consequences, and so these may be a fan-out from the event log the matching engine writes to.</p>
-
-<p>For a given market, only one engine instance is active, but there may be hot standbys replaying the event log, ready to take leadership if the primary engine instance fails.</p>
-
-<h3 id="q-why-does-it-seem-that-flight-searches-are-extremely-slow-product-searches-are-usually-extremely-fast-it-feels-like-a-comparable-case-of-live-availability-being-searched-no">Q: Why does it seem that flight searches are extremely slow? Product searches are usually extremely fast. It feels like a comparable case of "live" availability being searched, no?</h3>
-
-<p>A web store search is fundamentally a read from a precomputed, cache-friendly data set. A flight search is more like a distributed transaction and pricing problem. A product search typically involves tightly integrated systems while pricing and availability change infrequently. A flight search often requires querying multiple lives systems including the airline's reservation system, partner airlines, and fare construction engines.</p>
-
-<p>Airline fare are not looked up so much as constructed. They are governed by a large rule system. For a round trip, the system may need to evaluate many outbound and return combinations. It's more of an optimization problem than a lookup. Raw seat inventory may be cached, but the valid price for a particular trip often isn't.</p>
-
-<p>Flight availability is managed in terms of fare class availability. Availability is not purely about whether a given seat is free, but whether there is at least one unit left in a particular fare bucket on a particular flight. Those buckets are controlled by revenue management and can be opened, closed, or resized dynamically. Caching is less useful when results change so dynamically.</p>
-
-<p>Flight searches must consider combinations of flights with hops to a destination while factoring in connection times.</p>
-
-<p>Flight availability is intentionally fuzzy. Airlines overbook and rely on probabilistic no-show models, so the inventory is not a hard count but rather based on a controlled risk model.</p>
-
-<p>There's a lot of legacy infrastructure. Core airline reservation systems are famously old. Many are mainframe-era systems that expose functionality via protocols that are not optimized for low-latency. Many airlines run on Passenger Service Systems (Amadeus, Sabre, Travelport) that date back to the 1970s-1990s.</p>
-
-<h3 id="q-why-does-it-seem-that-people-commonly-report-themselves-as-tired-if-everyone-is-tired-then-thats-just-the-baseline-state-no">Q: Why does it seem that people commonly report themselves as "tired". If everyone is "tired", then that's just the baseline state, no?</h3>
-
-<p>A few possibilities. People tend to compare to an idealized norm, not their own baseline. If their potential best is an idealized well-rested, alert, focused, then anything less than than is "tired".</p>
-
-<p>It may also be used as a safer communication shortcut that avoids over-sharing. It can mean anxious, unmotivated, or empty without getting into specifics.</p>
-
-<p>However there are potentially true modern lifestyle deficits including getting less than 7-8 hours of sleep regulary or getting poor sleep due to artifical light, caffeine, alcohol, or sedentary work.</p>
-
-<h3 id="q-what-are-some-games-for-handheld-systems-that-break-the-mold-of-handheld-games-being-lesser">Q: What are some games for handheld systems that break the mold of handheld games being "lesser"?</h3>
-
-<p>On the GB / GBC:
-- Link's Awakening
-- Pokemon Gold and Silver
-- Metal Gear: Ghost Babel
-- Shantae
-- Tetris</p>
-
-<p>On the GBA:
-- Metroid Fusion / Zero Mission
-- Advance Wars and Advance Wars 2
-- Fire Emblem and Fire Emblem: The Sacred Stones
-- Final Fantasy Tactics Advance
-- Mario Kart: Super Circuit
-- Castlevania: Aria of Sorrow</p>
-
-<p>On the DS:
-- The World Ends With You
-- Castlevania: Dawn of Sorrow / Portrait of Ruin / Order of Ecclesia
-- Advance Wars: Dual Strike
-- Mario &amp; Luigi: Bowser's Inside Story
-- Pokemon Black &amp; White / Black 2 &amp; White 2</p>
-
-<p>On the PSP:
-- Monster Hunter Portable 3rd
-- Monster Hunter Freedom Unite
-- Persona 3 Portable
-- Crisis Core: Final Fantasy VII
-- God of War: Chains of Olympus / Ghost of Sparta
-- Metal Gear Solid: Peace Walker
-- Daxter
-- Jeanne d'Arc</p>
 
 <h3 id="q-i-recall-various-x86-instruction-set-expansions-over-the-years-are-they-all-still-in-use-do-they-get-used-together-or-replace-each-other">Q: I recall various x86 instruction set "expansions" over the years. Are they all still in use? Do They get used together or replace each other?</h3>
 
@@ -513,134 +417,6 @@
 
 <p>Ghidra had been used internally for nearly two decades. It was mature and well-documented. Most of the advantages associated with keeping it secret were no longer relevant. It also doesn't include exploits or anything; it is a passive analysis tool.</p>
 
-<h3 id="q-having-grown-up-in-the-us-why-was-i-completely-unaware-of-the-sega-master-system">Q: Having grown up in the U.S., why was I completely unaware of the Sega Master System?</h3>
-
-<p>It was crushed by the NES in North America and Japan by a factor of roughly 20 to 1. Sega's marketing was half-hearted in the U.S. and they frequently changed distribution partners. The box art was infamously minimalist and unattractive.</p>
-
-<p>The Master System had solid games, but no particular mascot or breakout hit at the time. The Genesis / Mega Drive along with Sonic as its mascot was effectively Sega's debut for many Americans.</p>
-
-<p>The Master System was a massive hit in other markets, particularly Brazil, the UK, and Portugal.</p>
-
-<h3 id="q-why-do-so-many-european-folk-and-fairy-tails-involve-the-woods-which-real-world-woods-are-these-tales-likely-influenced-by">Q: Why do so many European folk and fairy tails involve the woods? Which real-world woods are these tales likely influenced by?</h3>
-
-<p>The woods symbolically and historically represented the boundary between the known and the unknown. In pre-modern Europe, forests were vast, untamed, and dangerous. The rules of society didn't apply, mystery and magic felt plausible, and old pre-Christian beliefs lingered.</p>
-
-<p>Most classic fairy tales stem from Central and Northern European traditions involving Germany's Black Forest, The Ardennes, and Scandinavian boreal forests.</p>
-
-<h3 id="q-its-hard-to-even-comprehend-how-many-people-are-alive-today-can-you-compare-global-populations-through-history-to-modern-day-regions">Q: It's hard to even comprehend how many people are alive today. Can you compare global populations through history to modern day regions?</h3>
-
-<ul>
-<li>10,000 BCE (start of agriculture): around 4 million, similar to the modern Los Angeles metro area</li>
-<li>1,000 BCE: around 50 million, or modern South Korea</li>
-<li>1 CE (height of Roman Empire): around 170-300 million, up to roughly the modern United States</li>
-<li>1000 CE: around 250-310 million, still roughly up to the modern United States</li>
-<li>1300 CE: around 400 million, modern European Union</li>
-<li>1350 CE (post-Black Death): around 350 million, roughly modern United States</li>
-<li>1500 CE: around 450-500 million, modern European Union + Japan</li>
-<li>1700 CE: around 600 million, modern Central America plus South America</li>
-<li>1800 CE: around 1 billion, modern Africa</li>
-<li>1900 CE: around 1.6 billion, modern China plus United States</li>
-<li>1950 CE: around 2.5 billion, modern India plus Africa</li>
-<li>2000 CE: around 6.1 billion, roughly modern Asia</li>
-<li>2026 CE: around 8.1 billion, present day global population</li>
-</ul>
-
-<h3 id="q-in-1-ce-how-much-of-the-global-population-was-within-the-roman-empire">Q: In 1 CE, how much of the global population was within the Roman Empire?</h3>
-
-<p>The Roman Empire likely had a population of around 45 to 60 million people depending on how borders are defined and what estimates are used. That would put it between 15% and 35% of the world's population.</p>
-
-<p>Han China around the same time had roughly 60 million as well, and the combination of the two could've held nearly half the global population.</p>
-
-<h3 id="q-if-land-area-were-equally-divided-for-every-living-human-how-much-land-would-each-person-get">Q: If land area were equally divided for every living human, how much land would each person get?</h3>
-
-<p>Every human could get around 7 acres of land, ignoring the fact that not all land is equally useful or productive, and that in practice wild zones are needed for maintaining ecosystems.</p>
-
-<p>For comparison, modern industrial agriculture requires around 0.5 to 2 acres per person to feed a meat-heavy Western diet, although plant-based diets can be grown on 0.2-0.5 acres.</p>
-
-<p>Urban housing and roads only use maybe 0.05-0.1 acres per person, while suburban housing may use over 1 acre.</p>
-
-<p>Some estimates say that an average American uses over 20 acres for their full footprint, including infrastructure for energy, waste management, roads, factories, etc.</p>
-
-<h3 id="q-i-understand-that-dogs-benefited-from-eating-leftover-food-from-humans-but-how-did-early-humans-benefit-from-having-dogs-around">Q: I understand that dogs benefited from eating leftover food from humans, but how did early humans benefit from having dogs around?</h3>
-
-<p>Dogs are much better at detecting intruders via smell and hearing. They sleep lightly and serve as a warning system for sleeping humans.</p>
-
-<p>The "cleanup" of bones and food scraps may have reduced disease vectors around a human camp.</p>
-
-<p>Dogs can track prey by scent and chase wounded animals into the open which aids humans in hunting. Some early dogs could retrieve hunted animals that may have died somewhere out of sight.</p>
-
-<p>Of course, emotional bonds and companionship at some point started to reinforce the relationship.</p>
-
-<h3 id="q-when-were-the-first-photos-of-earth-from-space-taken">Q: When were the first photos of Earth from space taken?</h3>
-
-<p>The first photo was taken in 1946 by a V-2 rocket launched from New Mexico. It reached an altitude of about 65 miles, just above the boundary of space.</p>
-
-<p>The TIROS-1 weather satellite launched by NASA in 1960 took more comprehensive images of Earth from an altitude of around 450 miles.</p>
-
-<p>The first full-disk image of the Earth (what most would consider "from space") was taken by the ATS-3 satellite in 1967 at an altitude of 22,300 miles.</p>
-
-<h3 id="q-how-did-palm-trees-end-up-in-california">Q: How did palm trees end up in California?</h3>
-
-<p>They are not native to the region. Spanish missionaries planted date palms at their missions, which were brought from Spain. Spain had imported them even earlier from North Africa. During the late 1800s, exotic plants such as palms were brought to California as the state promoted its image as a paradise. In the 1930s, thousands were planted as part of public works programs.</p>
-
-<h3 id="q-whats-the-deal-with-santa-claus-st-nicholas-and-kris-kringle-all-being-names-for-the-same-person-and-how-does-krampus-fit-in">Q: What's the deal with Santa Claus, St. Nicholas, and Kris Kringle all being names for the same person? And how does Krampus fit in?</h3>
-
-<p>St. Nicholas was a real 4th-century Bishop, known for his piety, generosity, and gift-giving. The name "Santa Claus" is derived from the Dutch Sinterklaas, which itself is a hsortening of Sint Nikolaas. Dutch settlers brought the tradition to America.</p>
-
-<p>Kris Kringle is an Americanization of the German Christkind (Christ Child), a gift-bringer figure introduced by Martin Luther as an alternative to St. Nicholas meant to emphasize the Christ-centericity of the holiday.</p>
-
-<p>Krampus is a figure from Alpine folklore, likely part of winter solstice festivals. Over time he was adapted to act as a kind of "punishing" counter-part to St. Nicholas.</p>
-
-<h3 id="q-what-is-the-origin-of-the-american-diner-and-its-aesthetic">Q: What is the origin of the American diner and its aesthetic?</h3>
-
-<p>The diner originated in the late 19th century as a mobile eatery to serve workers during odd hours. By the 1910s, the concept evolved into stationary but prefabricated structures. Early diners were inspired by railway dining cars. During the 1930s and 1940s, the Art Deco movement added stainless steel, bold lines, and neon accents. The post-World War II boom popularized bright color schemes, vinyl booths, and checkerboard tiles.</p>
-
-<h3 id="q-presumably-grid-power-supply-never-perfectly-matches-demand-so-where-does-any-extra-energy-go">Q: Presumably grid power supply never perfectly matches demand, so where does any "extra" energy go?</h3>
-
-<p>Although modern grids may incorporate some energy storage in the form of flywheels, pumped hydroelectric storage, and batteries, in general the system aims to quickly adjust to match demand. A mismatch may manifest as additional heat or divergence from the target frequency (e.g. 60 Hz in the U.S.), but that is not catastrophic.</p>
-
-<h3 id="q-why-is-sino-sometimes-used-in-reference-to-china">Q: Why is "Sino" sometimes used in reference to China?</h3>
-
-<p>The term "sino" derives from the Latin word Sinae, which was the Roman name for China. This likely originates from an earlier Greek term, Sinai, which was derived from Sanskrit Cina. The term referred to the Qin dynasty. The Chinese refer to their country as Zhong Guo, which means "middle kingdom".</p>
-
-<h3 id="q-what-is-the-relationship-between-things-like-taoism-buddhism-confucianism-and-yin-yang">Q: What is the relationship between things like Taoism, Buddhism, Confucianism, and Yin-Yang?</h3>
-
-<p>Taoism (Daoism) is a Chinese philosophy and religious tradition that emphasizes living with the Dao (the Way), which is "the fundamental principle that underlies the universe". It values spontaneity, naturalness, non-resistance, and balance.</p>
-
-<p>Buddhism originated in India before spreading and being adapted to local beliefs in China. Chinese Buddhism incorporates elements of Taoism, leading to sects like Chan Buddhism which later became "Zen" in Japan. It focuses on enlightenment, impermanence, and the cessation of suffering through detachment from desire.</p>
-
-<p>Confuscianism is a socio-political philosophy founded by Confuscius that emphasizes ethics, hierarchy, duty, and proper behavior. It is less spiritual than the others.</p>
-
-<p>Yin-Yang is a concept from ancient Chinese cosmology that represents dualism: the interplay of opposite but complementary forces. It is not exclusive to Taoism, but it plays a significant role in its worldview. Confucianism and Buddhism also reference yin-yang to explain balance in ethics and the universe.</p>
-
-<p>Taoism and confucianism emerged around 500-200 BCE in response to the social chaos of the Warring States period. Taoism sought to escape from rigid structures while Confucianism sought order within them. Buddhism entered China around the 1st century CE and blended with both. Yin-yang is more of a cosmological principle that all three use to explain aspects of their philosophies.</p>
-
-<h3 id="q-why-do-i-associate-city-life-in-the-1990s-with-jazz-music">Q: Why do I associate "city life" in the 1990s with jazz music?</h3>
-
-<p>Jazz had a cultural presence in the 1990s despite not being mainstream. It was used in media as a kind of shorthand for "sophistication and urban cool". You would see it in Hey Arnold, Cowboy Bebop, and Seinfeld to some extent. It was used in coffee culture advertising. Games like SimCity 3000 had jazz-heavy soundtracks, reinforcing the connection between jazz and the cityscape.</p>
-
-<h3 id="q-i-remember-wolframalpha-handling-natural-language-questions-long-before-modern-nlp-how-did-it-do-this">Q: I remember WolframAlpha handling natural language questions long before modern NLP; how did it do this?</h3>
-
-<p>It used a highly structured, rule-based approach relying on thousands of handcrafted parsing rules and templates. These rules were designed to capture common ways people might phrase questions in specific domains. It drew on curated databases and knowledge models and used Mathematica as a computational engine to produce results based on that data.</p>
-
-<h3 id="q-what-does-it-mean-for-an-animation-to-be-on-1s-or-on-2s">Q: What does it mean for an animation to be "on 1s" or "on 2s"?</h3>
-
-<p>Animation "on 1s" means there is a new drawing every frame while "on 2s" means every other frame repeats. Most often the purpose of this is simply to save time drawing frames on less important parts of an animation and prioritizing detailed frame work on the focal point of an animation.</p>
-
-<h3 id="q-what-was-a-paladin-historically">Q: What was a "paladin" historically?</h3>
-
-<p>In historical contexts, a paladin was a term used to refer to a high-ranking knight, typically of noble birth, renowned for their martial prowess, chivalry, and loyalty to their lord or sovereign. The concept of paladins originated in the medieval period, particularly during the Carolingian era in Europe, and gained popularity through literature, such as the epic poems of Charlemagne and his knights.</p>
-
-<p>Paladins were often depicted as champions of justice and defenders of the realm, embarking on quests to protect the innocent, uphold the law, and fight against evil forces, including monsters, invaders, and rival knights. They adhered to a strict code of conduct, emphasizing virtues like courage, honesty, humility, and honor.</p>
-
-<h3 id="q-what-is-data-normalization-and-denormalization">Q: What is data normalization and denormalization?</h3>
-
-<p>Data normalization is the reorganization of data to eliminate data redundancy. It involves breaking a database down into smaller, related tables with each piece of data stored canonically in one place. Denormalization is the opposite -- intentionally introducing redundancy into a database. This may be done to improve the performance of certain types of queries (eliminating costly joins), but must be done thoughtfully or it can lead to data integrity issues.</p>
-
-<h3 id="q-what-is-redis-and-how-does-it-differ-from-memcached">Q: What is Redis and how does it differ from Memcached?</h3>
-
-<p>Redis (Remote Dictionary Server) and Memcached are both in-memory data storage systems used for caching. Redis supports additional features over Memcached, including a wider range of data structures that can be stored natively, options for persisting data for durability, support for atomic operations, a pub/sub messaging system, and replication/clustering.</p>
-
 <h3 id="q-why-is-it-called-dynamic-programming-a-bit-vague-isnt-it">Q: Why is it called "dynamic programming"? A bit vague isn't it?</h3>
 
 <p>Dynamic programming refers to the technique of breaking a problem down into simpler problems of the same kind while storing subproblem solutions to avoid redundant calculations. It is primarily approached either top-down with memoization or bottom-up with tabulation.</p>
@@ -656,7 +432,7 @@
 <h3 id="q-what-are-all-the-things-the-posix-standard-covers">Q: What are all the things the POSIX standard covers?</h3>
 
 <ul>
-<li>System calls for file I/O, process management, inter-process communciation, and more.</li>
+<li>System calls for file I/O, process management, inter-process communication, and more.</li>
 <li>Standard libraries extending the C standard library for file and directory operations, regular expressions, and memory management.</li>
 <li>Command-line utilities such as ls, cat, grep, and many others.</li>
 <li>Certain shell syntax, functionality, and command-line argument conventions.</li>
@@ -686,30 +462,11 @@
 <li>C99-Data Structures is a collection of common generic data structures</li>
 </ul>
 
-<h3 id="q-is-the-placebo-effect-definitely-real-and-what-kinds-of-effects-have-been-seen">Q: Is the placebo effect definitely real and what kinds of effects have been seen?</h3>
-
-<p>It is recognized as a genuine biological phenomenon, although the exact mechanisms are not fully understood. Some notable effects observed have been pain relief, influence on psychiatric conditions, immune system response, and motor performance.</p>
-
 <h3 id="q-why-did-freebsd-remove-block-devices-while-linux-_only_-creates-block-devices">Q: Why did FreeBSD remove block devices while Linux <em>only</em> creates block devices?</h3>
 
 <p>Block devices operate on fixed size blocks of data with the OS managing a buffer. Character, or raw, devices are accessed directly by applications with no OS-managed cache. FreeBSD removed block devices in favor of moving caching logic into the filesystem layer (UFS/ZFS). This simplified aspects of the kernel.</p>
 
 <p>Linux instead treats the block device as the primary interface for a disk. This helps enable the OS to optimize I/O in a centralized way via scheduling and read-ahead prediction. If an application like a database wants more direct access, it can use the block device with the O_DIRECT flag which disables caching while still using the same block device interface.</p>
-
-<h3 id="q-what-are-the-differences-between-all-the-editions-of-dungeons-dragons">Q: What are the differences between all the "editions" of Dungeons &amp; Dragons?</h3>
-
-<ul>
-<li>Original (OD&amp;D): Released in the 1970s, it was a relatively simple system that encouraged creativity with rules that were up to interpretation.</li>
-<li>Advanced (AD&amp;D): Released in the late 1970s, it introduced more complexity and detailed rules, classes, and races.</li>
-<li>3rd Edition (D&amp;D 3E): Released in 2000, it revamped the system with a unified mechanic (the d20 system).</li>
-<li>3.5 Edition (D&amp;D 3.5E): A revision that addressed balance issues and refind some rules.</li>
-<li>4th Edition (D&amp;D 4E): Released in 2008, it brought significant changes, emphasizing tactical combat through roles for each class (defender, striker, leader, controller), with powers being a key feature.</li>
-<li>5th Edition (D&amp;D 5E): Released in 2014, it aimed to streamline gameplay, making it accessible to newcomers while retaining depth. It simplified rules, emphasized storytelling, and introduced advantage/disadavantage mechanics.</li>
-</ul>
-
-<h3 id="q-why-do-we-say-something-is-byazantine-when-its-excessively-complicated">Q: Why do we say something is "byazantine" when it's excessively complicated?</h3>
-
-<p>It reflects a historical perception of the Byzantine political, bureaucratic, and administrative systems as complex and intricate. The Byzantine Empire was known for its elaborate court rituals, intricate political maneuvering, and complex administrative procedures.</p>
 
 <h3 id="q-how-does-a-uefi-system-boot">Q: How does a UEFI system boot?</h3>
 
@@ -721,261 +478,6 @@
 <li>UEFI variables are configuration parameters saved in NVRAM, such as the boot device priority order.</li>
 <li>UEFI often supports a Secure Boot feature whereby only signed and authenticated boot loaders and OS kernels are approved to be loaded during the boot process.</li>
 </ul>
-
-<h3 id="q-how-does-ssh-establish-a-connection-without-leaking-information-to-the-public-internet">Q: How does SSH establish a connection without leaking information to the public Internet?</h3>
-
-<p>SSH uses a secure key exchange, typically Diffie-Hellman or its elliptic curve variant (ECDH).</p>
-
-<ol>
-<li>The client sends a "hello" message including information about supported encryption algorithms and exchange methods.</li>
-<li>The server responds with a "hello" message acknowledging the request and providing its own set of supported encryption and exchange methods.</li>
-<li>The client and server agree on an exchange method and generate key material to establish a shared secret without transmitting the secret over the network. Diffie-Hellman involves both parties contributing to a generated shared secret without explicitly exchanging it in public.</li>
-<li>A handshake is done to verify that both parties have generated the same key material.</li>
-<li>The client and server can then exxchange data securely using keys derived from the shared secret.</li>
-</ol>
-
-<p>The server typically presents its public key to the client during the exchange process, allowing the client to verify the server's identity.</p>
-
-<h3 id="q-in-the-context-of-cryptography-what-is-a-nonce">Q: In the context of cryptography, what is a "nonce"?</h3>
-
-<p>The term "nonce" refers to a "number used once" (may also relate to more general uses of the term meaning "something used for now"). It describes a random or pseudo-random number that is generated for a specific purpose and is intended and expected to be used only once within a given context or session. </p>
-
-<p>Generally, the server generates a nonce and sends it to the client as part of a communication protocol. The client uses it as instructed within the protocol, for example as part of signing a request. The server checks to ensure that the nonce has not been used previously in the same context or session and can reject the request if it has. To achieve this, the server typcially maintains a record of nonces that have been used within the current session.</p>
-
-<h3 id="q-what-is-the-origin-of-the-phrase-winner-winner-chicken-dinner">Q: What is the origin of the phrase "winner winner chicken dinner"?</h3>
-
-<p>Unclear, but it may have originated in Las Vegas casinos in the mid-to-late 20th century when a typical payout at some tables matched the cost of a casino meal, which was often a chicken dinner.</p>
-
-<h3 id="q-what-is-the-difference-between-marxism-and-communism">Q: What is the difference between Marxism and Communism?</h3>
-
-<p>Marxism is a socio-economic and political theory emphasizing the role of class struggle and the eventual establishment of a classless society. Communism is a political and economic ideology that advocates for a society in which the means of production are commonly owned and the distribution of wealth is based on the principle of balancing ability and need. In other words, Marxism is a broader theoretical framework while communism is a specific socio-economic system that is considered the ultimate "stage" in Marxist theory.</p>
-
-<h3 id="q-why-did-primates-evolve-to-have-flatter-faces-than-other-animals">Q: Why did primates evolve to have flatter faces than other animals?</h3>
-
-<p>It is an adaptation to an arboreal (tree-dwelling) lifestyle. Flatter faces provide a broader field of binocular vision which helps in accurately judging distances while navigating through branches; better depth perception.</p>
-
-<h3 id="q-why-did-hollywood-become-the-place-that-movies-are-made">Q: Why did Hollywood become the place that movies are made?</h3>
-
-<ol>
-<li>The sunny and consistent weather allowed for year-round outdoor filming, especially important for early cameras that required bright light.</li>
-<li>Proximity to diverse scenery such as deserts, mountains, and beaches.</li>
-<li>Distance from Thomas Edison's Motion Picture Patents Company on the East Coast, offering some protection from patent restrictions.</li>
-</ol>
-
-<h3 id="q-when-a-photon-hits-a-transparent-window-is-the-photon-that-emerges-on-the-other-side-the-same-photon">Q: When a photon hits a transparent window, is the photon that emerges on the other side the "same" photon?</h3>
-
-<p>Identity is not necessarily straightforward in the subatomic world. In a simplified physical model where photons are particles, a photon is emitted on the other side after a chain of interactions, absorptions, and energy transfers, and so in that sense it is not really the same photon.</p>
-
-<p>However, from the perspective of Quantum Field Theory, there is one universal "photon field" with localized ripples rather than "little billiard balls", and in that sense photons are fundamentally indistinguishable. If you have two photons A and B, there is no physical experiment that can tell you which is which after an interaction and so the concept of identity has little meaning.</p>
-
-<h3 id="q-why-do-private-vehicles-not-use-diesel-if-it-is-a-more-efficient-fuel">Q: Why do private vehicles not use diesel if it is a more efficient fuel?</h3>
-
-<p>Diesel vehicles are typically more expensive due to their robust engines that handle higher compression. In some countries, diesel fuel is also taxed more heavily than gasoline.</p>
-
-<p>Diesel engines are most efficient during long, steady drives. Private vehicles often make short trips with frequent stops which reduces the efficiency benefits of diesel. Diesel engines take longer to warm up, again making them less appropriate for short commutes.</p>
-
-<p>While diesel engines produce less CO2, they emit more nitrogen oxides and particulate matter which reduces air quality. Emission regulations have made gasoline more attractive for private buyers.</p>
-
-<p>Gasoline engines generally provide smoother acceleration and quieter operation which appeals to many private buyers. Public perception of diesel as being something dirty for commercial or utility vehicles further influences private buyer choices.</p>
-
-<h3 id="q-what-do-the-dot-product-and-cross-product-of-two-vectors-represent">Q: What do the "dot product" and "cross product" of two vectors represent?</h3>
-
-<p>The dot product is a scalar value measuring how much one vector extends in the direction of the other. If two vectors are perpendicular, then their dot product is zero and if they are parallel then their dot product is maximized. In other words, it is a measure of "how parallel" or "how perpendicular" two vectors are.</p>
-
-<p>The cross product produces a third vector that is perpendicular to both of the other vectors. It is useful for finding the normal vector of surfaces, computing torque, and determining rotational direction.</p>
-
-<h3 id="q-what-is-the-distinction-between-absurdism-and-nihilism">Q: What is the distinction between absurdism and nihilism?</h3>
-
-<p>Both confront an apparent meaninglessness of existence, but interpret and respond to it differently. Nihilism says there is no inherent meaning, value, or purpose in the universe and does not take the idea further than that. Absurdism incorporates the idea that there is a human desire for meaning despite the lack of a universal meaning, and emphasizes the absurdity of that conflict. Where nihilism surrenders to the meaningless in a way, absurdism is more like an acknowledgement, observation, and possibly defiance.</p>
-
-<h3 id="q-what-was-the-environment-of-evolutionary-adaptation-for-humans">Q: What was the "environment of evolutionary adaptation" for humans?</h3>
-
-<p>The details are still a subject of debate, but it is generally believed to span from about 200,000 years ago to roughly 10,000 years ago. During the EEA, humans were primarily hunter-gatherers, relying on foraging for food rather than agriculture and settled societies. The period was characterized by a nomadic lifestyle and various environments, including savannahs, forests, and costal regions.</p>
-
-<ol>
-<li>Hunter-gatherer lifestyle required mobility and skills such as tracking, tool-making, and knowledge of the local environment.</li>
-<li>Small groups consisting of extended family or bands of related individuals. Cooperation and bonding were crucial for survival.</li>
-<li>Bipedal locomotion enabled efficient travel over long distances and a larger brain enabled complex problem-solving and social interaction.</li>
-<li>A diverse and adaptable diet involving meat, fish, fruits, vegetables, nuts, and roots.</li>
-</ol>
-
-<h3 id="q-how-does-a-generative-image-model-work">Q: How does a generative image model work?</h3>
-
-<p>A massive dataset teaches the model relationships between image data and text descriptions.</p>
-
-<p>When prompting, the text is transformed into a point in a "latent space". This is a high-dimensional, mathematical "space" that captures relationships between various image features that have been learned.</p>
-
-<p>Most commonly, models use a diffusion process to generate an image based on the prompt. This involves starting with random noise and iteratively refining the image toward one that aligns with the prompt's associated region of the latent space.</p>
-
-<h3 id="q-to-what-extent-are-language-models-and-image-models-similar">Q: To what extent are language models and image models similar?</h3>
-
-<p>Both types of models often use the same kinds of neural network models with a transformer architecture. They both rely heavily on pre-training with massive amounts of data to establish reasonable baseline performance.</p>
-
-<p>Both models learn to map input data into a high-dimensional latent space where related concepts or features are located near each other.</p>
-
-<p>Language models must track dependencies over long sequences, but they are ultimately working with a linear structure. Images are far more complex due to the spacial nature and the higher dimensionality of the output (height x width x color channels).</p>
-
-<p>In language models, the "attention" mechanism of a transformer architecture helps the model focus on the most relevant parts of the input sequence as it generates output tokens. In image models, the attention mechanism is more spatially oriented, tracking relationships between different parts of the image.</p>
-
-<h3 id="q-what-are-unified-shaders">Q: What are "unified shaders"?</h3>
-
-<p>The unified shader model refers to the shader model found in modern GPUs. Prior to their introduction, GPUs used a largely fixed rendering pipeline where each stage was handled by different specialized units. With unified shaders, shader cores on the GPU are flexible and not dedicated to a particular function; they are "unified". This means the cores can be better allocated and utilized for the specific needs of a given application.</p>
-
-<h3 id="q-what-is-meant-by-deferred-rendering">Q: What is meant by "deferred rendering"?</h3>
-
-<p>Deferred rendering is a technique that attemps to reduce the raw compute needed to render a scene with complex lighting. More traditional rendering techniques such as forward rendering require performing lighting calculations for each individual object or light source which scales poorly for complex scenes. In deferred rendering, computations are done per-pixel, and so the amount of computations is pinned more to a fixed, unchanging resolution regardless of scene complexity.</p>
-
-<p>The process has two stages. First, the geometry stage renders the geometry in the scene to several buffers that capture different attributes, for example diffuse color, normals, and material properties (often in the form of a numeric identifier). This set of buffers is collectively called the G-buffer. Then, in the shading stage, the lighting and shading calculations are performed based on the G-buffer.</p>
-
-<p>One drawback of deferred rendering is the increased memory requirements of the G-buffer as output resolution grows. Another is that traditional MSAA blurs the image instead of only softening edges because of the way that the G-buffer interacts with that process.</p>
-
-<h3 id="q-what-is-tile-based-deferred-rendering">Q: What is "tile-based deferred rendering"?</h3>
-
-<p>Traditional deferred shading can be computationally expensive due to the large number of pixels processed in the lighting pass. Tile-based deferred shading divides the screen into smaller tiles and the lighting pass is done per-tile rather than per-pixel. A per-tile light list contains the necessary data for lighting calculations in that tile. This reduces the raw amount of lighting calculations needed by a factor of how large the tiles are, and it enables efficient memory access patterns where related light information lives together per tile.</p>
-
-<h3 id="q-what-is-global-illumination">Q: What is "global illumination"?</h3>
-
-<p>In traditional rendering, direct illumination is typically calculated by considering only the light sources and their direct paths to the objects in the scene. However, this ignores the indirect lighting effects caused by light bouncing of surfaces. Global illumination techniques aim to model these indirect lighting effects.</p>
-
-<p>Ray tracing is a widely used technique for global illumination where light rays are simulated by tracing them from the camera throughout the scene. It can be physically accurate but computationally expensive.</p>
-
-<p>Radiosity is a method that divides the scene into small patches and calculates energy transfer between them. It can accurately simulate diffuse inter-reflections, but it may not handle other effects like glossy surfaces or caustics.</p>
-
-<p>Photon mapping is a two-pass technique where photons are traced from light sources and then used to estimate the lighting at different points in the scene. It can handle effects like caustics.</p>
-
-<p>Path tracing traces light rays through the scene while using random samples to estimate the light contribution at each point. Like ray tracing, it can be computationally demanding but can produce physically accurate results.</p>
-
-<h3 id="q-what-are-spherical-harmonic-probes">Q: What are spherical harmonic probes?</h3>
-
-<p>SH probes are a technique for capturing and representing lighting information in a scene. They are a compact representation of functions defind on a sphere, such as lighting environments or light intensities.</p>
-
-<p>Lighting information for a particular environment or scene is "captured" and encoded into a compact form using spherical harmonic coefficients. These represent the distribution of lighting across the spherical harmonics.</p>
-
-<p>Spherical harmonics are analogous to the harmonics in one-dimensional waves, but extended to a sphere. By using these harmonics, it becomes possible to capture and represent lighting information using a low-dimensional set of coefficients.</p>
-
-<h3 id="q-what-is-ssao">Q: What is SSAO?</h3>
-
-<p>Screen-Space Ambient Occlusion is a technique to approximate the ambient occlusion effect in graphics. This is a phenomenon where surfaces close to each other (like the corner of a room) receive less ambient light due to the blocking effect of nearby objects.</p>
-
-<p>SSAO estimates the occlusion of each pixel in the image based on its surrounding geometry in screen space. Instead of calculating occlusion in the full 3D scene, SSAO operates on the final rendered image.</p>
-
-<p>SSAO often operates on the G-buffer used in deferred rendering. For each pixel, the depth values from the G-buffer are used to reconstruct the 3D position at that point. By comparing with the depth of surrounding samples, an occlusion amount can be estimated. The occlusion value is often used to darken the original color of the pixel.</p>
-
-<h3 id="q-how-did-the-legacy-fixed-function-pipeline-in-opengl-operate">Q: How did the legacy fixed-function pipeline in OpenGL operate?</h3>
-
-<p>In versions of OpenGL prior to 2.0, vertices went through a series of fixed stages:</p>
-
-<ol>
-<li>Vertex data was provided as position ,color, texture coordinates, and normals.</li>
-<li>The vertices were transformed by the modelview and projection matrices to bring the vertices into view space and then screen space. Lighting calculations like diffuse and specular lighting were applied to the transformed vertices using fixed light positions and material properties.</li>
-<li>The primitives were clipped against the view frustum to discard portions of geometry outside the visible region.</li>
-<li>Assembled primitives were rasterized into fragments based on screen coordinates. This determined which pixels were covered by a given primitive and generated fragment position, color, texture, coordinates, and depth.</li>
-<li>If textures were enabled, the rasterizer would apply texture mapping to the fragments. This involved interpolating texture coordinates across the primitive and sampling textures to determine the texture color.</li>
-<li>Fragments underwent depth testing, stencil testing, and blending.</li>
-<li>The resulting fragments were written to the final framebuffer.</li>
-</ol>
-
-<h3 id="q-how-do-games-deal-with-transparent-objects">Q: How do games deal with transparent objects?</h3>
-
-<p>One approach is to sort and render objects such that those farther from the camera are rendered first. This ensures that closer transparent objects correctly blend with those rendered behind them. This sorting can be done per-object, per-triangle, or per-pixel. This opposes the "typical" rendering order where objects are rendered front-to-back such that occluded objects are ignored.</p>
-
-<p>Depth peeling is a technique for scenes with complex overlapping transparent objects. It involves multiple rendering passes to peel away layers of transparent geometry and resolve the order of blending correctly. Each pass renders a subset of transparent objects with depth values of previous objects stored and used to determine the correct rendering order.</p>
-
-<p>Order-independent transparency techniques aim to overcome a need for explicit sorting by using different data structures or algorithms to maintain transparency information for correct rendering.</p>
-
-<h3 id="q-what-is-a-skin-mesh">Q: What is a "skin mesh"?</h3>
-
-<p>A skin mesh, skinned mesh, or skeletal mesh, is a mesh often used to represent character models. It consists of a combined base mesh and skeletal rig. The base mesh contains the static geometry of the character. The skeletal rig is a hierarchical structure of interconnected bones or joints that define the character's underlying skeletal structure, with each bone or join associated with a specific region of the character mesh.</p>
-
-<h3 id="q-what-are-the-advantages-of-forward-rendering">Q: What are the advantages of forward rendering?</h3>
-
-<p>Forward rendering is generally more efficient and better leverages graphics hardware for scenes with a moderate number of lights or scenes where the number of lights affecting each pixels is relatively low. It has a lower memory footprint than deferred rendering as it does not need to store per-pixel information in intermediate buffers.</p>
-
-<p>Forward rendering benefits from early depth testing. By depth testing as early as possible, occluded objects don't need to be processed.</p>
-
-<p>Forward rendering handles transparency more naturally than deferred rendering.</p>
-
-<p>Forward rendering has a more straightforward pipeline that allows for greater control and customization of the rendering process by providing direct access to per-pixel lighting calculations and shading models.</p>
-
-<p>Forward rendering can be enhanced with so-called Forward+ rendering techniques whereby screenspace is divided into tiles or clusters and performing light culling and shading calculations only on relevant tiles, allowing forward rendering to handle more complex lighting scenarios.</p>
-
-<h3 id="q-what-are-the-various-techniques-for-rendering-shadows">Q: What are the various techniques for rendering shadows?</h3>
-
-<p>Shadow mapping renders a depth map, known as a shadow map, from the perspective of the light source. During final rendering, each fragment is compared with its corresponding position in the shadow map to determine if shadowing should be applied. It can support both hard and soft shadows using techniques such as Percentage Closer Filtering (PCF) or variance shadow mapping.</p>
-
-<p>Shadow volumes use the stencil buffer to determine whether a fragment is inside or outside a shadow volume. The volumes are generated by extruding the silhouette edges of occluder geometry in the direction of the light source. The stencil buffer is then used to count the number of times a fragment's depth is incremented or decremented, indicating whether it's inside or outside the shadow volume. They can handle hard and soft shadows, self-shadowing, and dynamic objects, but can be computationally expensive.</p>
-
-<p>Stencil shadows are an alternative to shadow volumes where geometry is not extruded. Instead, depth values of the occluder geometry are used to create a silhouette in the stencil buffer. Fragments are compared against the stencil value to determine if they are inside or outside the shadow. They are generally faster than shadow volumes and can support hard and soft shadows, but may not support self-shadowing.</p>
-
-<h3 id="q-why-are-self-shadows-a-distinct-problem-from-shadowing-in-general">Q: Why are "self-shadows" a distinct problem from shadowing in general?</h3>
-
-<p>In shadow mapping, which is the most common real-time shadowing method, the scene is rendered from a given light's point of view and depth is recorded. This is fine for capturing unambiguous cases of an object being further "behind" another object that casts a shadow. However, when considering whether a given object casts a shadow on itself, floating-point precision limits become a problem. They can lead to various artifacts like streaks, speckles, flickering, etc.</p>
-
-<h3 id="q-what-developments-allowed-for-real-time-raytracing-in-recent-years">Q: What developments allowed for real-time raytracing in recent years?</h3>
-
-<p>NVIDIA introduced RT Cores in 2018, specialized units designed to accelerate Bounding Volume Hierarchy (BVH) traversal and triangle intersection tests. BHV is used to eficiently find which objects a ray intersects. BHV is a tree structure that groups objects into bounding boxes.</p>
-
-<p>Even so, it isn't that full scenes are being raytraced. The scene still uses traditional rasterization but adds more accurate reflections, shadows, global illumination, and ambient occlusion using raytracing operations.</p>
-
-<p>Raytracing produces noisy images when limited samples per pixel are used. AI-based denoising enabled more accurate, smoother final images with limited samples.</p>
-
-<p>Similarly, AI-based upscaling via DLSS or FSR allowed games to render to a lower "native" resolution, offloading more raw compute power for raytracing operations.</p>
-
-<h3 id="q-how-does-raytracing-fit-into-the-existing-rasterization-pipeline">Q: How does raytracing fit into the existing rasterization pipeline?</h3>
-
-<p>Raytracing introduces new shader types, including:</p>
-
-<ul>
-<li>Ray generation: launches rays and defines what to compute when they hit or miss.</li>
-<li>Intersection: defines how rays interact with complex geometry like curves.</li>
-<li>Any-hit: runs whenever a ray hits geometry and can decide whether to continue or terminate the ray (e.g. for transparency).</li>
-<li>Closest-hit: runs at the closest ray intersection and determines final color, material, lighting, etc.</li>
-<li>Miss: handles rays that don't hit anything (used for skyboxes, backgrounds, etc.).</li>
-</ul>
-
-<h3 id="q-how-are-decals-eg-bullet-holes-typically-implemented">Q: How are "decals" (e.g., bullet holes) typically implemented?</h3>
-
-<p>Often times, both historically and in modern engines, it is simply a piece of textured geometry offset very slightly from a surface.</p>
-
-<p>In games that use deferred rendering, they may be volumetric geometry that influences the G-buffer (modifying normals or other attributes).</p>
-
-<p>In some cases, such as for persistent effects on terrain, texture "splatting" maybe used where by textures are truly modified at runtime and "painted" over.</p>
-
-<h3 id="q-what-is-the-point-of-premultiplying-alpha">Q: What is the point of "premultiplying alpha"?</h3>
-
-<p>Premultiplied alpha makes compositing mathematically simpler, more stable, and more efficient. Many compositing operations (additive effects, particles, glow, etc.) behave much more naturally with premultiplied alpha.</p>
-
-<p>A useful way to think about premultiplied alpha is that the RGB already represents the amount of light the pixel contributes; it stores "emitted light" instead of "color + opacity".</p>
-
-<p>The representation is more physically meaningful. Without premultiplied alpha, RGB can be any value while alpha is zero, which doesn't "mean" anything since a fully transparent pixel's color is irrelevant. With premultiplied alpha, RGB must be zero when alpha is zero. After premultiplication, the 4 channels behave more uniformly: scaling brightness multplies all four channels, fading multiplies all four channels, and interpolation works correctly. Before premultiplication, the alpha channel is somewhat independent of the others.</p>
-
-<p>Premultiplying alpha does not mean the alpha channel becomes unnecessary, though. It still controls how much of the destination/target image should be visible when blending.</p>
-
-<h3 id="q-how-do-living-world-games-like-skyrim-or-stalker-simulate-ai-for-npcs-that-are-distant">Q: How do "living world" games like Skyrim or S.T.A.L.K.E.R. simulate AI for NPCs that are distant?</h3>
-
-<p>They don't truly simulate distant NPCs the same way they simulate the ones nearby that can be seen. They only need to make sure what the player sees appears consistent at the time that they see it.</p>
-
-<p>For NPCs in other parts of the world, the real-time AI is replaced with various other approaches:</p>
-
-<ul>
-<li>Behavior state machines with time-based transitions.</li>
-<li>Random event resolution: instead of simulating full combat, the results may be decided by "dice rolls" and high-level statistics about the groups involved.</li>
-<li>Coarse position updates: NPCs may "teleport" between key points based on elapsed time.</li>
-</ul>
-
-<p>These systems often don't update every frame. They run on a schedule of seconds or minutes, or they may perform a batch of updates when the player moves to a new location.</p>
-
-<h3 id="q-when-rts-games-moved-from-2d-to-3d-they-often-appear-to-have-dropped-the-concept-of-a-fixed-grid-at-the-same-time-how-does-that-work">Q: When RTS games moved from 2D to 3D, they often appear to have dropped the concept of a fixed grid at the same time. How does that work?</h3>
-
-<p>The world is primarily modeled on continuous world coordinates while grids and spatial partitioning structures serve as coarse ways of looking up what exists in particular areas; structures like uniform grids, quadtrees, or BVH and KD-trees in games that truly operate in three dimensions.</p>
-
-<p>Buildings typically have bounding volumes; when attempting to place one, the terrain is evaluated to determine if it's flat enough, and collision tests are done against nearby existing structures.</p>
-
-<p>Pathfinding moves beyond grid-based A-star and onto navigation meshes (navmeshes). A navgmesh is a representation of walkable areas as polygons. Obstacles carve holes in that mesh. A-star can still be used for finding a path, but it operates on a variable-cost navmesh rather than a fixed-cost grid. Geometric "cutting" operations can be used to cut a building footprint out of such a navmesh.</p>
-
-<p>Triangles are trivial to split against a convex shape. In practice, though, buildings may be treated as "dynamic obstacles" rather than navmesh edits. The navmesh may reflect only the static terrain while the existence of buildings and units only operate on a runtime obstacle "mask" of nodes in that navmesh.</p>
-
-<p>The high-level approach for convex clipping is the Sutherland-Hodgman algorithm. This can, however, leave non-convex leftovers that need to be accounted for.</p>
 
 <h3 id="q-how-did-html-change-up-through-html5">Q: How did HTML change up through HTML5?</h3>
 
@@ -1046,18 +548,12 @@
 <li>SIGTERM (15): It asks the process to terminate gracefully, giving it an opportunity to cleanup and finalize.</li>
 <li>SIGKILL (9): This forces the process to terminate immediately.</li>
 <li>SIGHUP (1): Typically used to instruct a process to reload its configuration files.</li>
-<li>SIGINT (2): Sent via Ctrl+C in the terminal. It's meant to interrupt the process, which may be treated similarly to SIGTERM but not ncessarily.</li>
+<li>SIGINT (2): Sent via Ctrl+C in the terminal. It's meant to interrupt the process, which may be treated similarly to SIGTERM but not necessarily.</li>
 <li>SIGQUIT (3): Similar to SIGINT, it's often used to generate a core dump for debugging.</li>
 <li>SIGSTOP (19) and SIGCONT (18): SIGSTOP pauses a process while SIGCONT resumes a paused process.</li>
 <li>SIGABRT (6): Often used by the process itself when it detects a critical error. It can be handled, but the default action is to terminate and generate a core dump.</li>
 <li>SIGALRM (14): Generated when a timer set by the <code>alarm()</code> function expires. IT is used to handle timeouts or delays in a program.</li>
 </ul>
-
-<h3 id="q-what-should-be-considered-when-choosing-between-serverless-computing-and-traditional-fleets">Q: What should be considered when choosing between serverless computing and traditional fleets?</h3>
-
-<p>Severless is great when the workload is unpredictable or very dynamic. The pay-as-you-go pricing model can be very effective when applications have sporadic usage. Serverless platforms enable faster development and deployment since infrastructure setup, configuration, and maintenance are minimal. On the other hand, serverless platforms come with a degree of vendor lock-in and less configuration flexibility.</p>
-
-<p>Traditional server fleets offer more control of the underlying hardware and software stack. Because they can be left in a running and available state at all times, they can fulfill more stringent latency requirements and offer more predictable performance. They are capable of maintaining state between requests. Even for a generally stateless service, local cache layers that persist between requests may be beneficial.</p>
 
 <h3 id="q-whats-the-deal-with-fullscreen-behavior-on-windows">Q: What's the deal with fullscreen behavior on Windows?</h3>
 
@@ -1073,28 +569,6 @@
 
 <p>It is possible to run in a GPU-level exclusive model via DRM/KMS, but it requires that the application run outside the context of a windowing system.</p>
 
-<h3 id="q-are-microservices-still-in-vogue-2025">Q: Are microservices still "in vogue" (2025)?</h3>
-
-<p>They are widely used, but the hype has cooled and alternatives are common.</p>
-
-<p>Microservices are used more pragmatically. People have felt the pain of latency, complexity, cross-service coordination, and versioning issues.</p>
-
-<p>"Modular monoliths" are making a comeback -- monolithic services with clear internal boundaries and responsibilities. This provides the simplicity and performance benefits of a monolithic service while still allowing for logical separation or transition to multiple services later.</p>
-
-<p>Serverless / Function-as-a-Service (FaaS) emerged as an alternative -- breaking logic into event-driven functions while avoiding infrastructure management.</p>
-
-<p>Event-Driven architectures -- instead of REST-only APIs, services communicate via events (e.g. Kafka). It can lead to looser coupling and more resilient systems at the cost of harder debugging, eventual consistency, or a more complex mental model.</p>
-
-<h3 id="q-very-generally-how-do-search-systems-like-lucene-work">Q: Very generally, how do search systems like Lucene work?</h3>
-
-<p>Systems like Lucene use an inverted index to efficiently find which documents contain given keywords.</p>
-
-<p>During the indexing phase, Lucene scans each document, tokenizing text into individual terms, optionally applying stemming, lowercasing, stopword removal, etc. For each term, it records the list of documents that contain that term, called a "posting list". Optionally, Lucene can store positions and frequencies of words that appear.</p>
-
-<p>During the query phrase, the given search keyword is looked up in the inverted index. The list of associated documents is often sorted or scored using something like TF-IDF or BM25.</p>
-
-<p>Once candidate documents are found, they are scored based on term frequency, how rare the terms are in general (inverse document frequency), field boosts, document length normalization, etc.</p>
-
 <h3 id="q-i-understand-what-a-lambda-is-in-python-or-c-but-what-exactly-is-the-lambda-calculus-and-why-does-it-matter">Q: I understand what a lambda is in Python or C++, but what exactly is "the lambda calculus" and why does it matter?</h3>
 
 <p>The lambda calculus is a system that shows how computation can be done using only functions and function application. In other words, it is a language consisting of only variables, function abstractions, and function applications.</p>
@@ -1107,7 +581,7 @@
 
 <h3 id="q-what-is-the-history-and-purpose-of-the-opt-directory">Q: What is the history and purpose of the /opt directory?</h3>
 
-<p>Short for "optional", the directory was intorduced to provide a location for packages that are not part of the default OS installation. Software installed in opt is often self-contained with its own directory structures, libraries, and resources.</p>
+<p>Short for "optional", the directory was introduced to provide a location for packages that are not part of the default OS installation. Software installed in opt is often self-contained with its own directory structures, libraries, and resources.</p>
 
 <h3 id="q-what-are-all-the-different-terminal-color-modes-or-standards">Q: What are all the different terminal color "modes" or standards?</h3>
 
@@ -1158,7 +632,7 @@
 
 <p>The line is wherever mental unpacking outweighs perceived elegance. Some rules of thumb might be 3-5 functions in an intuitive pipeline and no more than 2-3 levels of nesting.</p>
 
-<h3 id="q-what-are-the-roces-behind-the-fact-that-javascript-became-popular-well-beyond-its-original-frontend-scripting-domain">Q: What are the roces behind the fact that JavaScript became popular well beyond its original frontend scripting domain?</h3>
+<h3 id="q-what-are-the-forces-behind-the-fact-that-javascript-became-popular-well-beyond-its-original-frontend-scripting-domain">Q: What are the forces behind the fact that JavaScript became popular well beyond its original frontend scripting domain?</h3>
 
 <ol>
 <li>The ubiquity of the browser runtime (and therefore JavaScript) as a platform.</li>
@@ -1168,7 +642,7 @@
 <li>Writing software as a webapp is of the path of least resistance due to browser ubiquity and frictionless distribution.</li>
 </ol>
 
-<h3 id="q-whats-the-dela-with-range-queries-query-types-1-and-2-and-difference-arrays">Q: What's the dela with "range queries", query types 1 and 2, and "difference arrays"?</h3>
+<h3 id="q-whats-the-deal-with-range-queries-query-types-1-and-2-and-difference-arrays">Q: What's the deal with "range queries", query types 1 and 2, and "difference arrays"?</h3>
 
 <p>This refers to a particular category of algorithm involving modifying and querying values in an array efficiently.</p>
 
@@ -1254,7 +728,7 @@
 
 <h3 id="q-python-and-ruby-are-similar-but-yet-so-different-what-is-the-difference-in-their-design-philosophies">Q: Python and Ruby are similar but yet so different. What is the difference in their design philosophies?</h3>
 
-<p>Python emphasizes readability, where explicit is better than implicit and there is "only one way to do it". It supports object-oriented programming but is more multi-paradigm and precedural styles feel natural as well. It supports some level of metaprogramming via decorators, dynamic class creation, and metaclasses, but it prefers clarity and understandability.</p>
+<p>Python emphasizes readability, where explicit is better than implicit and there is "only one way to do it". It supports object-oriented programming but is more multi-paradigm and procedural styles feel natural as well. It supports some level of metaprogramming via decorators, dynamic class creation, and metaclasses, but it prefers clarity and understandability.</p>
 
 <p>Ruby emphasizes flexibility with multiple ways of writing the same code and multiple ways of accomplishing the same thing. It is a purely object-oriented language where absolutely every construct is an object. Ruby's metaprogramming is more flexible and integrated into the language which is powerful but more "magical" and harder to follow.</p>
 
@@ -1303,18 +777,6 @@
 <p>Looking at a "Maybe" or "Optional" type, you have a way of putting a value into that context (e.g. <code>Some(value)</code>) or of putting an "empty" value into it (e.g. <code>None</code>). That is the entire space of possible things that can exist in that monadic context. Then, you have a bind or flatMap function which takes one of those possible things and provides a new one which may be the same or different. That is the "chaining" operation that allows representing computation as a series of steps.</p>
 
 <p>Other common monads are <code>Either</code>, which allows a "successful" <code>Right</code> result or an error <code>Left</code> result, analogous to <code>Some</code> or <code>None</code>, and the <code>List</code> monad which allows chaining operations over lists, handling multiple values, and combining results.</p>
-
-<h3 id="q-what-is-backpressure-in-reactive-programming">Q: What is "backpressure" in reactive programming?</h3>
-
-<p>Backpressure refers to a mechanism for handling situations where a data producer (e.g. a stream or observable) generates data faster than a consumer (e.g. subscriber) can process it. It can be implemented in several ways, including:</p>
-
-<ul>
-<li>Buffering excess messages. This helps to tolerate occasional bursts of data but isn't a solution if the producer continuously outpaces the consumer.</li>
-<li>Dropping messages. This can be acceptable when only the latest data is relevant and a backlog has little value anyway.</li>
-<li>Throttling, whereby the producer reacts to the consumer's inability to keep up or proactively throttles itself.</li>
-<li>Blocking, whereby the producer must wait until the consumer is ready accept new data.</li>
-<li>Windowing and batching, whereby the system processes data in fixed-size chunks or batches, reducing the overhead of processing data items individually.</li>
-</ul>
 
 <h3 id="q-what-is-the-non-member-non-friend-principle">Q: What is the "non-member, non-friend principle"?</h3>
 
@@ -1369,7 +831,7 @@
 
 <p>Early high-level languages (1950s-1960s) like Fortran for scientific computing and Cobol for business applications.</p>
 
-<p>Structured programming languages (1960s-1980s) introduced the concepts of block structure and scope. Algol (1960) was influential in acacemia but less so in industry. Pascal (1970) was popular in educational settings and C (1972) became very popular for system programming and is still highly relevant today.</p>
+<p>Structured programming languages (1960s-1980s) introduced the concepts of block structure and scope. Algol (1960) was influential in academia but less so in industry. Pascal (1970) was popular in educational settings and C (1972) became very popular for system programming and is still highly relevant today.</p>
 
 <p>Object-Oriented programming languages (1980s-1990s) emerged starting with Smalltalk (1980). C++ (1985) extended C with object-oriented features while maintaining backward compatibility. Java (1995) emphasized platform independence and security.</p>
 
@@ -1395,7 +857,7 @@
 
 <p>Procedural programming is the idea of abstracting parts of a program into named blocks to aid abstraction and reuse.</p>
 
-<h3 id="q-whats-the-relationship-between-algabraic-data-types-traits-higher-kinded-types-and-implicits-as-seen-in-scala">Q: What's the relationship between algabraic data types, traits, higher-kinded types, and implicits as seen in Scala?</h3>
+<h3 id="q-whats-the-relationship-between-algebraic-data-types-traits-higher-kinded-types-and-implicits-as-seen-in-scala">Q: What's the relationship between algebraic data types, traits, higher-kinded types, and implicits as seen in Scala?</h3>
 
 <p>Traits are somewhat similar to interfaces in other languages. They define contracts but can also hold state and implement methods. They are used for a kind of multiple inheritance to share both interfaces and data among classes in a way that is more like composition than inheritance.</p>
 
@@ -1403,7 +865,7 @@
 
 <p>Implicits are mechanisms that allow the compiler to automatically supply parameters to functions or to convert types.</p>
 
-<p>Algabraic Data Types are types formed by combining other types, typically using sum types (variants) and product types (tuples). They allos the definition of complex structures that can encapsulate a fixed set of possible values for type-safe data handling.</p>
+<p>Algebraic Data Types are types formed by combining other types, typically using sum types (variants) and product types (tuples). They allow the definition of complex structures that can encapsulate a fixed set of possible values for type-safe data handling.</p>
 
 <p>Traits can be used to define ADTs by writing a set of classes that implement a sealed trait.</p>
 
@@ -1413,7 +875,7 @@
 
 <p>Traits can be parameterized with higher-kinded types to define abstract data structures or operations that work with any type constructor.</p>
 
-<h3 id="q-what-was-the-earliest-game-console-where-games-were-typically-programming-in-c-or-c-rather-than-assembly">Q: What was the earliest game console where games were typically programming in C or C++ rather than assembly?</h3>
+<h3 id="q-what-was-the-earliest-game-console-where-games-were-typically-programmed-in-c-or-c-rather-than-assembly">Q: What was the earliest game console where games were typically programmed in C or C++ rather than assembly?</h3>
 
 <p>The majority of SNES games were still written in assembly for performance. The PlayStation and Saturn were the earliest to provide robust development kits for C, and this of course continued with the N64, Dreamcast, and so on.</p>
 
@@ -1423,11 +885,529 @@
 
 <p>In languages that have closures, you can create lambdas or function objects with relevant context bound. Similarly, partial function application achieves binding of context separately from use.</p>
 
+<h2 id="networks-and-systems">Networks and Systems</h2>
+
+<h3 id="q-what-is-backpressure-in-reactive-programming">Q: What is "backpressure" in reactive programming?</h3>
+
+<p>Backpressure refers to a mechanism for handling situations where a data producer (e.g. a stream or observable) generates data faster than a consumer (e.g. subscriber) can process it. It can be implemented in several ways, including:</p>
+
+<ul>
+<li>Buffering excess messages. This helps to tolerate occasional bursts of data but isn't a solution if the producer continuously outpaces the consumer.</li>
+<li>Dropping messages. This can be acceptable when only the latest data is relevant and a backlog has little value anyway.</li>
+<li>Throttling, whereby the producer reacts to the consumer's inability to keep up or proactively throttles itself.</li>
+<li>Blocking, whereby the producer must wait until the consumer is ready accept new data.</li>
+<li>Windowing and batching, whereby the system processes data in fixed-size chunks or batches, reducing the overhead of processing data items individually.</li>
+</ul>
+
+<h3 id="q-are-microservices-still-in-vogue-2025">Q: Are microservices still "in vogue" (2025)?</h3>
+
+<p>They are widely used, but the hype has cooled and alternatives are common.</p>
+
+<p>Microservices are used more pragmatically. People have felt the pain of latency, complexity, cross-service coordination, and versioning issues.</p>
+
+<p>"Modular monoliths" are making a comeback -- monolithic services with clear internal boundaries and responsibilities. This provides the simplicity and performance benefits of a monolithic service while still allowing for logical separation or transition to multiple services later.</p>
+
+<p>Serverless / Function-as-a-Service (FaaS) emerged as an alternative -- breaking logic into event-driven functions while avoiding infrastructure management.</p>
+
+<p>Event-Driven architectures -- instead of REST-only APIs, services communicate via events (e.g. Kafka). It can lead to looser coupling and more resilient systems at the cost of harder debugging, eventual consistency, or a more complex mental model.</p>
+
+<h3 id="q-very-generally-how-do-search-systems-like-lucene-work">Q: Very generally, how do search systems like Lucene work?</h3>
+
+<p>Systems like Lucene use an inverted index to efficiently find which documents contain given keywords.</p>
+
+<p>During the indexing phase, Lucene scans each document, tokenizing text into individual terms, optionally applying stemming, lowercasing, stopword removal, etc. For each term, it records the list of documents that contain that term, called a "posting list". Optionally, Lucene can store positions and frequencies of words that appear.</p>
+
+<p>During the query phrase, the given search keyword is looked up in the inverted index. The list of associated documents is often sorted or scored using something like TF-IDF or BM25.</p>
+
+<p>Once candidate documents are found, they are scored based on term frequency, how rare the terms are in general (inverse document frequency), field boosts, document length normalization, etc.</p>
+
+<h3 id="q-what-should-be-considered-when-choosing-between-serverless-computing-and-traditional-fleets">Q: What should be considered when choosing between serverless computing and traditional fleets?</h3>
+
+<p>Serverless is great when the workload is unpredictable or very dynamic. The pay-as-you-go pricing model can be very effective when applications have sporadic usage. Serverless platforms enable faster development and deployment since infrastructure setup, configuration, and maintenance are minimal. On the other hand, serverless platforms come with a degree of vendor lock-in and less configuration flexibility.</p>
+
+<p>Traditional server fleets offer more control of the underlying hardware and software stack. Because they can be left in a running and available state at all times, they can fulfill more stringent latency requirements and offer more predictable performance. They are capable of maintaining state between requests. Even for a generally stateless service, local cache layers that persist between requests may be beneficial.</p>
+
+<h3 id="q-how-does-ssh-establish-a-connection-without-leaking-information-to-the-public-internet">Q: How does SSH establish a connection without leaking information to the public Internet?</h3>
+
+<p>SSH uses a secure key exchange, typically Diffie-Hellman or its elliptic curve variant (ECDH).</p>
+
+<ol>
+<li>The client sends a "hello" message including information about supported encryption algorithms and exchange methods.</li>
+<li>The server responds with a "hello" message acknowledging the request and providing its own set of supported encryption and exchange methods.</li>
+<li>The client and server agree on an exchange method and generate key material to establish a shared secret without transmitting the secret over the network. Diffie-Hellman involves both parties contributing to a generated shared secret without explicitly exchanging it in public.</li>
+<li>A handshake is done to verify that both parties have generated the same key material.</li>
+<li>The client and server can then exchange data securely using keys derived from the shared secret.</li>
+</ol>
+
+<p>The server typically presents its public key to the client during the exchange process, allowing the client to verify the server's identity.</p>
+
+<h3 id="q-in-the-context-of-cryptography-what-is-a-nonce">Q: In the context of cryptography, what is a "nonce"?</h3>
+
+<p>The term "nonce" refers to a "number used once" (may also relate to more general uses of the term meaning "something used for now"). It describes a random or pseudo-random number that is generated for a specific purpose and is intended and expected to be used only once within a given context or session. </p>
+
+<p>Generally, the server generates a nonce and sends it to the client as part of a communication protocol. The client uses it as instructed within the protocol, for example as part of signing a request. The server checks to ensure that the nonce has not been used previously in the same context or session and can reject the request if it has. To achieve this, the server typically maintains a record of nonces that have been used within the current session.</p>
+
+<h3 id="q-what-is-data-normalization-and-denormalization">Q: What is data normalization and denormalization?</h3>
+
+<p>Data normalization is the reorganization of data to eliminate data redundancy. It involves breaking a database down into smaller, related tables with each piece of data stored canonically in one place. Denormalization is the opposite -- intentionally introducing redundancy into a database. This may be done to improve the performance of certain types of queries (eliminating costly joins), but must be done thoughtfully or it can lead to data integrity issues.</p>
+
+<h3 id="q-what-is-redis-and-how-does-it-differ-from-memcached">Q: What is Redis and how does it differ from Memcached?</h3>
+
+<p>Redis (Remote Dictionary Server) and Memcached are both in-memory data storage systems used for caching. Redis supports additional features over Memcached, including a wider range of data structures that can be stored natively, options for persisting data for durability, support for atomic operations, a pub/sub messaging system, and replication/clustering.</p>
+
+<h3 id="q-how-does-something-like-a-centralized-crypto-exchange-scale-given-the-non-negotiable-requirements-for-sequential-order-execution">Q: How does something like a centralized crypto exchange scale given the non-negotiable requirements for sequential order execution?</h3>
+
+<p>At its core, an exchange does rely on strongly ordered, single-writer components, and this doesn't scale the way a more stateless web backend does, nor does it pretend to. Instead of scaling everything horizontally, exchanges are almost always sharded by market. The exchange overall may have massive traffic, but traffic is substantially less for any given market pair.</p>
+
+<p>Of course, certain markets are more active than others, and for this some amount of vertical scaling is required: faster CPUs, more memory on a single system, optimizations, etc.</p>
+
+<p>Persistence on the critical path is usually handled by append-only logs rather than a traditional "source of truth" database. The order matching engine writes an event stream which is used to build database state downstream. If the engine crashes, the log still serves as a source of truth for reconstructing the expected state, and so distributed transactions and eventual consistency are avoided in the critical path.</p>
+
+<p>Outside of that, there is much more room for horizontal scaling. Things like authentication, API gateways, order intake, and balance checks don't require precise timing and can be eventually consistent. There is more room for being optimistic until the boundary of the critical order matching path.</p>
+
+<p>Account balances are somewhat split-brained. There is typically a fast and strongly consistent balance colocated with the matching engine, or logically owned by it, that tracks available funds. Separately, there are slower, replicated ledger systems that track deposits, withdrawals, funding, and reconciliation.</p>
+
+<p>Similarly, market data feeds and user dashboards can tolerate a fair amount of lag without major consequences, and so these may be a fan-out from the event log the matching engine writes to.</p>
+
+<p>For a given market, only one engine instance is active, but there may be hot standbys replaying the event log, ready to take leadership if the primary engine instance fails.</p>
+
+<h3 id="q-why-does-it-seem-that-flight-searches-are-extremely-slow-product-searches-are-usually-extremely-fast-it-feels-like-a-comparable-case-of-live-availability-being-searched-no">Q: Why does it seem that flight searches are extremely slow? Product searches are usually extremely fast. It feels like a comparable case of "live" availability being searched, no?</h3>
+
+<p>A web store search is fundamentally a read from a precomputed, cache-friendly data set. A flight search is more like a distributed transaction and pricing problem. A product search typically involves tightly integrated systems while pricing and availability change infrequently. A flight search often requires querying multiple lives systems including the airline's reservation system, partner airlines, and fare construction engines.</p>
+
+<p>Airline fare are not looked up so much as constructed. They are governed by a large rule system. For a round trip, the system may need to evaluate many outbound and return combinations. It's more of an optimization problem than a lookup. Raw seat inventory may be cached, but the valid price for a particular trip often isn't.</p>
+
+<p>Flight availability is managed in terms of fare class availability. Availability is not purely about whether a given seat is free, but whether there is at least one unit left in a particular fare bucket on a particular flight. Those buckets are controlled by revenue management and can be opened, closed, or resized dynamically. Caching is less useful when results change so dynamically.</p>
+
+<p>Flight searches must consider combinations of flights with hops to a destination while factoring in connection times.</p>
+
+<p>Flight availability is intentionally fuzzy. Airlines overbook and rely on probabilistic no-show models, so the inventory is not a hard count but rather based on a controlled risk model.</p>
+
+<p>There's a lot of legacy infrastructure. Core airline reservation systems are famously old. Many are mainframe-era systems that expose functionality via protocols that are not optimized for low-latency. Many airlines run on Passenger Service Systems (Amadeus, Sabre, Travelport) that date back to the 1970s-1990s.</p>
+
+<h3 id="q-how-does-the-concept-of-a-byzantine-fault-relate-to-the-design-of-distributed-systems">Q: How does the concept of a Byzantine fault relate to the design of distributed systems?</h3>
+
+<p>Byzantine faults are about the inability of nodes in a system to know whether other nodes are providing correct or information or may even be behaving maliciously. Fault-tolerant designs may involve redundant copies of data with replication, consensus algorithms like PBFT, HoneyBadgerBFT, Paxos or Raft, and of course secure communication via encryption, authentication, and authorization.</p>
+
+<p>One failure mode is that nodes may simply stop functioning or be unreachable due to network partition. Timeouts and heartbeats can be used as a basic signal that a node is "dead" or unreachable and to exclude it until it comes back online. Another failure mode is that a given node may be operating on old or incorrect information, or be otherwise faulty in some way while still responding to messages. This is where consensus algorithms come in so that the system can agree on a ground truth.</p>
+
+<h3 id="q-what-is-the-relevance-of-3n-1-with-regard-to-byzantine-faults">Q: What is the relevance of "3n + 1" with regard to Byzantine faults?</h3>
+
+<p>A 1980 paper showed that "3n + 1" nodes are necessary and sufficient in a distributed system to handle "n" nodes acting maliciously. In other words, the system can still agree on the correct "truth" as long as under 1/3 of the nodes are acting maliciously.</p>
+
+<h3 id="q-how-do-pbft-and-honeybadgerbft-work">Q: How do PBFT and HoneyBadgerBFT work?</h3>
+
+<p>Practical Byzantine Fault Tolerance aims to provide a solution to the Byzantine Generals Problem. It relies on replicating the relevant state across a set of nodes that participate in the consensus process. A "primary node" proposes a value, other nodes acknowledge the proposed value, and then nodes vote on a value. A certain number of nodes (quorum) need to agree on a value for it be accepted. The optimistic path is that most nodes are functioning correctly and will agree, otherwise a slower path is required. Cryptographic signatures are used to ensure the authenticity of messages.</p>
+
+<p>HoneyBadgerBFT operates in an asynchronous network that doesn't rely on assumptions about message delivery times. This makes it more tolerant to unpredictable network conditions. It uses broadcast encryption to transmit messages to a subset of nodes without revealing the content to others which adds an extra layer of privacy and security. It (somehow) maintains its functionality even when the number of faulty nodes exceeds the expected threshold. It is particularly suitable for use in blockchain or decentralized ledger technologies.</p>
+
+<h3 id="q-what-is-a-federated-system">Q: What is a "federated" system?</h3>
+
+<p>A federated system is a decentralized one composed of multiple independent "nodes" that cooperate. A common example is email. There is no central email system or provider; email is really a set of protocols that different systems agree on for sending messages to each other. Although Gmail dominates personal email accounts today, a person can create an email account using any available service or even set up their own email server.</p>
+
+<p>Users authenticate with their chosen node, or "instance", with their credentials. This may use something like OAuth 2.0.</p>
+
+<p>Instances communicate with others through a protocol like ActivityPub, or SMTP/IMAP in the case of email. Cryptographic signatures (public key cryptography) are used to verify the authenticity of interactions. For example, each instance may have its own pair of public and private keys. The public keys allow other instances to verify that incoming messages were truly sent by a given instance.</p>
+
+<p>As commonly seen with email, "identity" is tied to a specific instance (e.g. "@gmail.com").</p>
+
+<h3 id="q-how-does-single-sign-on-work">Q: How does Single Sign-On work?</h3>
+
+<p>SSO delegates authentication to a trusted third party. The target system sends you to the authentication system. Upon authentication, you are directed back to the target system along with an authorization code. The target system uses the authorization code to request an access token (and optionally a refresh token) from the identity provider. This access token can then be used to make authorized requests to the identity provide for more information. The target system may also set its own session cookie or token to manage your session independently from the identity provider.</p>
+
+<p>Standardized protocols and formats may be used, such as OAuth 2.0, OpenID Connect, and JWT.</p>
+
+<p>A state parameter is used to prevent CSRF attacks. The target system generates a unique value for each authentication request which the identity provider must return unchanged.</p>
+
+<h2 id="llms-ai-and-machine-learning">LLMs, AI, and Machine Learning</h2>
+
+<h3 id="q-if-llms-predict-tokens-sequentially-what-stops-one-bad-prediction-from-derailing-the-rest-of-the-response">Q: If LLMs predict tokens sequentially, what stops one bad prediction from derailing the rest of the response?</h3>
+
+<p>Nothing fundamentally stops it and it can happen, but there are some factors that prevent it from happening constantly.</p>
+
+<p>Language has a strong statistical structure and is extremely redundant. Even if one token is slightly wrong, the rest of the context still constrains the continuation heavily. A long with this, modern models have very large context windows that contribute to the probability and stability of the next token.</p>
+
+<p>During training, models learn from imperfect text. It implicitly learns to recover from inconsistencies in a coherent way even if part of the response is slightly odd or incorrect.</p>
+
+<h3 id="q-how-were-reasoning-models-trained">Q: How were "reasoning" models trained?</h3>
+
+<p>Early versions relied heavily on human-written reasoning traces, but modern reasoning models are not primarily trained that way. After a point, they were trained from self-generated reasoning plus verification and reinforcement learning. You have a model generate reasoning paths for a problem and train a new model on the reasoning trajectories that reached the correct answer. This is somewhat analogous to selection pressure in evolution. Even the correct answer can be decided automatically by assuming that the answer which appears most often in many traces is correct. In some domains like math, code, or logic, correctness for known problems can be checked automatically.</p>
+
+<h3 id="q-why-do-reasoning-traces-often-seem-to-ramble-and-repeat-awkwardly">Q: Why do reasoning traces often seem to ramble and repeat awkwardly?</h3>
+
+<p>The training rewarded correctness, not elegance. Only the final result was rewarded. Thinking longer often improves accuracy, so models learned to think longer even if they end up repeating or going in circles sometimes.</p>
+
+<p>Self-generated reasoning amplifies weird patterns. Models may generate strange patterns that happen to succeed, and training reinforces this. This is somewhat analogous to the way that arbitrary mutations or features that are hard to explain in nature are carried along with obvious beneficial genetic changes.</p>
+
+<p>Some repetitive phrasing serves to represent a kind of state or state change that happens to be represented as natural language.</p>
+
+<h3 id="q-how-do-llms-decide-when-to-stop-a-response-if-its-just-another-token-isnt-it-unlikely-to-choose-that-token-over-all-others">Q: How do LLMs decide when to stop a response? If it's just another token, isn't it unlikely to choose that token over all others?</h3>
+
+<p>Conceptually they predict a end-of-sequence token as the next token. It works reliably because the model has learned very strong signals about when text typically ends. It has seen billions or more samples of how text ends with a concluding sentence, finished list, closing braces, etc. Furthermore, every training input ends with an EOS token so the model has a high amount of exposure to it.</p>
+
+<p>Models are also trained on length. As the length of a response approaches a typical response length, the probability of predicting EOS dramatically increases. This is also why a model might produce a similarly lengthy response to both a simple and complex question.</p>
+
+<h3 id="q-in-the-context-of-machine-learning-what-is-mlp">Q: In the context of machine learning, what is MLP?</h3>
+
+<p>A Multilayer Perceptron, a type of feedforward artificial neural network. An input layer receives initial data corresponding to the number of "features". A set of one or more "hidden layers" sits between the input and output layers, with each node in a given layer connected to every node in the next layer (fully connected network). The hidden layers use non-linear activation functions like ReLU or sigmoid which is crucial for the model's ability to learn complex, non-linear relationships. At each neuron input, a weighted sum of inputs from the previous layer is calculated and a bias is added. The output layer has a number of neurons dependent on the task; it may have one for a single decision or multiple for a classification problem.</p>
+
+<p>The network learns by adjusting weights and biases to minimize the difference between predictions and expected values using a process called backpropagation. Backpropagation uses the chain rule from calculus to efficiently calculate how much each weight and bias contributes to the overall error. These adjustments are made through an optimization algorithm like gradient descent.</p>
+
+<p>MLPs are considered universal function approximators; they can, in theory, approximate any continuous function given enough hidden neurons and layers.</p>
+
+<h3 id="q-what-are-some-known-universal-function-approximators">Q: What are some known universal function approximators?</h3>
+
+<p>Universal function approximators are systems that have been proven to be capable of approximating any continuous function using the Universal Approximation Theorem.</p>
+
+<ul>
+<li>Multilayer Perceptrons (MLPs): a common type of feedforward artificial neural network.</li>
+<li>Radial Basis Function (RBF) networks: a type of neural network that uses radial basis functions (like a Gaussian curve) as activation functions in the hidden layer. Instead of a weighted sum of inputs like MLPs, RBF networks use the distance from a central point to determine the output of a neuron.</li>
+<li>Support Vector Machines (SVMs): these are often used for classification problems, but SVMs with certain kernels like the Gaussian kernel can act as universal function approximators. The kernel essentially maps data into a higher-dimensional space where it can be separated or approximated linearly.</li>
+<li>Polynomials and Fourier Series: the Stone-Weirstrass theorem shows that polynomials can approximate any continuous function on a closed interval. Similarly, the Fourier series can.</li>
+<li>Turing Machines: although more abstract and conceptual, a Turing machine can simulate any computer algorithm and thus, in a sense, process any computable function. It is a broader class than continuous functions.</li>
+</ul>
+
+<h3 id="q-how-can-you-have-a-second-order-linear-regression-its-quadratic-not-a-line">Q: How can you have a "second order linear regression"? It's quadratic, not a line.</h3>
+
+<p>In the context of statistics and machine learning, "linear regression" means the coefficients appear linearly, not that the regression itself is linear.</p>
+
+<ul>
+<li><code>y = a + bx</code> is a 1st-order linear regression</li>
+<li><code>y = a + bx + cx^2</code> is a 2nd-order linear regression</li>
+<li><code>y = a + b^x</code> is <em>not</em> a linear regression</li>
+</ul>
+
+<h3 id="q-how-does-a-generative-image-model-work">Q: How does a generative image model work?</h3>
+
+<p>A massive dataset teaches the model relationships between image data and text descriptions.</p>
+
+<p>When prompting, the text is transformed into a point in a "latent space". This is a high-dimensional, mathematical "space" that captures relationships between various image features that have been learned.</p>
+
+<p>Most commonly, models use a diffusion process to generate an image based on the prompt. This involves starting with random noise and iteratively refining the image toward one that aligns with the prompt's associated region of the latent space.</p>
+
+<h3 id="q-to-what-extent-are-language-models-and-image-models-similar">Q: To what extent are language models and image models similar?</h3>
+
+<p>Both types of models often use the same kinds of neural network models with a transformer architecture. They both rely heavily on pre-training with massive amounts of data to establish reasonable baseline performance.</p>
+
+<p>Both models learn to map input data into a high-dimensional latent space where related concepts or features are located near each other.</p>
+
+<p>Language models must track dependencies over long sequences, but they are ultimately working with a linear structure. Images are far more complex due to the spacial nature and the higher dimensionality of the output (height x width x color channels).</p>
+
+<p>In language models, the "attention" mechanism of a transformer architecture helps the model focus on the most relevant parts of the input sequence as it generates output tokens. In image models, the attention mechanism is more spatially oriented, tracking relationships between different parts of the image.</p>
+
+<h3 id="q-i-remember-wolframalpha-handling-natural-language-questions-long-before-modern-nlp-how-did-it-do-this">Q: I remember WolframAlpha handling natural language questions long before modern NLP; how did it do this?</h3>
+
+<p>It used a highly structured, rule-based approach relying on thousands of handcrafted parsing rules and templates. These rules were designed to capture common ways people might phrase questions in specific domains. It drew on curated databases and knowledge models and used Mathematica as a computational engine to produce results based on that data.</p>
+
+<h2 id="society-and-culture">Society and Culture</h2>
+
+<h3 id="q-what-value-do-critics-provide-seems-like-they-just-provide-subjective-opinions-for-the-most-part-i-often-like-things-that-critics-rated-poorly">Q: What value do critics provide? Seems like they just provide subjective opinions for the most part. I often like things that critics rated poorly.</h3>
+
+<p>I may like critically unpopular media because I don't consume that much of it and a given example is therefore still novel and entertaining enough to me. A critic likely consumes a lot more content and is comparing to many more examples. Fair enough.</p>
+
+<h3 id="q-why-does-it-seem-that-people-commonly-report-themselves-as-tired-if-everyone-is-tired-then-thats-just-the-baseline-state-no">Q: Why does it seem that people commonly report themselves as "tired". If everyone is "tired", then that's just the baseline state, no?</h3>
+
+<p>A few possibilities. People tend to compare to an idealized norm, not their own baseline. If their potential best is an idealized well-rested, alert, focused state, then anything less than that is "tired".</p>
+
+<p>It may also be used as a safer communication shortcut that avoids over-sharing. It can mean anxious, unmotivated, or empty without getting into specifics.</p>
+
+<p>However there are potentially true modern lifestyle deficits including getting less than 7-8 hours of sleep regularly or getting poor sleep due to artificial light, caffeine, alcohol, or sedentary work.</p>
+
+<h3 id="q-what-are-some-games-for-handheld-systems-that-break-the-mold-of-handheld-games-being-lesser">Q: What are some games for handheld systems that break the mold of handheld games being "lesser"?</h3>
+
+<p>On the GB / GBC:</p>
+
+<ul>
+<li>Link's Awakening</li>
+<li>Pokemon Gold and Silver</li>
+<li>Metal Gear: Ghost Babel</li>
+<li>Shantae</li>
+<li>Tetris</li>
+</ul>
+
+<p>On the GBA:</p>
+
+<ul>
+<li>Metroid Fusion / Zero Mission</li>
+<li>Advance Wars and Advance Wars 2</li>
+<li>Fire Emblem and Fire Emblem: The Sacred Stones</li>
+<li>Final Fantasy Tactics Advance</li>
+<li>Mario Kart: Super Circuit</li>
+<li>Castlevania: Aria of Sorrow</li>
+</ul>
+
+<p>On the DS:</p>
+
+<ul>
+<li>The World Ends With You</li>
+<li>Castlevania: Dawn of Sorrow / Portrait of Ruin / Order of Ecclesia</li>
+<li>Advance Wars: Dual Strike</li>
+<li>Mario &amp; Luigi: Bowser's Inside Story</li>
+<li>Pokemon Black &amp; White / Black 2 &amp; White 2</li>
+</ul>
+
+<p>On the PSP:</p>
+
+<ul>
+<li>Monster Hunter Portable 3rd</li>
+<li>Monster Hunter Freedom Unite</li>
+<li>Persona 3 Portable</li>
+<li>Crisis Core: Final Fantasy VII</li>
+<li>God of War: Chains of Olympus / Ghost of Sparta</li>
+<li>Metal Gear Solid: Peace Walker</li>
+<li>Daxter</li>
+<li>Jeanne d'Arc</li>
+</ul>
+
+<h3 id="q-having-grown-up-in-the-us-why-was-i-completely-unaware-of-the-sega-master-system">Q: Having grown up in the U.S., why was I completely unaware of the Sega Master System?</h3>
+
+<p>It was crushed by the NES in North America and Japan by a factor of roughly 20 to 1. Sega's marketing was half-hearted in the U.S. and they frequently changed distribution partners. The box art was infamously minimalist and unattractive.</p>
+
+<p>The Master System had solid games, but no particular mascot or breakout hit at the time. The Genesis / Mega Drive along with Sonic as its mascot was effectively Sega's debut for many Americans.</p>
+
+<p>The Master System was a massive hit in other markets, particularly Brazil, the UK, and Portugal.</p>
+
+<h3 id="q-why-do-so-many-european-folk-and-fairy-tails-involve-the-woods-which-real-world-woods-are-these-tales-likely-influenced-by">Q: Why do so many European folk and fairy tails involve the woods? Which real-world woods are these tales likely influenced by?</h3>
+
+<p>The woods symbolically and historically represented the boundary between the known and the unknown. In pre-modern Europe, forests were vast, untamed, and dangerous. The rules of society didn't apply, mystery and magic felt plausible, and old pre-Christian beliefs lingered.</p>
+
+<p>Most classic fairy tales stem from Central and Northern European traditions involving Germany's Black Forest, The Ardennes, and Scandinavian boreal forests.</p>
+
+<h3 id="q-its-hard-to-even-comprehend-how-many-people-are-alive-today-can-you-compare-global-populations-through-history-to-modern-day-regions">Q: It's hard to even comprehend how many people are alive today. Can you compare global populations through history to modern day regions?</h3>
+
+<ul>
+<li>10,000 BCE (start of agriculture): around 4 million, similar to the modern Los Angeles metro area</li>
+<li>1,000 BCE: around 50 million, or modern South Korea</li>
+<li>1 CE (height of Roman Empire): around 170-300 million, up to roughly the modern United States</li>
+<li>1000 CE: around 250-310 million, still roughly up to the modern United States</li>
+<li>1300 CE: around 400 million, modern European Union</li>
+<li>1350 CE (post-Black Death): around 350 million, roughly modern United States</li>
+<li>1500 CE: around 450-500 million, modern European Union + Japan</li>
+<li>1700 CE: around 600 million, modern Central America plus South America</li>
+<li>1800 CE: around 1 billion, modern Africa</li>
+<li>1900 CE: around 1.6 billion, modern China plus United States</li>
+<li>1950 CE: around 2.5 billion, modern India plus Africa</li>
+<li>2000 CE: around 6.1 billion, roughly modern Asia</li>
+<li>2026 CE: around 8.1 billion, present day global population</li>
+</ul>
+
+<h3 id="q-in-1-ce-how-much-of-the-global-population-was-within-the-roman-empire">Q: In 1 CE, how much of the global population was within the Roman Empire?</h3>
+
+<p>The Roman Empire likely had a population of around 45 to 60 million people depending on how borders are defined and what estimates are used. That would put it between 15% and 35% of the world's population.</p>
+
+<p>Han China around the same time had roughly 60 million as well, and the combination of the two could've held nearly half the global population.</p>
+
+<h3 id="q-if-land-area-were-equally-divided-for-every-living-human-how-much-land-would-each-person-get">Q: If land area were equally divided for every living human, how much land would each person get?</h3>
+
+<p>Every human could get around 7 acres of land, ignoring the fact that not all land is equally useful or productive, and that in practice wild zones are needed for maintaining ecosystems.</p>
+
+<p>For comparison, modern industrial agriculture requires around 0.5 to 2 acres per person to feed a meat-heavy Western diet, although plant-based diets can be grown on 0.2-0.5 acres.</p>
+
+<p>Urban housing and roads only use maybe 0.05-0.1 acres per person, while suburban housing may use over 1 acre.</p>
+
+<p>Some estimates say that an average American uses over 20 acres for their full footprint, including infrastructure for energy, waste management, roads, factories, etc.</p>
+
+<h3 id="q-i-understand-that-dogs-benefited-from-eating-leftover-food-from-humans-but-how-did-early-humans-benefit-from-having-dogs-around">Q: I understand that dogs benefited from eating leftover food from humans, but how did early humans benefit from having dogs around?</h3>
+
+<p>Dogs are much better at detecting intruders via smell and hearing. They sleep lightly and serve as a warning system for sleeping humans.</p>
+
+<p>The "cleanup" of bones and food scraps may have reduced disease vectors around a human camp.</p>
+
+<p>Dogs can track prey by scent and chase wounded animals into the open which aids humans in hunting. Some early dogs could retrieve hunted animals that may have died somewhere out of sight.</p>
+
+<p>Of course, emotional bonds and companionship at some point started to reinforce the relationship.</p>
+
+<h3 id="q-when-were-the-first-photos-of-earth-from-space-taken">Q: When were the first photos of Earth from space taken?</h3>
+
+<p>The first photo was taken in 1946 by a V-2 rocket launched from New Mexico. It reached an altitude of about 65 miles, just above the boundary of space.</p>
+
+<p>The TIROS-1 weather satellite launched by NASA in 1960 took more comprehensive images of Earth from an altitude of around 450 miles.</p>
+
+<p>The first full-disk image of the Earth (what most would consider "from space") was taken by the ATS-3 satellite in 1967 at an altitude of 22,300 miles.</p>
+
+<h3 id="q-how-did-palm-trees-end-up-in-california">Q: How did palm trees end up in California?</h3>
+
+<p>They are not native to the region. Spanish missionaries planted date palms at their missions, which were brought from Spain. Spain had imported them even earlier from North Africa. During the late 1800s, exotic plants such as palms were brought to California as the state promoted its image as a paradise. In the 1930s, thousands were planted as part of public works programs.</p>
+
+<h3 id="q-whats-the-deal-with-santa-claus-st-nicholas-and-kris-kringle-all-being-names-for-the-same-person-and-how-does-krampus-fit-in">Q: What's the deal with Santa Claus, St. Nicholas, and Kris Kringle all being names for the same person? And how does Krampus fit in?</h3>
+
+<p>St. Nicholas was a real 4th-century Bishop, known for his piety, generosity, and gift-giving. The name "Santa Claus" is derived from the Dutch Sinterklaas, which itself is a shortening of Sint Nikolaas. Dutch settlers brought the tradition to America.</p>
+
+<p>Kris Kringle is an Americanization of the German Christkind (Christ Child), a gift-bringer figure introduced by Martin Luther as an alternative to St. Nicholas meant to emphasize the Christ-centric nature of the holiday.</p>
+
+<p>Krampus is a figure from Alpine folklore, likely part of winter solstice festivals. Over time he was adapted to act as a kind of "punishing" counter-part to St. Nicholas.</p>
+
+<h3 id="q-what-is-the-origin-of-the-american-diner-and-its-aesthetic">Q: What is the origin of the American diner and its aesthetic?</h3>
+
+<p>The diner originated in the late 19th century as a mobile eatery to serve workers during odd hours. By the 1910s, the concept evolved into stationary but prefabricated structures. Early diners were inspired by railway dining cars. During the 1930s and 1940s, the Art Deco movement added stainless steel, bold lines, and neon accents. The post-World War II boom popularized bright color schemes, vinyl booths, and checkerboard tiles.</p>
+
+<h3 id="q-presumably-grid-power-supply-never-perfectly-matches-demand-so-where-does-any-extra-energy-go">Q: Presumably grid power supply never perfectly matches demand, so where does any "extra" energy go?</h3>
+
+<p>Although modern grids may incorporate some energy storage in the form of flywheels, pumped hydroelectric storage, and batteries, in general the system aims to quickly adjust to match demand. A mismatch may manifest as additional heat or divergence from the target frequency (e.g. 60 Hz in the U.S.), but that is not catastrophic.</p>
+
+<h3 id="q-why-do-i-associate-city-life-in-the-1990s-with-jazz-music">Q: Why do I associate "city life" in the 1990s with jazz music?</h3>
+
+<p>Jazz had a cultural presence in the 1990s despite not being mainstream. It was used in media as a kind of shorthand for "sophistication and urban cool". You would see it in Hey Arnold, Cowboy Bebop, and Seinfeld to some extent. It was used in coffee culture advertising. Games like SimCity 3000 had jazz-heavy soundtracks, reinforcing the connection between jazz and the cityscape.</p>
+
+<h3 id="q-what-does-it-mean-for-an-animation-to-be-on-1s-or-on-2s">Q: What does it mean for an animation to be "on 1s" or "on 2s"?</h3>
+
+<p>Animation "on 1s" means there is a new drawing every frame while "on 2s" means every other frame repeats. Most often the purpose of this is simply to save time drawing frames on less important parts of an animation and prioritizing detailed frame work on the focal point of an animation.</p>
+
+<h3 id="q-what-was-a-paladin-historically">Q: What was a "paladin" historically?</h3>
+
+<p>In historical contexts, a paladin was a term used to refer to a high-ranking knight, typically of noble birth, renowned for their martial prowess, chivalry, and loyalty to their lord or sovereign. The concept of paladins originated in the medieval period, particularly during the Carolingian era in Europe, and gained popularity through literature, such as the epic poems of Charlemagne and his knights.</p>
+
+<p>Paladins were often depicted as champions of justice and defenders of the realm, embarking on quests to protect the innocent, uphold the law, and fight against evil forces, including monsters, invaders, and rival knights. They adhered to a strict code of conduct, emphasizing virtues like courage, honesty, humility, and honor.</p>
+
+<h3 id="q-is-the-placebo-effect-definitely-real-and-what-kinds-of-effects-have-been-seen">Q: Is the placebo effect definitely real and what kinds of effects have been seen?</h3>
+
+<p>It is recognized as a genuine biological phenomenon, although the exact mechanisms are not fully understood. Some notable effects observed have been pain relief, influence on psychiatric conditions, immune system response, and motor performance.</p>
+
+<h3 id="q-why-do-we-say-something-is-byzantine-when-its-excessively-complicated">Q: Why do we say something is "byzantine" when it's excessively complicated?</h3>
+
+<p>It reflects a historical perception of the Byzantine political, bureaucratic, and administrative systems as complex and intricate. The Byzantine Empire was known for its elaborate court rituals, intricate political maneuvering, and complex administrative procedures.</p>
+
+<h3 id="q-what-are-the-differences-between-all-the-editions-of-dungeons-dragons">Q: What are the differences between all the "editions" of Dungeons &amp; Dragons?</h3>
+
+<ul>
+<li>Original (OD&amp;D): Released in the 1970s, it was a relatively simple system that encouraged creativity with rules that were up to interpretation.</li>
+<li>Advanced (AD&amp;D): Released in the late 1970s, it introduced more complexity and detailed rules, classes, and races.</li>
+<li>3rd Edition (D&amp;D 3E): Released in 2000, it revamped the system with a unified mechanic (the d20 system).</li>
+<li>3.5 Edition (D&amp;D 3.5E): A revision that addressed balance issues and refined some rules.</li>
+<li>4th Edition (D&amp;D 4E): Released in 2008, it brought significant changes, emphasizing tactical combat through roles for each class (defender, striker, leader, controller), with powers being a key feature.</li>
+<li>5th Edition (D&amp;D 5E): Released in 2014, it aimed to streamline gameplay, making it accessible to newcomers while retaining depth. It simplified rules, emphasized storytelling, and introduced advantage/disadvantage mechanics.</li>
+</ul>
+
+<h3 id="q-what-is-the-origin-of-the-phrase-winner-winner-chicken-dinner">Q: What is the origin of the phrase "winner winner chicken dinner"?</h3>
+
+<p>Unclear, but it may have originated in Las Vegas casinos in the mid-to-late 20th century when a typical payout at some tables matched the cost of a casino meal, which was often a chicken dinner.</p>
+
+<h3 id="q-what-is-the-difference-between-marxism-and-communism">Q: What is the difference between Marxism and Communism?</h3>
+
+<p>Marxism is a socio-economic and political theory emphasizing the role of class struggle and the eventual establishment of a classless society. Communism is a political and economic ideology that advocates for a society in which the means of production are commonly owned and the distribution of wealth is based on the principle of balancing ability and need. In other words, Marxism is a broader theoretical framework while communism is a specific socio-economic system that is considered the ultimate "stage" in Marxist theory.</p>
+
+<h3 id="q-why-did-primates-evolve-to-have-flatter-faces-than-other-animals">Q: Why did primates evolve to have flatter faces than other animals?</h3>
+
+<p>It is an adaptation to an arboreal (tree-dwelling) lifestyle. Flatter faces provide a broader field of binocular vision which helps in accurately judging distances while navigating through branches; better depth perception.</p>
+
+<h3 id="q-why-did-hollywood-become-the-place-that-movies-are-made">Q: Why did Hollywood become the place that movies are made?</h3>
+
+<ol>
+<li>The sunny and consistent weather allowed for year-round outdoor filming, especially important for early cameras that required bright light.</li>
+<li>Proximity to diverse scenery such as deserts, mountains, and beaches.</li>
+<li>Distance from Thomas Edison's Motion Picture Patents Company on the East Coast, offering some protection from patent restrictions.</li>
+</ol>
+
+<h3 id="q-when-a-photon-hits-a-transparent-window-is-the-photon-that-emerges-on-the-other-side-the-same-photon">Q: When a photon hits a transparent window, is the photon that emerges on the other side the "same" photon?</h3>
+
+<p>Identity is not necessarily straightforward in the subatomic world. In a simplified physical model where photons are particles, a photon is emitted on the other side after a chain of interactions, absorptions, and energy transfers, and so in that sense it is not really the same photon.</p>
+
+<p>However, from the perspective of Quantum Field Theory, there is one universal "photon field" with localized ripples rather than "little billiard balls", and in that sense photons are fundamentally indistinguishable. If you have two photons A and B, there is no physical experiment that can tell you which is which after an interaction and so the concept of identity has little meaning.</p>
+
+<h3 id="q-why-do-private-vehicles-not-use-diesel-if-it-is-a-more-efficient-fuel">Q: Why do private vehicles not use diesel if it is a more efficient fuel?</h3>
+
+<p>Diesel vehicles are typically more expensive due to their robust engines that handle higher compression. In some countries, diesel fuel is also taxed more heavily than gasoline.</p>
+
+<p>Diesel engines are most efficient during long, steady drives. Private vehicles often make short trips with frequent stops which reduces the efficiency benefits of diesel. Diesel engines take longer to warm up, again making them less appropriate for short commutes.</p>
+
+<p>While diesel engines produce less CO2, they emit more nitrogen oxides and particulate matter which reduces air quality. Emission regulations have made gasoline more attractive for private buyers.</p>
+
+<p>Gasoline engines generally provide smoother acceleration and quieter operation which appeals to many private buyers. Public perception of diesel as being something dirty for commercial or utility vehicles further influences private buyer choices.</p>
+
+<h3 id="q-what-is-the-distinction-between-absurdism-and-nihilism">Q: What is the distinction between absurdism and nihilism?</h3>
+
+<p>Both confront an apparent meaninglessness of existence, but interpret and respond to it differently. Nihilism says there is no inherent meaning, value, or purpose in the universe and does not take the idea further than that. Absurdism incorporates the idea that there is a human desire for meaning despite the lack of a universal meaning, and emphasizes the absurdity of that conflict. Where nihilism surrenders to the meaningless in a way, absurdism is more like an acknowledgement, observation, and possibly defiance.</p>
+
+<h3 id="q-what-was-the-environment-of-evolutionary-adaptation-for-humans">Q: What was the "environment of evolutionary adaptation" for humans?</h3>
+
+<p>The details are still a subject of debate, but it is generally believed to span from about 200,000 years ago to roughly 10,000 years ago. During the EEA, humans were primarily hunter-gatherers, relying on foraging for food rather than agriculture and settled societies. The period was characterized by a nomadic lifestyle and various environments, including savannahs, forests, and costal regions.</p>
+
+<ol>
+<li>Hunter-gatherer lifestyle required mobility and skills such as tracking, tool-making, and knowledge of the local environment.</li>
+<li>Small groups consisting of extended family or bands of related individuals. Cooperation and bonding were crucial for survival.</li>
+<li>Bipedal locomotion enabled efficient travel over long distances and a larger brain enabled complex problem-solving and social interaction.</li>
+<li>A diverse and adaptable diet involving meat, fish, fruits, vegetables, nuts, and roots.</li>
+</ol>
+
+<h3 id="q-why-did-producers-go-crazy-with-reverb-and-delay-in-the-1980s">Q: Why did producers go crazy with reverb and delay in the 1980s?</h3>
+
+<p>The late 1970s and early 1980s saw the appearance of new digital processors like the AMS RMX16 Digital Reverb and the Lexicon 224 Digital Reverb. For the first time, producers had clean, controllable reverb with precise gating and automation. The gated reverb drum sound in particular was an accidental discovery that became a trend due to its ability to make drums sound "big" while keeping the mix controlled.</p>
+
+<p>1970s production tended toward natural room sound and warmth. The 1980s reacted against that by emphasizing synthetic textures, electronic drums, processing, and brightness. This fits a general pattern in production trends where new technology or trend appears, it gets overused, and then there is a reaction against it.</p>
+
+<p>Considering the later decades, they might be associated with:</p>
+
+<ul>
+<li>1980s: gated reverb</li>
+<li>1990s: raw minimalism</li>
+<li>2000s: extreme loudness</li>
+<li>2010s: sidechain pumping</li>
+<li>2020s: analog nostalgia</li>
+</ul>
+
+<h3 id="q-why-does-80s-music-sound-decently-modern-to-me-while-earlier-music-does-not">Q: Why does 80s music sound decently "modern" to me while earlier music does not?</h3>
+
+<p>The 80s production crossed a threshold such that it is not fundamentally different from the modern day. Digital tools, MIDI, and increasingly clean multitrack recording all arrived around the same time. The aesthetic target changed from capturing a performance in a room toward aiming for clarity, separation, and control.</p>
+
+<p>A lot of pre-80s music is still rhythmically "human" with loose timing, swing by default, and tempo drift. Tools in the 80s allowed for and encouraged the use of quantized, grid-locked patterns. This rhythmic rigidity has become standard.</p>
+
+<p>The frequency balance moved toward what modern playback systems are designed for. Earlier music often emphasizes mids with rolled-off lows and highs, partly due to the constraints of vinyl and live-band instrumentation. The 80s brings extended low-end and bright highs with cleaner transients, and modern speakers or headphones are capable of producing the full range.</p>
+
+<p>Certain synthetic sounds introduced in the 80s are sonically simple and remain functional. Unlike performance instruments which have strong ties to certain places or times, many synthetic sounds are abstract and timeless in a way.</p>
+
+<h3 id="q-was-there-pushback-against-the-shift-from-capturing-a-performance-to-the-modern-multitrack-studio-sound">Q: Was there pushback against the shift from "capturing a performance" to the modern multitrack studio sound?</h3>
+
+<p>Yes, many felt it was sterile, fake, or dishonest. Some listeners described it as cold, plastic, or soulless. Genres like punk and grunge were in some way push-back against the new artificial sound.</p>
+
+<h3 id="q-what-is-the-highest-ping-latency-for-an-idealized-network-connection-between-two-points-on-earth">Q: What is the highest "ping" latency for an idealized network connection between two points on Earth?</h3>
+
+<p>The speed of light in fiber is around 200,000 km/s. A realistic best-case cable path would be something like 30,000 - 40,000 km one way. This gives up to 200 ms one-way or 400 ms round-trip.</p>
+
+<h3 id="q-whats-the-difference-between-realm-and-domain">Q: What's the difference between "realm" and "domain"?</h3>
+
+<p>Realm is related to the Latin regimen, meaning "rule, government", and historically is the territory of a monarch; a kingdom or empire. Domain comes from Latin dominus, meaning "lord, master", and historically is the land controlled by a lord or noble. A domain is a smaller area than a realm.</p>
+
+<h3 id="q-where-does-the-trope-of-dwarves-being-master-craftsmen-and-elves-being-archers-come-from">Q: Where does the trope of dwarves being master craftsmen and elves being archers come from?</h3>
+
+<p>Norse mythology includes the concept of dwarves as subterranean smiths who forged legendary items like Thor's hammer and Odin's spear. Germanic folklore also involves dwarves as miners and metalworkers living and working underground.</p>
+
+<p>Elves in Celtic mythology were otherworldly beings associated with nature, beauty, and sometimes skill with weapons, but they were not strongly associated with bows until Tolkien's portrayal of Legolas. He linked elves with forests and the bow as a weapon.</p>
+
+<h3 id="q-where-does-the-depiction-of-elves-as-tiny-creatures-originate">Q: Where does the depiction of elves as tiny creatures originate?</h3>
+
+<p>The "tiny elf" stereotype comes from later European folklore. Early Germanic and Norse sources depicted elves as human-sized or larger. Over time, especially in British folklore, elves became conflated with fairies and household spirits which were depicted as small, mischievous beings.</p>
+
+<p>In the 19th century Victorian era, literature and art portrayed elves as miniature, whimsical creatures living in flowers or mushrooms. Around the same time, the 19th century evolution of Santa Claus introduced Santa's elves as tiny, industrious helpers.</p>
+
+<h3 id="q-are-futhorc-runes-derived-from-the-latin-alphabet">Q: Are futhorc runes derived from the Latin alphabet?</h3>
+
+<p>Elder Futhark was developed around 150-300 CE among Germanic tribes. It was not derived from Latin, but was almost certainly influenced by Italic scripts like Old Italic or Greek, as Germanic peoples traded and fought near the Roman frontier.</p>
+
+<p>Anglo-Saxon Futhorc descended from Elder Futhark and was used from around the 5th to the 11th centuries, expanding the script from 24 to 28-33 runes to accommodate Old English phonemes.</p>
+
+<h2 id="international">International</h2>
+
+<h3 id="q-why-is-sino-sometimes-used-in-reference-to-china">Q: Why is "Sino" sometimes used in reference to China?</h3>
+
+<p>The term "sino" derives from the Latin word Sinae, which was the Roman name for China. This likely originates from an earlier Greek term, Sinai, which was derived from Sanskrit Cina. The term referred to the Qin dynasty. The Chinese refer to their country as "zhong guo", which can be translated as "middle kingdom".</p>
+
+<h3 id="q-what-is-the-relationship-between-things-like-taoism-buddhism-confucianism-and-yin-yang">Q: What is the relationship between things like Taoism, Buddhism, Confucianism, and Yin-Yang?</h3>
+
+<p>Taoism (Daoism) is a Chinese philosophy and religious tradition that emphasizes living with the Dao (the Way), which is "the fundamental principle that underlies the universe". It values spontaneity, naturalness, non-resistance, and balance.</p>
+
+<p>Buddhism originated in India before spreading and being adapted to local beliefs in China. Chinese Buddhism incorporates elements of Taoism, leading to sects like Chan Buddhism which later became "Zen" in Japan. It focuses on enlightenment, impermanence, and the cessation of suffering through detachment from desire.</p>
+
+<p>Confucianism is a socio-political philosophy founded by Confucius that emphasizes ethics, hierarchy, duty, and proper behavior. It is less spiritual than the others.</p>
+
+<p>Yin-Yang is a concept from ancient Chinese cosmology that represents dualism: the interplay of opposite but complementary forces. It is not exclusive to Taoism, but it plays a significant role in its worldview. Confucianism and Buddhism also reference yin-yang to explain balance in ethics and the universe.</p>
+
+<p>Taoism and confucianism emerged around 500-200 BCE in response to the social chaos of the Warring States period. Taoism sought to escape from rigid structures while Confucianism sought order within them. Buddhism entered China around the 1st century CE and blended with both. Yin-yang is more of a cosmological principle that all three use to explain aspects of their philosophies.</p>
+
 <h3 id="q-why-are-houses-in-the-us-typically-built-with-wood-while-in-the-uk-theyre-typically-built-with-brick-or-stone">Q: Why are houses in the US typically built with wood while in the UK they're typically built with brick or stone?</h3>
 
 <p>By the time large-scale building was needed in the UK, much of Britain's original forest cover had already been depleted due to centuries of shipbuilding, charcoal production, and land clearing for agriculture. Timber shortages were already an issue by the 17th and 18th centuries.</p>
 
-<p>The UK has abundant natural stone deposits (limestone, sandstone, granite, etc.). Stone is durable, fire-resistant, and sutiable for the damp British climate.</p>
+<p>The UK has abundant natural stone deposits (limestone, sandstone, granite, etc.). Stone is durable, fire-resistant, and suitable for the damp British climate.</p>
 
 <p>Wood construction works well in the US because it offers better insulation against the more extreme temperature fluctuations.</p>
 
@@ -1481,6 +1461,174 @@
 
 <p>The UK falls between California and Texas in terms of GDP, with California having 4.1 trillion USD and Texas having 2.7 trillion USD.</p>
 
+<h2 id="games-graphics-and-math">Games, Graphics, and Math</h2>
+
+<h3 id="q-what-do-the-dot-product-and-cross-product-of-two-vectors-represent">Q: What do the "dot product" and "cross product" of two vectors represent?</h3>
+
+<p>The dot product is a scalar value measuring how much one vector extends in the direction of the other. If two vectors are perpendicular, then their dot product is zero and if they are parallel then their dot product is maximized. In other words, it is a measure of "how parallel" or "how perpendicular" two vectors are.</p>
+
+<p>The cross product produces a third vector that is perpendicular to both of the other vectors. It is useful for finding the normal vector of surfaces, computing torque, and determining rotational direction.</p>
+
+<h3 id="q-what-are-unified-shaders">Q: What are "unified shaders"?</h3>
+
+<p>The unified shader model refers to the shader model found in modern GPUs. Prior to their introduction, GPUs used a largely fixed rendering pipeline where each stage was handled by different specialized units. With unified shaders, shader cores on the GPU are flexible and not dedicated to a particular function; they are "unified". This means the cores can be better allocated and utilized for the specific needs of a given application.</p>
+
+<h3 id="q-what-is-meant-by-deferred-rendering">Q: What is meant by "deferred rendering"?</h3>
+
+<p>Deferred rendering is a technique that attempts to reduce the raw compute needed to render a scene with complex lighting. More traditional rendering techniques such as forward rendering require performing lighting calculations for each individual object or light source which scales poorly for complex scenes. In deferred rendering, computations are done per-pixel, and so the amount of computations is pinned more to a fixed, unchanging resolution regardless of scene complexity.</p>
+
+<p>The process has two stages. First, the geometry stage renders the geometry in the scene to several buffers that capture different attributes, for example diffuse color, normals, and material properties (often in the form of a numeric identifier). This set of buffers is collectively called the G-buffer. Then, in the shading stage, the lighting and shading calculations are performed based on the G-buffer.</p>
+
+<p>One drawback of deferred rendering is the increased memory requirements of the G-buffer as output resolution grows. Another is that traditional MSAA blurs the image instead of only softening edges because of the way that the G-buffer interacts with that process.</p>
+
+<h3 id="q-what-is-tile-based-deferred-rendering">Q: What is "tile-based deferred rendering"?</h3>
+
+<p>Traditional deferred shading can be computationally expensive due to the large number of pixels processed in the lighting pass. Tile-based deferred shading divides the screen into smaller tiles and the lighting pass is done per-tile rather than per-pixel. A per-tile light list contains the necessary data for lighting calculations in that tile. This reduces the raw amount of lighting calculations needed by a factor of how large the tiles are, and it enables efficient memory access patterns where related light information lives together per tile.</p>
+
+<h3 id="q-what-is-global-illumination">Q: What is "global illumination"?</h3>
+
+<p>In traditional rendering, direct illumination is typically calculated by considering only the light sources and their direct paths to the objects in the scene. However, this ignores the indirect lighting effects caused by light bouncing of surfaces. Global illumination techniques aim to model these indirect lighting effects.</p>
+
+<p>Ray tracing is a widely used technique for global illumination where light rays are simulated by tracing them from the camera throughout the scene. It can be physically accurate but computationally expensive.</p>
+
+<p>Radiosity is a method that divides the scene into small patches and calculates energy transfer between them. It can accurately simulate diffuse inter-reflections, but it may not handle other effects like glossy surfaces or caustics.</p>
+
+<p>Photon mapping is a two-pass technique where photons are traced from light sources and then used to estimate the lighting at different points in the scene. It can handle effects like caustics.</p>
+
+<p>Path tracing traces light rays through the scene while using random samples to estimate the light contribution at each point. Like ray tracing, it can be computationally demanding but can produce physically accurate results.</p>
+
+<h3 id="q-what-are-spherical-harmonic-probes">Q: What are spherical harmonic probes?</h3>
+
+<p>SH probes are a technique for capturing and representing lighting information in a scene. They are a compact representation of functions defined on a sphere, such as lighting environments or light intensities.</p>
+
+<p>Lighting information for a particular environment or scene is "captured" and encoded into a compact form using spherical harmonic coefficients. These represent the distribution of lighting across the spherical harmonics.</p>
+
+<p>Spherical harmonics are analogous to the harmonics in one-dimensional waves, but extended to a sphere. By using these harmonics, it becomes possible to capture and represent lighting information using a low-dimensional set of coefficients.</p>
+
+<h3 id="q-what-is-ssao">Q: What is SSAO?</h3>
+
+<p>Screen-Space Ambient Occlusion is a technique to approximate the ambient occlusion effect in graphics. This is a phenomenon where surfaces close to each other (like the corner of a room) receive less ambient light due to the blocking effect of nearby objects.</p>
+
+<p>SSAO estimates the occlusion of each pixel in the image based on its surrounding geometry in screen space. Instead of calculating occlusion in the full 3D scene, SSAO operates on the final rendered image.</p>
+
+<p>SSAO often operates on the G-buffer used in deferred rendering. For each pixel, the depth values from the G-buffer are used to reconstruct the 3D position at that point. By comparing with the depth of surrounding samples, an occlusion amount can be estimated. The occlusion value is often used to darken the original color of the pixel.</p>
+
+<h3 id="q-how-did-the-legacy-fixed-function-pipeline-in-opengl-operate">Q: How did the legacy fixed-function pipeline in OpenGL operate?</h3>
+
+<p>In versions of OpenGL prior to 2.0, vertices went through a series of fixed stages:</p>
+
+<ol>
+<li>Vertex data was provided as position ,color, texture coordinates, and normals.</li>
+<li>The vertices were transformed by the modelview and projection matrices to bring the vertices into view space and then screen space. Lighting calculations like diffuse and specular lighting were applied to the transformed vertices using fixed light positions and material properties.</li>
+<li>The primitives were clipped against the view frustum to discard portions of geometry outside the visible region.</li>
+<li>Assembled primitives were rasterized into fragments based on screen coordinates. This determined which pixels were covered by a given primitive and generated fragment position, color, texture, coordinates, and depth.</li>
+<li>If textures were enabled, the rasterizer would apply texture mapping to the fragments. This involved interpolating texture coordinates across the primitive and sampling textures to determine the texture color.</li>
+<li>Fragments underwent depth testing, stencil testing, and blending.</li>
+<li>The resulting fragments were written to the final framebuffer.</li>
+</ol>
+
+<h3 id="q-how-do-games-deal-with-transparent-objects">Q: How do games deal with transparent objects?</h3>
+
+<p>One approach is to sort and render objects such that those farther from the camera are rendered first. This ensures that closer transparent objects correctly blend with those rendered behind them. This sorting can be done per-object, per-triangle, or per-pixel. This opposes the "typical" rendering order where objects are rendered front-to-back such that occluded objects are ignored.</p>
+
+<p>Depth peeling is a technique for scenes with complex overlapping transparent objects. It involves multiple rendering passes to peel away layers of transparent geometry and resolve the order of blending correctly. Each pass renders a subset of transparent objects with depth values of previous objects stored and used to determine the correct rendering order.</p>
+
+<p>Order-independent transparency techniques aim to overcome a need for explicit sorting by using different data structures or algorithms to maintain transparency information for correct rendering.</p>
+
+<h3 id="q-what-is-a-skin-mesh">Q: What is a "skin mesh"?</h3>
+
+<p>A skin mesh, skinned mesh, or skeletal mesh, is a mesh often used to represent character models. It consists of a combined base mesh and skeletal rig. The base mesh contains the static geometry of the character. The skeletal rig is a hierarchical structure of interconnected bones or joints that define the character's underlying skeletal structure, with each bone or join associated with a specific region of the character mesh.</p>
+
+<h3 id="q-what-are-the-advantages-of-forward-rendering">Q: What are the advantages of forward rendering?</h3>
+
+<p>Forward rendering is generally more efficient and better leverages graphics hardware for scenes with a moderate number of lights or scenes where the number of lights affecting each pixels is relatively low. It has a lower memory footprint than deferred rendering as it does not need to store per-pixel information in intermediate buffers.</p>
+
+<p>Forward rendering benefits from early depth testing. By depth testing as early as possible, occluded objects don't need to be processed.</p>
+
+<p>Forward rendering handles transparency more naturally than deferred rendering.</p>
+
+<p>Forward rendering has a more straightforward pipeline that allows for greater control and customization of the rendering process by providing direct access to per-pixel lighting calculations and shading models.</p>
+
+<p>Forward rendering can be enhanced with so-called Forward+ rendering techniques whereby screenspace is divided into tiles or clusters and performing light culling and shading calculations only on relevant tiles, allowing forward rendering to handle more complex lighting scenarios.</p>
+
+<h3 id="q-what-are-the-various-techniques-for-rendering-shadows">Q: What are the various techniques for rendering shadows?</h3>
+
+<p>Shadow mapping renders a depth map, known as a shadow map, from the perspective of the light source. During final rendering, each fragment is compared with its corresponding position in the shadow map to determine if shadowing should be applied. It can support both hard and soft shadows using techniques such as Percentage Closer Filtering (PCF) or variance shadow mapping.</p>
+
+<p>Shadow volumes use the stencil buffer to determine whether a fragment is inside or outside a shadow volume. The volumes are generated by extruding the silhouette edges of occluder geometry in the direction of the light source. The stencil buffer is then used to count the number of times a fragment's depth is incremented or decremented, indicating whether it's inside or outside the shadow volume. They can handle hard and soft shadows, self-shadowing, and dynamic objects, but can be computationally expensive.</p>
+
+<p>Stencil shadows are an alternative to shadow volumes where geometry is not extruded. Instead, depth values of the occluder geometry are used to create a silhouette in the stencil buffer. Fragments are compared against the stencil value to determine if they are inside or outside the shadow. They are generally faster than shadow volumes and can support hard and soft shadows, but may not support self-shadowing.</p>
+
+<h3 id="q-why-are-self-shadows-a-distinct-problem-from-shadowing-in-general">Q: Why are "self-shadows" a distinct problem from shadowing in general?</h3>
+
+<p>In shadow mapping, which is the most common real-time shadowing method, the scene is rendered from a given light's point of view and depth is recorded. This is fine for capturing unambiguous cases of an object being further "behind" another object that casts a shadow. However, when considering whether a given object casts a shadow on itself, floating-point precision limits become a problem. They can lead to various artifacts like streaks, speckles, flickering, etc.</p>
+
+<h3 id="q-what-developments-allowed-for-real-time-raytracing-in-recent-years">Q: What developments allowed for real-time raytracing in recent years?</h3>
+
+<p>NVIDIA introduced RT Cores in 2018, specialized units designed to accelerate Bounding Volume Hierarchy (BVH) traversal and triangle intersection tests. BHV is used to efficiently find which objects a ray intersects. BHV is a tree structure that groups objects into bounding boxes.</p>
+
+<p>Even so, it isn't that full scenes are being raytraced. The scene still uses traditional rasterization but adds more accurate reflections, shadows, global illumination, and ambient occlusion using raytracing operations.</p>
+
+<p>Raytracing produces noisy images when limited samples per pixel are used. AI-based denoising enabled more accurate, smoother final images with limited samples.</p>
+
+<p>Similarly, AI-based upscaling via DLSS or FSR allowed games to render to a lower "native" resolution, offloading more raw compute power for raytracing operations.</p>
+
+<h3 id="q-how-does-raytracing-fit-into-the-existing-rasterization-pipeline">Q: How does raytracing fit into the existing rasterization pipeline?</h3>
+
+<p>Raytracing introduces new shader types, including:</p>
+
+<ul>
+<li>Ray generation: launches rays and defines what to compute when they hit or miss.</li>
+<li>Intersection: defines how rays interact with complex geometry like curves.</li>
+<li>Any-hit: runs whenever a ray hits geometry and can decide whether to continue or terminate the ray (e.g. for transparency).</li>
+<li>Closest-hit: runs at the closest ray intersection and determines final color, material, lighting, etc.</li>
+<li>Miss: handles rays that don't hit anything (used for skyboxes, backgrounds, etc.).</li>
+</ul>
+
+<h3 id="q-how-are-decals-eg-bullet-holes-typically-implemented">Q: How are "decals" (e.g., bullet holes) typically implemented?</h3>
+
+<p>Often times, both historically and in modern engines, it is simply a piece of textured geometry offset very slightly from a surface.</p>
+
+<p>In games that use deferred rendering, they may be volumetric geometry that influences the G-buffer (modifying normals or other attributes).</p>
+
+<p>In some cases, such as for persistent effects on terrain, texture "splatting" maybe used where by textures are truly modified at runtime and "painted" over.</p>
+
+<h3 id="q-what-is-the-point-of-pre-multiplying-alpha">Q: What is the point of "pre-multiplying alpha"?</h3>
+
+<p>Premultiplied alpha makes compositing mathematically simpler, more stable, and more efficient. Many compositing operations (additive effects, particles, glow, etc.) behave much more naturally with premultiplied alpha.</p>
+
+<p>A useful way to think about premultiplied alpha is that the RGB already represents the amount of light the pixel contributes; it stores "emitted light" instead of "color + opacity".</p>
+
+<p>The representation is more physically meaningful. Without premultiplied alpha, RGB can be any value while alpha is zero, which doesn't "mean" anything since a fully transparent pixel's color is irrelevant. With premultiplied alpha, RGB must be zero when alpha is zero. After pre-multiplication, the 4 channels behave more uniformly: scaling brightness multiplies all four channels, fading multiplies all four channels, and interpolation works correctly. Before pre-multiplication, the alpha channel is somewhat independent of the others.</p>
+
+<p>Pre-multiplying alpha does not mean the alpha channel becomes unnecessary, though. It still controls how much of the destination/target image should be visible when blending.</p>
+
+<h3 id="q-how-do-living-world-games-like-skyrim-or-stalker-simulate-ai-for-npcs-that-are-distant">Q: How do "living world" games like Skyrim or S.T.A.L.K.E.R. simulate AI for NPCs that are distant?</h3>
+
+<p>They don't truly simulate distant NPCs the same way they simulate the ones nearby that can be seen. They only need to make sure what the player sees appears consistent at the time that they see it.</p>
+
+<p>For NPCs in other parts of the world, the real-time AI is replaced with various other approaches:</p>
+
+<ul>
+<li>Behavior state machines with time-based transitions.</li>
+<li>Random event resolution: instead of simulating full combat, the results may be decided by "dice rolls" and high-level statistics about the groups involved.</li>
+<li>Coarse position updates: NPCs may "teleport" between key points based on elapsed time.</li>
+</ul>
+
+<p>These systems often don't update every frame. They run on a schedule of seconds or minutes, or they may perform a batch of updates when the player moves to a new location.</p>
+
+<h3 id="q-when-rts-games-moved-from-2d-to-3d-they-often-appear-to-have-dropped-the-concept-of-a-fixed-grid-at-the-same-time-how-does-that-work">Q: When RTS games moved from 2D to 3D, they often appear to have dropped the concept of a fixed grid at the same time. How does that work?</h3>
+
+<p>The world is primarily modeled on continuous world coordinates while grids and spatial partitioning structures serve as coarse ways of looking up what exists in particular areas; structures like uniform grids, quadtrees, or BVH and KD-trees in games that truly operate in three dimensions.</p>
+
+<p>Buildings typically have bounding volumes; when attempting to place one, the terrain is evaluated to determine if it's flat enough, and collision tests are done against nearby existing structures.</p>
+
+<p>Pathfinding moves beyond grid-based A-star and onto navigation meshes (navmeshes). A navmesh is a representation of walkable areas as polygons. Obstacles carve holes in that mesh. A-star can still be used for finding a path, but it operates on a variable-cost navmesh rather than a fixed-cost grid. Geometric "cutting" operations can be used to cut a building footprint out of such a navmesh.</p>
+
+<p>Triangles are trivial to split against a convex shape. In practice, though, buildings may be treated as "dynamic obstacles" rather than navmesh edits. The navmesh may reflect only the static terrain while the existence of buildings and units only operate on a runtime obstacle "mask" of nodes in that navmesh.</p>
+
+<p>The high-level approach for convex clipping is the Sutherland-Hodgman algorithm. This can, however, leave non-convex leftovers that need to be accounted for.</p>
+
 <h3 id="q-how-can-i-deal-with-the-awkwardness-of-handling-both-orientation-and-velocity-with-a-vector">Q: How can I deal with the "awkwardness" of handling both orientation and velocity with a vector?</h3>
 
 <p>A velocity vector is awkward for orientation because it can have zero magnitude which has no orientation. These are really two independent pieces of state that are only correlated in many cases.</p>
@@ -1501,7 +1649,7 @@
 
 <p>Brightness adjusts the overall luminance of an image, with all regions and tones affected uniformly.</p>
 
-<p>Contrast controls the difference between the darkest areas and the lighest areas in an image.</p>
+<p>Contrast controls the difference between the darkest areas and the lightest areas in an image.</p>
 
 <p>Gamma refers to a nonlinear relationship between the numerical values of pixel intensities and their perceived brightness on a display. It is used to compensate for the nonlinearity of human visual perception and to ensure that images appear correctly on different devices. Adjusting the gamma value affects the overall brightness distribution and mid-tones of an image.</p>
 
@@ -1527,17 +1675,33 @@
 
 <p>A common approach in roguelikes is a graph-first, abstract layout that is "realized" into a more physical space. The graph defines rooms or areas as nodes with edges between them representing connections via doors or corridors, and encodes any constraints like special areas that must exist somewhere (e.g. boss or starting area). The graph is then used to build a more detailed tile-based world. The details of a given room or connection can be decided on-the-fly, but by following the graph when building it ensures that the high-level constraints are maintained.</p>
 
-<p>Cellular automata can be good for creating organic, cave-like spaces with natural chokepoints and emergent shapes, but connectivity is probabalistic without post-processing and you have less control. It works best when the environment is the focus rather than layout control. You start with random noise and apply local rules iteratively such as "if a cell has more than N solid neighbors, it becomes solid". Then, you flood-fill to keep only the largest connected region.</p>
+<p>Cellular automata can be good for creating organic, cave-like spaces with natural chokepoints and emergent shapes, but connectivity is probabilistic without post-processing and you have less control. It works best when the environment is the focus rather than layout control. You start with random noise and apply local rules iteratively such as "if a cell has more than N solid neighbors, it becomes solid". Then, you flood-fill to keep only the largest connected region.</p>
 
 <p>Binary space partitioning can be used to carve less organic spaces. It involves splitting the map rectangle recursively and placing a room in each leaf and potentially connecting sibling partitions. It is essential building a graph from space rather than building spaces from a graph. It works well for clean, readable layouts and reliable connectivity.</p>
 
 <p>Random walk tunneling involves metaphorically digging tunnels by walking agents through a solid space including variants like the drunkard's walk or biasing toward unexplored regions. This is not especially interesting on its own but can be used to make more interesting corridors or connections between rooms that have been placed in another way.</p>
 
-<p>Constraint satisfcation or "wave function collapse" style methods involves building a map from local adjacency rules. You iteratively pin tiles in the world from among the options that are valid for a given tile considering what has been pinned already. It's good for enforcing local adjacency rules and making a coherent map, but on its own does little to satisfy global constraints unless those constraints bias the choices that are made when pinning.</p>
+<p>Constraint satisfaction or "wave function collapse" style methods involves building a map from local adjacency rules. You iteratively pin tiles in the world from among the options that are valid for a given tile considering what has been pinned already. It's good for enforcing local adjacency rules and making a coherent map, but on its own does little to satisfy global constraints unless those constraints bias the choices that are made when pinning.</p>
 
 <p>Rule-based generation like shape grammars or L-systems require a bit more upfront design work, but can allow a map to feel authored.</p>
 
 <p>For outdoor spaces or terrain, it can make sense to start with a noise-based heightfield. Use flood-fill to find large connected components and either discard small isolated areas or carve passes between them. The heightmap can be used to determine walkability, where water flows, where vegetation can grow, etc.</p>
+
+<h3 id="q-what-are-the-approaches-games-or-simulations-use-for-handling-time-steps-each-frame">Q: What are the approaches games or simulations use for handling "time steps" each frame?</h3>
+
+<p>In fixed time steps, a timestep is chosen (e.g. 16 ms) and simulation logic is run however many whole steps are required to account for time that has passed since the last frame. Leftover time is accumulated and accounted for in the next frame.</p>
+
+<p>This handles occasional slow frames acceptably, but if the engine is never able to deliver frames within the expected timestep then the simulation will only fall further behind.</p>
+
+<p>With variable time steps, the world state advances proportionally with the amount of real time that has passed since the last frame was delivered.</p>
+
+<p>Optionally, this "delta time" can be clamped to prevent too much of a jump in world state between frames (e.g. to avoid phasing through a wall).</p>
+
+<p>In either case, sub-stepping may be used for movement or collision that is particularly sensitive (e.g. fast projectiles or interactions that require precision). The engine may run operations repeatedly when the "delta time" is greater than a predefined timestep length. For example, if the delta is 40 ms, run the logic repeatedly: twice with delta 16 ms and once more with delta 8ms.</p>
+
+<p>Alternatively or in addition to sub-stepping, continuous collision detection (CCD) involves "capsule sweeps" that perform collision tests across the entire volume or area that an object would have moved.</p>
+
+<h2 id="audio-and-production">Audio and Production</h2>
 
 <h3 id="q-what-are-typical-final-loudness-targets-in-modern-music">Q: What are typical final loudness targets in modern music?</h3>
 
@@ -1622,7 +1786,7 @@
 
 <h3 id="q-are-there-any-guidelines-for-how-to-chain-non-linear-distortion-effects-and-eq">Q: Are there any guidelines for how to chain non-linear distortion effects and EQ?</h3>
 
-<p>The key principle is that non-linaer processors create new frequency content. EQ before them changes what gets created while EQ after them changes what survives.</p>
+<p>The key principle is that non-linear processors create new frequency content. EQ before them changes what gets created while EQ after them changes what survives.</p>
 
 <p>Use EQ before distortion to prevent ugly artifacts or bias where harmonics are generated. Common cases include high-pass to avoid muddy, pumping results, cutting harsh bands, especially 3-6 kHz, or feeding target band-pass or shelf into saturation.</p>
 
@@ -1707,36 +1871,6 @@
 
 <p>Delay is usually per-instrument. They are often EQ'd to avoid frequency clutter and modulated for richness.</p>
 
-<h3 id="q-why-did-producers-go-crazy-with-reverb-and-delay-in-the-1980s">Q: Why did producers go crazy with reverb and delay in the 1980s?</h3>
-
-<p>The late 1970s and early 1980s saw the appearance of new digital processors like the AMS RMX16 Digital Reverb and the Lexicon 224 Digital Reverb. For the first time, producers had clean, controllable reverb with precise gating and automation. The gated reverb drum sound in particular was an accidental discovery that became a trend due to its ability to make drums sound "big" while keeping the mix controlled.</p>
-
-<p>1970s production tended toward natural room sound and warmth. The 1980s reacted against that by emphasizing synthetic textures, electronic drums, processing, and brightness. This fits a general pattern in production trends where new technology or trend appears, it gets overused, and then there is a reaction against it.</p>
-
-<p>Considering the later decades, they might be associated with:</p>
-
-<ul>
-<li>1980s: gated reverb</li>
-<li>1990s: raw minimalism</li>
-<li>2000s: extreme loudness</li>
-<li>2010s: sidechain pumping</li>
-<li>2020s: analog nostalgia</li>
-</ul>
-
-<h3 id="q-why-does-80s-music-sound-decently-modern-to-me-while-earlier-music-does-not">Q: Why does 80s music sound decently "modern" to me while earlier music does not?</h3>
-
-<p>The 80s production crossed a threshold such that it is not fundamentally different from the modern day. Digital tools, MIDI, and increasingly clean multitrack recording all arrived around the same time. The aesthetic target changed from capturing a performance in a room toward aiming for clarity, separation, and control.</p>
-
-<p>A lot of pre-80s music is still rhythmically "human" with loose timing, swing by default, and tempo drift. Tools in the 80s allowed for and encouraged the use of quantized, grid-locked patterns. This rhythmic rigidity has become standard.</p>
-
-<p>The frequency balance moved toward what modern playback systems are designed for. Earlier music often emphasizes mids with rolled-off lows and highs, partly due to the constraints of vinyl and live-band instrumentation. The 80s brings extended low-end and bright highs with cleaner transients, and modern speakers or headphones are capable of producing the full range.</p>
-
-<p>Certain synthetic sounds introduced in the 80s are sonically simple and remain functional. Unlike performance instruments which have strong ties to certain places or times, many synthetic sounds are abstract and timeless in a way.</p>
-
-<h3 id="q-was-there-pushback-against-the-shift-from-capturing-a-performance-to-the-modern-multitrack-studio-sound">Q: Was there pushback against the shift from "capturing a performance" to the modern multitrack studio sound?</h3>
-
-<p>Yes, many felt it was sterile, fake, or dishonest. Some listeners described it as cold, plastic, or soulless. Genres like punk and grunge were in some way push-back against the new artificial sound.</p>
-
 <h3 id="q-what-were-the-audio-capabilities-of-the-sega-genesis-mega-drive">Q: What were the audio capabilities of the Sega Genesis / Mega Drive?</h3>
 
 <p>It had two audio chips: a Yamaha YM2612 FM Synthesizer and a Texas Instruments SN75489, the latter mainly for backward compatibility with the Master System.</p>
@@ -1760,7 +1894,7 @@
 - Parallel Op2 mod Op1, Op3 mod Op4, complex dual-instrument sounds</p>
 
 <p>The SN76489 provided:
-- 4 channels: 3 square wave tone generators with a fixed duty cyle, 1 noise channel with white or periodic noise
+- 4 channels: 3 square wave tone generators with a fixed duty cycle, 1 noise channel with white or periodic noise
 - 16 volume levels (4-bit volume control)
 - Tone range roughly from 110 Hz to 111 kHz
 - Mono only</p>
@@ -1777,97 +1911,15 @@
 
 <h3 id="q-without-any-compressors-or-limiters-how-was-dynamic-range-handled-on-hardware-like-the-sega-genesis-mega-drive">Q: Without any compressors or limiters, how was dynamic range handled on hardware like the Sega Genesis / Mega Drive?</h3>
 
-<p>Everything was handled manually or left to quirks of the chip. Dynamics were handled via volume envelopes, channel balancing, and deliberate saturation/clipping via DAC limitations. The DAC is nonlinaer and slightly distorted eve nat normal volumes, but if the sum of the FM outputs is too loud then it clips.</p>
+<p>Everything was handled manually or left to quirks of the chip. Dynamics were handled via volume envelopes, channel balancing, and deliberate saturation/clipping via DAC limitations. The DAC is nonlinear and slightly distorted eve nat normal volumes, but if the sum of the FM outputs is too loud then it clips.</p>
 
 <p>Sometimes, percussive sounds or bass were deliberately driven into the red to stand out.</p>
 
-<h3 id="q-how-can-you-have-a-second-order-linear-regression-its-quadratic-not-a-line">Q: How can you have a "second order linear regression"? It's quadratic, not a line.</h3>
-
-<p>In the context of statistics and machine learning, "linear regression" means the coefficients appear linearly, not that the regression itself is linear.</p>
-
-<ul>
-<li><code>y = a + bx</code> is a 1st-order linear regression</li>
-<li><code>y = a + bx + cx^2</code> is a 2nd-order linear regression</li>
-<li><code>y = a + b^x</code> is <em>not</em> a linear regression</li>
-</ul>
-
-<h3 id="q-if-llms-predict-tokens-sequentially-what-stops-one-bad-prediction-from-derailing-the-rest-of-the-response">Q: If LLMs predict tokens sequentially, what stops one bad prediction from derailing the rest of the response?</h3>
-
-<p>Nothing fundamentally stops it and it can happen, but there are some factors that prevent it from happening constantly.</p>
-
-<p>Language has a strong statistical structure and is extremely redundant. Even if one token is slightly wrong, the rest of the context still constrains the continuation heavily. A long with this, modern models have very large context windows that contribute to the probability and stability of the next token.</p>
-
-<p>During training, models learn from imperfect text. It implicitly learns to recover from inconsistencies in a coherent way even if part of the response is slightly odd or incorrect.</p>
-
-<h3 id="q-how-were-reasoning-models-trained">Q: How were "reasoning" models trained?</h3>
-
-<p>Early versions relied heavily on human-written reasoning traces, but modern reasoning models are not primarily trained that way. After a point, they were trained from self-generated reasoning plus verification and reinforcement learning. You have a model generate reasoning paths for a problem and train a new model on the reasoning trajectories that reached the correct answer. This is somewhat analogous to selection pressure in evolution. Even the correct answer can be decided automatically by assuming that the answer which appears most often in many traces is correct. In some domains like math, code, or logic, correctness for known problems can be checked automatically.</p>
-
-<h3 id="q-why-do-reasoning-traces-often-seem-to-ramble-and-repeat-awkwardly">Q: Why do reasoning traces often seem to ramble and repeat awkwardly?</h3>
-
-<p>The training rewarded correctness, not elegance. Only the final result was rewarded. Thinking longer often improves accuracy, so models learned to think longer even if they end up repeating or going in circles sometimes.</p>
-
-<p>Self-generated reasoning amplifies weird patterns. Models may generate strange patterns that happen to succeed, and training reinforces this. This is somewhat analogous to the way that arbitrary mutations or features that are hard to explain in nature are carried along with obvious beneficial genetic changes.</p>
-
-<p>Some repetitive phrasing serves to represent a kind of state or state change that happens to be represented as natural language.</p>
-
-<h3 id="q-how-do-llms-decide-when-to-stop-a-response-if-its-just-another-token-isnt-it-unlikely-to-choose-that-token-over-all-others">Q: How do LLMs decide when to stop a response? If it's just another token, isn't it unlikely to choose that token over all others?</h3>
-
-<p>Conceptually they predict a end-of-sequence token as the next token. It works relibably because the model has learned very strong signals about when text typically ends. It has seen billions or more samples of how text ends with a concluding sentence, finished list, closing braces, etc. Furthermore, every training input ends with an EOS token so the model has a high amount of exposure to it.</p>
-
-<p>Models are also trained on length. As the length of a response approaches a typical response length, the probability of predicting EOS dramatically increases. This is also why a model might produce a similarly lengthy response to both a simple and complex question.</p>
-
-<h3 id="q-in-the-context-of-machine-learning-what-is-mlp">Q: In the context of machine learning, what is MLP?</h3>
-
-<p>A Multilayer Perceptron, a type of feedforward artificial neural network. An input layer receives initial data corresponding to the number of "features". A set of one or more "hidden layers" sits between the input and output layers, with each node in a given layer connected to every node in the next layer (fully connected network). The hidden layers use non-linear activation functions like ReLU or sigmoid which is crucial for the model's ability to learn complex, non-linear relationships. At each neuron input, a weighted sum of inputs from the previous layer is calculated and a bias is added. The output layer has a number of neurons dependent on the task; it may have one for a single decision or multiple for a classification problem.</p>
-
-<p>The network learns by adjusting weights and biases to minimize the difference between predictions and expected values using a process called backpropagation. Backpropagation uses the chain rule from calculus to efficiently calculate how much each weight and bias contributes to the overall error. These adjustments are made through an optimization algorithm like gradient descent.</p>
-
-<p>MLPs are considered universal function approximators; they can, in theory, approximate any continuous function given enough hidden neurons and layers.</p>
-
-<h3 id="q-what-are-some-known-universal-function-approximators">Q: What are some known universal function approximators?</h3>
-
-<p>Universal function approximators are systems that have been proven to be capable of approximating any continous function using the Universal Approximation Theorem.</p>
-
-<ul>
-<li>Multilayer Perceptrons (MLPs): a common type of feedforward artificial neural network.</li>
-<li>Radial Basis Function (RBF) networks: a type of neural network that uses radial basis functions (like a Gaussian curve) as activation functions in the hidden layer. Instead of a weighted sum of inputs like MLPs, RBF networks use the distance from a central point to determine the output of a neuron.</li>
-<li>Support Vector Machines (SVMs): these are often used for classification problems, but SVMs with certain kernels like the Gaussian kernel can act as universal function approximators. The kernel essentially maps data into a higher-dimensional space where it can be separated or approximated linearly.</li>
-<li>Polynomials and Fourier Series: the Stone-Weirstrass theorem shows that polynomials can approximate any continuous function on a closed interval. Similarly, the Fourier series can.</li>
-<li>Turing Machines: although more abstract and conceptual, a Turing machine can simulate any computer algorithm and thus, in a sense, process any computable function. It is a broader class than continuous functions.</li>
-</ul>
-
-<h3 id="q-what-is-the-highest-ping-latency-for-an-idealized-network-connection-between-two-points-on-earth">Q: What is the highest "ping" latency for an idealized network connection between two points on Earth?</h3>
-
-<p>The speed of light in fiber is around 200,000 km/s. A realistic best-case cable path would be something like 30,000 - 40,000 km one way. This gives up to 200 ms one-way or 400 ms round-trip.</p>
-
-<h3 id="q-whats-the-difference-between-realm-and-domain">Q: What's the difference between "realm" and "domain"?</h3>
-
-<p>Realm is related to the Latin regimen, meaning "rule, government", and historically is the territory of a monarch; a kingdom or empire. Domain comes from Latin dominus, meaning "lord, master", and historically is the land controlled by a lord or noble. A domain is a smaller area than a realm.</p>
-
-<h3 id="q-where-does-the-trope-of-dwarves-being-master-craftsmen-and-elves-being-archers-come-from">Q: Where does the trope of dwarves being master craftsmen and elves being archers come from?</h3>
-
-<p>Norse mythology includes the concept of dwarves as subterranean smiths who forged legendary items like Thor's hammer and Odin's spear. Germanic folklore also involves dwarves as miners and metalworkers living and working underground.</p>
-
-<p>Elves in Celtic mythology were otherwordly beings associated with nature, beauty, and sometimes skill with weapons, but they were not strongly associated with bows until Tolkien's portrayal of Legolas. He linked elves with forests and the bow as a weapon.</p>
-
-<h3 id="q-where-does-the-depiction-of-elves-as-tiny-creatures-originate">Q: Where does the depiction of elves as tiny creatures originate?</h3>
-
-<p>The "tiny elf" stereotype comes from later European folklore. Early Germanic and Norse sources depicted elves as human-sized or larger. Over time, especially in British folklore, elves became conflated with fairies and household spirits which were depicted as small, mischievous beings.</p>
-
-<p>In the 19th century Victorian era, literature and art portrayed elves as miniature, whimsical creatures living in flowers or mushrooms. Around the same time, the 19th century evolution of Santa Claus introduced Santa's elves as tiny, industrious helpers.</p>
-
-<h3 id="q-are-futhorc-runes-derived-from-the-latin-alphabet">Q: Are futhorc runes derived from the Latin alphabet?</h3>
-
-<p>Elder Futhark was developed around 150-300 CE among Germanic tribes. It was not derived from Latin, but was almost certainly influenced by Italic scripts like Old Italic or Greek, as Germanic peoples traded and fought near the Roman frontier.</p>
-
-<p>Anglo-Saxon Futhorc descended from Elder Futhark and was used from around the 5th to the 11th centuries, expanding the script from 24 to 28-33 runes to accommodate Old English phonemes.</p>
-
     </main>
     <footer>
-    <p class="generated_date">Generated on May 18 2026</p>
+    <p class="generated_date">Generated on May 20 2026</p>
     </footer>
-    <script src="script.js?v=1779172267.9653304"></script>
+    <script src="script.js?v=1779266050.7458577"></script>
     </body>
     </html>
     
