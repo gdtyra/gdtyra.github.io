@@ -1,5 +1,7 @@
 # Curiosities
 
+In no particular order.
+
 - [Gombe Chimpanzee War](https://en.wikipedia.org/wiki/Gombe_Chimpanzee_War): a violent four-year conflict observed between two groups of chimpanzees.
 - [Spite house](https://en.wikipedia.org/wiki/Spite_house): a building constructed or modified to irritate neighbors.
 - [House in the Clouds](https://en.wikipedia.org/wiki/House_in_the_Clouds): a combination water tower and house.
@@ -7,13 +9,11 @@
 - [Bodie, California](https://en.wikipedia.org/wiki/Bodie,_California): a well-preserved gold rush ghost town.
 - [Cliff Palace](https://en.wikipedia.org/wiki/Cliff_Palace): an ancient cliff dwelling in Mesa Verde National Park.
 - [Lanterns of the Dead](https://en.wikipedia.org/wiki/Lanterns_of_the_Dead): medieval stone structures used to guide or mark locations.
-- [Banksy](https://en.wikipedia.org/wiki/Banksy): anonymous England-based street artist.
 - [A Treasury of Great Reporting](https://archive.org/details/in.ernet.dli.2015.502969): an anthology of notable journalism from the first half of the 20th century.
 - [No Longer Human](https://en.wikipedia.org/wiki/No_Longer_Human): a Japanese novel exploring alienation and despair.
 - [Voynich manuscript](https://en.wikipedia.org/wiki/Voynich_manuscript): an illustrated medieval codex written in an unknown language or code.
 - [Shi](https://en.wikipedia.org/wiki/Shi_(personator)): ancient Chinese ritual "personators" who stood in for ancestors during ceremonies.
 - [Illegal number](https://en.wikipedia.org/wiki/Illegal_number): numbers which represent information illegal to possess, such as copyrighted or forbidden data.
-- [lp0 on fire](https://en.wikipedia.org/wiki/Lp0_on_fire): error message related to the historic potential for printers to fail catastrophically.
 - [Blue Brain Project](https://en.wikipedia.org/wiki/Blue_Brain_Project): a Swiss research initiative to digitally reconstruct the mammalian brain.
 - [Cold War playground equipment](https://en.wikipedia.org/wiki/Cold_War_playground_equipment): playgrounds designed to inspire excitement about the space race.
 - [Karoshi](https://en.wikipedia.org/wiki/Karoshi): the phenomenon of death caused by overwork, mainly in Japan.
@@ -22,7 +22,6 @@
 - [Accelerating change](https://en.wikipedia.org/wiki/Accelerating_change): the idea that technological and social change are happening at an increasing rate.
 - [Andromeda-Milky Way collision](https://en.wikipedia.org/wiki/Andromeda%E2%80%93Milky_Way_collision): a predicted future collision between the Milky Way and Andromeda galaxies.
 - [Anthropic principle](https://en.wikipedia.org/wiki/Anthropic_principle): the philosophical idea that observations of the universe are constrained by the necessity for conscious life to observe it.
-- [Blood moon prophecy](https://en.wikipedia.org/wiki/Blood_moon_prophecy): an apocalyptic prophecy circa 2014.
 - [Chauvet Cave](https://en.wikipedia.org/wiki/Chauvet_Cave): a French cave with some of the earliest and best-preserved prehistoric cave paintings.
 - [Chrysler Air-Raid siren](https://en.wikipedia.org/wiki/Chrysler_Air-Raid_Siren): the world's loudest siren, used in the US during the Cold War.
 - [Collyer brothers](https://en.wikipedia.org/wiki/Collyer_brothers): famous New York City recluses and hoarders who died amid tons of rubbish in their home.
@@ -30,7 +29,6 @@
 - [Cullinan Diamond](https://en.wikipedia.org/wiki/Cullinan_Diamond): the largest gem-quality rough diamond ever found.
 - [Digital sundial](https://en.wikipedia.org/wiki/Digital_sundial): a sundial that displays the time in a numeric form.
 - [Discovery Island](https://en.wikipedia.org/wiki/Discovery_Island_(Bay_Lake)): an abandoned Disney-owned island in Florida.
-- [Fiji mermaid](https://en.wikipedia.org/wiki/Fiji_mermaid): a famous 19th-century sideshow hoax.
 - [Goiania accident](https://en.wikipedia.org/wiki/Goi%C3%A2nia_accident): a 1987 radiological disaster in Brazil caused by the mishandling of radioactive material.
 - [Leakin Park](https://en.wikipedia.org/wiki/Gwynns_Falls/Leakin_Park): a Baltimore park infamous as a frequent site of crime and found bodies.
 - [Heaven's Gate](https://en.wikipedia.org/wiki/Heaven%27s_Gate_(religious_group)): a cult linked to beliefs about a UFO following comet Hale-Bopp.
@@ -59,7 +57,7 @@
 - [Supercontinent cycle](https://en.wikipedia.org/wiki/Supercontinent_cycle): the process by which Earth's continents repeatedly join and break apart over geologic time.
 - [The Hole](https://en.wikipedia.org/wiki/The_Hole_(Scientology)): a facility for confining and punishing Scientology executives.
 - [The Hum](https://en.wikipedia.org/wiki/The_Hum): persistent, low-frequency mysterious noises reported worldwide.
-- [Ren Zhi](https://raymondgoh.blogspot.com/2013/07/the-origin-of-jailangkung.html?m=1): a strange and disturbing story.
+- [Ren Zhi](https://raymondgoh.blogspot.com/2013/07/the-origin-of-jailangkung.html?m=1): a strange and disturbing Chinese story.
 - [Titanic II](https://en.wikipedia.org/wiki/Titanic_II): a proposed modern-day replica of the RMS Titanic.
 - [Tower of Wooden Pallets](https://web.archive.org/web/20190414222841/https://en.wikipedia.org/wiki/Tower_of_Wooden_Pallets): a massive temporary wooden structure assembled as a public art piece.
 - [Toynbee tiles](https://en.wikipedia.org/wiki/Toynbee_tiles): mysterious linoleum tiles embedded in city streets with cryptic messages.
@@ -475,3 +473,71 @@
 - [Xin Zhui](https://en.wikipedia.org/wiki/Xin_Zhui): the remarkably well-preserved body of a Chinese noblewoman from over 2,000 years ago.
 - [Cartesian theater](https://en.wikipedia.org/wiki/Cartesian_theater): a philosophical concept critiquing the idea of a central mental "stage" where consciousness observes experience.
 - [Lychgate](https://en.wikipedia.org/wiki/Lychgate): the covered gateway at the entrance to a traditional English churchyard.
+- [Corpse road](https://en.wikipedia.org/wiki/Corpse_road): paths historically used to transport the dead from villages to remote cemeteries.
+- [Hearth](https://en.wikipedia.org/wiki/Hearth): a fireplace or the floor of a fireplace, historic center of home life and cooking.
+- [Plague doctor costume](https://en.wikipedia.org/wiki/Plague_doctor_costume): the distinctive beaked outfit worn by doctors treating plague patients in Europe.
+- [Ellis Island](https://en.wikipedia.org/wiki/Ellis_Island): US immigration station in New York that processed millions of immigrants.
+- [Emerald Tablet](https://en.wikipedia.org/wiki/Emerald_Tablet): legendary alchemical text attributed to Hermes Trismegistus, source of the phrase "as above, so below."
+- [Eridu](https://en.wikipedia.org/wiki/Eridu): one of the earliest cities in ancient Sumer, often considered the oldest city in the world.
+- [Florentine Codex](https://en.wikipedia.org/wiki/Florentine_Codex): a 16th-century ethnographic research project about Aztec culture, compiled by Bernardino de Sahagún.
+- [Gokstad ship](https://en.wikipedia.org/wiki/Gokstad_ship): a well-preserved Viking ship discovered in a burial mound in Norway.
+- [Halve Maen](https://en.wikipedia.org/wiki/Halve_Maen): the Dutch ship ("Half Moon") sailed by Henry Hudson in 1609 to explore North America.
+- [HMHS Britannic](https://en.wikipedia.org/wiki/HMHS_Britannic): a sister ship to Titanic, used as a hospital ship during WWI and sank in 1916.
+- [Jinn](https://en.wikipedia.org/wiki/Jinn): supernatural beings in Middle Eastern and Islamic tradition, also known as Djin or Genie.
+- [Lyres of Ur](https://en.wikipedia.org/wiki/Lyres_of_Ur): ancient Sumerian musical instruments discovered in the Royal Cemetery at Ur.
+- [Oracle bone script](https://en.wikipedia.org/wiki/Oracle_bone_script): earliest known form of Chinese writing, found on turtle shells and ox bones.
+- [Oseberg ship](https://en.wikipedia.org/wiki/Oseberg_ship): a richly decorated Viking ship used as a burial ship, found in Norway.
+- [Physical history of the US Declaration of Independence](https://en.wikipedia.org/wiki/Physical_history_of_the_United_States_Declaration_of_Independence): drafts, copies, and locations of the document, including a copy found recently in England.
+- [Plymouth Colony](https://en.wikipedia.org/wiki/Plymouth_Colony): an English colonial venture in North America established in 1620 by the Pilgrims.
+- [Richard III](https://en.wikipedia.org/wiki/Richard_III_of_England): King of England whose remains were found in modern times.
+- [RMS Titanic](https://en.wikipedia.org/wiki/Titanic): famed British passenger liner that sank on its maiden voyage in 1912.
+- [Sumer](https://en.wikipedia.org/wiki/Sumer): the earliest known civilization in southern Mesopotamia.
+- [Towle Silversmiths](https://en.wikipedia.org/wiki/Towle_Silversmiths): American maker of fine silverware and flatware originally founded in the 17th century.
+- [Amarna letters](https://en.wikipedia.org/wiki/Amarna_letters): diplomatic correspondence between Egypt and other ancient powers written on clay tablets.
+- [Beowulf](https://en.wikipedia.org/wiki/Beowulf): epic Old English poem.
+- [Cyrus Cylinder](https://en.wikipedia.org/wiki/Cyrus_Cylinder): ancient clay artifact recording the conquest of Babylon by Cyrus the Great.
+- [Finnesburg Fragment](https://en.wikipedia.org/wiki/Finnesburg_Fragment): a surviving fragment of Old English poetry that seems to talk of conflict between Danes and Frisians.
+- [Greek numerals](https://en.wikipedia.org/wiki/Greek_numerals): the numerical system used in ancient Greece, based on the Greek alphabet.
+- [Hildebrandslied](https://en.wikipedia.org/wiki/Hildebrandslied): an Old High German heroic poem about a tragic duel.
+- [Junius manuscript](https://en.wikipedia.org/wiki/Junius_manuscript): a major Old English illustrated manuscript of biblical poetry.
+- [Nowell Codex](https://en.wikipedia.org/wiki/Nowell_Codex): the manuscript containing Beowulf and other texts in Old English.
+- [Rosetta Stone](https://en.wikipedia.org/wiki/Rosetta_Stone): inscribed stone that provided the key to deciphering Egyptian hieroglyphs.
+- [Tower of Silence](https://en.wikipedia.org/wiki/Tower_of_Silence): circular structures used in Zoroastrian tradition for exposing the dead to scavenging birds.
+- [Aethelred the Unready](https://en.wikipedia.org/wiki/%C3%86thelred_the_Unready): King of England with an amusing title.
+- [Bayeux Tapestry](https://en.wikipedia.org/wiki/Bayeux_Tapestry): an embroidered cloth depicting the Norman conquest of England in 1066.
+- [Codex Gigas](https://en.wikipedia.org/wiki/Codex_Gigas): the largest extant medieval manuscript, famous for its full-page "Devil's Portrait."
+- [Khufu ship](https://en.wikipedia.org/wiki/Khufu_ship): an ancient Egyptian full-sized vessel buried at the foot of the Great Pyramid of Giza.
+- [RMS Mauretania](https://en.wikipedia.org/wiki/RMS_Mauretania_(1938)): an ocean liner of the Cunard Line, launched in 1938.
+- [RMS Queen Mary 2](https://en.wikipedia.org/wiki/Queen_Mary_2): a modern, transatlantic ocean liner still in service, flagship of Cunard Line.
+- [Roman concrete](https://en.wikipedia.org/wiki/Roman_concrete): ancient construction material credited for the longevity of Roman architecture.
+- [Anglo-Saxon Chronicle](https://en.wikipedia.org/wiki/Anglo-Saxon_Chronicle): a set of annals chronicling the history of the Anglo-Saxons in England.
+- [Domesday Book](https://en.wikipedia.org/wiki/Domesday_Book): a detailed survey of land and property in England, commissioned by William the Conqueror in 1086.
+- [The Discoverie of Witchcraft](https://en.wikipedia.org/wiki/The_Discoverie_of_Witchcraft): a 16th-century book skeptical of witch trials and magical claims.
+- [Epic of Gilgamesh](https://en.wikipedia.org/wiki/Epic_of_Gilgamesh): Mesopotamian epic poem, one of the earliest works of literature.
+- [Exeter Book](https://en.wikipedia.org/wiki/Exeter_Book): an Old English manuscript containing poetry and riddles.
+- [1906 San Francisco earthquake](https://en.wikipedia.org/wiki/1906_San_Francisco_earthquake): a devastating earthquake that destroyed much of San Francisco.
+- [Babylonian Map of the World](https://en.wikipedia.org/wiki/Babylonian_Map_of_the_World): a clay tablet describing the then-known world, centered on the Euphrates river.
+- [Herculaneum papyri](https://en.wikipedia.org/wiki/Herculaneum_papyri): carbonized scrolls from a Roman villa, preserved by the eruption of Mount Vesuvius.
+- [Rassam cylinder](https://en.wikipedia.org/wiki/Rassam_cylinder): an Assyrian clay cylinder inscribed with a royal inscription from Ashurbanipal.
+- [Xanthian Obelisk](https://en.wikipedia.org/wiki/Xanthian_Obelisk): a pillar covered in inscriptions, key to deciphering the Lycian language.
+- [Boltzmann brain](https://en.wikipedia.org/wiki/Boltzmann_brain): a thought experiment about conscious experience and reality.
+- [Explanatory gap](https://en.wikipedia.org/wiki/Explanatory_gap): the philosophical idea that physical processes alone can't fully explain consciousness.
+- [Hard problem of consciousness](https://en.wikipedia.org/wiki/Hard_problem_of_consciousness): the challenge of explaining why and how subjective experiences arise.
+- [Metaphysical solipsism](https://en.wikipedia.org/wiki/Metaphysical_solipsism): the philosophical position that only one's own mind is certain to exist.
+- [Problem of other minds](https://en.wikipedia.org/wiki/Problem_of_other_minds): the philosophical issue of how we can know other minds exist.
+- [Why is there anything at all?](https://en.wikipedia.org/wiki/Why_is_there_anything_at_all%3F): the ultimate philosophical question about the existence of the universe.
+- [Qualia](https://en.wikipedia.org/wiki/Qualia): the individual subjective qualities of conscious experience.
+- [Vertiginous question](https://en.wikipedia.org/wiki/Why_am_I_me): a philosophical question about personal identity and subjective experience.
+- [Four Pest campaign](https://en.wikipedia.org/wiki/Four_Pests_campaign): a Chinese government initiative targeting "pests" that had catastrophic consequences.
+- [Dragon Throne](https://en.wikipedia.org/wiki/Dragon_Throne): the symbolic seat of imperial authority in China.
+- [Four Olds](https://en.wikipedia.org/wiki/Four_Olds): a campaign during China's Cultural Revolution to eliminate old customs, culture, habits, and ideas.
+- [Empress Dowager Cixi](https://en.wikipedia.org/wiki/Empress_Dowager_Cixi): the controversial ruler of Qing dynasty China in the late 19th and early 20th centuries.
+- [Mausoleum of Qin Shi Huang](https://en.wikipedia.org/wiki/Mausoleum_of_Qin_Shi_Huang): the monumental tomb of China's first emperor, famous for the Terracotta Army.
+- [La Garita Caldera](https://en.wikipedia.org/wiki/La_Garita_Caldera): the site of one of the world's largest known volcanic eruptions, located in Colorado.
+- [Comet Shoemaker-Levy 9](https://en.wikipedia.org/wiki/Comet_Shoemaker%E2%80%93Levy_9): a comet that spectacularly impacted Jupiter in 1994, leaving visible marks.
+- [Living Fossil](https://en.wikipedia.org/wiki/Living_fossil): an organism that has remained largely unchanged over millions of years and resembles ancient relatives.
+- [Procoptodon](https://en.wikipedia.org/wiki/Procoptodon): a genus of giant, short-faced kangaroos from prehistoric Australia.
+- [Trilobite](https://en.wikipedia.org/wiki/Trilobite): extinct marine arthropods with distinctive segmented bodies, commonly seen as fossils.
+- [Alex the parrot](https://en.wikipedia.org/wiki/Alex_(parrot)): an African grey parrot famous for his advanced communication and cognitive abilities.
+- [Ancient woodland](https://en.wikipedia.org/wiki/Ancient_woodland): areas of forest in Europe that have existed continuously since at least the year 1600.
+- [Pink House](https://en.wikipedia.org/wiki/Pink_House_(Newbury,_Massachusetts)): a former, iconic, often-photographed pink house in Massachusetts.
