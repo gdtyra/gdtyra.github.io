@@ -305,6 +305,10 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 ## `ss` - investigate socket usage
 - `ss -tulpn` - display processes using and listening to TCP and UDP sockets that are listening, use numbers instead of human-readable alternatives
 
+
+## `xsel` - access X11 clipboard from terminal
+- `xsel --clipboard --output` - write clipboard content to stdout
+
 ## Miscellaneous
 - `cal` - display calendars
 - `at` - schedule a task at a given time
@@ -329,3 +333,5 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 - `wget -O <output_path> <some.resource/address>` - download a given resource to a given path
 - `chsh -s <shell_path> <user>` - change a user's login shell
 - `uuencode` and `uudecode` - binary to ASCII format
+- `recutils` - relational database operations on plain text files
+- `apropos` - search manual pages

@@ -1336,6 +1336,10 @@ Yin-Yang is a concept from ancient Chinese cosmology that represents dualism: th
 
 Taoism and confucianism emerged around 500-200 BCE in response to the social chaos of the Warring States period. Taoism sought to escape from rigid structures while Confucianism sought order within them. Buddhism entered China around the 1st century CE and blended with both. Yin-yang is more of a cosmological principle that all three use to explain aspects of their philosophies.
 
+### Q: What is the Chinese or East Asian percussion instrument that sounds like a crash followed by an upward "boing"?
+
+It is probably the small Chinese opera gong, or xiaoluo.
+
 ### Q: Why are houses in the US typically built with wood while in the UK they're typically built with brick or stone?
 
 By the time large-scale building was needed in the UK, much of Britain's original forest cover had already been depleted due to centuries of shipbuilding, charcoal production, and land clearing for agriculture. Timber shortages were already an issue by the 17th and 18th centuries.

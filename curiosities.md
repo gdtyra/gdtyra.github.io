@@ -1,0 +1,477 @@
+# Curiosities
+
+- [Gombe Chimpanzee War](https://en.wikipedia.org/wiki/Gombe_Chimpanzee_War): a violent four-year conflict observed between two groups of chimpanzees.
+- [Spite house](https://en.wikipedia.org/wiki/Spite_house): a building constructed or modified to irritate neighbors.
+- [House in the Clouds](https://en.wikipedia.org/wiki/House_in_the_Clouds): a combination water tower and house.
+- [Seven Mile Bridge](https://en.wikipedia.org/wiki/Seven_Mile_Bridge): a long bridge in the Florida Keys.
+- [Bodie, California](https://en.wikipedia.org/wiki/Bodie,_California): a well-preserved gold rush ghost town.
+- [Cliff Palace](https://en.wikipedia.org/wiki/Cliff_Palace): an ancient cliff dwelling in Mesa Verde National Park.
+- [Lanterns of the Dead](https://en.wikipedia.org/wiki/Lanterns_of_the_Dead): medieval stone structures used to guide or mark locations.
+- [Banksy](https://en.wikipedia.org/wiki/Banksy): anonymous England-based street artist.
+- [A Treasury of Great Reporting](https://archive.org/details/in.ernet.dli.2015.502969): an anthology of notable journalism from the first half of the 20th century.
+- [No Longer Human](https://en.wikipedia.org/wiki/No_Longer_Human): a Japanese novel exploring alienation and despair.
+- [Voynich manuscript](https://en.wikipedia.org/wiki/Voynich_manuscript): an illustrated medieval codex written in an unknown language or code.
+- [Shi](https://en.wikipedia.org/wiki/Shi_(personator)): ancient Chinese ritual "personators" who stood in for ancestors during ceremonies.
+- [Illegal number](https://en.wikipedia.org/wiki/Illegal_number): numbers which represent information illegal to possess, such as copyrighted or forbidden data.
+- [lp0 on fire](https://en.wikipedia.org/wiki/Lp0_on_fire): error message related to the historic potential for printers to fail catastrophically.
+- [Blue Brain Project](https://en.wikipedia.org/wiki/Blue_Brain_Project): a Swiss research initiative to digitally reconstruct the mammalian brain.
+- [Cold War playground equipment](https://en.wikipedia.org/wiki/Cold_War_playground_equipment): playgrounds designed to inspire excitement about the space race.
+- [Karoshi](https://en.wikipedia.org/wiki/Karoshi): the phenomenon of death caused by overwork, mainly in Japan.
+- [Sweater curse](https://en.wikipedia.org/wiki/Sweater_curse): the belief that gifting a hand-knit sweater to a romantic partner will lead to breakup.
+- [Tamagotchi effect](https://en.wikipedia.org/wiki/Tamagotchi_effect): emotional attachment formed with virtual pets or digital companions.
+- [Accelerating change](https://en.wikipedia.org/wiki/Accelerating_change): the idea that technological and social change are happening at an increasing rate.
+- [Andromeda-Milky Way collision](https://en.wikipedia.org/wiki/Andromeda%E2%80%93Milky_Way_collision): a predicted future collision between the Milky Way and Andromeda galaxies.
+- [Anthropic principle](https://en.wikipedia.org/wiki/Anthropic_principle): the philosophical idea that observations of the universe are constrained by the necessity for conscious life to observe it.
+- [Blood moon prophecy](https://en.wikipedia.org/wiki/Blood_moon_prophecy): an apocalyptic prophecy circa 2014.
+- [Chauvet Cave](https://en.wikipedia.org/wiki/Chauvet_Cave): a French cave with some of the earliest and best-preserved prehistoric cave paintings.
+- [Chrysler Air-Raid siren](https://en.wikipedia.org/wiki/Chrysler_Air-Raid_Siren): the world's loudest siren, used in the US during the Cold War.
+- [Collyer brothers](https://en.wikipedia.org/wiki/Collyer_brothers): famous New York City recluses and hoarders who died amid tons of rubbish in their home.
+- [Controversial Reddit communities](https://en.wikipedia.org/wiki/Controversial_Reddit_communities): self-explanatory.
+- [Cullinan Diamond](https://en.wikipedia.org/wiki/Cullinan_Diamond): the largest gem-quality rough diamond ever found.
+- [Digital sundial](https://en.wikipedia.org/wiki/Digital_sundial): a sundial that displays the time in a numeric form.
+- [Discovery Island](https://en.wikipedia.org/wiki/Discovery_Island_(Bay_Lake)): an abandoned Disney-owned island in Florida.
+- [Fiji mermaid](https://en.wikipedia.org/wiki/Fiji_mermaid): a famous 19th-century sideshow hoax.
+- [Goiania accident](https://en.wikipedia.org/wiki/Goi%C3%A2nia_accident): a 1987 radiological disaster in Brazil caused by the mishandling of radioactive material.
+- [Leakin Park](https://en.wikipedia.org/wiki/Gwynns_Falls/Leakin_Park): a Baltimore park infamous as a frequent site of crime and found bodies.
+- [Heaven's Gate](https://en.wikipedia.org/wiki/Heaven%27s_Gate_(religious_group)): a cult linked to beliefs about a UFO following comet Hale-Bopp.
+- [Hyperthymesia](https://en.wikipedia.org/wiki/Hyperthymesia): an extremely rare condition characterized by an exceptional autobiographical memory.
+- [If a 707 Hit the World Trade Center? (Posted Nov 2000)](https://www.airliners.net/forum/viewtopic.php?t=60625): a spooky and prescient forum post.
+- [Immortal Game](https://en.wikipedia.org/wiki/Immortal_Game): a famous 1851 chess game.
+- [Roanoke Colony](https://en.wikipedia.org/wiki/Roanoke_Colony): failed English settlement in North America with a mysterious ending.
+- [King of Prussia Inn](https://en.wikipedia.org/wiki/King_of_Prussia_Inn): a historic tavern in Pennsylvania.
+- [Locked-in syndrome](https://en.wikipedia.org/wiki/Locked-in_syndrome): a rare neurological disorder in which a person is aware but unable to move or speak.
+- [Low-background steel](https://en.wikipedia.org/wiki/Low-background_steel): steel produced before atmospheric nuclear testing, valuable for sensitive scientific instruments.
+- [Marilyn vos Savant](https://en.wikipedia.org/wiki/Marilyn_vos_Savant): writer and columnist listed as having the world's highest recorded IQ.
+- [Mel's Hole](https://en.wikipedia.org/wiki/Mel%27s_Hole): an urban legend about a supposedly mysterious and bottomless hole in Washington state.
+- [Nut rage incident](https://en.wikipedia.org/wiki/Nut_rage_incident): a 2014 Korean Air scandal involving an executive's outburst over how nuts were served on a flight.
+- [Olmec colossal heads](https://en.wikipedia.org/wiki/Olmec_colossal_heads): giant sculpted stone heads from the ancient Olmec civilization in Mexico.
+- [One red paperclip](https://en.wikipedia.org/wiki/One_red_paperclip): a story of a man who bartered his way from a paperclip to a house.
+- [Phoebus cartel](https://en.wikipedia.org/wiki/Phoebus_cartel): a historical agreement among lightbulb manufacturers to artificially limit bulb lifespans.
+- [Presidential state car](https://en.wikipedia.org/wiki/Presidential_state_car_(United_States)): heavily armored car used to transport the US president.
+- [Problem of time](https://en.wikipedia.org/wiki/Problem_of_time): a physics and philosophy issue regarding time's role in quantum gravity.
+- [Quantum eraser experiment](https://en.wikipedia.org/wiki/Quantum_eraser_experiment): a quantum physics experiment showing how measurement alters outcomes.
+- [RMS Queen Mary](https://en.wikipedia.org/wiki/RMS_Queen_Mary): a retired British ocean liner now permanently moored as a hotel in California.
+- [Robert the Doll](https://en.wikipedia.org/wiki/Robert_(doll)): a supposedly haunted doll in Florida associated with many legends.
+- [Safety coffin](https://en.wikipedia.org/wiki/Safety_coffin): special coffins designed to prevent premature burial.
+- [Samy worm](https://en.wikipedia.org/wiki/Samy_(computer_worm)): a computer worm that spread quickly on MySpace in 2005.
+- [Six Flags New Orleans](https://en.wikipedia.org/wiki/Six_Flags_New_Orleans): an abandoned theme park left in ruins after Hurricane Katrina.
+- [Pistol shrimp](https://en.wikipedia.org/wiki/Alpheidae): a family of shrimp with a snapping claw that stuns prey and can produce heat and light.
+- [Supercontinent cycle](https://en.wikipedia.org/wiki/Supercontinent_cycle): the process by which Earth's continents repeatedly join and break apart over geologic time.
+- [The Hole](https://en.wikipedia.org/wiki/The_Hole_(Scientology)): a facility for confining and punishing Scientology executives.
+- [The Hum](https://en.wikipedia.org/wiki/The_Hum): persistent, low-frequency mysterious noises reported worldwide.
+- [Ren Zhi](https://raymondgoh.blogspot.com/2013/07/the-origin-of-jailangkung.html?m=1): a strange and disturbing story.
+- [Titanic II](https://en.wikipedia.org/wiki/Titanic_II): a proposed modern-day replica of the RMS Titanic.
+- [Tower of Wooden Pallets](https://web.archive.org/web/20190414222841/https://en.wikipedia.org/wiki/Tower_of_Wooden_Pallets): a massive temporary wooden structure assembled as a public art piece.
+- [Toynbee tiles](https://en.wikipedia.org/wiki/Toynbee_tiles): mysterious linoleum tiles embedded in city streets with cryptic messages.
+- [United States Bullion Depository](https://en.wikipedia.org/wiki/United_States_Bullion_Depository): the guarded facility at Fort Knox, Kentucky, that stores much of America's gold reserves.
+- [Vantablack](https://en.wikipedia.org/wiki/Vantablack): one of the most light-absorbing substances.
+- [Vivian Maier](https://en.wikipedia.org/wiki/Vivian_Maier): a lady who was posthumously recognized as a great street photographer.
+- [2006 transatlantic aircraft plot](https://en.wikipedia.org/wiki/2006_transatlantic_aircraft_plot): a thwarted plan to detonate liquid explosives on airliners.
+- [2012 Harvard cheating scandal](https://en.wikipedia.org/wiki/2012_Harvard_cheating_scandal): a high-profile academic dishonesty case involving hundreds of students.
+- [Bhopal disaster](https://en.wikipedia.org/wiki/Bhopal_disaster): a catastrophic gas leak incident in India in 1984.
+- [Bojinka plot](https://en.wikipedia.org/wiki/Bojinka_plot): a foiled 1995 plan.
+- [Bath School disaster](https://en.wikipedia.org/wiki/Bath_School_disaster): a 1927 attack in Michigan.
+- [Uncontacted peoples](https://en.wikipedia.org/wiki/Uncontacted_peoples): groups around the world living with little or no contact with global civilization.
+- [Decasia](https://en.wikipedia.org/wiki/Decasia): an experimental film composed of decaying archival footage.
+- [Lost film](https://en.wikipedia.org/wiki/Lost_film): movies of which no known copies exist.
+- [DONKEY.BAS](https://en.wikipedia.org/wiki/DONKEY.BAS): a simple car-dodging video game written by Bill Gates.
+- [American chestnut](https://en.wikipedia.org/wiki/American_chestnut): a once-common tree species nearly wiped out by blight in North America.
+- [Antikythera mechanism](https://en.wikipedia.org/wiki/Antikythera_mechanism): an ancient Greek analog computer used to predict astronomical positions.
+- [Apega of Nabis](https://en.wikipedia.org/wiki/Apega_of_Nabis): a torture device modeled after the wife of a Spartan tyrant.
+- [Bog body](https://en.wikipedia.org/wiki/Bog_body): ancient human remains naturally preserved in peat bogs.
+- [Bottini of Siena](https://en.wikipedia.org/wiki/Bottini_of_Siena): a network of underground medieval aqueducts in Siena, Italy.
+- [Doggerland](https://en.wikipedia.org/wiki/Doggerland): a submerged landmass that once connected the UK and continental Europe.
+- [Donner Party](https://en.wikipedia.org/wiki/Donner_Party): a group of American pioneers who resorted to cannibalism after being stranded in the Sierra Nevada.
+- [Johnstown Flood](https://en.wikipedia.org/wiki/Johnstown_Flood): a devastating 1889 dam collapse and flood in Pennsylvania.
+- [Leshan Giant Buddha](https://en.wikipedia.org/wiki/Leshan_Giant_Buddha): a massive 71-meter tall stone statue of Buddha in China.
+- [Malleus Maleficarum](https://en.wikipedia.org/wiki/Malleus_Maleficarum): a 15th-century treatise on witchcraft that contributed to witch hunts.
+- [Nebra sky disc](https://en.wikipedia.org/wiki/Nebra_sky_disc): a Bronze Age artifact thought to depict a celestial map.
+- [Philosopher's stone](https://en.wikipedia.org/wiki/Philosopher%27s_stone): a legendary alchemical substance believed to turn base metals into gold.
+- [Port Chicago disaster](https://en.wikipedia.org/wiki/Port_Chicago_disaster): a deadly 1944 munitions explosion at a naval base in California.
+- [Princes in the Tower](https://en.wikipedia.org/wiki/Princes_in_the_Tower): two English princes presumed murdered in the Tower of London in the 15th century.
+- [Salem witch trials](https://en.wikipedia.org/wiki/Salem_witch_trials): a series of witchcraft trials and executions in colonial Massachusetts in 1692.
+- [Tollund Man](https://en.wikipedia.org/wiki/Tollund_Man): a well-preserved prehistoric bog body discovered in Denmark.
+- [0.999...](https://en.wikipedia.org/wiki/0.999...): a mathematical concept showing that 0.999... equals 1.
+- [Gravity train](https://en.wikipedia.org/wiki/Gravity_train): a theoretical train that could travel through a planet using gravity to move.
+- [1983 Soviet nuclear false alarm incident](https://en.wikipedia.org/wiki/1983_Soviet_nuclear_false_alarm_incident): event in which a Soviet officer averted nuclear war by correctly identifying a false alarm.
+- [Christmas truce](https://en.wikipedia.org/wiki/Christmas_truce): an unofficial ceasefire on the Western Front during World War I in December 1914.
+- [Fogbank](https://en.wikipedia.org/wiki/Fogbank): a classified material used in nuclear warheads.
+- [Bicameral mentality](https://en.wikipedia.org/wiki/Bicameral_mentality): a hypothesis that the human mind once operated in a state split between conscious and unconscious thought.
+- [Limnic eruption](https://en.wikipedia.org/wiki/Limnic_eruption): a rare natural disaster where dissolved CO2 suddenly erupts from a lake, suffocating wildlife and people.
+- [Neskowin Ghost Forest](https://en.wikipedia.org/wiki/Neskowin_Ghost_Forest): the remains of an ancient forest exposed along the coast of Oregon.
+- [Aaron Swartz](https://en.wikipedia.org/wiki/Aaron_Swartz): internet activist, programmer, and co-founder of Reddit who had an unfortunate end.
+- [Particle spin](https://en.wikipedia.org/wiki/Spin_(physics)): an intrinsic form of angular momentum carried by elementary particles.
+- [Document Number Nine](https://en.wikipedia.org/wiki/Document_Number_Nine): a leaked Chinese government directive warning against Western liberal ideas.
+- [why the lucky stiff](https://en.wikipedia.org/wiki/Why_the_lucky_stiff): an enigmatic and influential Ruby programmer and artist.
+- [Spacetime](https://en.wikipedia.org/wiki/Spacetime): the four-dimensional framework combining three spatial dimensions and time in relativity.
+- [Tunguska event](https://en.wikipedia.org/wiki/Tunguska_event): a massive 1908 explosion over Siberia widely believed to be caused by an airbursting meteor.
+- [Ultimate fate of the universe](https://en.wikipedia.org/wiki/Ultimate_fate_of_the_universe): scientific theories regarding how the universe will end.
+- [Lady tasting tea](https://simple.wikipedia.org/wiki/Lady_tasting_tea): a famous early test in statistics where a woman claimed to distinguish by taste the order in which milk was added to tea. 
+- [SGR_1806-20](https://en.wikipedia.org/wiki/SGR_1806%E2%88%9220): a magnetar known for emitting the brightest giant flare ever recorded from Earth.
+- [Cameron's World](https://www.cameronsworld.net/): a web art project that collages imagery from 1990s GeoCities websites.
+- [Old Tjikko](https://en.wikipedia.org/wiki/Old_Tjikko): a Norway spruce in Sweden considered among the world's oldest living trees.
+- [Freemasonry](https://en.wikipedia.org/wiki/Freemasonry): a centuries-old fraternal society with secretive rituals and traditions.
+- [Stepan Company](https://en.wikipedia.org/wiki/Stepan_Company): the only company allowed to process Coca leaves for Coca-Cola.
+- [New Coke](https://en.wikipedia.org/wiki/New_Coke): a widely disliked reformulation of Coca-Cola introduced in 1985.
+- [Gomboc](https://en.wikipedia.org/wiki/G%C3%B6mb%C3%B6c): a mathematical object with one stable and one unstable point of equilibrium.
+- [Lazarus and Joannes Baptista Colloredo](https://en.wikipedia.org/wiki/Lazarus_and_Joannes_Baptista_Colloredo): famous 17th-century conjoined twins exhibited across Europe.
+- [J.S. Seaverns](https://en.wikipedia.org/wiki/J.S._Seaverns): a ship that sank in 1884 and is within scuba diving depths.
+- [Tuba Man](https://en.wikipedia.org/wiki/Tuba_Man): a street performer who met a really tragic end.
+- [Immortality Drive](https://en.wikipedia.org/wiki/Immortality_Drive): a storage device with DNA from notable people sent to the International Space Station.
+- [1980 Damascus Titan missile explosion](https://en.wikipedia.org/wiki/1980_Damascus_Titan_missile_explosion): an accident in Arkansas involving a nuclear missile explosion.
+- [1966 Palomares accident](https://en.wikipedia.org/wiki/1966_Palomares_accident): a US Air Force nuclear weapons accident over Spain resulting in non-nuclear detonations.
+- [Quabbin Reservoir](https://en.wikipedia.org/wiki/Quabbin_Reservoir): a large man-made reservoir created by flooding several towns.
+- [Cute aggression](https://en.wikipedia.org/wiki/Cute_aggression): the urge to squeeze, hug, or bite something because it's overwhelmingly cute.
+- [Uranium glass](https://en.wikipedia.org/wiki/Uranium_glass): glass colored with uranium compounds, often glowing under UV light.
+- [Luang Pho Daeng](https://en.wikipedia.org/wiki/Luang_Pho_Daeng): a Thai Buddhist monk whose mummified body is displayed in a temple.
+- [American Airlines Flight 587](https://en.wikipedia.org/wiki/American_Airlines_Flight_587): a 2001 plane crash in Queens, New York, soon after 9/11.
+- [Nazino tragedy](https://en.wikipedia.org/wiki/Nazino_tragedy): a deadly forced resettlement and famine on a Russian island in 1933.
+- [SS Edmund Fitzgerald](https://en.wikipedia.org/wiki/SS_Edmund_Fitzgerald): a Great Lakes freighter that sank in 1975.
+- [Who put Bella in the wych elm?](https://en.wikipedia.org/wiki/Who_put_Bella_in_the_wych_elm%3F): an unsolved WWII mystery involving a skeleton found inside a tree in England.
+- [War of the Bucket](https://en.wikipedia.org/wiki/War_of_the_Bucket): a 14th-century conflict between Italian city-states, allegedly over a stolen bucket.
+- [The Book of Mozilla](https://en.wikipedia.org/wiki/The_Book_of_Mozilla): a cryptic Easter egg found in Mozilla products styled as a biblical prophecy.
+- [Terry A. Davis](https://en.wikipedia.org/wiki/Terry_A._Davis): schizophrenic programmer who created the TempleOS operating system.
+- [Mike the Headless Chicken](https://en.wikipedia.org/wiki/Mike_the_Headless_Chicken): a chicken that survived for 18 months after being mostly decapitated.
+- [David Hahn](https://en.wikipedia.org/wiki/David_Hahn): the "Radioactive Boy Scout" who attempted to build a nuclear reactor in his backyard.
+- [Coober Pedy](https://en.wikipedia.org/wiki/Coober_Pedy): an Australian mining town famous for underground dwellings.
+- [Nitt Witt Ridge](https://en.wikipedia.org/wiki/Nitt_Witt_Ridge): a folk art house in California constructed from scavenged materials.
+- [Operation Wandering Soul](https://en.wikipedia.org/wiki/Operation_Wandering_Soul): a US psychological warfare campaign during the Vietnam War using ghostly sound effects.
+- [Oak Island mystery](https://en.wikipedia.org/wiki/Oak_Island_mystery): legends of buried treasure and unexplained artifacts on Oak Island, Nova Scotia.
+- [Sampoong Department Store collapse](https://en.wikipedia.org/wiki/Sampoong_Department_Store_collapse): a disastrous 1995 building collapse in Seoul, South Korea.
+- [Tower Hill](https://en.wikipedia.org/wiki/Tower_Hill): a historical execution site outside the Tower of London.
+- [Kowloon Walled City](https://en.wikipedia.org/wiki/Kowloon_Walled_City): a former densely populated urban settlement in Hong Kong.
+- [Cecil Hotel](https://en.wikipedia.org/wiki/Cecil_Hotel_(Los_Angeles)): a Los Angeles hotel known for mysterious deaths and alleged hauntings.
+- [Star Breeze](https://en.wikipedia.org/wiki/Star_Breeze): a modern cruise ship that was attacked by pirates.
+- [Sonderkommando photographs](https://en.wikipedia.org/wiki/Sonderkommando_photographs): rare photos covertly taken in a concentration camp.
+- [Hachiko](https://en.wikipedia.org/wiki/Hachik%C5%8D): a loyal dog remembered for waiting for his deceased owner at a Japanese train station.
+- [The Three Christs of Ypsilanti](https://en.wikipedia.org/wiki/The_Three_Christs_of_Ypsilanti): a psychological study involving three psychiatric patients who each believed they were Jesus.
+- [Battle of Alcatraz](https://en.wikipedia.org/wiki/Battle_of_Alcatraz): a violent 1946 escape attempt in the infamous Alcatraz prison.
+- [Rotary jail](https://en.wikipedia.org/wiki/Rotary_jail): a type of jail with cells arranged on a rotating cylinder.
+- [Everywhere at the End of Time](https://en.wikipedia.org/wiki/Everywhere_at_the_End_of_Time): an experimental music project about dementia.
+- [Capitol Hill mystery soda machine](https://en.wikipedia.org/wiki/Capitol_Hill_mystery_soda_machine): an enigmatic and untraceable vending machine in Seattle selling rare sodas.
+- [HeLa](https://en.wikipedia.org/wiki/HeLa): the first immortal human cell line, derived from Henrietta Lacks.
+- [Turnspit dog](https://en.wikipedia.org/wiki/Turnspit_dog): a now-extinct breed used to turn meat on spits in old kitchens.
+- [Radithor](https://en.wikipedia.org/wiki/Radithor): a radioactive "health" drink sold in the early 20th century.
+- [White House Farm](https://en.wikipedia.org/wiki/White_House_Farm_murders): a notorious 1985 murder case in England.
+- [Catacombs of Paris](https://en.wikipedia.org/wiki/Catacombs_of_Paris): extensive underground ossuaries in Paris.
+- [Mellified man](https://en.wikipedia.org/wiki/Mellified_man): a legendary medicinal substance made from a corpse preserved in honey.
+- [Pan Am Flight 7](https://en.wikipedia.org/wiki/Pan_Am_Flight_7): a mysterious 1957 airline crash still unsolved.
+- [Mummia](https://en.wikipedia.org/wiki/Mummia): an old medicinal product made from ground-up mummies.
+- [Citicorp Center engineering crisis](https://en.wikipedia.org/wiki/Citicorp_Center_engineering_crisis): a critical flaw in a New York skyscraper discovered and discretely fixed decades later.
+- [Waco siege](https://en.wikipedia.org/wiki/Waco_siege): a deadly 1993 standoff between US law enforcement and the Branch Davidians sect in Texas.
+- [Fossil water](https://en.wikipedia.org/wiki/Fossil_water): ancient groundwater trapped underground for thousands to millions of years.
+- [Beijing Underground City](https://en.wikipedia.org/wiki/Underground_City_(Beijing)): a vast underground shelter complex in Beijing.
+- [Derinkuyu underground city](https://en.wikipedia.org/wiki/Derinkuyu_underground_city): a multi-level ancient underground city in Cappadocia, Turkey.
+- [Aka Manto](https://en.wikipedia.org/wiki/Aka_Manto): a Japanese urban legend about a ghost haunting public restrooms.
+- [Martin Manley Life and Death](https://martin-manley.eprci.com/): an autobiographical website about a man and his unusually calm, rational decision to end it.
+- [Molecular motor](https://en.wikipedia.org/wiki/Molecular_motor): molecular-scale structures that rotate and walk.
+- [Jeffrey Manchester](https://en.wikipedia.org/wiki/Jeffrey_Manchester): an American criminal known for living secretly inside a Toys "R" Us store.
+- [TransAsia Airways Flight 235](https://en.wikipedia.org/wiki/TransAsia_Airways_Flight_235): a 2015 plane crash in Taiwan dramatically caught on dashboard cameras.
+- [Aeroflot Flight 593](https://en.wikipedia.org/wiki/Aeroflot_Flight_593): a 1994 aircraft crash caused by a pilot's child interfering with controls.
+- [Interbreeding between archaic and modern humans](https://en.wikipedia.org/wiki/Interbreeding_between_archaic_and_modern_humans): genetic mixing between Homo sapiens, Neanderthals, Denisovans, and others.
+- [Surfside condominium collapse](https://en.wikipedia.org/wiki/Surfside_condominium_collapse): a 2021 building collapse in Florida due to a structural weakness that was not taken seriously enough in time.
+- [Baron Hill](https://everywherefromwhereyouarenot.blogspot.com/2021/04/mansion-in-woods.html?m=1): a ruined mansion in Wales.
+- [Pollepel Island](https://en.wikipedia.org/wiki/Pollepel_Island): an island on the Hudson River known for the ruins of Bannerman's Castle.
+- [Cabinet of curiosities](https://en.wikipedia.org/wiki/Cabinet_of_curiosities): historical collections of notable objects.
+- [The Day the Clown Cried](https://en.wikipedia.org/wiki/The_Day_the_Clown_Cried): an unreleased and infamous Jerry Lewis film about a clown in a concentration camp.
+- [Raising of Chicago](https://en.wikipedia.org/wiki/Raising_of_Chicago): a massive 19th-century project to literally lift city buildings and streets in Chicago.
+- [Castrato](https://en.wikipedia.org/wiki/Castrato): a type of classical male singing voice produced by castration before puberty.
+- [HitchBOT](https://en.wikipedia.org/wiki/HitchBOT): a hitchhiking robot project that traveled hundreds of miles before being vandalized.
+- [The Wreck of the Titan](https://en.wikipedia.org/wiki/The_Wreck_of_the_Titan:_Or,_Futility): an 1898 novel eerily similar to the actual Titanic disaster.
+- [Fibrodysplasia ossificans progressiva](https://en.wikipedia.org/wiki/Fibrodysplasia_ossificans_progressiva): a rare disorder where muscles and connective tissue turn to bone.
+- [Moonlight tower](https://en.wikipedia.org/wiki/Moonlight_tower): tall structures with arc lamps erected in the 19th century for nighttime city lighting.
+- [Robert Johnson](https://en.wikipedia.org/wiki/Robert_Johnson): legendary blues musician with an interesting story.
+- [Fata Morgana](https://en.wikipedia.org/wiki/Fata_Morgana_(mirage)): a complex form of mirage producing supernatural-looking horizon images.
+- [Cult of the Dead Cow](https://en.wikipedia.org/wiki/Cult_of_the_Dead_Cow): an early US hacker group.
+- [Trinitite](https://en.wikipedia.org/wiki/Trinitite): a unique glassy residue left after the first atomic bomb test.
+- [Hiroo Onada](https://en.wikipedia.org/wiki/Hiroo_Onoda): a Japanese soldier who didn't surrender until 1974.
+- [Phil Sokolof](https://en.wikipedia.org/wiki/Phil_Sokolof): an American businessman and health advocate who campaigned against saturated fat.
+- [i am lonely will anyone speak to me](https://en.wikipedia.org/wiki/I_am_lonely_will_anyone_speak_to_me): a famous internet forum post.
+- [Michael Rockefeller](https://en.wikipedia.org/wiki/Michael_Rockefeller): son of New York Governor Nelson Rockefeller who disappeared during an expedition in New Guinea.
+- [Infomart](https://en.wikipedia.org/wiki/Infomart): a large Dallas building designed for information technology trade shows and data centers.
+- [2008 Universal Studios fire](https://en.wikipedia.org/wiki/2008_Universal_Studios_fire): a fire that destroyed thousands of master recordings and film archives.
+- [Man in the Iron Mask](https://en.wikipedia.org/wiki/Man_in_the_Iron_Mask): an unidentified prisoner in France whose face was always hidden.
+- [2022 Paria diving disaster](https://en.wikipedia.org/wiki/2022_Paria_diving_disaster): a fatal accident involving underwater pipeline work off the coast of Trinidad.
+- [Daniel Aric Johnson](https://danielaricjohnson.blogspot.com/2006/11/?m=1): memorial page for an Insomniac Games employee.
+- [Clear Channel memorandum](https://en.wikipedia.org/wiki/Clear_Channel_memorandum): a list of songs suggested to be avoided by radio stations after 9/11.
+- [Heartbeat in the Brain](https://en.wikipedia.org/wiki/Heartbeat_in_the_Brain): a 1970s documentary film involving self-trepanation.
+- [Chicago Tunnel Company](https://en.wikipedia.org/wiki/Chicago_Tunnel_Company): an underground freight tunnel network under downtown Chicago.
+- [Anthropodermic bibliopegy](https://en.wikipedia.org/wiki/Anthropodermic_bibliopegy): the practice of binding books in human skin.
+- [1995 San Diego tank rampage](https://en.wikipedia.org/wiki/1995_San_Diego_tank_rampage): when a man stole a tank and drove it through city streets before being stopped by police.
+- [Catacombe dei Cappuccini](https://en.wikipedia.org/wiki/Catacombe_dei_Cappuccini): Palermo catacombs known for thousands of mummified corpses on display.
+- [Depression glass](https://en.wikipedia.org/wiki/Depression_glass): inexpensive colored glassware popular during the Great Depression.
+- [Terminal Studio website frozen in time](http://www.terminalstudio.com/news.shtml): a website seemingly frozen in time.
+- [Ferdinand Cheval](https://en.wikipedia.org/wiki/Ferdinand_Cheval): a French postman who built an elaborate palace from stones he collected.
+- [Old Summer Palace bronze heads](https://en.wikipedia.org/wiki/Old_Summer_Palace_bronze_heads): twelve zodiac animal fountainheads looted from a Chinese imperial garden.
+- [Mimizuka](https://en.wikipedia.org/wiki/Mimizuka): a strange monument in Kyoto.
+- [Anatomical Machines](https://en.wikipedia.org/wiki/Anatomical_Machines): detailed 18th-century anatomical models on display in a Naples chapel.
+- [Ulillillia](https://ulillillia.fandom.com/wiki/Ulillillia): an internet personality famous for obsessive video game design and surreal personal website.
+- [George Washington's teeth](https://en.wikipedia.org/wiki/George_Washington%27s_teeth): myths and facts about the false teeth of America's first president.
+- [Tanenbaum-Torvalds debate](https://en.wikipedia.org/wiki/Tanenbaum%E2%80%93Torvalds_debate): a famous 1992 online dispute over kernel design.
+- [Early world maps](https://en.wikipedia.org/wiki/Early_world_maps): ancient representations of the world by various civilizations.
+- [Mowing-Devil](https://en.wikipedia.org/wiki/Mowing-Devil): a 17th-century English pamphlet describing a field mysteriously mowed overnight, thought by some as a precursor to crop circles.
+- [Cargill](https://en.wikipedia.org/wiki/Cargill): one of the world's largest privately, family-owned corporations.
+- [Here be dragons](https://en.wikipedia.org/wiki/Here_be_dragons): phrase and concept historically used on maps to indicate dangerous or unknown regions.
+- [Gros Michel banana](https://en.wikipedia.org/wiki/Gros_Michel): an original commercial banana variety wiped out by disease.
+- [Velvalee Dickinson](https://en.wikipedia.org/wiki/Velvalee_Dickinson): an American convicted of using doll shipments to send wartime espionage messages.
+- [The Tcl War](https://vanderburg.org/old_pages/Tcl/war/): an internet argument over the merits of the programming language Tcl.
+- [Odesa catacombs](https://en.wikipedia.org/wiki/Odesa_catacombs): an extensive labyrinth of underground tunnels beneath Odesa, Ukraine.
+- [Akmal Shaikh](https://en.wikipedia.org/wiki/Akmal_Shaikh): a British national executed in China under controversial circumstances.
+- [A Crow Looked at Me](https://en.wikipedia.org/wiki/A_Crow_Looked_at_Me): an album creatively driven by the loss of the artist's wife to cancer.
+- [Igor Panarin](https://en.wikipedia.org/wiki/Igor_Panarin): Russian professor known for inaccurate predictions of US collapse and partition.
+- [Coca wine](https://en.wikipedia.org/w/index.php?title=Coca_wine): a 19th-century alcoholic beverage made with coca leaf extract.
+- [Drunken boxing](https://en.wikipedia.org/w/index.php?title=Drunken_boxing): a style of Chinese martial arts meant to mimic the movements of a drunk person.
+- [Oldest McDonald's restaurant](https://en.wikipedia.org/wiki/Oldest_McDonald%27s_restaurant): the world's oldest operating McDonald's.
+- [Vasily Arkhipov](https://en.wikipedia.org/wiki/Vasily_Arkhipov): a Soviet officer credited with averting nuclear war during the Cuban Missile Crisis.
+- [Stanislov Petrov](https://en.wikipedia.org/wiki/Stanislav_Petrov): a Soviet officer who prevented a potential nuclear crisis by recognizing a false alarm.
+- [Chandelier Tree](https://en.wikipedia.org/wiki/Chandelier_Tree): a giant California redwood with a drive-through tunnel carved into it.
+- [United States airmail service](https://en.wikipedia.org/wiki/United_States_airmail_service): early postal deliveries by airplane in the US.
+- [Centralia, Pennsylvania](https://en.wikipedia.org/wiki/Centralia,_Pennsylvania): a near-abandoned town due to an ongoing underground coal fire.
+- [Edsel Ford Fong](https://en.wikipedia.org/wiki/Edsel_Ford_Fong): a notoriously rude waiter at San Francisco's Sam Wo restaurant, became a local celebrity.
+- [Billups Neon Crossing Signal](https://en.wikipedia.org/wiki/Billups_Neon_Crossing_Signal): a unique railroad crossing signal with neon lights and an air raid siren.
+- [Probert Encyclopaedia](https://web.archive.org/web/20051215120029/http://www.probertencyclopaedia.com/): an early, extensive, now defunct online encyclopedia.
+- [Jumbo Kingdom](https://en.wikipedia.org/wiki/Jumbo_Kingdom): a gigantic floating restaurant in Hong Kong, now closed.
+- [Concealed shoes](https://en.wikipedia.org/wiki/Concealed_shoes): phenomenon of old shoes hidden in buildings.
+- [Superpermutation](https://en.wikipedia.org/wiki/Superpermutation): a mathematical concept associated with an Anime-derived proof.
+- [Futurama theorem](https://theinfosphere.org/Futurama_theorem): a mathematical theorem invented for a Futurama episode about swapping minds.
+- [Tarrare](https://en.wikipedia.org/wiki/Tarrare): a 18th-century Frenchman famed for his insatiable appetite and bizarre eating habits.
+- [Hitobashira](https://en.wikipedia.org/wiki/Hitobashira): the historical practice of entombing people in building foundations.
+- [Ibadan forest of horror](https://en.wikipedia.org/wiki/Ibadan_forest_of_horror): Nigerian site of mass graves and trafficking scandals.
+- [Quartz crisis](https://en.wikipedia.org/wiki/Quartz_crisis): the upheaval in the watchmaking industry caused by the advent of quartz watches.
+- [Rhythm 0](https://en.wikipedia.org/wiki/Rhythm_0): a performance in which the audience could do anything they wished to the performer.
+- [Priest hole](https://en.wikipedia.org/wiki/Priest_hole): secret hiding places for Catholic priests in English houses during persecutions.
+- [Economy coffin](https://en.wikipedia.org/wiki/Economy_coffin): a coffin designed for reuse or for mass burials to save costs.
+- [London deep-level shelters](https://en.wikipedia.org/wiki/London_deep-level_shelters): deep underground bunkers built during WWII.
+- [Cheyenne Mountain Complex](https://en.wikipedia.org/wiki/Cheyenne_Mountain_Complex): a secure military installation built into a Colorado mountain.
+- [Myles Standish Burial Ground](https://en.wikipedia.org/wiki/Myles_Standish_Burial_Ground): historic cemetery in Massachusetts with graves from early colonial days.
+- [Puyi](https://en.wikipedia.org/wiki/Puyi): the last Emperor of China who would later interact with Forbidden City visitors as a commoner.
+- [Sonic hedgehog protein](https://en.wikipedia.org/wiki/Sonic_hedgehog_protein): a glycoprotein named after the character.
+- [Immovable Ladder](https://en.wikipedia.org/wiki/Immovable_Ladder): a wooden ladder kept in the same place for centuries at the Church of the Holy Sepulchre due to rivalries between religious sects.
+- [Anting](https://en.wikipedia.org/wiki/Anting_(behavior)): a behavior in which birds rub insects, usually ants, on their feathers.
+- [Gloomy Sunday](https://en.wikipedia.org/wiki/Gloomy_Sunday): a song supposedly with negative psychological effects.
+- [Snake Island](https://en.wikipedia.org/wiki/Ilha_da_Queimada_Grande): a Brazilian island notorious for its dense and deadly population of snakes.
+- [X Windows Boot Stipple](https://matttproud.com/blog/posts/x-window-system-boot-stipple.html): someone's investigation into the origin of the pixel graphic pattern displayed when the X Window System boots.
+- [Arshile Gorky](https://en.wikipedia.org/wiki/Arshile_Gorky): a pioneer of abstract expressionism and influential Armenian-American artist.
+- [Silphium](https://en.wikipedia.org/wiki/Silphium): an ancient, now-extinct plant once prized for its medicinal and culinary uses.
+- [Lion of Babylon](https://en.wikipedia.org/wiki/Lion_of_Babylon_(statue)): an ancient Mesopotamian statue.
+- [Gary Kildall](https://en.wikipedia.org/wiki/Gary_Kildall): computer scientist and creator of the CP/M operating system with a somewhat tragic story.
+- [Wonton font](https://en.wikipedia.org/wiki/Wonton_font): a decorative typeface designed to evoke stereotyped East Asian scripts.
+- [Ian Murdock](https://en.wikipedia.org/wiki/Ian_Murdock): founder of the Debian GNU/Linux operating system.
+- [SafeHarborGames.net](https://www.safeharborgames.net/): an apparently active board and card game website with a dated aesthetic.
+- [Goldin Finance 117](https://en.wikipedia.org/wiki/Goldin_Finance_117): an unfinished, supertall skyscraper in China.
+- [Principality of Sealand](https://en.wikipedia.org/wiki/Principality_of_Sealand): a self-proclaimed micronation on a former WWII sea fort off England's coast.
+- [Doctor DOS Betamax's DOS Website](https://www.chebucto.ns.ca/~ak621/DOS/index.html): a passionate website about DOS, probably a time capsule.
+- [Valeriepieris circle](https://en.wikipedia.org/wiki/Valeriepieris_circle): a circle drawn on a map enclosing most of the world's population.
+- [Abuja Airplane House](https://en.wikipedia.org/wiki/Abuja_Airplane_House): a residence in Nigeria shaped like an airplane.
+- [Giraffe Manor](https://en.wikipedia.org/wiki/Giraffe_Manor): a boutique hotel in Kenya where giraffes freely roam among guests.
+- [The Black Hole of Calcutta](https://en.wikipedia.org/wiki/Black_Hole_of_Calcutta): an infamous small prison cell.
+- [Bokhdi Amusement Park](https://en.wikipedia.org/wiki/Bokhdi_Amusement_Park): an abandoned amusement park in Turkmenistan with some interesting visitors.
+- [Darvaza gas crater](https://en.wikipedia.org/wiki/Darvaza_gas_crater): a fiery, continuously burning sinkhole in Turkmenistan.
+- [Ennigaldi-Nanna's museum](https://en.wikipedia.org/wiki/Ennigaldi-Nanna%27s_museum): the world's oldest known museum dating back to ancient Mesopotamia.
+- [Gate Tower Building](https://en.wikipedia.org/wiki/Gate_Tower_Building): a Japanese office building pierced by a highway passing through its middle floors.
+- [Hallstatt](https://en.wikipedia.org/wiki/Hallstatt_(China)): a Chinese town built as an imitation of an Austrian village.
+- [Haesindang Park](https://en.wikipedia.org/wiki/Haesindang_Park): a South Korean park famous for its collection of certain wooden statues.
+- [Hang Nga Guesthouse](https://en.wikipedia.org/wiki/H%E1%BA%B1ng_Nga_Guesthouse): structure in Vietnam that reminds me of something from Morrowind.
+- [Jackson Hole](https://en.wikipedia.org/wiki/Jackson_Hole,_China): an American themed town in China.
+- [Khewra Salt Mine](https://en.wikipedia.org/wiki/Khewra_Salt_Mine): the world's second largest salt mine.
+- [Kirisuto no Haka](https://en.wikipedia.org/wiki/Kirisuto_no_Haka): a site in Japan claiming to be the true burial place of Jesus.
+- [Living root bridge](https://en.wikipedia.org/wiki/Living_root_bridge): bridges made from the interwoven roots of trees.
+- [Porcelain Palace](https://en.wikipedia.org/wiki/Porcelain_Palace): the world's largest public toilet complex.
+- [Rednaxela Terrace](https://en.wikipedia.org/wiki/Rednaxela_Terrace): a street in Hong Kong with a name likely the result of an adminstrative mistake.
+- [Robot Building](https://en.wikipedia.org/wiki/Robot_Building): a Bangkok office building designed to look like a robot.
+- [Roopkund](https://en.wikipedia.org/wiki/Roopkund): an Indian Himalayan lake famous for hundreds of ancient human skeletons.
+- [Ryugyong Hotel](https://en.wikipedia.org/wiki/Ryugyong_Hotel): a massive, never-opened hotel skyscraper in North Korea.
+- [Thames Town](https://en.wikipedia.org/wiki/Thames_Town): a new town in China built to replicate classic English architectural styles.
+- [The Line](https://en.wikipedia.org/wiki/The_Line,_Saudi_Arabia): a planned "smart city" in Saudi Arabia.
+- [Villaggio Mall](https://en.wikipedia.org/wiki/Villaggio_Mall): a Venice-themed shopping mall in Doha, Qatar, known for its indoor canal.
+- [Wang Saen Suk](https://en.wikipedia.org/wiki/Wang_Saen_Suk): a Thai Buddhist park featuring graphic depictions of Buddhist hell.
+- [Wonderland Amusement Park](https://en.wikipedia.org/wiki/Wonderland_Amusement_Park_(Beijing)): an unfinished and abandoned amusement park near Beijing, China.
+- [Luna Park](https://en.wikipedia.org/wiki/Luna_Park_(Coney_Island,_1903)): a famous historic amusement park in Coney Island, New York.
+- [Brennender Berg](https://en.wikipedia.org/wiki/Brennender_Berg): an underground coal fire in Germany that has been burning for centuries.
+- [The Broomway](https://en.wikipedia.org/wiki/The_Broomway): a dangerous ancient tidal causeway in Essex, England.
+- [Cologne sewerage system](https://en.wikipedia.org/wiki/Cologne_sewerage_system): an system of historical sewers beneath Cologne, Germany.
+- [The Crooked House](https://en.wikipedia.org/wiki/The_Crooked_House): a famously tilted pub in England.
+- [Crooked Forest](https://en.wikipedia.org/wiki/Crooked_Forest): a grove of oddly bent pine trees in Poland.
+- [Flannan Isles Lighthouse](https://en.wikipedia.org/wiki/Flannan_Isles_Lighthouse): site of the mysterious 1900 disappearance of three lighthouse keepers.
+- [I Love You Will U Marry Me](https://en.wikipedia.org/wiki/I_Love_You_Will_U_Marry_Me): a famous graffiti marriage proposal painted and preserved in Sheffield.
+- [New York-Dublin Portal](https://en.wikipedia.org/wiki/New_York%E2%80%93Dublin_Portal): a public video feed between New York and Dublin that was shutdown due to inappropriate behavior.
+- [Predjama Castle](https://en.wikipedia.org/wiki/Predjama_Castle): a Slovenian castle built into a cave mouth.
+- [White's](https://en.wikipedia.org/wiki/White%27s): one of the oldest and most exclusive clubs in London.
+- [Zeljava Air Base](https://en.wikipedia.org/wiki/%C5%BDeljava_Air_Base): a huge underground Yugoslav military airbase now abandoned.
+- [Devil's Island](https://en.wikipedia.org/wiki/Devil%27s_Island): a notorious French penal colony off the coast of South America.
+- [Fordlandia](https://en.wikipedia.org/wiki/Fordl%C3%A2ndia): Henry Ford's failed attempt to build a rubber-producing utopia in the Amazon.
+- [Hacienda Napoles](https://en.wikipedia.org/wiki/Hacienda_N%C3%A1poles): Pablo Escobar's extravagant estate in Colombia.
+- [Island of the Dolls](https://en.wikipedia.org/wiki/Island_of_the_Dolls): an island in Mexico's canals covered in hanging and decaying dolls.
+- [El Ojo](https://en.wikipedia.org/wiki/El_Ojo): a mysterious circular floating island in Argentina.
+- [Freedom Ship](https://en.wikipedia.org/wiki/Freedom_Ship): a never-built proposal for a massive floating city.
+- [33 Thomas Street](https://en.wikipedia.org/wiki/33_Thomas_Street): a windowless skyscraper in New York.
+- [Bishop Castle](https://en.wikipedia.org/wiki/Bishop_Castle): a hand-built, ever-expanding stone castle in rural Colorado.
+- [Bubbly Creek](https://en.wikipedia.org/wiki/Bubbly_Creek): a heavily polluted Chicago river branch known for bubbles from decomposing animal waste.
+- [Clinton Road](https://en.wikipedia.org/wiki/Clinton_Road_(New_Jersey)): a New Jersey road infamous for ghost stories and mysterious happenings.
+- [Colma, California](https://en.wikipedia.org/wiki/Colma,_California): a small city notable for having more dead people than living ones.
+- [Desert of Maine](https://en.wikipedia.org/wiki/Desert_of_Maine): a large patch of exposed glacial sand in otherwise forested Maine.
+- [Dixie Square Mall](https://en.wikipedia.org/wiki/Dixie_Square_Mall): an abandoned Illinois shopping mall.
+- [Florence Y'all Water Tower](https://en.wikipedia.org/wiki/Florence_Y%27all_Water_Tower): a water tower with an unusual greeting.
+- [Habitat 67](https://en.wikipedia.org/wiki/Habitat_67): a futuristic modular apartment housing complex in Montreal.
+- [Holy Land Experience](https://en.wikipedia.org/wiki/Holy_Land_Experience): a former biblical theme park in Florida.
+- [Indianapolis Catacombs](https://en.wikipedia.org/wiki/Indianapolis_Catacombs): a network of tunnels and storage vaults beneath Indianapolis city market.
+- [Island of California](https://en.wikipedia.org/wiki/Island_of_California): the mistaken belief that California was an island off the coast of North America.
+- [Just Room Enough Island](https://en.wikipedia.org/wiki/Just_Room_Enough_Island): the smallest inhabited island, with just enough space for a single house.
+- [KRDK-TV mast](https://en.wikipedia.org/wiki/KRDK-TV_mast): one of the tallest structures in the world, used for television broadcasting in North Dakota.
+- [London Bridge in Arizona](https://en.wikipedia.org/wiki/London_Bridge_(Lake_Havasu_City)): a relocated London bridge reconstructed in Lake Havasu City, Arizona.
+- [Mary Ellis grave](https://en.wikipedia.org/wiki/Mary_Ellis_grave): a lone colonial-era grave now surrounded by a New Jersey parking lot.
+- [Mexia Supermarket](https://en.wikipedia.org/wiki/Mexia_Supermarket): a supermarket that was closed and abandoned for months before being cleaned out.
+- [Mojave phone booth](https://en.wikipedia.org/wiki/Mojave_phone_booth): a remote phone booth in the Mojave Desert.
+- [North Oaks, Minnesota](https://en.wikipedia.org/wiki/North_Oaks,_Minnesota): a private city known for restricting mapping and photography.
+- [Sam Kee Building](https://en.wikipedia.org/wiki/Sam_Kee_Building): a famously narrow commercial building in Vancouver, Canada.
+- [Winchester Mystery House](https://en.wikipedia.org/wiki/Winchester_Mystery_House): a sprawling, labyrinthine California mansion with an odd story.
+- [World's littlest skyscraper](https://en.wikipedia.org/wiki/World%27s_littlest_skyscraper): an unusually tiny high-rise in Wichita Falls, Texas, built as part of a con.
+- [Banjawarn Station](https://en.wikipedia.org/wiki/Banjawarn_Station): an Australian sheep station possibly linked to apocalypse cult activity.
+- [Burning Mountain](https://en.wikipedia.org/wiki/Burning_Mountain): a hill in Australia with a continuous underground coal fire.
+- [Jellyfish Lake](https://en.wikipedia.org/wiki/Jellyfish_Lake): a lake in Palau home to millions of non-stinging jellyfish.
+- [Complaint tablet to Ea-nasir](https://en.wikipedia.org/wiki/Complaint_tablet_to_Ea-n%C4%81%E1%B9%A3ir): an ancient Babylonian letter of complaint about poor-quality copper.
+- [Erfurt latrine disaster](https://en.wikipedia.org/wiki/Erfurt_latrine_disaster): a fatal 12th-century accident where people fell into a latrine during a meeting.
+- [Hegelochus](https://en.wikipedia.org/wiki/Hegelochus_(actor)): an ancient Greek actor remembered for a notorious mispronunciation.
+- [Onfim](https://en.wikipedia.org/wiki/Onfim): a medieval Russian boy whose childhood writings on birch bark have survived.
+- [Glass delusion](https://en.wikipedia.org/wiki/Glass_delusion): a historical psychiatric phenomenon where people believed they were made of glass.
+- [Nottingham cheese riot](https://en.wikipedia.org/wiki/Nottingham_cheese_riot): a riot over cheese prices in 18th-century England.
+- [Andrew Johnson's drunken vice-presidential inaugural address](https://en.wikipedia.org/wiki/Andrew_Johnson%27s_drunken_vice-presidential_inaugural_address): incident when the future US president gave an embarrassing speech while intoxicated.
+- [John Bentinck](https://en.wikipedia.org/wiki/John_Bentinck,_5th_Duke_of_Portland): an eccentric English duke known for reclusive habits and underground tunnels.
+- [Johann Georg August Galletti](https://en.wikipedia.org/wiki/Johann_Georg_August_Galletti): a German historian remembered for unintentionally humorous statements.
+- [I Am Going to the Lordy](https://en.wikipedia.org/wiki/I_Am_Going_to_the_Lordy): a low-quality poem written by Charles J. Guiteau before his execution.
+- [Jerome of Sandy Cove](https://en.wikipedia.org/wiki/Jerome_of_Sandy_Cove): a mysterious Canadian castaway found with both legs amputated.
+- [Kentucky meat shower](https://en.wikipedia.org/wiki/Kentucky_meat_shower): a baffling 1876 incident where pieces of meat rained down in Kentucky.
+- [London Beer Flood](https://en.wikipedia.org/wiki/London_Beer_Flood): a 1814 industrial accident that released a flood of beer into London streets.
+- [New England vampire panic](https://en.wikipedia.org/wiki/New_England_vampire_panic): a 19th-century outbreak of anti-vampire exhumations and rituals.
+- [Heinrich Schliemann](https://en.wikipedia.org/wiki/Heinrich_Schliemann): the archaeologist who discovered and damaged the site believed to be ancient Troy.
+- [Toronto circus riot](https://en.wikipedia.org/wiki/Toronto_circus_riot): a 19th-century riot between circus performers and local firemen.
+- [Great Michigan Pizza Funeral](https://en.wikipedia.org/wiki/Great_Michigan_Pizza_Funeral): a 1973 disposal of recalled pizzas.
+- [Great Molasses Flood](https://en.wikipedia.org/wiki/Great_Molasses_Flood): a deadly 1919 flood of molasses that swept through Boston.
+- [Julia Butterfly Hill](https://en.wikipedia.org/wiki/Julia_Butterfly_Hill): environmentalist famous for living in a redwood tree for over two years to protest logging.
+- [Masabumi Hosono](https://en.wikipedia.org/wiki/Masabumi_Hosono): the only Japanese survivor of the Titanic, shunned at home for having survived.
+- [Kilroy was here](https://en.wikipedia.org/wiki/Kilroy_was_here): a popular WWII-era graffiti tag found around the world.
+- [Self-propelled barge T-36](https://en.wikipedia.org/wiki/Self-propelled_barge_T-36): the crew survived 49 days on 3 days of food.
+- [Albert Stevens](https://en.wikipedia.org/wiki/Albert_Stevens): a man who unknowingly received a dose of radiation as part of US government testing.
+- [Dean scream](https://en.wikipedia.org/wiki/Dean_scream): a widely broadcast outburst by presidential candidate Howard Dean that ruined his 2004 campaign.
+- [Rudi Dekkers](https://en.wikipedia.org/wiki/Rudi_Dekkers): Dutch flight school owner who trained the 9/11 hijackers and got into various other trouble.
+- [John McAfee](https://en.wikipedia.org/wiki/John_McAfee): former eccentric antivirus software pioneer and fugitive.
+- [Great Canadian Maple Syrup Heist](https://en.wikipedia.org/wiki/Great_Canadian_Maple_Syrup_Heist): the theft of millions of dollars worth of maple syrup in Canada.
+- [Monty Hall Problem](https://en.wikipedia.org/wiki/Monty_Hall_problem): a counterintuitive probability puzzle.
+- [Numbers station](https://en.wikipedia.org/wiki/Numbers_station): mysterious shortwave radio stations broadcasting coded messages.
+- [Ruth Belville](https://en.wikipedia.org/wiki/Ruth_Belville): the "Greenwich Time Lady" who sold accurate time in Victorian London by letting people look at her watch.
+- [Bouba/kiki effect](https://en.wikipedia.org/wiki/Bouba/kiki_effect): a psychological experiment showing a cross-cultural link between sounds and shapes.
+- [Contronym](https://en.wikipedia.org/wiki/Contronym): a word with multiple opposing meanings.
+- [Hopi time controversy](https://en.wikipedia.org/wiki/Hopi_time_controversy): debate about whether the Hopi language contains concepts of time.
+- [Pronounciation of GIF](https://en.wikipedia.org/wiki/Pronunciation_of_GIF): the long-running dispute over whether to say "jif" or "gif."
+- [Response to sneezing](https://en.wikipedia.org/wiki/Response_to_sneezing): cultural customs and superstitions regarding sneezing.
+- [Robert Shields](https://en.wikipedia.org/wiki/Robert_Shields_(diarist)): a man who documented his life in five-minute intervals for decades.
+- [Rohonc Codex](https://en.wikipedia.org/wiki/Rohonc_Codex): a mysterious illustrated manuscript in an undeciphered script.
+- [Skunked term](https://en.wikipedia.org/wiki/Skunked_term): words whose meaning has become unclear or disputed due to changing usage.
+- [Uncleftish Beholding](https://en.wikipedia.org/wiki/Uncleftish_Beholding): an essay explaining atomic theory using "pure English".
+- [Unpaired word](https://en.wikipedia.org/wiki/Unpaired_word): a word that seems like it should have a related opposite, but doesn't.
+- [Gilbert U-238 Atomic Energy Laboratory](https://en.wikipedia.org/wiki/Gilbert_U-238_Atomic_Energy_Laboratory): a 1950s children's science kit that actually included radioactive materials.
+- [Nobel disease](https://en.wikipedia.org/wiki/Nobel_disease): the phenomenon of Nobel laureates developing eccentric or unscientific ideas later in life.
+- [Timeline of the far future](https://en.wikipedia.org/wiki/Timeline_of_the_far_future): projections of major cosmological or geological events in the distant future.
+- [Anatoli Bugorski](https://en.wikipedia.org/wiki/Anatoli_Bugorski): a Russian scientist who survived being hit by a particle accelerator beam.
+- [Impossible color](https://en.wikipedia.org/wiki/Impossible_color): colors that cannot normally be perceived by the human eye.
+- [Shower-curtain effect](https://en.wikipedia.org/wiki/Shower-curtain_effect): the unexplained tendency for shower curtains to billow inward when water is running.
+- [Bone Wars](https://en.wikipedia.org/wiki/Bone_Wars): a rivalry between paleontologists Othniel Marsh and Edward Cope during the 19th-century American "dinosaur rush."
+- [Floyd Collins](https://en.wikipedia.org/wiki/Floyd_Collins): a cave explorer trapped and killed in a Kentucky cave, sparking major media coverage.
+- [Waffle House Index](https://en.wikipedia.org/wiki/Waffle_House_Index): an informal metric of disaster severity based on whether Waffle House restaurants remain open.
+- [Alien hand syndrome](https://en.wikipedia.org/wiki/Alien_hand_syndrome): a rare neurological disorder causing one hand to act involuntarily.
+- [Gen Z stare](https://en.wikipedia.org/wiki/Gen_Z_stare): a reported trend of Gen Z staring expressionlessly in response to questions.
+- [Millenial pause](https://en.wikipedia.org/wiki/Millennial_pause): a reported phenomenon where Millenials leave an awkward pause before speaking on camera.
+- [Therac-25](https://en.wikipedia.org/wiki/Therac-25): a radiation therapy machine responsible for accidents due to software failure.
+- [Advice to a Friend on Choosing a Mistress](https://en.wikipedia.org/wiki/Advice_to_a_Friend_on_Choosing_a_Mistress): a letter by Benjamin Franklin offering unconventional advice.
+- [Jeanne Clement](https://en.wikipedia.org/wiki/Jeanne_Calment): the oldest verified person, who lived to age 122.
+- [Benjaman Kyle](https://en.wikipedia.org/wiki/Benjaman_Kyle): a man with mysterious amnesia who could not recall his identity.
+- [Donald Mastick](https://en.wikipedia.org/wiki/Donald_Mastick): a chemist who accidentally ingested plutonium.
+- [Paris Syndrome](https://en.wikipedia.org/wiki/Paris_syndrome): the disappointment felt by some tourists in Paris.
+- [Great Sheep Panic](https://en.wikipedia.org/wiki/Great_Sheep_Panic): a 19th-century incident where sheep across southern England inexplicably stampeded.
+- [Human](https://en.wikipedia.org/wiki/Human): the article is interesting because it describes Humans in a detached way as if they were just another animal.
+- [Street dogs in Moscow](https://en.wikipedia.org/wiki/Street_dogs_in_Moscow): the unique population of stray dogs in Moscow, some of which travel by subway.
+- [Ming the clam](https://en.wikipedia.org/wiki/Ming_(clam)): the oldest known animal, a clam estimated to be over 500 years old.
+- [Penelope the platypus](https://en.wikipedia.org/wiki/Penelope_(platypus)): an individual platypus known for faking pregnancy and escaping a zoo.
+- [Plant arithmetic](https://en.wikipedia.org/wiki/Plant_arithmetic): the apparent ability of plants to perform kinds of arithmetic calculations.
+- [300-page iPhone bill](https://en.wikipedia.org/wiki/300-page_iPhone_bill): early AT&T iPhone usage bills were sometimes massive.
+- [Bild Lilli Doll](https://en.wikipedia.org/wiki/Bild_Lilli_doll): a German doll that inspired the creation of Barbie.
+- [Friendly Floatees spill](https://en.wikipedia.org/wiki/Friendly_Floatees_spill): a shipping accident where thousands of toy ducks were lost at sea and used to track ocean currents.
+- [Shoe-fitting fluoroscope](https://en.wikipedia.org/wiki/Shoe-fitting_fluoroscope): an X-ray machine once commonly used in shoe stores to fit shoes to feet.
+- [Dagen H](https://en.wikipedia.org/wiki/Dagen_H): Sweden's dramatic switch from left- to right-side driving in 1967.
+- [2018 Horizon Air Bombardier Q400 incident](https://en.wikipedia.org/wiki/2018_Horizon_Air_Bombardier_Q400_incident): an airliner stolen and crashed by an apparently thrill-seeking ground worker in Seattle-Tacoma.
+- [Aeroflot Flight 6502](https://en.wikipedia.org/wiki/Aeroflot_Flight_6502): a Soviet plane crash caused by a pilot flying "blind" as a bet.
+- [China National Highway 110 traffic jam](https://en.wikipedia.org/wiki/China_National_Highway_110_traffic_jam): an exceptionally long and slow traffic jam that lasted weeks in 2010.
+- [Human mail](https://en.wikipedia.org/wiki/Human_mail): instances of people mailing themselves via postal services.
+- [Mehran Karimi Nasseri](https://en.wikipedia.org/wiki/Mehran_Karimi_Nasseri): an Iranian man who lived in Paris Charles de Gaulle airport for 18 years.
+- [The wrong type of snow](https://en.wikipedia.org/wiki/The_wrong_type_of_snow): a much-mocked British phrase for train delays during winter weather.
+- [.su domain](https://en.wikipedia.org/wiki/.su): the internet domain assigned to the Soviet Union, still sometimes in use.
+- [999 phone charging myth](https://en.wikipedia.org/wiki/999_phone_charging_myth): a mistaken belief that dialing emergency services charges your mobile phone battery.
+- [Crungus](https://en.wikipedia.org/wiki/Crungus): a bizarre creature invented by an AI image generator with a nonsense prompt.
+- [GPT-4Chan](https://en.wikipedia.org/wiki/GPT-4Chan): an AI language model trained on 4chan posts.
+- [Tay](https://en.wikipedia.org/wiki/Tay_(chatbot)): a Microsoft Twitter chatbot shut down after it started posting offensive tweets.
+- [Trojan Room coffee pot](https://en.wikipedia.org/wiki/Trojan_Room_coffee_pot): the world's first webcam, created to monitor a coffee pot at Cambridge University.
+- [Action Park](https://en.wikipedia.org/wiki/Action_Park): a notorious New Jersey amusement park infamous for its dangerous rides and accidents.
+- [Frozen Peas](https://en.wikipedia.org/wiki/Frozen_Peas): a famous outtake of Orson Welles struggling to record a frozen food commercial.
+- [Lawnchair Larry flight](https://en.wikipedia.org/wiki/Lawnchair_Larry_flight): a man who flew in a lawn chair attached to weather balloons over Los Angeles.
+- [Hobby tunneling](https://en.wikipedia.org/wiki/Hobby_tunneling): the act of digging tunnels for personal enjoyment or obsession.
+- [Katrina refrigerator](https://en.wikipedia.org/wiki/Katrina_refrigerator): a phenomenon of ruined refrigerators stacked on the streets after Hurricane Katrina.
+- [Project Graham](https://en.wikipedia.org/wiki/Project_Graham): a model of what the human body might look like if it evolved to survive car crashes.
+- [William Utermohlen](https://en.wikipedia.org/wiki/William_Utermohlen): an artist who documented his decline from Alzheimer's disease through self-portraits.
+- [Confessions of an English Opium-Eater](https://en.wikipedia.org/wiki/Confessions_of_an_English_Opium-Eater): a literary autobiography detailing drug addiction in 19th-century England.
+- [Henry Darger](https://en.wikipedia.org/wiki/Henry_Darger): a reclusive hospital janitor posthumously discovered to be a prolific outsider artist.
+- [Lion-Eating Poet in the Stone Den](https://en.wikipedia.org/wiki/Lion-Eating_Poet_in_the_Stone_Den): a coherent Chinese poem written with nearly all words pronounced "shi" but different characters.
+- [Wonders of the East](https://en.wikipedia.org/wiki/Wonders_of_the_East): an Old English text describing strange lands and creatures.
+- [Great Stalacpipe Organ](https://en.wikipedia.org/wiki/Great_Stalacpipe_Organ): the world's largest musical instrument, made from cave stalactites in Virginia.
+- [Pyrophone](https://en.wikipedia.org/wiki/Pyrophone): a musical instrument producing sound via explosions.
+- [Ram Ranch and Grant MacDonald](https://en.wikipedia.org/wiki/Ram_Ranch): a curious song and eccentric artist.
+- [Amore](https://en.wikipedia.org/wiki/Amore_(Alessandra_Mussolini_album)): an album released by Alessandra Mussolini, granddaughter of the Italian dictator.
+- [Backstroke of the West](https://en.wikipedia.org/wiki/Backstroke_of_the_West): a notoriously poor Chinese-to-English DVD translation of "Star Wars: Episode III."
+- [Logistics](https://en.wikipedia.org/wiki/Logistics_(film)): an extremely lengthy experimental film showing the entire production chain of a pedometer in reverse.
+- [2005 Connecticut false evacuation alert](https://en.wikipedia.org/wiki/2005_Connecticut_false_evacuation_alert): an accidental emergency broadcast that was overwhelmingly ignored by residents despite appearing real.
+- [2013 Emergency Alert System hijackings](https://en.wikipedia.org/wiki/2013_Emergency_Alert_System_hijackings): a series of incidents where US TV emergency alerts were spoofed with false zombie attack warnings.
+- [2018 Hawaii false missile alert](https://en.wikipedia.org/wiki/2018_Hawaii_false_missile_alert): a mistaken statewide emergency alert warning of an incoming ballistic missile.
+- [Captain Midnight broadcast signal intrusion](https://en.wikipedia.org/wiki/Captain_Midnight_broadcast_signal_intrusion): a 1986 television signal hijacking protest against satellite TV fees.
+- [Max Headroom signal hijacking](https://en.wikipedia.org/wiki/Max_Headroom_signal_hijacking): a 1987 incident where Chicago TV broadcasts were interrupted by a disguised intruder.
+- [Mikhail Gorbachev Pizza Hut commercial](https://en.wikipedia.org/wiki/Mikhail_Gorbachev_Pizza_Hut_commercial): the former Soviet leader appearing in a 1997 Pizza Hut commercial.
+- [Southern Television broadcast interruption](https://en.wikipedia.org/wiki/Southern_Television_broadcast_interruption): a 1977 British TV signal hijack delivering a bizarre message. 
+- [Turner Doomsday Video](https://en.wikipedia.org/wiki/Turner_Doomsday_Video): a video created by CNN to broadcast in the event of the end of the world.
+- [TV pickup](https://en.wikipedia.org/wiki/TV_pickup): a phenomenon in the UK where power usage spikes during TV ad breaks due to kettle usage.
+- [Battle of B-R5RB](https://en.wikipedia.org/wiki/Battle_of_B-R5RB): one of the largest and costliest battles in the history of the game EVE Online.
+- [Chain World](https://en.wikipedia.org/wiki/Chain_World): a unique Minecraft world passed between players via USB stick.
+- [Corrupted Blood incident](https://en.wikipedia.org/wiki/Corrupted_Blood_incident): a virtual pandemic spread in World of Warcraft, studied by researchers.
+- [Hong Kong 97](https://en.wikipedia.org/wiki/Hong_Kong_97_(video_game)): a curious and notoriously bad unlicensed video game for the Super Famicom.
+- [The Bogdanoff Twins](https://en.wikipedia.org/wiki/Igor_and_Grichka_Bogdanoff): French twin media personalities known for their eccentricity.
+- [Unfavorable Semicircle](https://en.wikipedia.org/wiki/Unfavorable_Semicircle): an enigmatic YouTube channel that uploaded thousands of bizarre videos.
+- [Meow Wars](https://en.wikipedia.org/wiki/Meow_Wars): a 1990s Usenet flame war involving email "meowing."
+- [Charles Harrelson](https://en.wikipedia.org/wiki/Charles_Harrelson): contract killer and father of actor Woody Harrelson.
+- [Crypt of Civilization](https://en.wikipedia.org/wiki/Crypt_of_Civilization): a time capsule at Oglethorpe University sealed in 1940, to be opened in 8113.
+- [Man in the Hole](https://en.wikipedia.org/wiki/Man_of_the_Hole): an indigenous man in Brazil, last of his tribe, living alone for decades.
+- [Bitcoin buried in Newport landfill](https://en.wikipedia.org/wiki/Bitcoin_buried_in_Newport_landfill): a hard drive with a massive fortune in Bitcoin supposedly lost in a UK landfill.
+- [Oil futures drunk-trading incident](https://en.wikipedia.org/wiki/Oil_futures_drunk-trading_incident): a trader who cost his company millions by trading while intoxicated.
+- [2014 Midwest FurFest gas attack](https://en.wikipedia.org/wiki/2014_Midwest_FurFest_gas_attack): an apparent chlorine gas attack during a furry convention in Illinois.
+- [Animal trial](https://en.wikipedia.org/wiki/Animal_trial): medieval legal proceedings in which animals were prosecuted for crimes.
+- [Attempted theft of George Washington's skull](https://en.wikipedia.org/wiki/Attempted_theft_of_George_Washington%27s_skull): a failed 1830 plot to steal the first president's skull from his tomb.
+- [Glasgow ice cream wars](https://en.wikipedia.org/wiki/Glasgow_ice_cream_wars): a violent turf war between Scottish ice cream van operators.
+- [Hobby Lobby smuggling scandal](https://en.wikipedia.org/wiki/Hobby_Lobby_smuggling_scandal): US business caught smuggling ancient artifacts from the Middle East.
+- [Illegal flower tribute](https://en.wikipedia.org/wiki/Illegal_flower_tribute): a humorous phrase from authorities warning against leaving flowers at the Google HQ in China.
+- [Perry Mason moment](https://en.wikipedia.org/wiki/Perry_Mason_moment): when key evidence dramatically surfaces during a trial, changing the outcome.
+- [Ugly law](https://en.wikipedia.org/wiki/Ugly_law): historic US laws prohibiting the appearance of "unsightly" people in public.
+- [United Airlines Flight 976](https://en.wikipedia.org/wiki/United_Airlines_Flight_976): a notorious 1995 in-flight air rage incident on a transatlantic flight.
+- [Tacoma Narrows Bridge collapse](https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940)): the spectacular 1940 collapse of a suspension bridge due to wind-induced oscillations.
+- [Attack of the Dead Men](https://en.wikipedia.org/wiki/Attack_of_the_Dead_Men): WWI counterattack by Russian soldiers despite being poisoned by gas.
+- [Ngogo chimpanzee war](https://en.wikipedia.org/wiki/Ngogo_chimpanzee_war): a long-term chimpanzee conflict studied in Uganda.
+- [Mercy Brown vampire incident](https://en.wikipedia.org/wiki/Mercy_Brown_vampire_incident): a real-life case that fueled vampire folklore in New England.
+- [Fan death](https://en.wikipedia.org/wiki/Fan_death): a South Korean urban legend that electric fans can kill people by suffocation at night.
+- [Green Boots and "Rainbow Valley"](https://en.wikipedia.org/wiki/Green_Boots): the nickname for a deceased Everest climber whose body acts as a landmark.
+- [Hell money](https://en.wikipedia.org/wiki/Hell_money): imitation banknotes burned in East Asian ancestral rites for the afterlife.
+- [Sogen Kato](https://en.wikipedia.org/wiki/Sogen_Kato): a Japanese man whose death went unnoticed for decades, sparking a government scandal.
+- [London Necropolis railway station](https://en.wikipedia.org/wiki/London_Necropolis_railway_station): a former dedicated train station for transporting the dead to cemeteries outside London.
+- [Elmer McCurdy](https://en.wikipedia.org/wiki/Elmer_McCurdy): an outlaw whose mummified body became a carnival attraction for decades after his death, later unknowingly.
+- [Prohibition in the United States](https://en.wikipedia.org/wiki/Prohibition_in_the_United_States): when the US tried to outlaw alcohol.
+- [Micromort](https://en.wikipedia.org/wiki/Micromort): a measure of how deadly or risky activities are.
+- [Oliver Cromwell's Head](https://en.wikipedia.org/wiki/Oliver_Cromwell%27s_head): severed in 1661 and then displayed or privately owned until being burried in 1960.
+- [Salish Sea human foot discoveries](https://en.wikipedia.org/wiki/Salish_Sea_human_foot_discoveries): phenomenon of human feet being found on the coast of Canada.
+- [Somerton Man](https://en.wikipedia.org/wiki/Somerton_Man): an unidentified man found dead on an Australian beach in 1948.
+- [Xin Zhui](https://en.wikipedia.org/wiki/Xin_Zhui): the remarkably well-preserved body of a Chinese noblewoman from over 2,000 years ago.
+- [Cartesian theater](https://en.wikipedia.org/wiki/Cartesian_theater): a philosophical concept critiquing the idea of a central mental "stage" where consciousness observes experience.
+- [Lychgate](https://en.wikipedia.org/wiki/Lychgate): the covered gateway at the entrance to a traditional English churchyard.

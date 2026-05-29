@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css?v=1779266050.7458577" />
-        <link rel="stylesheet" href="vim.css?v=1779266050.7458577" />
-        <link rel="shortcut icon" href="favicon.ico?v=1779266050.7458577" />
+        <link rel="stylesheet" href="style.css?v=1780064777.3729265" />
+        <link rel="stylesheet" href="vim.css?v=1780064777.3729265" />
+        <link rel="shortcut icon" href="favicon.ico?v=1780064777.3729265" />
         <title>gdtyra :: Command Reference</title>
     </head>
     <body>
@@ -62,12 +62,13 @@
     <li><a href="#curl-download-or-make-various-requests-over-http"><code>curl</code> - download or make various requests over HTTP</a></li>
     <li><a href="#socat-cat-for-sockets"><code>socat</code> - cat for sockets</a></li>
     <li><a href="#ss-investigate-socket-usage"><code>ss</code> - investigate socket usage</a></li>
+    <li><a href="#xsel-access-x11-clipboard-from-terminal"><code>xsel</code> - access X11 clipboard from terminal</a></li>
     <li><a href="#miscellaneous">Miscellaneous</a></li>
   </ul></li>
 </ul>
 
         <h3>Other Pages</h3>
-        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
+        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="curiosities.html">Curiosities</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
     </nav>
     <main class="container">
     <h1 id="command-reference">Command Reference</h1>
@@ -498,6 +499,12 @@
 <li><code>ss -tulpn</code> - display processes using and listening to TCP and UDP sockets that are listening, use numbers instead of human-readable alternatives</li>
 </ul>
 
+<h2 id="xsel-access-x11-clipboard-from-terminal"><code>xsel</code> - access X11 clipboard from terminal</h2>
+
+<ul>
+<li><code>xsel --clipboard --output</code> - write clipboard content to stdout</li>
+</ul>
+
 <h2 id="miscellaneous">Miscellaneous</h2>
 
 <ul>
@@ -524,13 +531,15 @@
 <li><code>wget -O &lt;output_path&gt; &lt;some.resource/address&gt;</code> - download a given resource to a given path</li>
 <li><code>chsh -s &lt;shell_path&gt; &lt;user&gt;</code> - change a user's login shell</li>
 <li><code>uuencode</code> and <code>uudecode</code> - binary to ASCII format</li>
+<li><code>recutils</code> - relational database operations on plain text files</li>
+<li><code>apropos</code> - search manual pages</li>
 </ul>
 
     </main>
     <footer>
-    <p class="generated_date">Generated on May 20 2026</p>
+    <p class="generated_date">Generated on May 29 2026</p>
     </footer>
-    <script src="script.js?v=1779266050.7458577"></script>
+    <script src="script.js?v=1780064777.3729265"></script>
     </body>
     </html>
     
