@@ -838,6 +838,17 @@ In C, this might be accomplished with context structs holding relevant context f
 
 In languages that have closures, you can create lambdas or function objects with relevant context bound. Similarly, partial function application achieves binding of context separately from use.
 
+### Q: Why did the Amiga have trouble running Doom or something like it?
+
+The PC used "chunky" graphics where all the data for a given pixel was stored together in memory. The Amiga used "planar" memory where components of a pixel were stored in separate planes in memory. The Amiga had been a graphical powerhouse due to its custom Copper and Blitter chipset which enabled hardware-accelerated 2D graphics. However, this architecture did not provide advantages for the raycasting engine seen in things like Doom. The PC industry moved toward faster CPUs and eventually this outpaced the specialized chips the Amiga had.
+
+Doom clones like Gloom did appear on the Amiga thanks to specialized renderers optimized for the Amiga, but even then they often used smaller viewports or simplified geometry.
+
+
+### Q: What is the nature of things that can be calculated versus things that must be simulated in steps?
+
+Some computation is "reducible" in that some future state can be predicted or known based purely on the current state. Other computation is "irreducible" and running the process itself is the only known method of determining the result. Often, a reducible process is one that is "linear" in the sense that the result is the sum of its input factors. The path of a tossed ball with no air resistance can be calculated for any time because the result is a function of time, gravity, and starting position/velocity. However, if you want to factor in air resistance, the ball's own velocity becomes a factor in that calculation and the output is no longer governed by a linear differential equation. This is also referred to as what is "integrable" or what is not. Nonlinear dynamics, branching conditions, and interdependencies are common reasons that a process is not integrable.
+
 
 ## Networks and Systems
 
@@ -1047,6 +1058,51 @@ In language models, the "attention" mechanism of a transformer architecture help
 
 It used a highly structured, rule-based approach relying on thousands of handcrafted parsing rules and templates. These rules were designed to capture common ways people might phrase questions in specific domains. It drew on curated databases and knowledge models and used Mathematica as a computational engine to produce results based on that data.
 
+### Q: How can I make an LLM question me or my framing more?
+
+- Ask the model to state how it's interpreting the question before answering, or even offer several possible interpretations.
+- Ask the model to state assumptions involved in its answer.
+- Ask the model to steel-man a completely different approach.
+- Ask the model not to over-focus on providing an immediate satisfying answer.
+- Ask the model to evaluate or rate its confidence in the framing of the question.
+- Ask the model to ask for any clarification it might need upfront.
+- Ask the model to flag bad questions.
+- Ask the model whether experts would agree or have consensus on an answer.
+- Ask the model how a human expert might check the model's answer.
+
+Perhaps something like the following in the customization prompt:
+
+```
+Before answering, briefly consider whether my question might be underspecified, 
+based on a wrong assumption, or answerable in genuinely different ways depending 
+on what I actually need — and say so if it is, even if I didn't ask for that check.
+
+Distinguish clearly between what's well-established/objective and what's your 
+judgment call or a contested question among experts. Flag your own uncertainty 
+in the framing of an answer, not just in its factual content.
+
+Don't optimize for a response that sounds complete and confident — prefer being 
+useful and correctly-scoped over sounding polished. If a simpler, more 
+falsifiable, or more measurable approach exists, lead with that before 
+elaborating into more subjective or complex territory.
+
+When relevant, tell me where an actual expert would disagree with you, or what 
+I could independently check to verify you're not missing something.
+```
+
+### Q: How does an LLM behave differently from a human expert?
+
+- Experts may have "skin in the game" or an implied alignment toward the same goals and incentives.
+- Experts have a felt sense of their own uncertainty or confusion
+- Experts often triage by cost of being wrong more than by appearing unhelpful
+- Experts build a model of who they're talking to over time
+
+### Q: How can I get an LLM to enumerate an exhaustive list of something without repeating or padding with questionable items?
+
+- Ask for the list to be tiered or ordered by confidence or importance.
+- Ask the model to evaluate whether the list is comprehensive before adding more.
+- Anchor the list to a known reference or canonical source.
+- Ask the model for an estimated count upfront and then require it to adhere to that.
 
 ## Society and Culture
 
@@ -1317,6 +1373,31 @@ Elder Futhark was developed around 150-300 CE among Germanic tribes. It was not 
 
 Anglo-Saxon Futhorc descended from Elder Futhark and was used from around the 5th to the 11th centuries, expanding the script from 24 to 28-33 runes to accommodate Old English phonemes.
 
+### Q: Why does it seem that, historically, monarchs have sought excessive expansion and, today, CEOs seek absurd amounts of growth and wealth?
+
+Historically, expansion is not caused by a single factor. It is often influenced by a desire for:
+
+- Security: conquer neighbors first to avoid being conquered
+- Power and prestige: rulers and elites seeking a kind of social status
+- Economic gain: land, taxes, trade routes, and resources
+- Internal politics: keeping nobles, armies, and interest groups happy and rewarded
+- Ideology or religion: spreading faith, culture, government, or way of life
+
+Even though we talk about kings as all-powerful people, the reality is that they were the figurehead of an organization. They were acting under influence of nobles, other rulers, and the general population beneath them.
+
+Historically, expansion was actually more about gaining people than resources. More people meant more taxpayers, more agricultural output, and more soldiers. More land meant more benefits for nobles, who pressured the king. Land meant offices and governorships, loot, and trade monopolies. It wasn't about satisfying the insatiable need of a king, but rather keeping the elite and nobility happy.
+
+Modern people often underestimate the value of prestige historically. Status among rulers was a political asset. If a king was viewed as weak, allies became less reliable, nobles became rebellious, and rivals became more aggressive to take advantage of the weakness.
+
+A broader pattern to consider is that there is an "evolutionary logic" to states. States which did not act in this way were conquered and absorbed. The world map and historical narrative we inherit today is disproportionately shaped by states that expanded aggressively.
+
+Similarly, a modern CEO with many millions at their disposal will not personally benefit from additional wealth in any meaningful way, but that's not what motivates them. Instead, CEOs pursue growth because:
+
+- Investors expect and demand it; their entire job is essentially to generate growth, that's what they do
+- If they do not grow, a competitor eventually will and may push them out of the market
+- The CEOs maintenance of their reputation and status depends on succeeding in this growth
+
+The "evolutionary logic" applies here as well -- companies that did not grow were consumed or out-competed by those that did. It doesn't even matter if the behavior of a CEO or the company is rational, the reality is that behaving in that particular way is successful in that environment whether it's rational or not.
 
 ## International
 
@@ -1401,6 +1482,33 @@ For reference, the US's approximate nominal GDP is 29.2 trillion USD.
 The UK's GDP is approximately 3.3-3.9 trillion USD.
 
 The UK falls between California and Texas in terms of GDP, with California having 4.1 trillion USD and Texas having 2.7 trillion USD.
+
+
+### Q: Why did that particular cluster of western European countries put so much effort into colonization?
+
+Western Europe occupied a particular sweet spot in 1400-1700. Portugal and Spain were the first to expand overseas as they were literally on the edge of Europe. They were geographically distant from Asian resources, and so trade was expensive and passed through many intermediaries. They had incentive to find alternate routes to Asia, particularly after the expansion of the Ottoman empire.
+
+Around 1400, China was arguably more technologically advanced than any European state. One theory as to why China did not similarly colonize is that it was largely unified under one government. The court decided to stop funding oceanic expeditions, and so the entire project stopped.
+
+Conversely, Europe was fragmented. If one nation stopped pursuing exploration and expansion, another would continue and potentially gain an advantage. Competition created pressure to explore and expand. If a profitable route was discovered, everyone needed to respond. It was similar to modern technological arms races.
+
+Europeans did not set out to conquer, per se; they set out to trade. They would establish a trading post and build a fort for protection. Then, they would start to intervene in local politics and gain military influence. They would end up controlling the territory. Britain did not go to India with the intent of controlling the population, it started as a commercial operation.
+
+It's also worth noting that Russia, the Ottomans, and the Chinese did similarly expand over land, these stories just don't dominate Western historical narratives.
+
+### Q: Why did England, a relatively small island nation, become a leader in science and medicine during the Renaissance?
+
+During the early Renaissance (1400s-1500s), the intellectual centers were arguably places like Italy, parts of the Holy Roman Empire, and The Netherlands. However, England arguably became a leader in the 1600s-1700s.
+
+The fact that it is an island may be a reason for this, not an obstacle. Compared to continental Europe, England was insulated from large-scale warfare that swept across Europe. This allowed intellectual and economic institutions to better accumulate over time. The Royal Society is a good example of this. It preserved knowledge, published results, rewarded discovery, and created networks among researchers. It "institutionalized" science.
+
+Scientific research requires surplus resources, and England became increasingly wealthy through trade, shipping, and colonial expansion, all of which are related to its position at the edge of Europe and the Atlantic ocean.
+
+Europe as a whole benefited from being particularly fragmented, while England, at the same time, benefited from being relatively unified. It participated in the competitive European environment while avoiding disadvantages of being split into smaller states during this time.
+
+Historians debate this, but some argue that the Protestant culture encouraged literacy and individual inquiry. Others believe this is overstated but, regardless, it's likely the literacy rate and education culture in England was a factor.
+
+In England at the time, knowledge was not simply "prestige" but potentially offered competitive advantages in navigation, shipbuilding, mining, manufacturing, or agriculture, generating wealth or military power.
 
 ## Games, Graphics, and Math
 

@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css?v=1780080708.4814603" />
-        <link rel="stylesheet" href="vim.css?v=1780080708.4814603" />
-        <link rel="shortcut icon" href="favicon.ico?v=1780080708.4814603" />
+        <link rel="stylesheet" href="style.css?v=1788481910.693218" />
+        <link rel="stylesheet" href="vim.css?v=1788481910.693218" />
+        <link rel="shortcut icon" href="favicon.ico?v=1788481910.693218" />
         <title>gdtyra :: Command Reference</title>
     </head>
     <body>
@@ -31,6 +31,7 @@
     <li><a href="#cmp-compare-files-byte-wise"><code>cmp</code> - compare files byte-wise</a></li>
     <li><a href="#pr-and-paste-join-files-column-wise"><code>pr</code> and <code>paste</code> - join files column-wise</a></li>
     <li><a href="#comm-some-set-operations-on-sorted-files"><code>comm</code> - some set operations on sorted files</a></li>
+    <li><a href="#cut-select-data-columns"><code>cut</code> - select data columns</a></li>
     <li><a href="#dd-read-and-write-files-or-devices-byte-wise"><code>dd</code> - read and write files or devices byte-wise</a></li>
     <li><a href="#sudo-execute-commands-as-a-different-user"><code>sudo</code> - execute commands as a different user</a></li>
     <li><a href="#kill-and-pkill-terminate-processes-or-send-signals"><code>kill</code> and <code>pkill</code> - terminate processes or send signals</a></li>
@@ -63,12 +64,13 @@
     <li><a href="#socat-cat-for-sockets"><code>socat</code> - cat for sockets</a></li>
     <li><a href="#ss-investigate-socket-usage"><code>ss</code> - investigate socket usage</a></li>
     <li><a href="#xsel-access-x11-clipboard-from-terminal"><code>xsel</code> - access X11 clipboard from terminal</a></li>
+    <li><a href="#xsct-set-x11-screen-color-temperature"><code>xsct</code> - set X11 screen color temperature</a></li>
     <li><a href="#miscellaneous">Miscellaneous</a></li>
   </ul></li>
 </ul>
 
         <h3>Other Pages</h3>
-        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="curiosities.html">Curiosities</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
+        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="curiosities.html">Curiosities</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="refactoring.html">Refactoring</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
     </nav>
     <main class="container">
     <h1 id="command-reference">Command Reference</h1>
@@ -166,6 +168,12 @@
 <li><code>comm -12 &lt;sorted_file_1&gt; &lt;sorted_file_2&gt;</code> - outputs lines common to both files</li>
 <li><code>comm -23 &lt;sorted_file_1&gt; &lt;sorted_file_2&gt;</code> - outputs lines unique to the first file</li>
 <li><code>comm -3 &lt;sorted_file_1&gt; &lt;sorted_file_2&gt;</code> - outputs lines that are unique to either file</li>
+</ul>
+
+<h2 id="cut-select-data-columns"><code>cut</code> - select data columns</h2>
+
+<ul>
+<li><code>cut -d, -f2</code> - show only the 2nd field of data separated by commas</li>
 </ul>
 
 <h2 id="dd-read-and-write-files-or-devices-byte-wise"><code>dd</code> - read and write files or devices byte-wise</h2>
@@ -311,6 +319,7 @@
 <li><code>git submodule update --init --recursive</code> - pull down and register missing submodules</li>
 <li><code>git submodule sync</code> - synchronize all submodule URL configurations to the value specified in <code>.gitmodules</code></li>
 <li><code>git switch &lt;branch&gt;</code> - switch to a different, existing local branch</li>
+<li><code>git log -- &lt;path&gt;</code> - see commits involving a given path, even if it no longer exists</li>
 </ul>
 
 <h2 id="go-for-the-very-limited-golang-exposure-i-have"><code>go</code> - for the very limited golang exposure I have</h2>
@@ -399,6 +408,7 @@
 <ul>
 <li><code>apt update</code> - synchronize local index with repositories</li>
 <li><code>apt upgrade</code> - install all newer versions of installed packages</li>
+<li><code>apt-mark showmanual</code> - show packages that were installed directly, not only brought in as dependencies. Includes packages from the initial system installation. Alternatively, history of command line installations can be seen in <code>/var/log/apt/history.*</code> files</li>
 </ul>
 
 <h2 id="ruby-using-ruby-for-one-liners"><code>ruby</code> - using Ruby for one-liners</h2>
@@ -505,6 +515,12 @@
 <li><code>xsel --clipboard --output</code> - write clipboard content to stdout</li>
 </ul>
 
+<h2 id="xsct-set-x11-screen-color-temperature"><code>xsct</code> - set X11 screen color temperature</h2>
+
+<ul>
+<li><code>xsct 3500 1.0</code> - set the color temperature to 3500 with full brightness</li>
+</ul>
+
 <h2 id="miscellaneous">Miscellaneous</h2>
 
 <ul>
@@ -537,9 +553,9 @@
 
     </main>
     <footer>
-    <p class="generated_date">Generated on May 29 2026</p>
+    <p class="generated_date">Generated on September 03 2026</p>
     </footer>
-    <script src="script.js?v=1780080708.4814603"></script>
+    <script src="script.js?v=1788481910.693218"></script>
     </body>
     </html>
     

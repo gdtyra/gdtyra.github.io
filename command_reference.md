@@ -68,6 +68,9 @@
 - `comm -23 <sorted_file_1> <sorted_file_2>` - outputs lines unique to the first file
 - `comm -3 <sorted_file_1> <sorted_file_2>` - outputs lines that are unique to either file
 
+## `cut` - select data columns
+- `cut -d, -f2` - show only the 2nd field of data separated by commas
+
 ## `dd` - read and write files or devices byte-wise
 - `dd if=<file> ibs=1 skip=200 count=100` - read 100 bytes starting at the 200th byte
 - `dd if=/dev/sdf of=image.bin bs=8M` - write the entire device `/dev/sdf` to a file with a block size of 8M
@@ -170,6 +173,7 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 - `git submodule update --init --recursive` - pull down and register missing submodules
 - `git submodule sync` - synchronize all submodule URL configurations to the value specified in `.gitmodules`
 - `git switch <branch>` - switch to a different, existing local branch
+- `git log -- <path>` - see commits involving a given path, even if it no longer exists
 
 ## `go` - for the very limited golang exposure I have
 - `go mod init <name>` - initialize a go module workspace
@@ -235,6 +239,7 @@ If `/` is placed at the end of the source folder, `rsync` will copy only the con
 ## `apt` - More common package manager
 - `apt update` - synchronize local index with repositories
 - `apt upgrade` - install all newer versions of installed packages
+- `apt-mark showmanual` - show packages that were installed directly, not only brought in as dependencies. Includes packages from the initial system installation. Alternatively, history of command line installations can be seen in `/var/log/apt/history.*` files
 
 ## `ruby` - using Ruby for one-liners
 
@@ -305,9 +310,11 @@ Ruby has command-line options that make it useful for writing inline scripts as 
 ## `ss` - investigate socket usage
 - `ss -tulpn` - display processes using and listening to TCP and UDP sockets that are listening, use numbers instead of human-readable alternatives
 
-
 ## `xsel` - access X11 clipboard from terminal
 - `xsel --clipboard --output` - write clipboard content to stdout
+
+## `xsct` - set X11 screen color temperature
+- `xsct 3500 1.0` - set the color temperature to 3500 with full brightness
 
 ## Miscellaneous
 - `cal` - display calendars

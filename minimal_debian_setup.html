@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css?v=1780080708.4814603" />
-        <link rel="stylesheet" href="vim.css?v=1780080708.4814603" />
-        <link rel="shortcut icon" href="favicon.ico?v=1780080708.4814603" />
+        <link rel="stylesheet" href="style.css?v=1788481910.693218" />
+        <link rel="stylesheet" href="vim.css?v=1788481910.693218" />
+        <link rel="shortcut icon" href="favicon.ico?v=1788481910.693218" />
         <title>gdtyra :: Essential steps when setting up a minimal Debian environment</title>
     </head>
     <body>
@@ -24,25 +24,75 @@
 </ul>
 
         <h3>Other Pages</h3>
-        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="curiosities.html">Curiosities</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
+        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="curiosities.html">Curiosities</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="refactoring.html">Refactoring</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
     </nav>
     <main class="container">
     <h1 id="essential-steps-when-setting-up-a-minimal-debian-environment">Essential steps when setting up a minimal Debian environment</h1>
 
 <h3 id="setup-sudo">Setup sudo</h3>
 
-<div class="codehilite">
-<pre><span></span><code>su<span class="w"> </span>-
-apt<span class="w"> </span>install<span class="w"> </span>sudo
-usermod<span class="w"> </span>-aG<span class="w"> </span>sudo<span class="w"> </span>&lt;user&gt;
+<pre><code>su -
+apt install sudo
+usermod -aG sudo &lt;user&gt;
 </code></pre>
-</div>
+
+<h3 id="install-minimal-components">Install minimal components</h3>
+
+<ul>
+<li>Install xorg</li>
+<li>Install openbox, obconf, lxappearance</li>
+<li>Install picom</li>
+<li>Install tint2</li>
+<li>Install network-manager, network-manager-gnome</li>
+<li>Install pipewire, wireplumber, pavucontrol</li>
+</ul>
+
+<h3 id="install-laptop-essentials-if-needed">Install laptop essentials if needed</h3>
+
+<ul>
+<li>Install lxqt-powermanagement</li>
+<li>install xsct to modify screen brightness and color temperature</li>
+</ul>
+
+<h3 id="install-desktop-essentials">Install desktop essentials</h3>
+
+<ul>
+<li>install xsel for clipboard access</li>
+<li>Install Thunar or PCManFM</li>
+<li>Install xscreensaver for lock screen</li>
+</ul>
+
+<h3 id="non-essentials">Non-essentials</h3>
+
+<ul>
+<li>Install a font for emoji, like <code>fonts-noto-color-emoji</code> or <code>fonts-symbola</code>, then run <code>fc-cache -f -v</code></li>
+<li>Install flameshot</li>
+</ul>
+
+<h3 id="add-non-free-package-sources">Add non-free package sources</h3>
+
+<ul>
+<li>Modify <code>/etc/apt/sources.list</code> to include <code>contrib</code> and <code>non-free</code> in each line</li>
+</ul>
+
+<h3 id="setup-firewall-for-vpn-only-traffic-plus-dns">Setup firewall for VPN-only traffic plus DNS</h3>
+
+<pre><code>ufw reset
+ufw default deny outgoing
+ufw default deny incoming
+ufw allow out to any port 53
+ufw allow out to &lt;vpn-endpoint&gt; 1194 proto udp
+ufw allow out on tun0 from any to any
+ufw enable
+
+OPENSSL_CONF=/dev/null /usr/sbin/openvpn --config client.ovpn --tls-version-min 1.0 --tls-cipher "DEFAULT:@SECLEVEL=0" --data-ciphers "AES-256-GCM:AES-128-GCM:AES-256-CBC" --block-ipv6
+</code></pre>
 
     </main>
     <footer>
-    <p class="generated_date">Generated on May 29 2026</p>
+    <p class="generated_date">Generated on September 03 2026</p>
     </footer>
-    <script src="script.js?v=1780080708.4814603"></script>
+    <script src="script.js?v=1788481910.693218"></script>
     </body>
     </html>
     

@@ -542,3 +542,9 @@ In no particular order.
 - [Ancient woodland](https://en.wikipedia.org/wiki/Ancient_woodland): areas of forest in Europe that have existed continuously since at least the year 1600.
 - [Pink House](https://en.wikipedia.org/wiki/Pink_House_(Newbury,_Massachusetts)): a former, iconic, often-photographed pink house in Massachusetts.
 - [Phoenician alphabet](https://en.wikipedia.org/wiki/Phoenician_alphabet): the ancestor of many modern writing systems.
+- [Varg Vikernes](https://en.wikipedia.org/wiki/Varg_Vikernes): early black metal musician convicted of various crimes.
+- [Pyramiden](https://en.wikipedia.org/wiki/Pyramiden): abandoned Soviet coal mining settlement in the Arctic.
+- [Longyearbyen](https://en.wikipedia.org/wiki/Longyearbyen): one of the world's northernmost settlements.
+- [War Thunder sensitive document leaks](https://en.wikipedia.org/wiki/War_Thunder#Sensitive_document_leaks): mostly military nerds leaking classified documents to win arguments.
+- [Mike's RPG Center](https://mikesrpgcenter.com/): long-running website with guides for old RPGs that retains a dated and minimal aesthetic.
+- [Crown shyness](https://en.wikipedia.org/wiki/Crown_shyness): the unexplained tendency for branches of some tree species to avoid growing into each other.

@@ -53,6 +53,7 @@
 - [Crystal Space](https://en.wikipedia.org/wiki/Crystal_Space)
 - [MonoGame](https://en.m.wikipedia.org/wiki/MonoGame)
 - [OGRE](https://en.m.wikipedia.org/wiki/OGRE)
+- [Irrlicht](https://en.wikipedia.org/wiki/Irrlicht_Engine)
 - [ClanLib](https://en.m.wikipedia.org/wiki/ClanLib)
 - [raylib](https://en.m.wikipedia.org/wiki/Raylib)
 - [Cocos2D](https://en.wikipedia.org/wiki/Cocos2d)
@@ -84,6 +85,7 @@
 - [CUDA](https://en.m.wikipedia.org/wiki/CUDA)
 - [Google Web Toolkit](https://en.wikipedia.org/wiki/Google_Web_Toolkit)
 - [libGDX](https://en.wikipedia.org/wiki/LibGDX)
+- [OpenSceneGraph](https://en.wikipedia.org/wiki/OpenSceneGraph)
 
 ### Web
 - [Bootstrap](https://en.m.wikipedia.org/wiki/Bootstrap_(front-end_framework))
@@ -94,6 +96,7 @@
 
 ### Languages
 - [Ada](https://en.m.wikipedia.org/wiki/Ada_(programming_language))
+- [AngelScript](https://en.wikipedia.org/wiki/AngelScript)
 - [bc](https://en.wikipedia.org/wiki/Bc_(programming_language))
 - [Carbon](https://github.com/carbon-language/carbon-lang)
 - [Boo](https://en.wikipedia.org/wiki/Boo_(programming_language))
@@ -233,6 +236,7 @@
 - [Hungarian algorithm](https://en.wikipedia.org/wiki/Hungarian_algorithm)
 - [MinHash](https://en.wikipedia.org/wiki/MinHash)
 - [Combinatorial optimization](https://en.wikipedia.org/wiki/Combinatorial_optimization)
+- [Edge recombination operator](https://en.wikipedia.org/wiki/Edge_recombination_operator)
 
 ### Data Structures
 - [Merkle tree](https://en.m.wikipedia.org/wiki/Merkle_tree)
@@ -440,6 +444,8 @@
 - [State pattern](https://en.wikipedia.org/wiki/State_pattern)
 - [Opaque data type](https://en.wikipedia.org/wiki/Opaque_data_type)
 - [Side effect](https://en.wikipedia.org/wiki/Side_effect_(computer_science))
+- [Mealy machine](https://en.wikipedia.org/wiki/Mealy_machine)
+- [Moore machine](https://en.wikipedia.org/wiki/Moore_machine)
 
 ### History
 - [APL](https://en.m.wikipedia.org/wiki/APL_(programming_language))
@@ -513,6 +519,7 @@
 - [Scintilla](https://en.m.wikipedia.org/wiki/Scintilla_(software))
 - [Tree-sitter](https://en.m.wikipedia.org/wiki/Tree-sitter_(parser_generator))
 - [Fantasy video game console](https://en.wikipedia.org/wiki/Fantasy_video_game_console)
+- [SWIG](https://en.wikipedia.org/wiki/SWIG)
 
 ## Systems and Security
 - [HMAC](https://en.wikipedia.org/wiki/HMAC)
@@ -565,6 +572,10 @@
 - [Salt](https://en.wikipedia.org/wiki/Salt_(cryptography))
 - [GUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
 - [Directory service](https://en.wikipedia.org/wiki/Directory_service)
+- [PAKE](https://en.wikipedia.org/wiki/Password-authenticated_key_agreement)
+- [Zero-knowledge proof](https://en.wikipedia.org/wiki/Zero-knowledge_proof)
+- [Sabre](https://en.wikipedia.org/wiki/Sabre_(travel_reservation_system))
+- [tz database](https://en.wikipedia.org/wiki/Tz_database)
 
 ## Machine Learning and Statistics
 - [Naive Bayes Classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
@@ -772,6 +783,8 @@
 - [ASCII](https://en.m.wikipedia.org/wiki/ASCII)
 - [IBM PC compatible](https://en.m.wikipedia.org/wiki/IBM_PC_compatible)
 - [Addressable cursor](https://en.m.wikipedia.org/wiki/Addressable_cursor)
+- [Personal information management](https://en.wikipedia.org/wiki/Personal_information_management)
+- [Flat-file database](https://en.wikipedia.org/wiki/Flat-file_database)
 
 ### Windows
 - [Windows Console](https://en.wikipedia.org/wiki/Windows_Console)
@@ -875,6 +888,10 @@
 - [tput](https://en.m.wikipedia.org/wiki/Tput)
 - [NixOS](https://en.wikipedia.org/wiki/NixOS)
 - [File descriptor](https://en.wikipedia.org/wiki/File_descriptor)
+- [uuencoding](https://en.wikipedia.org/wiki/Uuencoding)
+- [Not a typewriter](https://en.wikipedia.org/wiki/Not_a_typewriter)
+- [shar](https://en.wikipedia.org/wiki/Shar_(file_format))
+- [Recutils](https://en.wikipedia.org/wiki/Recutils)
 
 ### GUI
 - [Clipboard](https://en.wikipedia.org/wiki/Clipboard_(computing))
@@ -1021,6 +1038,7 @@
 - [Kernel (image processing)](https://en.wikipedia.org/wiki/Kernel_(image_processing))
 - [Worley noise](https://en.wikipedia.org/wiki/Worley_noise)
 - [Simplex noise](https://en.wikipedia.org/wiki/Simplex_noise)
+- [Brush](https://en.wikipedia.org/wiki/Brush_(video_games))
 
 ### Software / Tools
 - [Beaker](https://en.wikipedia.org/wiki/Beaker_(web_browser))
@@ -1125,6 +1143,7 @@
 - [VT100](https://en.wikipedia.org/wiki/VT100)
 - [Usenet](https://en.wikipedia.org/wiki/Usenet)
 - [Raster interrupt](https://en.wikipedia.org/wiki/Raster_interrupt)
+- [Edlin](https://en.wikipedia.org/wiki/Edlin)
 
 ### Mobile
 - [postmarketOS](https://en.m.wikipedia.org/wiki/PostmarketOS)

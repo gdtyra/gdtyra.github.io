@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css?v=1780080708.4814603" />
-        <link rel="stylesheet" href="vim.css?v=1780080708.4814603" />
-        <link rel="shortcut icon" href="favicon.ico?v=1780080708.4814603" />
+        <link rel="stylesheet" href="style.css?v=1788481910.693218" />
+        <link rel="stylesheet" href="vim.css?v=1788481910.693218" />
+        <link rel="shortcut icon" href="favicon.ico?v=1788481910.693218" />
         <title>gdtyra :: C++ Templates and Metaprogramming</title>
     </head>
     <body>
@@ -34,7 +34,7 @@
 </ul>
 
         <h3>Other Pages</h3>
-        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="curiosities.html">Curiosities</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
+        <ul><li><a href="command_reference.html">Command Reference</a></li><li><a href="cpp_cheat_sheet.html">C++ Cheat Sheet</a></li><li><a href="cpp_templates_and_metaprogramming.html">C++ Templates and Metaprogramming</a></li><li><a href="curiosities.html">Curiosities</a></li><li><a href="data_migrations.html">Data Migrations</a></li><li><a href="deep_dives.html">Potential Deep Dives</a></li><li><a href="distributed_systems.html">Distributed Systems</a></li><li><a href="etymologies.html">Interesting Etymologies</a></li><li><a href="jargon_file.html">Jargon File</a></li><li><a href="llm_chats.html">Information from chatting with LLMs</a></li><li><a href="minimal_debian_setup.html">Essential steps when setting up a minimal Debian environment</a></li><li><a href="refactoring.html">Refactoring</a></li><li><a href="software_design.html">Software Design</a></li><li><a href="things_of_interest.html">Things of Interest</a></li></ul>
     </nav>
     <main class="container">
     <h1 id="c-templates-and-metaprogramming">C++ Templates and Metaprogramming</h1>
@@ -45,137 +45,136 @@
 
 <p>Overload ambiguities weren't really an issue until I started playing with templates heavily. Maybe because I don't have a very deep understanding of the C++ type system, I was surprised by what is and isn't considered ambiguous in the following examples:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c1">// Ambiguous between const-ref and value</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<pre><code>
+// Ambiguous between const-ref and value
+void foo(int) { }
+void foo(int const&amp;) { }
+foo(1);
 
 
-<span class="c1">// I thought maybe the above would not be ambiguous for a type that isn&#39;t copyable,</span>
-<span class="c1">// but the ambiguity error remained. An error regarding the missing copy constructor surfaced</span>
-<span class="c1">// only after removing the const reference option.</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">A</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
-<span class="w">    </span><span class="n">A</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">=</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">delete</span><span class="p">;</span>
-<span class="p">};</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">A</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+// I thought maybe the above would not be ambiguous for a type that isn't copyable,
+// but the ambiguity error remained. An error regarding the missing copy constructor surfaced
+// only after removing the const reference option.
+struct A {
+    A(A const&amp;) = delete;
+    A&amp; operator =(A const&amp;) = delete;
+};
+void foo(A) { }
+void foo(A const&amp;) { }
+A a{};
+foo(a);
 
-<span class="c1">// NOT ambiguous; r-value reference and non-const reference take priority</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// binds to int&amp; if present, otherwise int const&amp;</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">y</span><span class="p">);</span><span class="w"> </span><span class="c1">// can only bind to int const&amp;</span>
-<span class="n">foo</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="c1">// binds to int&amp;&amp; if present, otherwise int const&amp;</span>
+// NOT ambiguous; r-value reference and non-const reference take priority
+void foo(int const&amp;) { }
+void foo(int&amp;) { }
+void foo(int&amp;&amp;) { }
+int x = 1;
+int const y = 2;
+foo(x); // binds to int&amp; if present, otherwise int const&amp;
+foo(y); // can only bind to int const&amp;
+foo(3); // binds to int&amp;&amp; if present, otherwise int const&amp;
 </code></pre>
-</div>
 
 <h2 id="templates-and-overload-resolution">Templates and overload resolution</h2>
 
 <p>This is largely intuitive, but there are many cases where I wasn't entirely sure what to expect without testing.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{};</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{};</span>
+<pre><code>
+struct A {};
+struct B : A {};
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+template &lt;class T&gt;
+void foo(T) { }
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+template &lt;class T&gt;
+void foo(T*) { }
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+template &lt;class T&gt;
+void foo(std::list&lt;T&gt;) { }
 
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+void foo(std::list&lt;float&gt;) { }
 
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+void foo(std::list&lt;A&gt;) { }
 
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">A</span><span class="o">*&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+void foo(std::list&lt;A*&gt;) { }
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_base_of_v</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+template &lt;class T&gt;
+void foo(std::list&lt;std::enable_if_t&lt;std::is_base_of_v&lt;A, T&gt;, T&gt;&gt;) { }
 
 
-<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// calls foo(T)</span>
-<span class="n">foo</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// calls foo(T*)</span>
-<span class="n">foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">*&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c1">// calls foo(T)</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{});</span><span class="w"> </span><span class="c1">// calls foo(std::list&lt;T&gt;)</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">{});</span><span class="w"> </span><span class="c1">// calls foo(std::list&lt;float&gt;)</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;</span><span class="p">{});</span><span class="w"> </span><span class="c1">// calls foo(std::list&lt;A&gt;)</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="p">{});</span><span class="w"> </span><span class="c1">// calls foo(std::list&lt;T&gt;)</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">B</span><span class="o">*&gt;</span><span class="p">{});</span><span class="w"> </span><span class="c1">// calls foo(std::list&lt;T&gt;)</span>
-<span class="n">foo</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="p">{});</span><span class="w"> </span><span class="c1">// calls foo(std::list&lt;std::enable_if_t&lt;std::is_base_of_v&lt;A, T&gt;, T&gt;&gt;)</span>
+int x = 5;
+foo(x); // calls foo(T)
+foo(&amp;x); // calls foo(T*)
+foo&lt;int*&gt;(&amp;x); // calls foo(T)
+foo(std::list&lt;int&gt;{}); // calls foo(std::list&lt;T&gt;)
+foo(std::list&lt;float&gt;{}); // calls foo(std::list&lt;float&gt;)
+foo(std::list&lt;A&gt;{}); // calls foo(std::list&lt;A&gt;)
+foo(std::list&lt;B&gt;{}); // calls foo(std::list&lt;T&gt;)
+foo(std::list&lt;B*&gt;{}); // calls foo(std::list&lt;T&gt;)
+foo&lt;B&gt;(std::list&lt;B&gt;{}); // calls foo(std::list&lt;std::enable_if_t&lt;std::is_base_of_v&lt;A, T&gt;, T&gt;&gt;)
+
 </code></pre>
-</div>
 
 <p>What if I want an overload specifically for lists of objects derived from A? Using <code>enable_if_t</code> as above doesn't work with type deduction and needs <code>B</code> to be specified as the type parameter explicitly. The following possibilities don't work at all because they are considered ambiguous in combination with the general list overload:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_base_of_v</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<pre><code>
+template &lt;class T&gt;
+std::enable_if_t&lt;std::is_base_of_v&lt;A, T&gt;, void&gt; foo(std::list&lt;T&gt;) { }
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_base_of_v</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+template &lt;class T, class = std::enable_if_t&lt;std::is_base_of_v&lt;A, T&gt;, void&gt;&gt;
+void foo(std::list&lt;T&gt;) { }
+
 </code></pre>
-</div>
 
 <p>One option is to resolve the ambiguity by using SFINAE to enable different implementations in a mutually exclusive way:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;!</span><span class="n">std</span><span class="o">::</span><span class="n">is_base_of_v</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<pre><code>
+template &lt;class T&gt;
+std::enable_if_t&lt;!std::is_base_of_v&lt;A, T&gt;, void&gt; foo(std::list&lt;T&gt;) { }
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_base_of_v</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+template &lt;class T&gt;
+std::enable_if_t&lt;std::is_base_of_v&lt;A, T&gt;, void&gt; foo(std::list&lt;T&gt;) { }
+
 </code></pre>
-</div>
 
 <p>Alternatively, tag dispatching can be used which seems easier to follow:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo_impl</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">true_type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<pre><code>
+template &lt;class T&gt;
+void foo_impl(std::list&lt;T&gt;, std::true_type) { }
 
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo_impl</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">false_type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+template &lt;class T&gt;
+void foo_impl(std::list&lt;T&gt;, std::false_type) { }
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="n">foo_impl</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">is_base_of</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">{});</span>
-<span class="p">}</span>
+template &lt;class T&gt;
+void foo(std::list&lt;T&gt; lst) { 
+    foo_impl(lst, std::is_base_of&lt;A, T&gt;{});
+}
+
 </code></pre>
-</div>
 
 <p>These options may be acceptable in many cases, but they require all implementations to be coupled together so that they mutually exclude each other. What I really want is a hierarchy of implementations where the more generic implementations are entirely unaware of any other more specific implementations that may exist.</p>
 
 <p>According to my limited understanding, this can't be accomplished with only function templates. Instead, we have to make use of struct templates and partial specialization which is not available with function templates.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">foo_impl</span><span class="p">{</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="p">};</span>
+<pre><code>
+template &lt;class T, class Enable = void&gt;
+struct foo_impl{
+    static void apply(std::list&lt;T&gt;) { }
+};
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">foo_impl</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">enable_if_t</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_base_of_v</span><span class="o">&lt;</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="p">};</span>
+template &lt;class T&gt;
+struct foo_impl&lt;T, std::enable_if_t&lt;std::is_base_of_v&lt;A, T&gt;&gt;&gt; {
+    static void apply(std::list&lt;T&gt;) { }
+};
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">lst</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">foo_impl</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">apply</span><span class="p">(</span><span class="n">lst</span><span class="p">);</span>
-<span class="p">}</span>
+template &lt;class T&gt;
+int foo(std::list&lt;T&gt; lst) {
+    return foo_impl&lt;T&gt;::apply(lst);
+}
+
 </code></pre>
-</div>
 
 <p>The primary template for <code>foo_impl</code> contains what would be the default implementation of the function. A dummy template parameter <code>Enable</code> is used as a sort of slot for doing SFINAE when specializing the template for types matching arbitrary criteria. It is given an arbitrary default type <code>void</code> so it doesn't get in the way. The type assigned to Enable is irrelevant; it just provides a place in the template to use <code>std::enable_if_t</code> when specializing. Through SFINAE, the use of <code>std::enable_if_t</code> in the specialization will cause C++ to ignore the specialization when the type given doesn't fulfill the criteria. In this example, the specialization requires <code>T</code> to be derived from <code>A</code>, otherwise the primary template will be used.</p>
 
@@ -185,109 +184,108 @@
 
 <p>I would have thought I needed to explicitly handle the situation where a template function makes use of another function that may or may not be <code>void</code> depending on the arguments, but this is handled automatically:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
-<span class="kt">int</span><span class="w"> </span><span class="nf">bar</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<pre><code>
+void bar(int) {}
+int bar(float) { return 0; }
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">auto</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">bar</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<span class="p">}</span>
+template &lt;class T&gt;
+auto foo(T x) {
+    return bar(x);
+}
 
-<span class="c1">// These both work</span>
-<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">foo</span><span class="p">(</span><span class="mf">1.0f</span><span class="p">);</span>
+// These both work
+foo(1);
+foo(1.0f);
+
 </code></pre>
-</div>
 
 <h2 id="placement-of-variadic-template-arguments">Placement of variadic template arguments</h2>
 
 <p>In the case of class templates, the compiler gives me a message specifically saying that variadic parameters must be the last template parameters.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c1">// Okay</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">First</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="w"> </span><span class="p">{};</span>
+<pre><code>
+// Okay
+template&lt;class First, class... Remaining&gt;
+struct Bar {};
 
-<span class="c1">// Not okay</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Last</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="w"> </span><span class="p">{};</span>
+// Not okay
+template&lt;class... Remaining, class Last&gt;
+struct Bar {};
 
-<span class="c1">// Not okay</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">First</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Last</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="w"> </span><span class="p">{};</span>
+// Not okay
+template&lt;class First, class... Remaining, class Last&gt;
+struct Bar {};
+
 </code></pre>
-</div>
 
 <p>Template functions don't give me an error explicitly telling me this, but rather fail in different ways depending on how I've ordered things and whether I've listed the template types or used deduction.</p>
 
 <p>When relying on deduction the order of the template arguments themselves is not strict, but putting them anywhere but the end breaks your ability to provide all the type parameters explicitly because they are greedily assigned to the variadic arguments. It still "works" in that you can let deduction take care of the other types.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">One</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">One</span><span class="o">&amp;&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&amp;&amp;</span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<pre><code>template&lt;class One, class... Remaining&gt;
+void foo(One&amp;&amp;, Remaining&amp;&amp;...) { }
 
-<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Okay</span>
-<span class="n">foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Okay</span>
+foo(1, 2, 3, 4); // Okay
+foo&lt;int, int, int, int&gt;(1, 2, 3, 4); // Okay
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">One</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">One</span><span class="o">&amp;&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&amp;&amp;</span><span class="p">...)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+template&lt;class... Remaining, class One&gt;
+void foo(One&amp;&amp;, Remaining&amp;&amp;...) { }
 
-<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Okay</span>
-<span class="n">foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Okay... One is deduced to be an int</span>
-<span class="n">foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Fails because compiler thinks 5 parameters are expected in total</span>
+foo(1, 2, 3, 4); // Okay
+foo&lt;int, int, int&gt;(1, 2, 3, 4); // Okay... One is deduced to be an int
+foo&lt;int, int, int, int&gt;(1, 2, 3, 4); // Fails because compiler thinks 5 parameters are expected in total
+
 </code></pre>
-</div>
 
 <p>Putting the function parameter pack itself anywhere but the end seems to completely break type parameter deduction, but the types can still be given explicitly.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">One</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">Remaining</span><span class="o">&amp;&amp;</span><span class="p">...,</span><span class="w"> </span><span class="n">One</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Fails, apparently because deduction results in Remaining being empty</span>
-<span class="n">foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Okay</span>
+<pre><code>
+template&lt;class One, class... Remaining&gt;
+void foo(Remaining&amp;&amp;..., One&amp;&amp;) { }
+foo(1, 2, 3, 4); // Fails, apparently because deduction results in Remaining being empty
+foo&lt;int, int, int, int&gt;(1, 2, 3, 4); // Okay
+
 </code></pre>
-</div>
 
 <p>So, it seems that if you don't stick to putting variadics at the end, you sacrifice either deduction or the ability to specify all types explicitly.</p>
 
 <p>At first I thought I was able to do something useful by reordering them. In this example, I'm able to recursively process the parameters in reverse order:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Last</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">Remaining</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">remaining</span><span class="p">,</span><span class="w"> </span><span class="n">Last</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">last</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">last</span><span class="p">;</span>
-<span class="w">    </span><span class="n">foo</span><span class="o">&lt;</span><span class="n">Remaining</span><span class="p">...</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Remaining</span><span class="o">&gt;</span><span class="p">(</span><span class="n">remaining</span><span class="p">)...);</span>
-<span class="p">}</span>
+<pre><code>
+template&lt;class T&gt;
+void foo(T&amp;&amp; t) {
+    std::cout &lt;&lt; t &lt;&lt; std::endl;
+}
+template&lt;class Last, class... Remaining&gt;
+void foo(Remaining&amp;&amp;... remaining, Last&amp;&amp; last) {
+    std::cout &lt;&lt; last;
+    foo&lt;Remaining...&gt;(std::forward&lt;Remaining&gt;(remaining)...);
+}
 
-<span class="n">foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// output is 4321</span>
+foo&lt;int, int, int, int&gt;(1, 2, 3, 4); // output is 4321
+
 </code></pre>
-</div>
 
 <p>However, using entirely unrelated types reveals a problem. I'm able to specify the type of 'Last' by hand on the top-level call, but for recursive calls 'Last' receives the wrong type.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">getChar</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Last</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">Remaining</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">remaining</span><span class="p">,</span><span class="w"> </span><span class="n">Last</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">last</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">last</span><span class="p">.</span><span class="n">getChar</span><span class="p">();</span>
-<span class="w">    </span><span class="n">foo</span><span class="o">&lt;</span><span class="n">Remaining</span><span class="p">...</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Remaining</span><span class="o">&gt;</span><span class="p">(</span><span class="n">remaining</span><span class="p">)...);</span>
-<span class="p">}</span>
+<pre><code>
+template&lt;class T&gt;
+void foo(T&amp;&amp; t) {
+    std::cout &lt;&lt; t.getChar() &lt;&lt; std::endl;
+}
+template&lt;class Last, class... Remaining&gt;
+void foo(Remaining&amp;&amp;... remaining, Last&amp;&amp; last) {
+    std::cout &lt;&lt; last.getChar();
+    foo&lt;Remaining...&gt;(std::forward&lt;Remaining&gt;(remaining)...);
+}
 
-<span class="k">struct</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">getChar</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">B</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">getChar</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="sc">&#39;B&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">C</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="nf">getChar</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="sc">&#39;C&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+struct A { char getChar() const { return 'A'; } };
+struct B { char getChar() const { return 'B'; } };
+struct C { char getChar() const { return 'C'; } };
 
-<span class="n">foo</span><span class="o">&lt;</span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="o">&gt;</span><span class="p">(</span><span class="n">A</span><span class="p">{},</span><span class="w"> </span><span class="n">B</span><span class="p">{},</span><span class="w"> </span><span class="n">C</span><span class="p">{});</span><span class="w"> </span><span class="c1">// Fails because recursion attemps to call foo&lt;A, B&gt;(B&amp;&amp;, A&amp;&amp;) with arguments of type A&amp;&amp; and B&amp;&amp;</span>
+foo&lt;C, A, B&gt;(A{}, B{}, C{}); // Fails because recursion attemps to call foo&lt;A, B&gt;(B&amp;&amp;, A&amp;&amp;) with arguments of type A&amp;&amp; and B&amp;&amp;
+
 </code></pre>
-</div>
 
 <h2 id="what-is-the-purpose-of-stdforward">What is the purpose of <code>std::forward</code>?</h2>
 
@@ -295,39 +293,39 @@
 
 <p>In the following example, the template parameters for <code>foo</code> were deduced to be <code>int&amp;, const int&amp;, int*, int, A&amp;</code>:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<pre><code>
+template &lt;class... Ts&gt;
+void foo(Ts&amp;&amp;... args) { }
 
-<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+int x = 1;
+int const y = 2;
+A a{};
+foo(x, y, &amp;x, 5, a);
+
 </code></pre>
-</div>
 
 <p>If I remove the <code>&amp;&amp;</code>, the deduced types change to <code>int, int, int*, int, A</code> which explains what <code>&amp;&amp;</code> was doing while also telling me the compiler distinguishes between pointers and non-pointers regardless of whether forwarding references are used.</p>
 
 <p>Now that we understand that, lets expand on the example to see what <code>std::forward</code> does:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ref&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;rvalue ref&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">bar</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;const ref&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">bar</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;pointer&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<pre><code>
+void bar(int&amp;) { std::cout &lt;&lt; "ref" &lt;&lt; '\n'; }
+void bar(int&amp;&amp;) { std::cout &lt;&lt; "rvalue ref" &lt;&lt; '\n'; }
+void bar(int const&amp;) { std::cout &lt;&lt; "const ref" &lt;&lt; '\n';
+void bar(int*) { std::cout &lt;&lt; "pointer" &lt;&lt; '\n'; }
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="p">(</span><span class="n">bar</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Ts</span><span class="o">&gt;</span><span class="p">(</span><span class="n">args</span><span class="p">)),</span><span class="w"> </span><span class="p">...);</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;---</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-<span class="w">    </span><span class="p">(</span><span class="n">bar</span><span class="p">(</span><span class="n">args</span><span class="p">),</span><span class="w"> </span><span class="p">...);</span>
-<span class="p">}</span>
+template &lt;class... Ts&gt;
+void foo(Ts&amp;&amp;... args) {
+    (bar(std::forward&lt;Ts&gt;(args)), ...);
+    std::cout &lt;&lt; "---\n";
+    (bar(args), ...);
+}
 
-<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+int x = 1;
+int const y = 2;
+foo(x, y, &amp;x, 5);
+
 </code></pre>
-</div>
 
 <p>This examples passes forwarding references from a template function to a family of other functions using and then without using <code>std::forward</code>. The output of this tells me that the main purpose of <code>std::forward</code> is to ensure that rvalue references do not become regular references when passing them through a template function. For other parameter types, it does nothing.</p>
 
@@ -350,28 +348,26 @@ ref
 
 <p>For example, if I want a template function that returns me the exact same type that I pass in, I can use <code>decltype(auto)</code> in combination with <code>std::forward</code>:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&amp;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ref&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="o">&lt;</span><span class="n">T</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;const ref&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&amp;&amp;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;r-value ref&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<pre><code>template &lt;class T&gt; struct Bar { static constexpr const char* tag = "value"; };
+template &lt;class T&gt; struct Bar&lt;T&amp;&gt; { static constexpr const char* tag = "ref"; };
+template &lt;class T&gt; struct Bar&lt;T const&amp;&gt; { static constexpr const char* tag = "const ref"; };
+template &lt;class T&gt; struct Bar&lt;T&amp;&amp;&gt; { static constexpr const char* tag = "r-value ref"; };
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-<span class="p">}</span>
+template &lt;class T&gt;
+decltype(auto) foo(T&amp;&amp; x) {
+    return std::forward&lt;T&gt;(x);
+}
 
 
-<span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">rx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">crx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">rx</span><span class="p">))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">crx</span><span class="p">))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Bar</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span><span class="o">&gt;::</span><span class="n">tag</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+int x = 5;
+int&amp; rx = x;
+int const&amp; crx = x;
+std::cout &lt;&lt; Bar&lt;decltype(foo(5))&gt;::tag &lt;&lt; std::endl;
+std::cout &lt;&lt; Bar&lt;decltype(foo(x))&gt;::tag &lt;&lt; std::endl;
+std::cout &lt;&lt; Bar&lt;decltype(foo(rx))&gt;::tag &lt;&lt; std::endl;
+std::cout &lt;&lt; Bar&lt;decltype(foo(crx))&gt;::tag &lt;&lt; std::endl;
+std::cout &lt;&lt; Bar&lt;decltype(foo(std::move(x)))&gt;::tag &lt;&lt; std::endl;
 </code></pre>
-</div>
 
 <p>The above outputs what I would expect:</p>
 
@@ -386,194 +382,182 @@ r-value ref
 
 <h3 id="recursively-processing-variable-template-arguments">Recursively processing variable template arguments</h3>
 
-<div class="codehilite">
-<pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">foo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="p">}</span>
+<pre><code>
+void foo() {
+    std::cout &lt;&lt; std::endl;
+}
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">First</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&gt;</span>
-<span class="kt">void</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">First</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">first</span><span class="p">,</span><span class="w"> </span><span class="n">Remaining</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">remaining</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">first</span><span class="p">;</span>
-<span class="w">    </span><span class="p">(</span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Remaining</span><span class="o">&gt;</span><span class="p">(</span><span class="n">remaining</span><span class="p">)),</span><span class="w"> </span><span class="p">...);</span>
-<span class="p">}</span>
+template&lt;class First, class... Remaining&gt;
+void foo(First&amp;&amp; first, Remaining&amp;&amp;... remaining) {
+    std::cout &lt;&lt; first;
+    (foo(std::forward&lt;Remaining&gt;(remaining)), ...);
+}
 
-<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
-<span class="c1">// prints 1234</span>
+foo(1, 2, 3, 4)
+// prints 1234
+
 </code></pre>
-</div>
 
 <h3 id="using-specialization-or-deduction-to-unpack-types">Using specialization or deduction to unpack types</h3>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="p">;</span>
+<pre><code>
+template&lt;class T&gt;
+struct Foo;
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">constexpr</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">...(</span><span class="n">Ts</span><span class="p">);</span>
-<span class="p">};</span>
+template&lt;class... Ts&gt;
+struct Foo&lt;std::tuple&lt;Ts...&gt;&gt; {
+    static constexpr std::size_t n = sizeof...(Ts);
+};
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">Tuple</span><span class="o">&gt;</span>
-<span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">bar</span><span class="p">(</span><span class="n">Tuple</span><span class="o">&amp;&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Foo</span><span class="o">&lt;</span><span class="n">Tuple</span><span class="o">&gt;::</span><span class="n">n</span><span class="p">;</span>
-<span class="p">}</span>
+template&lt;class Tuple&gt;
+std::size_t bar(Tuple&amp;&amp;) {
+    return Foo&lt;Tuple&gt;::n;
+}
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
-<span class="n">std</span><span class="o">::</span><span class="kt">size_t</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">Ts</span><span class="o">&amp;&amp;</span><span class="p">...</span><span class="w"> </span><span class="n">ts</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">bar</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">Ts</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ts</span><span class="p">)...));</span>
-<span class="p">}</span>
+template&lt;class... Ts&gt;
+std::size_t foo(Ts&amp;&amp;... ts) {
+    return bar(std::tuple&lt;Ts...&gt;(std::forward&lt;Ts&gt;(ts)...));
+}
 
-<span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;3&#39;</span><span class="p">);</span><span class="w"> </span><span class="c1">// returns 3</span>
+foo(1, 2.0, '3'); // returns 3
+
 </code></pre>
-</div>
 
 <h3 id="tag-dispatch">Tag dispatch</h3>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">true_type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
+<pre><code>
+template &lt;class T&gt;
+int foo(T&amp;&amp;, std::true_type) {
+    return 1;
+}
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">false_type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
+template &lt;class T&gt;
+int foo(T&amp;&amp;, std::false_type) {
+    return 2;
+}
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">is_integral</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">{});</span>
-<span class="p">}</span>
+template &lt;class T&gt;
+int foo(T&amp;&amp; t) {
+    return foo(std::forward&lt;T&gt;(t), std::is_integral&lt;T&gt;{});
+}
 
-<span class="n">foo</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// returns 1</span>
-<span class="n">foo</span><span class="p">(</span><span class="mf">5.0</span><span class="p">);</span><span class="w"> </span><span class="c1">// returns 2</span>
+foo(5); // returns 1
+foo(5.0); // returns 2
+
 </code></pre>
-</div>
 
 <h3 id="type-holder-dispatch">Type holder dispatch</h3>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Holder</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
-<span class="p">};</span>
+<pre><code>
+template &lt;class T&gt;
+struct Holder {
+    using type = T;
+};
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">Holder</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="p">}</span>
+template &lt;class T&gt;
+int foo(Holder&lt;T&gt;) {
+    return 1;
+}
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">foo</span><span class="p">(</span><span class="n">Holder</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-<span class="p">}</span>
+template &lt;class... Ts&gt;
+int foo(Holder&lt;std::tuple&lt;Ts...&gt;&gt;) {
+    return 2;
+}
 
-<span class="n">foo</span><span class="p">(</span><span class="n">Holder</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">{});</span><span class="w"> </span><span class="c1">// returns 1</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">Holder</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;&gt;</span><span class="p">{});</span><span class="w"> </span><span class="c1">// returns 2</span>
+foo(Holder&lt;int&gt;{}); // returns 1
+foo(Holder&lt;std::tuple&lt;int, float&gt;&gt;{}); // returns 2
 
-<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">constexpr</span><span class="w"> </span><span class="n">Holder</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">holder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Holder</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">{};</span>
+template &lt;class T&gt;
+constexpr Holder&lt;T&gt; holder = Holder&lt;T&gt;{};
 
-<span class="n">foo</span><span class="p">(</span><span class="n">holder</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">);</span><span class="w"> </span><span class="c1">// returns 1</span>
-<span class="n">foo</span><span class="p">(</span><span class="n">holder</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">tuple</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="o">&gt;&gt;</span><span class="p">);</span><span class="w"> </span><span class="c1">// returns 2</span>
+foo(holder&lt;int&gt;); // returns 1
+foo(holder&lt;std::tuple&lt;int, float&gt;&gt;); // returns 2
+
 </code></pre>
-</div>
 
 <h2 id="other-language-features-and-idioms">Other language features and idioms</h2>
 
 <h3 id="anonymous-namespaces">Anonymous namespaces</h3>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c1">// Anonymous namespaces result in internal linkage, like static</span>
-<span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">internalVar1</span><span class="p">;</span>
-<span class="k">namespace</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">internalVar2</span><span class="p">;</span>
-<span class="p">}</span>
+<pre><code>// Anonymous namespaces result in internal linkage, like static
+static int internalVar1;
+namespace {
+    int internalVar2;
+}
 </code></pre>
-</div>
 
 <h3 id="inline-namespaces">Inline namespaces</h3>
 
-<div class="codehilite">
-<pre><span></span><code><span class="c1">// Declarations in inline namespaces are visible via the parent namespace</span>
-<span class="c1">// Can be used to have versioned implementations with the latest being the default</span>
-<span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">namespace</span><span class="w"> </span><span class="nn">v1</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="nf">bar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">v2</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="nf">bar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<pre><code>// Declarations in inline namespaces are visible via the parent namespace
+// Can be used to have versioned implementations with the latest being the default
+namespace foo {
+    namespace v1 {
+        int bar() { return 1; }
+    }
+    inline namespace v2 {
+        int bar() { return 2; }
+    }
+}
 
-<span class="n">foo</span><span class="o">::</span><span class="n">bar</span><span class="p">();</span><span class="w"> </span><span class="c1">// returns 2</span>
+foo::bar(); // returns 2
 </code></pre>
-</div>
 
 <h3 id="argument-dependent-lookup">Argument Dependent lookup</h3>
 
 <p>Argument Dependent Lookup, ADL, or Koenig lookup is the behavior in which C++ will look for functions declared in namespaces associated with the function's given arguments. It seems like one of the main reasons it exists is to enable operator overloads involving arbitrary types as shown in this contrived example:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">foo</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Bar</span><span class="p">{};</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="k">operator</span><span class="w"> </span><span class="o">+</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">Bar</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<pre><code>namespace foo {
+    struct Bar{};
+    int operator +(int const&amp; n, Bar const&amp;) {
+        return n + 1;
+    }
+}
 
-<span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">foo</span><span class="o">::</span><span class="n">Bar</span><span class="p">{};</span><span class="w"> </span><span class="c1">// returns 6</span>
+5 + foo::Bar{}; // returns 6
 </code></pre>
-</div>
 
 <p>Another use for ADL is in generic programming for setting up customization points. In another contrived example, client code can define parts of a generic function by providing an implementation of a function with a particular name within the client's own namespace.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">namespace</span><span class="w"> </span><span class="nn">Client</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="p">{};</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">specialized_behavior</span><span class="p">(</span><span class="n">Foo</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<pre><code>namespace Client {
+    struct Foo{};
+    int specialized_behavior(Foo const&amp;) {
+        return 5;
+    }
+}
 
-<span class="k">namespace</span><span class="w"> </span><span class="nn">Library</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">generic_behavior</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">specialized_behavior</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+namespace Library {
+    template &lt;class T&gt;
+    int generic_behavior(T&amp;&amp; t) {
+        return 1 + specialized_behavior(std::forward&lt;T&gt;(t));
+    }
+}
 
-<span class="n">Library</span><span class="o">::</span><span class="n">generic_behavior</span><span class="p">(</span><span class="n">Client</span><span class="o">::</span><span class="n">Foo</span><span class="p">{});</span><span class="w"> </span><span class="c1">// returns 6</span>
+Library::generic_behavior(Client::Foo{}); // returns 6
 </code></pre>
-</div>
 
 <h3 id="template-template-parameters">Template template parameters</h3>
 
 <p>Template parameters can themselves be a template as opposed to an instantiation of a template:</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">class</span><span class="w"> </span><span class="nc">Bar</span><span class="w"> </span><span class="p">{};</span>
+<pre><code>template&lt;class T&gt;
+class Bar {};
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="p">};</span>
+template&lt;template&lt;class&gt; class T&gt;
+struct Foo {
+    using type = T&lt;int&gt;;
+};
 
-<span class="n">Foo</span><span class="o">&lt;</span><span class="n">Bar</span><span class="o">&gt;::</span><span class="n">type</span><span class="p">;</span><span class="w"> </span><span class="c1">// type is Bar&lt;int&gt;</span>
+Foo&lt;Bar&gt;::type; // type is Bar&lt;int&gt;
 </code></pre>
-</div>
 
 <p>This can also be used with specialization to capture the types of a template instance as shown in this construct that determines if a given type is one of the type parameters of another template.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Tuple</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">has_type</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">false_type</span><span class="w"> </span><span class="p">{};</span>
+<pre><code>template&lt;class T, class Tuple&gt;
+struct has_type : std::false_type {};
 
-<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="w"> </span><span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TupleLike</span><span class="p">,</span><span class="w"> </span><span class="k">class</span><span class="p">...</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span>
-<span class="k">struct</span><span class="w"> </span><span class="nc">has_type</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">TupleLike</span><span class="o">&lt;</span><span class="n">Ts</span><span class="p">...</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">disjunction</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">is_same</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">Ts</span><span class="o">&gt;</span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{};</span>
+template&lt;class T, template&lt;class...&gt; class TupleLike, class... Ts&gt;
+struct has_type&lt;T, TupleLike&lt;Ts...&gt;&gt; : std::disjunction&lt;std::is_same&lt;T, Ts&gt;...&gt; {};
 </code></pre>
-</div>
 
 <h3 id="rule-of-five">Rule of Five</h3>
 
@@ -597,24 +581,22 @@ r-value ref
 
 <p>If your class is intended to be a base class it should probably have a virtual destructor. Without it, deleting an instance via a pointer to the base class won't invoke the destructor logic of derived classes.</p>
 
-<div class="codehilite">
-<pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="w"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">    </span><span class="k">virtual</span><span class="w"> </span><span class="o">~</span><span class="n">Base</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="p">};</span>
+<pre><code>class Base {
+public:
+    virtual ~Base() { }
+};
 
-<span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">    </span><span class="o">~</span><span class="n">Derived</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
-<span class="p">};</span>
+class Derived : public Base {
+public:
+    ~Derived() override { }
+};
 </code></pre>
-</div>
 
     </main>
     <footer>
-    <p class="generated_date">Generated on May 29 2026</p>
+    <p class="generated_date">Generated on September 03 2026</p>
     </footer>
-    <script src="script.js?v=1780080708.4814603"></script>
+    <script src="script.js?v=1788481910.693218"></script>
     </body>
     </html>
     
